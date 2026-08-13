@@ -1,0 +1,176 @@
+asset_path,character_id,usage,required_format,source,license_status
+audio/characters/char_u4e00_v1.mp3,char_u4e00,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u4e00_v1.mp3,char_u4e00,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e00_1_v1.mp3,char_u4e00,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e00_2_v1.mp3,char_u4e00,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e00_3_v1.mp3,char_u4e00,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u4e00_v1.mp3,char_u4e00,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u4e00_main_v1.webp,char_u4e00,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u4e8c_v1.mp3,char_u4e8c,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u4e8c_v1.mp3,char_u4e8c,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e8c_1_v1.mp3,char_u4e8c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e8c_2_v1.mp3,char_u4e8c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e8c_3_v1.mp3,char_u4e8c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u4e8c_v1.mp3,char_u4e8c,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u4e8c_main_v1.webp,char_u4e8c,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u4e09_v1.mp3,char_u4e09,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u4e09_v1.mp3,char_u4e09,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e09_1_v1.mp3,char_u4e09,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e09_2_v1.mp3,char_u4e09,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e09_3_v1.mp3,char_u4e09,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u4e09_v1.mp3,char_u4e09,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u4e09_main_v1.webp,char_u4e09,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u4e0a_v1.mp3,char_u4e0a,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u4e0a_v1.mp3,char_u4e0a,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e0a_1_v1.mp3,char_u4e0a,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e0a_2_v1.mp3,char_u4e0a,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e0a_3_v1.mp3,char_u4e0a,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u4e0a_v1.mp3,char_u4e0a,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u4e0a_main_v1.webp,char_u4e0a,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u4e0b_v1.mp3,char_u4e0b,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u4e0b_v1.mp3,char_u4e0b,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e0b_1_v1.mp3,char_u4e0b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e0b_2_v1.mp3,char_u4e0b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e0b_3_v1.mp3,char_u4e0b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u4e0b_v1.mp3,char_u4e0b,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u4e0b_main_v1.webp,char_u4e0b,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u65e5_v1.mp3,char_u65e5,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u65e5_v1.mp3,char_u65e5,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u65e5_1_v1.mp3,char_u65e5,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u65e5_2_v1.mp3,char_u65e5,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u65e5_3_v1.mp3,char_u65e5,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u65e5_v1.mp3,char_u65e5,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u65e5_main_v1.webp,char_u65e5,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u6708_v1.mp3,char_u6708,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u6708_v1.mp3,char_u6708,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6708_1_v1.mp3,char_u6708,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6708_2_v1.mp3,char_u6708,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6708_3_v1.mp3,char_u6708,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u6708_v1.mp3,char_u6708,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u6708_main_v1.webp,char_u6708,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u6c34_v1.mp3,char_u6c34,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u6c34_v1.mp3,char_u6c34,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6c34_1_v1.mp3,char_u6c34,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6c34_2_v1.mp3,char_u6c34,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6c34_3_v1.mp3,char_u6c34,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u6c34_v1.mp3,char_u6c34,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u6c34_main_v1.webp,char_u6c34,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u706b_v1.mp3,char_u706b,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u706b_v1.mp3,char_u706b,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u706b_1_v1.mp3,char_u706b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u706b_2_v1.mp3,char_u706b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u706b_3_v1.mp3,char_u706b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u706b_v1.mp3,char_u706b,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u706b_main_v1.webp,char_u706b,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u6728_v1.mp3,char_u6728,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u6728_v1.mp3,char_u6728,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6728_1_v1.mp3,char_u6728,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6728_2_v1.mp3,char_u6728,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u6728_3_v1.mp3,char_u6728,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u6728_v1.mp3,char_u6728,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u6728_main_v1.webp,char_u6728,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u5929_v1.mp3,char_u5929,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u5929_v1.mp3,char_u5929,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u5929_1_v1.mp3,char_u5929,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u5929_2_v1.mp3,char_u5929,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u5929_3_v1.mp3,char_u5929,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u5929_v1.mp3,char_u5929,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u5929_main_v1.webp,char_u5929,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u4e91_v1.mp3,char_u4e91,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u4e91_v1.mp3,char_u4e91,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e91_1_v1.mp3,char_u4e91,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e91_2_v1.mp3,char_u4e91,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u4e91_3_v1.mp3,char_u4e91,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u4e91_v1.mp3,char_u4e91,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u4e91_main_v1.webp,char_u4e91,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u96e8_v1.mp3,char_u96e8,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u96e8_v1.mp3,char_u96e8,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u96e8_1_v1.mp3,char_u96e8,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u96e8_2_v1.mp3,char_u96e8,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u96e8_3_v1.mp3,char_u96e8,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u96e8_v1.mp3,char_u96e8,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u96e8_main_v1.webp,char_u96e8,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u98ce_v1.mp3,char_u98ce,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u98ce_v1.mp3,char_u98ce,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u98ce_1_v1.mp3,char_u98ce,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u98ce_2_v1.mp3,char_u98ce,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u98ce_3_v1.mp3,char_u98ce,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u98ce_v1.mp3,char_u98ce,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u98ce_main_v1.webp,char_u98ce,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u7530_v1.mp3,char_u7530,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u7530_v1.mp3,char_u7530,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7530_1_v1.mp3,char_u7530,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7530_2_v1.mp3,char_u7530,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7530_3_v1.mp3,char_u7530,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u7530_v1.mp3,char_u7530,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u7530_main_v1.webp,char_u7530,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u624b_v1.mp3,char_u624b,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u624b_v1.mp3,char_u624b,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u624b_1_v1.mp3,char_u624b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u624b_2_v1.mp3,char_u624b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u624b_3_v1.mp3,char_u624b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u624b_v1.mp3,char_u624b,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u624b_main_v1.webp,char_u624b,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u5934_v1.mp3,char_u5934,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u5934_v1.mp3,char_u5934,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u5934_1_v1.mp3,char_u5934,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u5934_2_v1.mp3,char_u5934,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u5934_3_v1.mp3,char_u5934,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u5934_v1.mp3,char_u5934,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u5934_main_v1.webp,char_u5934,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u8033_v1.mp3,char_u8033,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u8033_v1.mp3,char_u8033,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u8033_1_v1.mp3,char_u8033,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u8033_2_v1.mp3,char_u8033,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u8033_3_v1.mp3,char_u8033,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u8033_v1.mp3,char_u8033,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u8033_main_v1.webp,char_u8033,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u773c_v1.mp3,char_u773c,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u773c_v1.mp3,char_u773c,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u773c_1_v1.mp3,char_u773c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u773c_2_v1.mp3,char_u773c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u773c_3_v1.mp3,char_u773c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u773c_v1.mp3,char_u773c,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u773c_main_v1.webp,char_u773c,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u7259_v1.mp3,char_u7259,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u7259_v1.mp3,char_u7259,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7259_1_v1.mp3,char_u7259,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7259_2_v1.mp3,char_u7259,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7259_3_v1.mp3,char_u7259,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u7259_v1.mp3,char_u7259,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u7259_main_v1.webp,char_u7259,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u725b_v1.mp3,char_u725b,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u725b_v1.mp3,char_u725b,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u725b_1_v1.mp3,char_u725b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u725b_2_v1.mp3,char_u725b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u725b_3_v1.mp3,char_u725b,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u725b_v1.mp3,char_u725b,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u725b_main_v1.webp,char_u725b,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u7f8a_v1.mp3,char_u7f8a,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u7f8a_v1.mp3,char_u7f8a,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7f8a_1_v1.mp3,char_u7f8a,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7f8a_2_v1.mp3,char_u7f8a,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u7f8a_3_v1.mp3,char_u7f8a,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u7f8a_v1.mp3,char_u7f8a,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u7f8a_main_v1.webp,char_u7f8a,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u9e1f_v1.mp3,char_u9e1f,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u9e1f_v1.mp3,char_u9e1f,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9e1f_1_v1.mp3,char_u9e1f,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9e1f_2_v1.mp3,char_u9e1f,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9e1f_3_v1.mp3,char_u9e1f,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u9e1f_v1.mp3,char_u9e1f,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u9e1f_main_v1.webp,char_u9e1f,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u9c7c_v1.mp3,char_u9c7c,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u9c7c_v1.mp3,char_u9c7c,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9c7c_1_v1.mp3,char_u9c7c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9c7c_2_v1.mp3,char_u9c7c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9c7c_3_v1.mp3,char_u9c7c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u9c7c_v1.mp3,char_u9c7c,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u9c7c_main_v1.webp,char_u9c7c,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
+audio/characters/char_u9a6c_v1.mp3,char_u9a6c,character,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/meanings/meaning_u9a6c_v1.mp3,char_u9a6c,meaning,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9a6c_1_v1.mp3,char_u9a6c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9a6c_2_v1.mp3,char_u9a6c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/words/word_u9a6c_3_v1.mp3,char_u9a6c,word,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+audio/sentences/sentence_u9a6c_v1.mp3,char_u9a6c,sentence,MP3 mono 44.1kHz 96-128kbps,TTS or adult self-recording,SELF_GENERATED_PENDING_REVIEW
+images/characters/char_u9a6c_main_v1.webp,char_u9a6c,main image / image option,WebP sRGB 1024x1024 <=500KB,AI generated or self-created,SELF_GENERATED_PENDING_REVIEW
