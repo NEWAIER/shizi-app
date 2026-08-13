@@ -1,0 +1,3 @@
+﻿package: com.family.shizi
+permission: com.family.shizi.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission: name='com.family.shizi.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'

@@ -1,0 +1,27 @@
+# Local Android and Gradle state
+.gradle/
+.gradle-temp-final/
+.kotlin/
+build/
+**/build/
+local.properties
+
+# Bundled local toolchains and caches
+.tools/
+.codex-tools/
+tmp/
+
+# Generated delivery copies and local review archives
+deliverables/
+chatgpt-web-review/
+压缩/
+*.apk
+*.aab
+*.zip
+
+# Local editor/runtime files
+.idea/
+*.iml
+build-tab.log
+build-tab.err
+kapt.log

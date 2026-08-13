@@ -1,0 +1,148 @@
+﻿07-27 01:10:46.208 I/AndroidRuntime(21304): RuntimeInit: Starting application from zygote
+07-27 01:10:46.208 D/AndroidRuntime(21304): Entered RuntimeInit!
+07-27 01:10:46.212 I/AndroidRuntime(21304): MethodAndArgsCaller run()
+07-27 01:13:20.619 I/AndroidRuntime(21673): RuntimeInit: Starting application from zygote
+07-27 01:13:20.620 D/AndroidRuntime(21673): Entered RuntimeInit!
+07-27 01:13:20.622 I/AndroidRuntime(21673): MethodAndArgsCaller run()
+07-27 01:13:20.651 I/MediaPlayerService( 1346): MediaPlayerService::create
+07-27 01:13:20.651 I/MediaPlayerService( 1346): Client(300) constructor
+07-27 01:13:20.652 I/MediaPlayerService( 1346): setDataSource(int fd, int64_t offset, int64_t length)
+07-27 01:13:20.652 I/MediaPlayerService( 1346): player type = 4
+07-27 01:13:20.652 I/MediaPlayerService( 1346): TimeCheck for MediaPlayerService setDataSource_pre stuck issue mediaserver.
+07-27 01:13:20.652 I/MediaPlayerService( 1346): create player
+07-27 01:13:20.660 I/MediaPlayerService( 1346): [300] setVolume(1.000000, 1.000000)
+07-27 01:13:20.660 I/MediaPlayerService( 1346): [300] setLooping(0)
+07-27 01:13:20.661 I/MediaPlayerService( 1346): [300] prepareAsync
+07-27 01:13:20.661 I/MediaPlayerNative( 1701): prepare MediaPlayer(0xb4000074b4441e00)
+07-27 01:13:20.666 D/MediaPlayerNative( 1701): Message: MEDIA_PREPARED(1), ext1=0, ext2=0x0
+07-27 01:13:20.666 I/MediaPlayerNative( 1701): prepare complete - status=0 MediaPlayer(0xb4000074b4441e00)
+07-27 01:13:20.667 I/MediaPlayer( 1701): SetSubtitleAnchorThread start
+07-27 01:13:20.668 I/MediaPlayer( 1701): getSubtitleLooper
+07-27 01:13:20.668 I/MediaPlayer( 1701): SetSubtitleAnchorThread quit begins
+07-27 01:13:20.668 I/MediaPlayer( 1701): SetSubtitleAnchorThread quit ends
+07-27 01:13:20.668 I/MediaPlayer( 1701): setSubtitleAnchor end
+07-27 01:13:20.675 I/PG_ash  ( 2770): CancelNetworkRestrict >> com.family.shizi, uids : [10542]
+07-27 01:13:20.676 I/PGServer( 2770): report state:6 event type:2 pid:0 uid:10542 pkg:com.family.shizi to pid: 1701
+07-27 01:13:20.676 W/MediaPlayer(19283): mediaplayer went away with unhandled events
+07-27 01:13:20.676 I/PG_ash  ( 2770): unF_Z com.family.shizi OK !
+07-27 01:13:20.676 I/PGManagerService( 1701): proxyBroadcast:[com.family.shizi] proxy:false
+07-27 01:13:20.677 I/PG_ash  ( 2770): unP_BC com.family.shizi OK !
+07-27 01:13:20.677 I/PG_ash  ( 2770): Unpending H_B com.family.shizi pkgs: [com.family.shizi]
+07-27 01:13:20.677 I/PG_ash  ( 2770): Unpending com.family.shizi H_B OK !
+07-27 01:13:20.678 I/PGManagerService( 1701): unproxy gps com.family.shizi 10542 success
+07-27 01:13:20.678 I/PGManagerService( 1701): proxyJob, sub type:1, list: [com.family.shizi]
+07-27 01:13:20.678 I/HwAudioService( 1701): getPackageNameByPid,  packageName=com.family.shizi
+07-27 01:13:20.678 I/PG_ash  ( 2770): unP_gps com.family.shizi OK !
+07-27 01:13:20.678 I/PG_ash  ( 2770): unP_job com.family.shizi OK !
+07-27 01:13:20.678 I/ash_trans( 2770): com.family.shizi { hibernation duration=210579 Uptime=210579 } transition to: end, reason: stop_ash
+07-27 01:13:20.683 W/MediaProvider(20213): Failed to fetch original file descriptor, com.family.shizi
+07-27 01:13:20.684 I/MediaPlayerService( 1346): MediaPlayerService::create
+07-27 01:13:20.684 I/MediaPlayerService( 1346): Client(301) constructor
+07-27 01:13:20.685 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:20.685 I/MediaPlayerService( 1346): setDataSource(int fd, int64_t offset, int64_t length)
+07-27 01:13:20.685 I/MediaPlayerService( 1346): player type = 4
+07-27 01:13:20.685 I/MediaPlayerService( 1346): TimeCheck for MediaPlayerService setDataSource_pre stuck issue mediaserver.
+07-27 01:13:20.685 I/MediaPlayerService( 1346): create player
+07-27 01:13:20.691 I/MediaPlayer( 1701): setSubtitleAnchor end
+07-27 01:13:20.697 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:20.701 I/MediaPlayerService( 1346): [301] prepareAsync
+07-27 01:13:20.701 I/MediaPlayerNative(19283): prepare MediaPlayer(0xb4000074a39bc600)
+07-27 01:13:20.713 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:20.716 D/MediaPlayerNative(19283): Message: MEDIA_PREPARED(1), ext1=0, ext2=0x0
+07-27 01:13:20.716 I/MediaPlayerNative(19283): prepare complete - status=0 MediaPlayer(0xb4000074a39bc600)
+07-27 01:13:20.716 I/MediaPlayer(19283): SetSubtitleAnchorThread start
+07-27 01:13:20.717 I/MediaPlayer(19283): getSubtitleLooper
+07-27 01:13:20.717 I/MediaPlayer(19283): SetSubtitleAnchorThread quit begins
+07-27 01:13:20.717 I/MediaPlayer(19283): SetSubtitleAnchorThread quit ends
+07-27 01:13:20.717 I/MediaPlayer(19283): setSubtitleAnchor end
+07-27 01:13:20.722 I/HwSwingMotionGestureHandler( 1701): processName:com.family.shizi,pkgName:com.family.shizi
+07-27 01:13:20.722 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:20.722 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:20.722 I/MediaPlayer(19283): [HSM] stayAwake true uid: 10542, pid: 19283
+07-27 01:13:20.722 I/HwSwingMotionGestureHandler( 1701): processName:com.family.shizi,pkgName:com.family.shizi
+07-27 01:13:20.722 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:20.722 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:20.722 I/MediaPlayerService( 1346): [301] setLooping(0)
+07-27 01:13:20.723 I/MediaPlayerService( 1346): [301] setVolume(1.000000, 1.000000)
+07-27 01:13:20.723 I/MediaPlayerService( 1346): [301] start
+07-27 01:13:20.723 I/MediaPlayerService( 1346): PN=mediaserver, SN=MediaPlayer, CN=2, MU=13800
+07-27 01:13:20.723 W/MediaPlayerNative(19283): Action:start, CurrentState:MEDIA_PLAYER_STARTED
+07-27 01:13:20.724 I/MediaPlayer(19283): setSubtitleAnchor end
+07-27 01:13:20.725 D/asd_pop (  869): PopDmdDataUpdate: set dmd_data.pkg_info = [com.family.shizi], succ
+07-27 01:13:20.728 D/AudioPlayerStateMonitor( 1701): Found a new active media playback. AudioPlaybackConfiguration piid:5815 deviceId:0 type:android.media.MediaPlayer u/pid:10542/19283 state:started attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null sessionId:0
+07-27 01:13:20.728 D/MediaSessionService( 1701): Audio playback is changed, config=AudioPlaybackConfiguration piid:5815 deviceId:0 type:android.media.MediaPlayer u/pid:10542/19283 state:started attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null sessionId:0, removed=false
+07-27 01:13:20.740 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:20.750 I/DeviceStateService( 2770): app: com.family.shizi pid: 1346 start mediacodec.
+07-27 01:13:20.758 I/AudioTrack( 1346): Add AUDIO_PERFORMANCE_FLAG_FADE_OUT for mediaplayer
+07-27 01:13:20.762 D/AudioFlinger(  906): createTrack getOutputForAttr res 0 sessionId 3713 outputId 13 output streamType 3 input format 0x1 input channel_mask 0x1 callingUid 1013 callingPid 1346 pkgName com.family.shizi
+07-27 01:13:20.780 D/MediaPlayerNative(19283): Message: Unknown MediaEventType(6), ext1=0, ext2=0x0
+07-27 01:13:20.792 I/PG_ash  ( 2770): CancelNetworkRestrict >> com.family.shizi.test, uids : [10543]
+07-27 01:13:20.793 I/PGServer( 2770): report state:6 event type:2 pid:0 uid:10543 pkg:com.family.shizi.test to pid: 1701
+07-27 01:13:20.793 I/PG_ash  ( 2770): unF_Z com.family.shizi.test OK !
+07-27 01:13:20.794 I/PGManagerService( 1701): proxyBroadcast:[com.family.shizi.test] proxy:false
+07-27 01:13:20.795 I/PG_ash  ( 2770): unP_BC com.family.shizi.test OK !
+07-27 01:13:20.795 I/PG_ash  ( 2770): Unpending H_B com.family.shizi.test pkgs: [com.family.shizi.test]
+07-27 01:13:20.796 I/PG_ash  ( 2770): Unpending com.family.shizi.test H_B OK !
+07-27 01:13:20.796 I/PGManagerService( 1701): unproxy gps com.family.shizi.test 10543 success
+07-27 01:13:20.796 I/PGManagerService( 1701): proxyJob, sub type:1, list: [com.family.shizi.test]
+07-27 01:13:20.797 I/PG_ash  ( 2770): unP_gps com.family.shizi.test OK !
+07-27 01:13:20.797 I/PG_ash  ( 2770): unP_job com.family.shizi.test OK !
+07-27 01:13:20.797 I/ash_trans( 2770): com.family.shizi.test { hibernation duration=206209 Uptime=206210 } transition to: end, reason: stop_ash
+07-27 01:13:20.934 I/MediaPlayer(19283): start vibrate delay 0 nulllightLatency0
+07-27 01:13:20.936 E/MediaPlayer(19283): package does not have vibrate permission
+07-27 01:13:22.094 I/PGAudioState( 2770): bg audio out stop com.family.shizi
+07-27 01:13:22.155 D/MediaPlayerNative(19283): Message: MEDIA_PLAYBACK_COMPLETE(2), ext1=0, ext2=0x0
+07-27 01:13:22.157 I/MediaPlayer(19283): [HSM] stayAwake false uid: 10542, pid: 19283
+07-27 01:13:22.158 V/MediaPlayer(19283): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+07-27 01:13:22.158 V/MediaPlayer(19283): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+07-27 01:13:22.158 I/MediaPlayerService( 1346): disconnect(301) from AttributionSource AttributionSourceState{pid: 19283, uid: 10542, packageName: com.family.shizi, attributionTag: (null), token: {no toString() implemented}, renouncedPermissions: (null), next: [], uidPidOrigin: -1}
+07-27 01:13:22.162 D/MediaSessionService( 1701): Audio playback is changed, config=AudioPlaybackConfiguration piid:5815 deviceId:3 type:android.media.MediaPlayer u/pid:10542/19283 state:stopped attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null sessionId:0, removed=false
+07-27 01:13:22.163 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:22.163 I/Hwmedia_monitor_bigdata( 1342): WriteBigData eventId(990942107), mediaCodecId(5034630891287640989), pkgName(com.family.shizi), mime(audio/raw), sampleRate(44100)
+07-27 01:13:22.169 I/MediaPlayerNative(19283): Pid:19283 MediaPlayer destructor MediaPlayer(0xb4000074a39bc600)
+07-27 01:13:22.169 I/ShiziAudioTest(19283): PASS natural-complete 20/38 audio/prompts/prompt_find_xiaoshan_v1.mp3
+07-27 01:13:22.169 I/MediaPlayer(19283): [HSM] stayAwake false uid: 10542, pid: 19283
+07-27 01:13:22.170 I/MediaPlayerService( 1346): Client(301) destructor AttributionSource = AttributionSourceState{pid: 19283, uid: 10542, packageName: com.family.shizi, attributionTag: (null), token: {no toString() implemented}, renouncedPermissions: (null), next: [], uidPidOrigin: -1}
+07-27 01:13:22.170 W/MediaPlayer(19283): mediaplayer went away with unhandled events
+07-27 01:13:22.174 I/MediaPlayerService( 1346): disconnect(301) from AttributionSource AttributionSourceState{pid: 19283, uid: 10542, packageName: com.family.shizi, attributionTag: (null), token: {no toString() implemented}, renouncedPermissions: (null), next: [], uidPidOrigin: -1}
+07-27 01:13:22.176 I/HwAudioService( 1701): getPackageNameByPid,  packageName=com.family.shizi
+07-27 01:13:22.180 W/MediaProvider(20213): Failed to fetch original file descriptor, com.family.shizi
+07-27 01:13:22.181 I/MediaPlayerService( 1346): MediaPlayerService::create
+07-27 01:13:22.181 I/MediaPlayerService( 1346): Client(302) constructor
+07-27 01:13:22.181 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:22.182 I/MediaPlayerService( 1346): setDataSource(int fd, int64_t offset, int64_t length)
+07-27 01:13:22.182 I/MediaPlayerService( 1346): player type = 4
+07-27 01:13:22.182 I/MediaPlayerService( 1346): TimeCheck for MediaPlayerService setDataSource_pre stuck issue mediaserver.
+07-27 01:13:22.182 I/MediaPlayerService( 1346): create player
+07-27 01:13:22.188 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:22.190 I/MediaPlayerService( 1346): [302] prepareAsync
+07-27 01:13:22.190 I/MediaPlayerNative(19283): prepare MediaPlayer(0xb4000074a39bc600)
+07-27 01:13:22.194 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:22.197 D/MediaPlayerNative(19283): Message: MEDIA_PREPARED(1), ext1=0, ext2=0x0
+07-27 01:13:22.197 I/MediaPlayerNative(19283): prepare complete - status=0 MediaPlayer(0xb4000074a39bc600)
+07-27 01:13:22.197 I/MediaPlayer(19283): SetSubtitleAnchorThread start
+07-27 01:13:22.198 I/MediaPlayer(19283): getSubtitleLooper
+07-27 01:13:22.198 I/MediaPlayer(19283): SetSubtitleAnchorThread quit begins
+07-27 01:13:22.198 I/MediaPlayer(19283): SetSubtitleAnchorThread quit ends
+07-27 01:13:22.198 I/MediaPlayer(19283): setSubtitleAnchor end
+07-27 01:13:22.202 I/HwSwingMotionGestureHandler( 1701): processName:com.family.shizi,pkgName:com.family.shizi
+07-27 01:13:22.202 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:22.202 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:22.202 I/MediaPlayer(19283): [HSM] stayAwake true uid: 10542, pid: 19283
+07-27 01:13:22.203 I/HwSwingMotionGestureHandler( 1701): processName:com.family.shizi,pkgName:com.family.shizi
+07-27 01:13:22.203 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:22.203 I/HwSwingMotionGestureHandler( 1701): current app:com.family.shizi,appType:-1
+07-27 01:13:22.203 I/MediaPlayerService( 1346): [302] setLooping(0)
+07-27 01:13:22.203 I/MediaPlayerService( 1346): [302] setVolume(1.000000, 1.000000)
+07-27 01:13:22.204 D/asd_pop (  869): PopDmdDataUpdate: set dmd_data.pkg_info = [com.family.shizi], succ
+07-27 01:13:22.204 I/MediaPlayerService( 1346): [302] start
+07-27 01:13:22.204 I/MediaPlayerService( 1346): PN=mediaserver, SN=MediaPlayer, CN=2, MU=13800
+07-27 01:13:22.204 W/MediaPlayerNative(19283): Action:start, CurrentState:MEDIA_PLAYER_STARTED
+07-27 01:13:22.205 I/MediaPlayer(19283): setSubtitleAnchor end
+07-27 01:13:22.206 D/AudioPlayerStateMonitor( 1701): Found a new active media playback. AudioPlaybackConfiguration piid:5823 deviceId:0 type:android.media.MediaPlayer u/pid:10542/19283 state:started attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null sessionId:0
+07-27 01:13:22.206 D/MediaSessionService( 1701): Audio playback is changed, config=AudioPlaybackConfiguration piid:5823 deviceId:0 type:android.media.MediaPlayer u/pid:10542/19283 state:started attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null sessionId:0, removed=false
+07-27 01:13:22.221 I/ServiceUtilities( 1346): GetPackageNameByUid packages size is 1, packages[0] com.family.shizi, uid(10542)
+07-27 01:13:22.232 I/DeviceStateService( 2770): app: com.family.shizi pid: 1346 start mediacodec.
+07-27 01:13:22.235 I/AudioTrack( 1346): Add AUDIO_PERFORMANCE_FLAG_FADE_OUT for mediaplayer
+07-27 01:13:22.241 D/AudioFlinger(  906): createTrack getOutputForAttr res 0 sessionId 3721 outputId 13 output streamType 3 input format 0x1 input channel_mask 0x1 callingUid 1013 callingPid 1346 pkgName com.family.shizi
+07-27 01:13:22.260 D/MediaPlayerNative(19283): Message: Unknown MediaEventType(6), ext1=0, ext2=0x0

@@ -1,0 +1,14 @@
+COMMANDS:
+adb devices -l
+adb install -r deliverables\T02\shizi-t02-skeleton-v1.1-debug.apk
+adb shell am force-stop com.family.shizi
+adb shell monkey -p com.family.shizi 1
+
+RAW OUTPUT:
+List of devices attached
+
+adb.e: no devices/emulators found
+adb.e: no devices/emulators found
+adb.e: no devices/emulators found
+
+RESULT: NOT_RUN — no device or emulator was connected.

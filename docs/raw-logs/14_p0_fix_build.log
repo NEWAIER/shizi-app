@@ -1,0 +1,11 @@
+﻿.\gradlew.bat :  
+所在位置 行:15 字符: 6256
++ ... evel=info"; .\gradlew.bat --no-daemon testDebugUnitTest lintDebug ass ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH. 
+ 
+Please set the JAVA_HOME variable in your environment to match the 
+location of your Java installation. 

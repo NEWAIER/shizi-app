@@ -1,0 +1,5 @@
+FILE: shizi-t02-skeleton-v1.1-debug.apk
+SHA-256: 5a80d2f07c7eebbb6195f81f3d3d98d9a079513f995c22aa061d40baef88b5ce
+RESULT: EXACT MATCH
+
+NOTE: A later clean debug rebuild produced a byte-different debug-signed APK because debug artifacts are not reproducible byte-for-byte. That rebuild artifact was not submitted. The submitted APK is the previously declared and independently requested artifact above.

@@ -1,0 +1,2213 @@
+===== audio/characters/char_da_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_da_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.522449",
+        "size": "6627",
+        "bit_rate": "101475"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_da_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_da_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.52, start: 0.025057, bitrate: 101 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000002b2b1c29980] silence_start: 0
+[silencedetect @ 000002b2b1c29980] silence_end: 0.0666719 | silence_duration: 0.0666719
+[silencedetect @ 000002b2b1c29980] silence_start: 0.407
+size=N/A time=00:00:00.48 bitrate=N/A speed=54.1x    
+video:0kB audio:182kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000002b2b1c43380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -3.6 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.1 LUFS
+Output True Peak:     -3.1 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.1 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.1 LU
+[silencedetect @ 000002b2b1c29980] silence_end: 0.484536 | silence_duration: 0.0775365
+
+===== audio/characters/char_kou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_kou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.522449",
+        "size": "6627",
+        "bit_rate": "101475"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_kou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_kou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.52, start: 0.025057, bitrate: 101 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000002109bf89780] silence_start: 0
+[silencedetect @ 000002109bf89780] silence_end: 0.0681406 | silence_duration: 0.0681406
+[silencedetect @ 000002109bf89780] silence_start: 0.42224
+size=N/A time=00:00:00.48 bitrate=N/A speed=52.5x    
+video:0kB audio:180kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000002109bfa3380] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.7 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.3 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -3.3 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -25.9 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+[silencedetect @ 000002109bf89780] silence_end: 0.480432 | silence_duration: 0.0581927
+
+===== audio/characters/char_ren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_ren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.522449",
+        "size": "6627",
+        "bit_rate": "101475"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_ren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_ren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.52, start: 0.025057, bitrate: 101 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000021321a49080] silence_start: 0
+[silencedetect @ 0000021321a49080] silence_end: 0.0665208 | silence_duration: 0.0665208
+[silencedetect @ 0000021321a49080] silence_start: 0.410156
+size=N/A time=00:00:00.47 bitrate=N/A speed=46.4x    
+video:0kB audio:178kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000021321a63380] 
+Input Integrated:    -16.2 LUFS
+Input True Peak:      -2.6 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.2 LUFS
+
+Output Integrated:   -16.1 LUFS
+Output True Peak:     -2.4 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.1 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.1 LU
+[silencedetect @ 0000021321a49080] silence_end: 0.473677 | silence_duration: 0.0635208
+
+===== audio/characters/char_shan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_shan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.600816",
+        "size": "7568",
+        "bit_rate": "100769"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_shan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_shan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.60, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001b4b6478bc0] silence_start: 0
+[silencedetect @ 000001b4b6478bc0] silence_end: 0.0677969 | silence_duration: 0.0677969
+[silencedetect @ 000001b4b6478bc0] silence_start: 0.502979
+size=N/A time=00:00:00.55 bitrate=N/A speed=53.3x    
+video:0kB audio:209kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001b4b6493380] 
+Input Integrated:    -16.2 LUFS
+Input True Peak:      -4.6 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.2 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -4.4 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+[silencedetect @ 000001b4b6478bc0] silence_end: 0.557896 | silence_duration: 0.0549167
+
+===== audio/characters/char_xiao_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_xiao_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.522449",
+        "size": "6627",
+        "bit_rate": "101475"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_xiao_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\characters\char_xiao_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.52, start: 0.025057, bitrate: 101 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000027896e194c0] silence_start: 0
+[silencedetect @ 0000027896e194c0] silence_end: 0.0499479 | silence_duration: 0.0499479
+[silencedetect @ 0000027896e194c0] silence_start: 0.434391
+size=N/A time=00:00:00.47 bitrate=N/A speed=57.2x    
+video:0kB audio:180kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000027896e33380] 
+Input Integrated:    -16.2 LUFS
+Input True Peak:      -1.8 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.2 LUFS
+
+Output Integrated:   -16.1 LUFS
+Output True Peak:     -1.6 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.1 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.1 LU
+[silencedetect @ 0000027896e194c0] silence_end: 0.479411 | silence_duration: 0.0450208
+
+===== audio/meanings/meaning_da_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_da_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "4.075102",
+        "size": "49259",
+        "bit_rate": "96702"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_da_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_da_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:04.08, start: 0.025057, bitrate: 96 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000015659ecac00] silence_start: 0
+[silencedetect @ 0000015659ecac00] silence_end: 0.0748802 | silence_duration: 0.0748802
+[silencedetect @ 0000015659ecac00] silence_start: 0.373167
+[silencedetect @ 0000015659ecac00] silence_end: 0.394656 | silence_duration: 0.0214896
+[silencedetect @ 0000015659ecac00] silence_start: 0.925208
+[silencedetect @ 0000015659ecac00] silence_end: 0.939828 | silence_duration: 0.0146198
+[silencedetect @ 0000015659ecac00] silence_start: 1.35697
+[silencedetect @ 0000015659ecac00] silence_end: 1.4107 | silence_duration: 0.0537292
+[silencedetect @ 0000015659ecac00] silence_start: 1.76954
+[silencedetect @ 0000015659ecac00] silence_end: 1.84646 | silence_duration: 0.0769219
+[silencedetect @ 0000015659ecac00] silence_start: 2.05158
+[silencedetect @ 0000015659ecac00] silence_end: 2.1346 | silence_duration: 0.0830156
+[silencedetect @ 0000015659ecac00] silence_start: 2.80296
+[silencedetect @ 0000015659ecac00] silence_end: 2.83518 | silence_duration: 0.0322187
+[silencedetect @ 0000015659ecac00] silence_start: 3.24415
+[silencedetect @ 0000015659ecac00] silence_end: 3.26392 | silence_duration: 0.0197656
+[silencedetect @ 0000015659ecac00] silence_start: 3.80029
+[silencedetect @ 0000015659ecac00] silence_end: 3.85589 | silence_duration: 0.055599
+size=N/A time=00:00:04.04 bitrate=N/A speed=91.3x    
+video:0kB audio:1515kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001565b79cb40] 
+Input Integrated:    -16.8 LUFS
+Input True Peak:      -1.4 dBTP
+Input LRA:             0.9 LU
+Input Threshold:     -26.8 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.0 dBTP
+Output LRA:            0.5 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Dynamic
+Target Offset:        +0.0 LU
+
+===== audio/meanings/meaning_kou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_kou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "3.186939",
+        "size": "38601",
+        "bit_rate": "96897"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_kou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_kou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:03.19, start: 0.025057, bitrate: 96 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000014872b6be00] silence_start: 0
+[silencedetect @ 0000014872b6be00] silence_end: 0.0788594 | silence_duration: 0.0788594
+[silencedetect @ 0000014872b6be00] silence_start: 0.996505
+[silencedetect @ 0000014872b6be00] silence_end: 1.05721 | silence_duration: 0.0607083
+[silencedetect @ 0000014872b6be00] silence_start: 1.57217
+[silencedetect @ 0000014872b6be00] silence_end: 1.59656 | silence_duration: 0.0243906
+[silencedetect @ 0000014872b6be00] silence_start: 2.10749
+[silencedetect @ 0000014872b6be00] silence_end: 2.18054 | silence_duration: 0.0730469
+size=N/A time=00:00:03.14 bitrate=N/A speed=83.2x    
+video:0kB audio:1181kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001487478cb40] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -1.4 dBTP
+Input LRA:             0.1 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.0 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Dynamic
+Target Offset:        -0.0 LU
+
+===== audio/meanings/meaning_ren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_ren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "3.160816",
+        "size": "38288",
+        "bit_rate": "96906"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_ren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_ren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:03.16, start: 0.025057, bitrate: 96 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000023e857aa680] silence_start: 0
+[silencedetect @ 0000023e857aa680] silence_end: 0.0541979 | silence_duration: 0.0541979
+[silencedetect @ 0000023e857aa680] silence_start: 0.683089
+[silencedetect @ 0000023e857aa680] silence_end: 0.772656 | silence_duration: 0.0895677
+[silencedetect @ 0000023e857aa680] silence_start: 0.910776
+[silencedetect @ 0000023e857aa680] silence_end: 0.931729 | silence_duration: 0.0209531
+[silencedetect @ 0000023e857aa680] silence_start: 1.54818
+[silencedetect @ 0000023e857aa680] silence_end: 1.62454 | silence_duration: 0.0763594
+[silencedetect @ 0000023e857aa680] silence_start: 2.4339
+[silencedetect @ 0000023e857aa680] silence_end: 2.51366 | silence_duration: 0.0797552
+[silencedetect @ 0000023e857aa680] silence_start: 3.11452
+size=N/A time=00:00:03.12 bitrate=N/A speed=87.2x    
+video:0kB audio:1172kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000023e8747cb40] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.1 dBTP
+Input LRA:             0.2 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -15.9 LUFS
+Output True Peak:     -1.6 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -25.9 LUFS
+
+Normalization Type:   Dynamic
+Target Offset:        -0.1 LU
+[silencedetect @ 0000023e857aa680] silence_end: 3.12554 | silence_duration: 0.0110208
+
+===== audio/meanings/meaning_shan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_shan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "5.146122",
+        "size": "62111",
+        "bit_rate": "96555"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_shan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_shan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:05.15, start: 0.025057, bitrate: 96 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000013a5f13b9c0] silence_start: 0
+[silencedetect @ 0000013a5f13b9c0] silence_end: 0.0666771 | silence_duration: 0.0666771
+[silencedetect @ 0000013a5f13b9c0] silence_start: 0.503448
+[silencedetect @ 0000013a5f13b9c0] silence_end: 0.533172 | silence_duration: 0.029724
+[silencedetect @ 0000013a5f13b9c0] silence_start: 1.40253
+[silencedetect @ 0000013a5f13b9c0] silence_end: 1.42874 | silence_duration: 0.0262083
+[silencedetect @ 0000013a5f13b9c0] silence_start: 2.01754
+[silencedetect @ 0000013a5f13b9c0] silence_end: 2.03902 | silence_duration: 0.0214792
+[silencedetect @ 0000013a5f13b9c0] silence_start: 2.11944
+[silencedetect @ 0000013a5f13b9c0] silence_end: 2.15861 | silence_duration: 0.0391719
+[silencedetect @ 0000013a5f13b9c0] silence_start: 2.59618
+[silencedetect @ 0000013a5f13b9c0] silence_end: 2.67493 | silence_duration: 0.0787552
+[silencedetect @ 0000013a5f13b9c0] silence_start: 3.52508
+[silencedetect @ 0000013a5f13b9c0] silence_end: 3.56882 | silence_duration: 0.0437344
+[silencedetect @ 0000013a5f13b9c0] silence_start: 3.82818
+[silencedetect @ 0000013a5f13b9c0] silence_end: 3.89636 | silence_duration: 0.0681823
+[silencedetect @ 0000013a5f13b9c0] silence_start: 4.25821
+[silencedetect @ 0000013a5f13b9c0] silence_end: 4.33201 | silence_duration: 0.0737969
+size=N/A time=00:00:05.09 bitrate=N/A speed=96.1x    
+video:0kB audio:1911kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000013a60c6cb40] 
+Input Integrated:    -17.2 LUFS
+Input True Peak:      -2.5 dBTP
+Input LRA:             1.5 LU
+Input Threshold:     -27.2 LUFS
+
+Output Integrated:   -16.4 LUFS
+Output True Peak:     -2.0 dBTP
+Output LRA:            1.5 LU
+Output Threshold:    -26.4 LUFS
+
+Normalization Type:   Dynamic
+Target Offset:        +0.4 LU
+
+===== audio/meanings/meaning_xiao_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_xiao_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "4.153469",
+        "size": "50200",
+        "bit_rate": "96690"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_xiao_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\meanings\meaning_xiao_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:04.15, start: 0.025057, bitrate: 96 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000002843ecaa480] silence_start: 0
+[silencedetect @ 000002843ecaa480] silence_end: 0.0750781 | silence_duration: 0.0750781
+[silencedetect @ 000002843ecaa480] silence_start: 0.911531
+[silencedetect @ 000002843ecaa480] silence_end: 0.923047 | silence_duration: 0.0115156
+[silencedetect @ 000002843ecaa480] silence_start: 1.33047
+[silencedetect @ 000002843ecaa480] silence_end: 1.38495 | silence_duration: 0.0544792
+[silencedetect @ 000002843ecaa480] silence_start: 1.7467
+[silencedetect @ 000002843ecaa480] silence_end: 1.82621 | silence_duration: 0.0795104
+[silencedetect @ 000002843ecaa480] silence_start: 2.03175
+[silencedetect @ 000002843ecaa480] silence_end: 2.11866 | silence_duration: 0.0869062
+[silencedetect @ 000002843ecaa480] silence_start: 3.22877
+[silencedetect @ 000002843ecaa480] silence_end: 3.26142 | silence_duration: 0.0326562
+size=N/A time=00:00:04.11 bitrate=N/A speed=87.5x    
+video:0kB audio:1542kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000002844087cb40] 
+Input Integrated:    -17.0 LUFS
+Input True Peak:      -1.4 dBTP
+Input LRA:             1.2 LU
+Input Threshold:     -27.0 LUFS
+
+Output Integrated:   -16.1 LUFS
+Output True Peak:     -1.0 dBTP
+Output LRA:            0.8 LU
+Output Threshold:    -26.1 LUFS
+
+Normalization Type:   Dynamic
+Target Offset:        +0.1 LU
+
+===== audio/prompts/prompt_choose_picture_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_choose_picture_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "2.716735",
+        "size": "32959",
+        "bit_rate": "97054"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_choose_picture_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_choose_picture_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:02.72, start: 0.025057, bitrate: 97 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 00000295c1b3a280] silence_start: 0
+[silencedetect @ 00000295c1b3a280] silence_end: 0.0762396 | silence_duration: 0.0762396
+[silencedetect @ 00000295c1b3a280] silence_start: 1.06369
+[silencedetect @ 00000295c1b3a280] silence_end: 1.14023 | silence_duration: 0.0765417
+[silencedetect @ 00000295c1b3a280] silence_start: 1.50927
+[silencedetect @ 00000295c1b3a280] silence_end: 1.52143 | silence_duration: 0.0121667
+[silencedetect @ 00000295c1b3a280] silence_start: 2.31141
+[silencedetect @ 00000295c1b3a280] silence_end: 2.34972 | silence_duration: 0.0383125
+size=N/A time=00:00:02.66 bitrate=N/A speed= 136x    
+video:0kB audio:1001kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 00000295c372cb40] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.8 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.4 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/prompts/prompt_choose_sound_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_choose_sound_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "2.925714",
+        "size": "35467",
+        "bit_rate": "96980"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_choose_sound_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_choose_sound_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:02.93, start: 0.025057, bitrate: 96 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000019507b7b380] silence_start: 0
+[silencedetect @ 0000019507b7b380] silence_end: 0.0849167 | silence_duration: 0.0849167
+[silencedetect @ 0000019507b7b380] silence_start: 0.633198
+[silencedetect @ 0000019507b7b380] silence_end: 0.662135 | silence_duration: 0.0289375
+[silencedetect @ 0000019507b7b380] silence_start: 0.670427
+[silencedetect @ 0000019507b7b380] silence_end: 0.684354 | silence_duration: 0.0139271
+[silencedetect @ 0000019507b7b380] silence_start: 0.723802
+[silencedetect @ 0000019507b7b380] silence_end: 0.750521 | silence_duration: 0.0267187
+[silencedetect @ 0000019507b7b380] silence_start: 0.970661
+[silencedetect @ 0000019507b7b380] silence_end: 1.02583 | silence_duration: 0.0551667
+[silencedetect @ 0000019507b7b380] silence_start: 1.02964
+[silencedetect @ 0000019507b7b380] silence_end: 1.04522 | silence_duration: 0.0155885
+[silencedetect @ 0000019507b7b380] silence_start: 1.09936
+[silencedetect @ 0000019507b7b380] silence_end: 1.13653 | silence_duration: 0.0371615
+[silencedetect @ 0000019507b7b380] silence_start: 1.30904
+[silencedetect @ 0000019507b7b380] silence_end: 1.42532 | silence_duration: 0.116276
+[silencedetect @ 0000019507b7b380] silence_start: 1.93694
+[silencedetect @ 0000019507b7b380] silence_end: 2.05018 | silence_duration: 0.11324
+[silencedetect @ 0000019507b7b380] silence_start: 2.17183
+[silencedetect @ 0000019507b7b380] silence_end: 2.23503 | silence_duration: 0.0631979
+[silencedetect @ 0000019507b7b380] silence_start: 2.39223
+[silencedetect @ 0000019507b7b380] silence_end: 2.44223 | silence_duration: 0.05
+[silencedetect @ 0000019507b7b380] silence_start: 2.57108
+[silencedetect @ 0000019507b7b380] silence_end: 2.65701 | silence_duration: 0.0859323
+[silencedetect @ 0000019507b7b380] silence_start: 2.66786
+[silencedetect @ 0000019507b7b380] silence_end: 2.68515 | silence_duration: 0.0172865
+[silencedetect @ 0000019507b7b380] silence_start: 2.85573
+size=N/A time=00:00:02.87 bitrate=N/A speed= 122x    
+video:0kB audio:1078kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001950936cb40] 
+Input Integrated:    -17.2 LUFS
+Input True Peak:      -1.7 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -27.2 LUFS
+
+Output Integrated:   -40.5 LUFS
+Output True Peak:    -25.0 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -50.5 LUFS
+
+Normalization Type:   Linear
+Target Offset:       +24.5 LU
+[silencedetect @ 0000019507b7b380] silence_end: 2.87549 | silence_duration: 0.0197552
+
+===== audio/prompts/prompt_find_da_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_da_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.123265",
+        "size": "13837",
+        "bit_rate": "98548"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_da_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_da_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.12, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000013ca6bcac00] silence_start: 0
+[silencedetect @ 0000013ca6bcac00] silence_end: 0.059125 | silence_duration: 0.059125
+[silencedetect @ 0000013ca6bcac00] silence_start: 0.517443
+[silencedetect @ 0000013ca6bcac00] silence_end: 0.579948 | silence_duration: 0.0625052
+[silencedetect @ 0000013ca6bcac00] silence_start: 0.793094
+[silencedetect @ 0000013ca6bcac00] silence_end: 0.879083 | silence_duration: 0.0859896
+size=N/A time=00:00:01.07 bitrate=N/A speed=89.8x    
+video:0kB audio:404kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000013ca88ca2c0] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.3 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.9 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/prompts/prompt_find_dashan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_dashan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.332245",
+        "size": "16345",
+        "bit_rate": "98150"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_dashan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_dashan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.33, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001ee7481be80] silence_start: 0
+[silencedetect @ 000001ee7481be80] silence_end: 0.0738125 | silence_duration: 0.0738125
+[silencedetect @ 000001ee7481be80] silence_start: 0.744964
+[silencedetect @ 000001ee7481be80] silence_end: 0.771359 | silence_duration: 0.0263958
+size=N/A time=00:00:01.30 bitrate=N/A speed=87.3x    
+video:0kB audio:489kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001ee7600c3c0] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.0 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.5 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/prompts/prompt_find_kou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_kou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.201633",
+        "size": "14778",
+        "bit_rate": "98386"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_kou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_kou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.20, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000020010b4ab40] silence_start: 0
+[silencedetect @ 0000020010b4ab40] silence_end: 0.0636615 | silence_duration: 0.0636615
+[silencedetect @ 0000020010b4ab40] silence_start: 0.517057
+[silencedetect @ 0000020010b4ab40] silence_end: 0.564083 | silence_duration: 0.047026
+[silencedetect @ 0000020010b4ab40] silence_start: 0.801609
+[silencedetect @ 0000020010b4ab40] silence_end: 0.884323 | silence_duration: 0.0827135
+size=N/A time=00:00:01.16 bitrate=N/A speed=97.2x    
+video:0kB audio:437kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 00000200123fc380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -2.9 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.4 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/prompts/prompt_find_ren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_ren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.175510",
+        "size": "14464",
+        "bit_rate": "98435"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_ren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_ren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.18, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000002149cadb880] silence_start: 0
+[silencedetect @ 000002149cadb880] silence_end: 0.0644583 | silence_duration: 0.0644583
+[silencedetect @ 000002149cadb880] silence_start: 0.51163
+[silencedetect @ 000002149cadb880] silence_end: 0.571047 | silence_duration: 0.0594167
+[silencedetect @ 000002149cadb880] silence_start: 0.782964
+[silencedetect @ 000002149cadb880] silence_end: 0.844198 | silence_duration: 0.0612344
+[silencedetect @ 000002149cadb880] silence_start: 1.12662
+size=N/A time=00:00:01.13 bitrate=N/A speed=90.4x    
+video:0kB audio:427kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000002149e81c380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -2.9 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.5 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+[silencedetect @ 000002149cadb880] silence_end: 1.1374 | silence_duration: 0.010776
+
+===== audio/prompts/prompt_find_same_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_same_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.959184",
+        "size": "23868",
+        "bit_rate": "97460"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_same_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_same_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.96, start: 0.025057, bitrate: 97 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 00000193f1b4bd40] silence_start: 0
+[silencedetect @ 00000193f1b4bd40] silence_end: 0.0780469 | silence_duration: 0.0780469
+[silencedetect @ 00000193f1b4bd40] silence_start: 1.91706
+size=N/A time=00:00:01.92 bitrate=N/A speed= 109x    
+video:0kB audio:724kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 00000193f333cb40] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.5 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.0 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+[silencedetect @ 00000193f1b4bd40] silence_end: 1.92944 | silence_duration: 0.012375
+
+===== audio/prompts/prompt_find_shan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_shan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.201633",
+        "size": "14778",
+        "bit_rate": "98386"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_shan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_shan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.20, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000015b059dbe80] silence_start: 0
+[silencedetect @ 0000015b059dbe80] silence_end: 0.063125 | silence_duration: 0.063125
+[silencedetect @ 0000015b059dbe80] silence_start: 0.508698
+[silencedetect @ 0000015b059dbe80] silence_end: 0.560667 | silence_duration: 0.0519688
+[silencedetect @ 0000015b059dbe80] silence_start: 0.786724
+[silencedetect @ 0000015b059dbe80] silence_end: 0.855833 | silence_duration: 0.0691094
+size=N/A time=00:00:01.16 bitrate=N/A speed=  76x    
+video:0kB audio:438kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000015b075dc380] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.3 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.8 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/prompts/prompt_find_xiao_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_xiao_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.253878",
+        "size": "15405",
+        "bit_rate": "98287"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_xiao_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_xiao_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.25, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001ec9357bbc0] silence_start: 0
+[silencedetect @ 000001ec9357bbc0] silence_end: 0.0642969 | silence_duration: 0.0642969
+[silencedetect @ 000001ec9357bbc0] silence_start: 0.511458
+[silencedetect @ 000001ec9357bbc0] silence_end: 0.558229 | silence_duration: 0.0467708
+[silencedetect @ 000001ec9357bbc0] silence_start: 0.782573
+[silencedetect @ 000001ec9357bbc0] silence_end: 0.845958 | silence_duration: 0.0633854
+size=N/A time=00:00:01.21 bitrate=N/A speed=97.3x    
+video:0kB audio:455kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001ec9513c380] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.1 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.7 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/prompts/prompt_find_xiaoshan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_xiaoshan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.306122",
+        "size": "16031",
+        "bit_rate": "98189"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_xiaoshan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\prompts\prompt_find_xiaoshan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.31, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001b1c4c5a1c0] silence_start: 0
+[silencedetect @ 000001b1c4c5a1c0] silence_end: 0.0740625 | silence_duration: 0.0740625
+size=N/A time=00:00:01.26 bitrate=N/A speed=96.1x    
+video:0kB audio:474kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001b1c67fc7c0] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -2.4 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.9 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/sentences/sentence_da_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_da_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.410612",
+        "size": "17285",
+        "bit_rate": "98028"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_da_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_da_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.41, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001e145f6a740] silence_start: 0
+[silencedetect @ 000001e145f6a740] silence_end: 0.0785312 | silence_duration: 0.0785312
+[silencedetect @ 000001e145f6a740] silence_start: 0.595411
+[silencedetect @ 000001e145f6a740] silence_end: 0.623224 | silence_duration: 0.0278125
+[silencedetect @ 000001e145f6a740] silence_start: 0.860703
+[silencedetect @ 000001e145f6a740] silence_end: 0.895516 | silence_duration: 0.0348125
+[silencedetect @ 000001e145f6a740] silence_start: 1.12317
+[silencedetect @ 000001e145f6a740] silence_end: 1.15382 | silence_duration: 0.0306458
+size=N/A time=00:00:01.36 bitrate=N/A speed=93.7x    
+video:0kB audio:513kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001e147bbcb40] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -1.6 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.1 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/sentences/sentence_kou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_kou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.515102",
+        "size": "18539",
+        "bit_rate": "97889"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_kou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_kou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.52, start: 0.025057, bitrate: 97 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000002a7b087bc80] silence_start: 0
+[silencedetect @ 000002a7b087bc80] silence_end: 0.0765833 | silence_duration: 0.0765833
+[silencedetect @ 000002a7b087bc80] silence_start: 0.188979
+[silencedetect @ 000002a7b087bc80] silence_end: 0.202484 | silence_duration: 0.0135052
+[silencedetect @ 000002a7b087bc80] silence_start: 0.395396
+[silencedetect @ 000002a7b087bc80] silence_end: 0.41138 | silence_duration: 0.0159844
+[silencedetect @ 000002a7b087bc80] silence_start: 0.941927
+[silencedetect @ 000002a7b087bc80] silence_end: 1.01867 | silence_duration: 0.0767396
+size=N/A time=00:00:01.46 bitrate=N/A speed=97.6x    
+video:0kB audio:550kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000002a7b243cb40] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -1.9 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.5 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/sentences/sentence_ren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_ren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.227755",
+        "size": "15091",
+        "bit_rate": "98332"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_ren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_ren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.23, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000024719e5acc0] silence_start: 0
+[silencedetect @ 0000024719e5acc0] silence_end: 0.0776354 | silence_duration: 0.0776354
+[silencedetect @ 0000024719e5acc0] silence_start: 0.727672
+[silencedetect @ 0000024719e5acc0] silence_end: 0.758161 | silence_duration: 0.0304896
+[silencedetect @ 0000024719e5acc0] silence_start: 1.18136
+size=N/A time=00:00:01.19 bitrate=N/A speed=87.9x    
+video:0kB audio:448kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000002471ba9c380] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.1 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.7 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+[silencedetect @ 0000024719e5acc0] silence_end: 1.19397 | silence_duration: 0.0126042
+
+===== audio/sentences/sentence_shan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_shan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.332245",
+        "size": "16345",
+        "bit_rate": "98150"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_shan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_shan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.33, start: 0.025057, bitrate: 98 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000018c9f47ab40] silence_start: 0
+[silencedetect @ 0000018c9f47ab40] silence_end: 0.0726719 | silence_duration: 0.0726719
+size=N/A time=00:00:01.28 bitrate=N/A speed=100x    
+video:0kB audio:482kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000018ca103c3c0] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.5 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.1 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/sentences/sentence_xiao_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_xiao_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "1.462857",
+        "size": "17912",
+        "bit_rate": "97956"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_xiao_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\sentences\sentence_xiao_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:01.46, start: 0.025057, bitrate: 97 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001def1e1bc80] silence_start: 0
+[silencedetect @ 000001def1e1bc80] silence_end: 0.0782188 | silence_duration: 0.0782188
+[silencedetect @ 000001def1e1bc80] silence_start: 0.246917
+[silencedetect @ 000001def1e1bc80] silence_end: 0.257214 | silence_duration: 0.0102969
+size=N/A time=00:00:01.42 bitrate=N/A speed=98.2x    
+video:0kB audio:534kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001def360cb40] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -3.6 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -3.1 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_dakou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_dakou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.679184",
+        "size": "8508",
+        "bit_rate": "100214"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_dakou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_dakou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.68, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001e4c6f29340] silence_start: 0
+[silencedetect @ 000001e4c6f29340] silence_end: 0.0744896 | silence_duration: 0.0744896
+[silencedetect @ 000001e4c6f29340] silence_start: 0.258672
+[silencedetect @ 000001e4c6f29340] silence_end: 0.308109 | silence_duration: 0.0494375
+size=N/A time=00:00:00.63 bitrate=N/A speed=  57x    
+video:0kB audio:240kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001e4c8b740c0] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.0 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.6 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_daren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_daren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.600816",
+        "size": "7568",
+        "bit_rate": "100769"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_daren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_daren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.60, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000022125458fc0] silence_start: 0
+[silencedetect @ 0000022125458fc0] silence_end: 0.0716823 | silence_duration: 0.0716823
+[silencedetect @ 0000022125458fc0] silence_start: 0.545781
+size=N/A time=00:00:00.55 bitrate=N/A speed=  57x    
+video:0kB audio:210kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000022125473380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -4.2 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -3.7 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+[silencedetect @ 0000022125458fc0] silence_end: 0.559438 | silence_duration: 0.0136562
+
+===== audio/words/word_dashan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_dashan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.653061",
+        "size": "8195",
+        "bit_rate": "100388"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_dashan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_dashan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.65, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000024a78327940] silence_start: 0
+[silencedetect @ 0000024a78327940] silence_end: 0.0718177 | silence_duration: 0.0718177
+size=N/A time=00:00:00.61 bitrate=N/A speed=60.7x    
+video:0kB audio:230kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000024a78323380] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -4.0 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -3.6 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_haoren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_haoren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.626939",
+        "size": "7881",
+        "bit_rate": "100564"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_haoren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_haoren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.63, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000020e9b358d00] silence_start: 0
+[silencedetect @ 0000020e9b358d00] silence_end: 0.0514167 | silence_duration: 0.0514167
+size=N/A time=00:00:00.57 bitrate=N/A speed=59.9x    
+video:0kB audio:217kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000020e9b373380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -3.6 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -3.2 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_jiaren_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_jiaren_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.653061",
+        "size": "8195",
+        "bit_rate": "100388"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_jiaren_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_jiaren_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.65, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000019479817940] silence_start: 0
+[silencedetect @ 0000019479817940] silence_end: 0.0697656 | silence_duration: 0.0697656
+[silencedetect @ 0000019479817940] silence_start: 0.599844
+size=N/A time=00:00:00.60 bitrate=N/A speed=57.1x    
+video:0kB audio:229kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000019479813380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -3.3 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.9 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+[silencedetect @ 0000019479817940] silence_end: 0.609891 | silence_duration: 0.0100469
+
+===== audio/words/word_kaikou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_kaikou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.679184",
+        "size": "8508",
+        "bit_rate": "100214"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_kaikou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_kaikou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.68, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 00000243125a94c0] silence_start: 0
+[silencedetect @ 00000243125a94c0] silence_end: 0.073125 | silence_duration: 0.073125
+[silencedetect @ 00000243125a94c0] silence_start: 0.297083
+[silencedetect @ 00000243125a94c0] silence_end: 0.326328 | silence_duration: 0.0292448
+size=N/A time=00:00:00.63 bitrate=N/A speed=59.1x    
+video:0kB audio:240kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 00000243142040c0] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.3 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.9 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/words/word_menkou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_menkou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.653061",
+        "size": "8195",
+        "bit_rate": "100388"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_menkou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_menkou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.65, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000014c053f7240] silence_start: 0
+[silencedetect @ 0000014c053f7240] silence_end: 0.0746562 | silence_duration: 0.0746562
+size=N/A time=00:00:00.62 bitrate=N/A speed=57.4x    
+video:0kB audio:234kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000014c053f3380] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -2.1 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -1.6 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_pashan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_pashan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.653061",
+        "size": "8195",
+        "bit_rate": "100388"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_pashan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_pashan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.65, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 00000169105175c0] silence_start: 0
+[silencedetect @ 00000169105175c0] silence_end: 0.0763333 | silence_duration: 0.0763333
+size=N/A time=00:00:00.62 bitrate=N/A speed=74.6x    
+video:0kB audio:233kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000016910513380] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.9 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -3.5 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_shanshang_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_shanshang_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.679184",
+        "size": "8508",
+        "bit_rate": "100214"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_shanshang_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_shanshang_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.68, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 00000246ee7d9f00] silence_start: 0
+[silencedetect @ 00000246ee7d9f00] silence_end: 0.0619531 | silence_duration: 0.0619531
+size=N/A time=00:00:00.64 bitrate=N/A speed=61.7x    
+video:0kB audio:242kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 00000246effc40c0] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -2.7 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.3 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/words/word_xiaokou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaokou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.731429",
+        "size": "9135",
+        "bit_rate": "99914"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaokou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaokou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.73, start: 0.025057, bitrate: 99 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001dc38d1a940] silence_start: 0
+[silencedetect @ 000001dc38d1a940] silence_end: 0.0968073 | silence_duration: 0.0968073
+[silencedetect @ 000001dc38d1a940] silence_start: 0.315036
+[silencedetect @ 000001dc38d1a940] silence_end: 0.386583 | silence_duration: 0.0715469
+[silencedetect @ 000001dc38d1a940] silence_start: 0.39326
+[silencedetect @ 000001dc38d1a940] silence_end: 0.403818 | silence_duration: 0.0105573
+[silencedetect @ 000001dc38d1a940] silence_start: 0.410224
+[silencedetect @ 000001dc38d1a940] silence_end: 0.420323 | silence_duration: 0.010099
+[silencedetect @ 000001dc38d1a940] silence_start: 0.666036
+size=N/A time=00:00:00.68 bitrate=N/A speed=68.9x    
+video:0kB audio:258kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001dc3a528180] 
+Input Integrated:    -17.2 LUFS
+Input True Peak:      -1.8 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -27.2 LUFS
+
+Output Integrated:   -39.6 LUFS
+Output True Peak:    -24.1 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -49.6 LUFS
+
+Normalization Type:   Linear
+Target Offset:       +23.6 LU
+[silencedetect @ 000001dc38d1a940] silence_end: 0.687125 | silence_duration: 0.0210885
+
+===== audio/words/word_xiaoshan_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaoshan_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.705306",
+        "size": "8822",
+        "bit_rate": "100064"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaoshan_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaoshan_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.71, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001c055f1bd40] silence_start: 0
+[silencedetect @ 000001c055f1bd40] silence_end: 0.05825 | silence_duration: 0.05825
+size=N/A time=00:00:00.65 bitrate=N/A speed=53.6x    
+video:0kB audio:247kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 000001c057708180] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.2 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.8 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU
+
+===== audio/words/word_xiaoshou_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaoshou_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.705306",
+        "size": "8822",
+        "bit_rate": "100064"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaoshou_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_xiaoshou_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.71, start: 0.025057, bitrate: 100 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 00000268d35ca5c0] silence_start: 0
+[silencedetect @ 00000268d35ca5c0] silence_end: 0.0604792 | silence_duration: 0.0604792
+size=N/A time=00:00:00.67 bitrate=N/A speed=60.5x    
+video:0kB audio:253kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 00000268d50f8180] 
+Input Integrated:    -16.5 LUFS
+Input True Peak:      -2.4 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.5 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.0 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        -0.0 LU
+
+===== audio/words/word_yikoushui_v1.mp3 =====
+$ D:\GPT-SoVITS-beta0306fix2\ffprobe.exe -v error -show_entries stream=codec_name,sample_rate,channels,channel_layout,bit_rate -show_entries format=duration,size,bit_rate -of json D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_yikoushui_v1.mp3
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bit_rate": "96000"
+        }
+    ],
+    "format": {
+        "duration": "0.888163",
+        "size": "11016",
+        "bit_rate": "99225"
+    }
+}
+$ D:\GPT-SoVITS-beta0306fix2\ffmpeg.exe -hide_banner -i D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_yikoushui_v1.mp3 -af loudnorm=I=-16:TP=-1:LRA=7:print_format=summary,silencedetect=noise=-45dB:d=0.01 -f null NUL
+Input #0, mp3, from 'D:\000000chengpin\识字\app\src\main\assets\content\v1\audio\words\word_yikoushui_v1.mp3':
+  Metadata:
+    encoder         : Lavf58.45.100
+  Duration: 00:00:00.89, start: 0.025057, bitrate: 99 kb/s
+    Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp, 96 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 0000018b49caa540] silence_start: 0
+[silencedetect @ 0000018b49caa540] silence_end: 0.0623698 | silence_duration: 0.0623698
+[silencedetect @ 0000018b49caa540] silence_start: 0.210771
+[silencedetect @ 0000018b49caa540] silence_end: 0.22963 | silence_duration: 0.0188594
+size=N/A time=00:00:00.84 bitrate=N/A speed=83.1x    
+video:0kB audio:318kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_loudnorm_0 @ 0000018b4b7d8240] 
+Input Integrated:    -16.4 LUFS
+Input True Peak:      -3.2 dBTP
+Input LRA:             0.0 LU
+Input Threshold:     -26.4 LUFS
+
+Output Integrated:   -16.0 LUFS
+Output True Peak:     -2.7 dBTP
+Output LRA:            0.0 LU
+Output Threshold:    -26.0 LUFS
+
+Normalization Type:   Linear
+Target Offset:        +0.0 LU

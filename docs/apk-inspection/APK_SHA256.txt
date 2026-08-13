@@ -1,0 +1,8 @@
+﻿
+
+Algorithm : SHA256
+Hash      : BE3DFA9C83449672FCB81EC415E8C371EBD248F678B7E0F2E98DB3392E7C37E2
+Path      : D:\codex-shizi-work\app\build\outputs\apk\debug\app-debug.apk
+
+
+

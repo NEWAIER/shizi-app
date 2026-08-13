@@ -1,0 +1,3 @@
+﻿List of devices attached
+FEC5T19B07013055       device product:TAS-AN00 model:TAS_AN00 device:HWTAS transport_id:7
+

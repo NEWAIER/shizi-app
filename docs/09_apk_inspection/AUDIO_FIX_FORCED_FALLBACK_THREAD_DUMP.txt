@@ -1,0 +1,313 @@
+﻿> 07-27 01:15:39.162 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4221838
+  07-27 01:15:39.395 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:15:39.659 I/TrafficStatisticsBoosterPlugin( 2723): handleMessage, msg = 2
+  07-27 01:15:39.746 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+> 07-27 01:15:54.487 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:15:54.488 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:15:54.513 I/BatteryService( 1701): Processing new values: info={.chargerAcOnline = false, .chargerUsbOnline = true, .chargerWirelessOnline = false, .maxChargingCurrent = 2067000, .maxChargingVoltage = 4944000, .batteryStatus = FULL, .batteryHealth = GOOD, .batteryPresent = true, .batteryLevel = 100, .batteryVoltage = 4221, .batteryTemperature = 320, .batteryCurrent = 178, .batteryCycleCount = 1389, .batteryFullCharge = 3452, .batteryChargeCounter = 2000, .batteryTechnology = Li-poly}, mBatteryLevelCritical=false, mPlugType=2, batteryStatus=5
+  07-27 01:15:54.513 E/BatteryService( 1701): no autopoweroff in settings
+> 07-27 01:16:09.236 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4221819
+  07-27 01:16:09.496 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:16:09.670 I/TrafficStatisticsBoosterPlugin( 2723): handleMessage, msg = 2
+  07-27 01:16:09.846 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+> 07-27 01:16:25.198 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:16:25.199 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:16:25.221 I/BatteryService( 1701): Processing new values: info={.chargerAcOnline = false, .chargerUsbOnline = true, .chargerWirelessOnline = false, .maxChargingCurrent = 2067000, .maxChargingVoltage = 4916000, .batteryStatus = FULL, .batteryHealth = GOOD, .batteryPresent = true, .batteryLevel = 100, .batteryVoltage = 4221, .batteryTemperature = 320, .batteryCurrent = 170, .batteryCycleCount = 1389, .batteryFullCharge = 3452, .batteryChargeCounter = 1000, .batteryTechnology = Li-poly}, mBatteryLevelCritical=false, mPlugType=2, batteryStatus=5
+  07-27 01:16:25.222 E/BatteryService( 1701): no autopoweroff in settings
+> 07-27 01:16:30.279 I/ContentProviderHelper( 1701): Successfully start provider ContentProviderRecord{76f845 u0 com.huawei.intelligent/.main.database.IntelligentProvider} launchingApp=null caller pid= 30707
+  07-27 01:16:30.291 I/HwActivityManagerServiceEx( 1701): provider is prevented for not-prevent
+  07-27 01:16:30.291 I/ContentProviderHelper( 1701): Successfully start provider ContentProviderRecord{77439b6 u0 com.android.providers.settings/.hwext.HwSettingsProvider} launchingApp=null caller pid= 22586
+  07-27 01:16:30.293 I/LowMemDetector( 1701): LowMemThread mPressureState:0 notifyTrimMemory: 0
+> 07-27 01:16:39.276 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4222014
+  07-27 01:16:39.595 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:16:39.688 I/TrafficStatisticsBoosterPlugin( 2723): handleMessage, msg = 2
+  07-27 01:16:39.946 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+> 07-27 01:16:55.930 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:16:55.931 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:16:55.965 I/BatteryService( 1701): Processing new values: info={.chargerAcOnline = false, .chargerUsbOnline = true, .chargerWirelessOnline = false, .maxChargingCurrent = 2067000, .maxChargingVoltage = 4923000, .batteryStatus = FULL, .batteryHealth = GOOD, .batteryPresent = true, .batteryLevel = 100, .batteryVoltage = 4222, .batteryTemperature = 310, .batteryCurrent = 164, .batteryCycleCount = 1389, .batteryFullCharge = 3453, .batteryChargeCounter = 2000, .batteryTechnology = Li-poly}, mBatteryLevelCritical=false, mPlugType=2, batteryStatus=5
+  07-27 01:16:55.965 E/BatteryService( 1701): no autopoweroff in settings
+> 07-27 01:17:09.356 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4221920
+> --------- beginning of main
+  07-27 01:17:09.636 I/HiH_DataStatManager(31420): 1600106310|R|I|insOrUpdStatDt:newDt=20260721,tp=300002868,1,old=1,Upd=false
+  07-27 01:17:09.637 I/HiH_DataStatManager(31420): 1600106310|R|I|insOrUpdStatDt:newDt=20260721,tp=300002933,1,old=1,Upd=false
+  07-27 01:17:09.637 I/HiH_DataStatManager(31420): 1600106310|R|I|insOrUpdStatDt:newDt=20260720,tp=40002,4283,old=4283,Upd=false
+> 07-27 01:17:10.547 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:10.547 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:10.548 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:10.548 I/MQoS    ( 1701): rtt=348,tcpTxPkts=93769,tcpRxPkts=78771
+  07-27 01:17:10.548 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:17:10.549 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:348, rtt pkt=10, tcp_rx=12, tcp_tx=24, tcp_reTran=0, rtRate=0
+> 07-27 01:17:14.059 I/TimeEat_PoolMonitor(31420): 1600106310|R|I|haf-def-1-main, state{[20, 5, 5], poolSize=5, activeCount=0, runNum=0, waitNum=(0, 0, 0)}, stage{interval=233284, cmpNum=9, avgRunTime=6, maxRunTime=41}, total{taskCmpNum=277, avgRunTime=15, maxRunTime=1325}
+  07-27 01:17:14.149 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:17:14.153 V/HwWifiServiceFactory( 1701): get AllImpl object = com.android.server.wifi.HwWifiServiceFactoryImpl@2f8f24f
+  07-27 01:17:14.155 V/HwWifiServiceFactory( 1701): get AllImpl object = com.android.server.wifi.HwWifiServiceFactoryImpl@2f8f24f
+> 07-27 01:17:14.559 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:14.559 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:14.560 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:14.560 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93774,tcpRxPkts=78774
+  07-27 01:17:14.561 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:336, rtt pkt=12, tcp_rx=3, tcp_tx=5, tcp_reTran=2, rtRate=0.4
+  07-27 01:17:14.562 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-61 < TargetRssi=-59
+> 07-27 01:17:18.577 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:18.578 I/QosMonitor( 1701): resetRtt: rttType = 3
+  07-27 01:17:18.578 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+  07-27 01:17:18.710 I/TrafficStatisticsBoosterPlugin( 2723): handleMessage, msg = 2
+> 07-27 01:17:22.585 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:22.585 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:22.586 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:22.587 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93774,tcpRxPkts=78774
+  07-27 01:17:22.587 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:17:22.589 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0.4
+> 07-27 01:17:26.598 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:26.598 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:26.599 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:26.599 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93774,tcpRxPkts=78774
+  07-27 01:17:26.600 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0.4
+  07-27 01:17:26.601 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59
+> 07-27 01:17:26.621 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:17:26.623 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:17:26.649 I/BatteryService( 1701): Processing new values: info={.chargerAcOnline = false, .chargerUsbOnline = true, .chargerWirelessOnline = false, .maxChargingCurrent = 2067000, .maxChargingVoltage = 4956000, .batteryStatus = FULL, .batteryHealth = GOOD, .batteryPresent = true, .batteryLevel = 100, .batteryVoltage = 4222, .batteryTemperature = 310, .batteryCurrent = 157, .batteryCycleCount = 1389, .batteryFullCharge = 3453, .batteryChargeCounter = 3000, .batteryTechnology = Li-poly}, mBatteryLevelCritical=false, mPlugType=2, batteryStatus=5
+  07-27 01:17:26.649 E/BatteryService( 1701): no autopoweroff in settings
+> 07-27 01:17:30.344 W/HiBoard_14.1.28.302_UIProcessCacheUtil(22586): getPrefBooleanFromCache,must call it in main process,process = com.huawei.intelligent:intelligentService
+  07-27 01:17:30.345 I/HiBoard_14.1.28.302_UIProcessCacheUtil(22586): updateCache from other process,change to ui process 
+  07-27 01:17:30.345 I/HiBoard_14.1.28.302_HiBoardProvider(30707): call method updateSPCacheFromRead
+  07-27 01:17:30.346 I/HiBoard_14.1.28.302_UIProcessCacheUtil(22586): updateCache call remote success
+> 07-27 01:17:30.612 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:30.612 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:30.613 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:30.613 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:30.614 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=3, tcp_tx=2, tcp_reTran=0, rtRate=0
+  07-27 01:17:30.614 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-61 < TargetRssi=-59
+> 07-27 01:17:34.635 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:34.635 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:34.636 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:34.636 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:34.636 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:17:34.637 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:17:37.944 I/HwSearchService( 2717): [IndexServiceGuarderHandler]: IndexRAMMonitor: 38MB ram is used, in which summary.code=6MB, summary.stack=0MB, summary.graphics=0MB, summary.java-heap=6MB, summary.native-heap=6MB, summary.system=14MB, summary.total-pss=38MB, summary.private-other=3MB, summary.total-swap=29MB, 
+  07-27 01:17:38.046 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:17:38.396 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:17:38.509 I/TrafficMonitor( 1701): update:rxPkts:0,txPkts:0,rxBytes:0,txBytes:0
+> 07-27 01:17:38.647 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:38.647 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+  07-27 01:17:38.647 V/HwWifiServiceFactory( 1701): get AllImpl object = com.android.server.wifi.HwWifiServiceFactoryImpl@2f8f24f
+> 07-27 01:17:38.648 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:38.649 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:38.651 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+  07-27 01:17:38.651 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:17:39.391 I/PowerManagerService-JNI( 1701): nativeRtGetPowerHidlValue is NOT null
+  07-27 01:17:39.395 I/power_hidl(  899): ExeGetState type=vbat
+  07-27 01:17:39.395 I/power_hidl(  899): get property ro.board.platform=kirin990 len=92
+  07-27 01:17:39.395 I/power_hidl(  899): platform is kirin990
+> 07-27 01:17:39.396 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4222097
+  07-27 01:17:39.398 I/SmartChgBase/Data( 2655): get scene=vbat, value=4222097
+  07-27 01:17:39.398 I/SmartChgBase/Data( 2655): , ret=0
+  07-27 01:17:39.398 I/SmartChgBase/Data( 2655): RawGetDataValue batt_temp
+> 07-27 01:17:42.663 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:42.664 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:42.664 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:42.665 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:42.666 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:17:42.666 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59
+> 07-27 01:17:46.675 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:46.675 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:46.676 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:46.677 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:46.677 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:17:46.679 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+> 07-27 01:17:50.686 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:50.686 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:50.687 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:50.688 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:50.690 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+  07-27 01:17:50.690 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:17:54.708 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:54.708 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:54.709 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:54.710 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:54.711 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:17:54.712 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+> 07-27 01:17:57.349 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:17:57.350 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:17:57.378 I/BatteryService( 1701): Processing new values: info={.chargerAcOnline = false, .chargerUsbOnline = true, .chargerWirelessOnline = false, .maxChargingCurrent = 2067000, .maxChargingVoltage = 4959000, .batteryStatus = FULL, .batteryHealth = GOOD, .batteryPresent = true, .batteryLevel = 100, .batteryVoltage = 4222, .batteryTemperature = 310, .batteryCurrent = 152, .batteryCycleCount = 1389, .batteryFullCharge = 3453, .batteryChargeCounter = 5000, .batteryTechnology = Li-poly}, mBatteryLevelCritical=false, mPlugType=2, batteryStatus=5
+  07-27 01:17:57.378 E/BatteryService( 1701): no autopoweroff in settings
+> 07-27 01:17:58.733 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:17:58.733 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:17:58.734 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:17:58.735 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:17:58.735 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:17:58.737 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+> 07-27 01:18:00.086 I/HAF_MemoryUtils(31420): 1600106310|R|I|total-pss=63535, java-heap=7676, native-heap=10904, code=23336, system=12935, threads=60, importance=(125, 0), dex-mmap=(20733, 20680, 16, 44), ver=16.1.6.310
+  07-27 01:18:00.093 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:18:00.447 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+  07-27 01:18:00.549 I/TrafficMonitor( 1701): update:rxPkts:0,txPkts:0,rxBytes:0,txBytes:0
+> 07-27 01:18:02.748 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:02.748 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:02.749 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:02.750 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:18:02.751 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+  07-27 01:18:02.752 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:18:06.772 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:06.772 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:06.773 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:06.773 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93776,tcpRxPkts=78777
+  07-27 01:18:06.774 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:18:06.774 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59
+> 07-27 01:18:09.427 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.431 I/power_hidl(  899): ExeSetState type=cccv_ichg_ratio, value=0@100,1@100
+  07-27 01:18:09.431 I/power_hidl(  899): PowerHidlSetCccvIchgRatio type=cccv_ichg_ratio, value=0@100,1@100
+  07-27 01:18:09.432 E/power_hidl(  899): file /sys/class/hw_power/battery/battery_cccv/update_ichg_ratio is invalid
+> 07-27 01:18:09.436 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.439 I/power_hidl(  899): ExeSetState type=vterm_dec, value=lvc 144
+  07-27 01:18:09.439 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: lvc 144
+  07-27 01:18:09.440 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.443 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.446 I/power_hidl(  899): ExeSetState type=vterm_dec, value=sc 144
+  07-27 01:18:09.446 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: sc 144
+  07-27 01:18:09.447 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.449 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.451 I/power_hidl(  899): ExeSetState type=vterm_dec, value=wl_sc 144
+  07-27 01:18:09.451 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: wl_sc 144
+  07-27 01:18:09.451 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.452 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.454 I/power_hidl(  899): ExeSetState type=vterm_dec, value=4sc 144
+  07-27 01:18:09.454 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: 4sc 144
+  07-27 01:18:09.454 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.456 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.458 I/power_hidl(  899): ExeSetState type=ichg_ratio, value=all 60
+  07-27 01:18:09.458 I/power_hidl(  899): start write compatible, scene: ichg_ratio, value: all 60
+  07-27 01:18:09.458 I/power_hidl(  899): ExeSetState success, type=ichg_ratio, index=58
+> 07-27 01:18:09.460 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.461 I/power_hidl(  899): ExeSetState type=vterm_dec, value=dcp 144
+  07-27 01:18:09.461 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: dcp 144
+  07-27 01:18:09.462 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.463 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.464 I/power_hidl(  899): ExeSetState type=vterm_dec, value=fcp 144
+  07-27 01:18:09.464 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: fcp 144
+  07-27 01:18:09.464 E/power_hidl(  899): file /sys/devices/virtual/hw_power/interface/vterm_dec write failed
+> 07-27 01:18:09.466 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.467 I/power_hidl(  899): ExeSetState type=vterm_dec, value=pd 144
+  07-27 01:18:09.467 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: pd 144
+  07-27 01:18:09.467 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.468 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.471 I/power_hidl(  899): ExeSetState type=vterm_dec, value=wl 144
+  07-27 01:18:09.471 I/power_hidl(  899): start write compatible, scene: vterm_dec, value: wl 144
+  07-27 01:18:09.471 I/power_hidl(  899): ExeSetState success, type=vterm_dec, index=57
+> 07-27 01:18:09.472 I/PowerManagerService-JNI( 1701): nativeRtSetPowerHidlValue is NOT null
+  07-27 01:18:09.473 I/power_hidl(  899): ExeSetState type=basp_coul_vdec, value=144
+  07-27 01:18:09.473 I/power_hidl(  899): start hvdp mmi test, type=basp_coul_vdec, value=144
+  07-27 01:18:09.473 I/power_hidl(  899): ExeSetState success, type=basp_coul_vdec, index=64
+> 07-27 01:18:09.476 I/PowerManagerService-JNI( 1701): nativeRtGetPowerHidlValue is NOT null
+  07-27 01:18:09.477 I/power_hidl(  899): ExeGetState type=vbat
+  07-27 01:18:09.477 I/power_hidl(  899): get property ro.board.platform=kirin990 len=92
+  07-27 01:18:09.477 I/power_hidl(  899): platform is kirin990
+> 07-27 01:18:09.478 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4222220
+  07-27 01:18:09.478 I/SmartChgBase/Data( 2655): get scene=vbat, value=4222220
+  07-27 01:18:09.478 I/SmartChgBase/Data( 2655): , ret=0
+  07-27 01:18:09.478 I/SmartChgBase/Data( 2655): RawGetDataValue batt_temp
+> 07-27 01:18:10.791 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:10.791 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:10.792 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:10.793 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93778,tcpRxPkts=78779
+  07-27 01:18:10.793 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:18:10.794 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+> 07-27 01:18:14.802 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:14.802 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:14.803 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:14.803 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93779,tcpRxPkts=78780
+  07-27 01:18:14.804 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=1, tcp_tx=1, tcp_reTran=0, rtRate=0
+  07-27 01:18:14.805 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59
+> 07-27 01:18:17.316 I/PushLog110124300( 5955): [main-1]action is com.huawei.push.alarm.HEARTBEAT
+  07-27 01:18:17.316 I/AppStateTracker( 1701): mRunAnyRestrictedPackages.indexOf return = -7,uid = 12810153,packageName = com.tencent.mm
+  07-27 01:18:17.317 I/AppStateTracker( 1701): mRunAnyRestrictedPackages.indexOf return = -7,uid = 12810153,packageName = com.tencent.mm
+  07-27 01:18:17.317 I/AppStateTracker( 1701): mRunAnyRestrictedPackages.indexOf return = -8,uid = 12810026,packageName = com.huawei.hwid
+> 07-27 01:18:18.818 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:18.818 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:18.819 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:18.819 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93779,tcpRxPkts=78780
+  07-27 01:18:18.821 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+  07-27 01:18:18.821 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:18:22.837 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:22.837 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:22.838 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:22.838 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93779,tcpRxPkts=78780
+  07-27 01:18:22.839 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:18:22.841 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:18:26.850 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:26.850 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:26.851 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:26.852 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93779,tcpRxPkts=78780
+  07-27 01:18:26.853 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:18:26.854 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+> 07-27 01:18:28.082 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:18:28.083 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:18:28.087 I/bms_behavior(21643): monitor interval count 61, name: Battery
+  07-27 01:18:28.094 I/HwAmbientLuxFilterAlgo( 1701): SceneBufferAmbientLux input error,end=30,start=-141,bufferSize=59
+> 07-27 01:18:30.866 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:30.867 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:30.868 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:30.868 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:30.870 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+  07-27 01:18:30.871 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=2, tcp_reTran=0, rtRate=0
+> 07-27 01:18:34.880 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:34.880 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:34.882 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:34.882 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:34.882 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:18:34.883 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:18:38.085 I/HwSearchService( 2717): [IndexServiceGuarderHandler]: IndexRAMMonitor: 38MB ram is used, in which summary.code=6MB, summary.stack=0MB, summary.graphics=0MB, summary.java-heap=6MB, summary.native-heap=6MB, summary.system=14MB, summary.total-pss=38MB, summary.private-other=3MB, summary.total-swap=29MB, 
+  07-27 01:18:38.141 I/bms_behavior(21643): runState = 1, cvStatus = 1 
+  07-27 01:18:38.144 E/bms_file(21643): file /sys/class/hw_power/charger/direct_charge_turbo/turbo_charge_status is invalid
+  07-27 01:18:38.145 E/bms_file(21643): file /sys/class/hw_power/charger/direct_charger_sc4/direct_charge_succ is invalid
+> 07-27 01:18:38.890 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:38.890 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:38.891 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:38.891 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:38.891 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:18:38.892 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59
+> 07-27 01:18:39.513 I/PowerManagerService-JNI( 1701): nativeRtGetPowerHidlValue is NOT null
+  07-27 01:18:39.517 I/power_hidl(  899): ExeGetState type=vbat
+  07-27 01:18:39.517 I/power_hidl(  899): get property ro.board.platform=kirin990 len=92
+  07-27 01:18:39.517 I/power_hidl(  899): platform is kirin990
+> 07-27 01:18:39.519 I/PowerManagerService( 1701): nativeRtGetPowerHidlValue: 4222222
+  07-27 01:18:39.519 I/SmartChgBase/Data( 2655): get scene=vbat, value=4222222
+  07-27 01:18:39.519 I/SmartChgBase/Data( 2655): , ret=0
+  07-27 01:18:39.519 I/SmartChgBase/Data( 2655): RawGetDataValue batt_temp
+> 07-27 01:18:42.903 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:42.903 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:42.904 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:42.904 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:42.907 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:18:42.907 I/MQoS    ( 1701): QOS_level:5(5),wifi-link;use signalLvl:5;RAT:4G
+> 07-27 01:18:46.919 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:46.919 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:46.920 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:46.920 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:46.921 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:18:46.922 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59
+> 07-27 01:18:50.935 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:50.935 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:50.936 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:50.936 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:50.937 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:18:50.938 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:18:53.793 I/CAWARENESS_34468_MemoryMonitor(20156): VersionCode: 1000034468 Hiai name: 14.3.10.300 memory(kB) static totalPss: 42086, dalvikPss: 5943, nativePss: 12260, otherPss: 13653, swapPss: 10230
+> 07-27 01:18:53.793 I/CAWARENESS_34468_MemoryMonitor(20156): App Summary:summary.code: 5376 kB	summary.stack: 372 kB	summary.graphics: 0 kB	summary.java-heap: 6988 kB	summary.native-heap: 11976 kB	summary.system: 13426 kB	summary.total-pss: 42086 kB	summary.private-other: 3948 kB	summary.total-swap: 28460 kB	
+  07-27 01:18:53.869 D/hwpged  ( 1353): HibSTrategy::HibStrategySwapCandidateProcessAdd packageName com.tencent.mm
+  07-27 01:18:53.871 I/PGServer( 2770): getTopFrontApp. calling pkg: android
+  07-27 01:18:53.976 I/WifiNl80211Manager( 1701): Noise: -87, Snr: 127, Chload: 135, rssi: -60, txBitrate: 468, rxBitrate: 650, frequency: 5220, UlDelay: 0, currentTxBytes: 44025282, currentTxPackets: 221082, currentTxFailed: 1, currentRxBytes: -1910209355, currentRxPackets: 958988
+> 07-27 01:18:54.946 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:54.946 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:54.947 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:54.948 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:54.948 I/HwConnectivityServiceEx( 1701): set 1000, metered: false, value: false
+  07-27 01:18:54.949 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+> 07-27 01:18:58.790 D/HwBatteryService( 1701): setHwChargeTimeRemaining, time = 0 String time: 1426063360
+  07-27 01:18:58.790 I/HwBatteryService( 1701): IS_WATCH : false
+  07-27 01:18:58.813 I/BatteryService( 1701): Processing new values: info={.chargerAcOnline = false, .chargerUsbOnline = true, .chargerWirelessOnline = false, .maxChargingCurrent = 2067000, .maxChargingVoltage = 4996000, .batteryStatus = FULL, .batteryHealth = GOOD, .batteryPresent = true, .batteryLevel = 100, .batteryVoltage = 4222, .batteryTemperature = 310, .batteryCurrent = 141, .batteryCycleCount = 1389, .batteryFullCharge = 3453, .batteryChargeCounter = 7000, .batteryTechnology = Li-poly}, mBatteryLevelCritical=false, mPlugType=2, batteryStatus=5
+  07-27 01:18:58.813 E/BatteryService( 1701): no autopoweroff in settings
+> 07-27 01:18:58.961 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=4,arg2=10
+  07-27 01:18:58.962 I/QosMonitor( 1701): call ctrlHwWifiNetwork
+> 07-27 01:18:58.963 I/QosMonitor( 1701): postEventFromNative: msg=100,arg1=0,arg2=10
+  07-27 01:18:58.964 I/MQoS    ( 1701): rtt=336,tcpTxPkts=93781,tcpRxPkts=78780
+  07-27 01:18:58.965 I/HuaweiWifiWatchdogStateMachine( 1701): PTcp RTT:0, rtt pkt=0, tcp_rx=0, tcp_tx=0, tcp_reTran=0, rtRate=0
+  07-27 01:18:58.965 I/HuaweiWifiWatchdogStateMachine( 1701): rssi bad, mrssi=-60 < TargetRssi=-59

@@ -1,0 +1,209 @@
+﻿07-27 00:31:35.337 I/NetworkQoeChr( 2723): updateTopAppInfo: com.family.shizi, appState2, uid10538
+07-27 00:31:35.346 I/SmartDualCardConfig( 2723): getAppType,pkgName=com.family.shizi,appType=-1
+07-27 00:31:35.348 I/HwAudioServiceEx( 1701): ComponentInfo : className = com.family.shizi.MainActivity, flag = onPause, isHomeActivity = , isTop = false
+07-27 00:31:35.631 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:false,
+07-27 00:31:35.632 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:false,
+07-27 00:31:36.103 I/WindowManager( 1701): Exit animation finished in Window{14dcb73 u0 Splash Screen com.family.shizi EXITING}: remove=true
+07-27 00:31:36.104 I/WindowManager( 1701): Removing Window{14dcb73 u0 Splash Screen com.family.shizi} from ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}}
+07-27 00:31:36.125 I/WindowManager( 1701): tryStartExitingAnimation destroySurface win=Window{c09a192 u0 com.family.shizi/com.family.shizi.MainActivity}
+07-27 00:31:36.127 D/ActivityTaskManager( 1701): Ready to stop: ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}} animating=false finishing=true isInHistory=true
+07-27 00:31:36.138 I/ActivityThread( 2237): Remove activity client record, r= ActivityRecord{c0879c0 token=android.os.BinderProxy@5a0cc90 {com.family.shizi/com.family.shizi.MainActivity}} token= android.os.BinderProxy@5a0cc90
+07-27 00:31:36.141 I/WindowManager( 1701): removeIfPossible: Window{c09a192 u0 com.family.shizi/com.family.shizi.MainActivity} callers=com.android.server.wm.WindowState.removeIfPossible:3343 com.android.server.wm.WindowManagerService.removeWindow:2819 com.android.server.wm.Session.remove:228 android.view.IWindowSession$Stub.onTransact:896 com.android.server.wm.Session.onTransact:179 
+07-27 00:31:36.141 I/WindowManager( 1701): Removing Window{c09a192 u0 com.family.shizi/com.family.shizi.MainActivity} from ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}}
+07-27 00:31:36.144 I/WindowManager( 1701): removeWindowToken: displayid:0 binder:Token{66176ce ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}}} token:ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}}
+07-27 00:31:36.144 I/WindowManager( 1701): removeWindowToken: displayid:0 binder:Token{66176ce ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}}} token:null
+07-27 00:31:36.145 I/WindowManager( 1701): removeChild: child=ActivityRecord{b0689ef u0 com.family.shizi/.MainActivity t549 f}} reason=removeChild
+07-27 00:31:36.146 D/ActivityTaskManager( 1701): onParentChanged: mDisplayContent=null. this=Task{fc26f85 #549 type=standard A=10538:com.family.shizi U=0 visible=false mode=fullscreen translucent=true sz=0}com.android.server.wm.WindowContainer.setParent:555 com.android.server.wm.WindowContainer.removeChild:747 com.android.server.wm.TaskDisplayArea.removeChildTask:495 com.android.server.wm.TaskDisplayArea.removeChild:473 com.android.server.wm.WindowContainer.removeImmediately:801 com.android.server.wm.Task.removeImmediately:4687 com.android.server.wm.Task.removeIfPossible:1493 com.android.server.wm.Task.removeChild:2478 
+07-27 00:31:36.994 I/ActivityTaskManager( 1701): notifyActivityLaunching intent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.family.shizi/.MainActivity bnds=[26,1678][234,1974] (has extras) } existingInfo=null
+07-27 00:31:36.995 I/ActivityTaskManager( 1701): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 hwFlg=0x10 cmp=com.family.shizi/.MainActivity bnds=[26,1678][234,1974] (has extras)} from uid 10073
+07-27 00:31:36.995 D/HwMWPM  ( 1701): activityInfo: ActivityInfo{1d6130a com.family.shizi.MainActivity}, intent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.family.shizi/.MainActivity bnds=[26,1678][234,1974] (has extras) }, options: ActivityOptions(95377275), mPackageName=null, mAnimationType=13, mStartX=0, mStartY=0, mWidth=0, mHeight=0, callingPackage: com.huawei.android.launcher, isStartToSplit: false
+07-27 00:31:36.996 D/HwASInterceptor( 1701): both page open. caller:com.huawei.android.launcher, target:com.family.shizi
+07-27 00:31:36.996 I/ActivityTaskManager( 1701): ActivityRecord info: ActivityInfo{1d6130a com.family.shizi.MainActivity}
+07-27 00:31:36.996 D/ActivityTaskManager( 1701): TaskLaunchParamsModifier:task=null activity=ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity display-area-from-source=DefaultTaskDisplayArea@250629097 display-id=0 display-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@250629097
+07-27 00:31:36.997 D/ActivityTaskManager( 1701): TaskLaunchParamsModifier:task=null activity=ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t-1} display-area-from-source=DefaultTaskDisplayArea@250629097 display-id=0 display-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@250629097 inherit-from-source=fullscreen activity-options-fullscreen=Rect(0, 0 - 0, 0) non-freeform-mode=1 display-area=DefaultTaskDisplayArea@250629097
+07-27 00:31:37.000 D/ActivityTaskManager( 1701): TaskLaunchParamsModifier:task=Task{a51f057 #550 type=standard A=10538:com.family.shizi U=0 visible=false mode=fullscreen translucent=true sz=0} activity=ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t-1} display-area-from-source=DefaultTaskDisplayArea@250629097 display-id=0 display-windowing-mode=1 suggested-display-area=DefaultTaskDisplayArea@250629097 inherit-from-source=fullscreen activity-options-fullscreen=Rect(0, 0 - 0, 0) non-freeform-mode=1 display-area=DefaultTaskDisplayArea@250629097
+07-27 00:31:37.000 I/WindowManager( 1701): addWindowToken: displayid:0 binder:Token{c71e998 ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t-1}} token:ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t-1}
+07-27 00:31:37.005 I/HwAudioServiceEx( 1701): ComponentInfo : className = com.family.shizi.MainActivity, flag = showStartingWindow, isHomeActivity = , isTop = false
+07-27 00:31:37.011 I/ActivityTaskManager( 1701): Making visible and scheduling visibility: ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550}
+07-27 00:31:37.013 I/ActivityTaskManager( 1701): updateTopApp to ProcessRecord{95b728e 2237:com.family.shizi/u0a538}
+07-27 00:31:37.013 W/HwActivityTaskManagerServiceEx( 1701): appSwitch from: com.huawei.android.launcher to: com.family.shizi
+07-27 00:31:37.014 D/HwGameAssistantController( 1701): UPDATE: mCurFgPkg=com.family.shizi, mCurFgPid=2237, mIsCurGame=false
+07-27 00:31:37.014 I/HwSwingFaceRotationHub( 1701): TopAppCallBack, pkg=com.family.shizi, isGameOrNavi:false, isLastGameOrNavi:false
+07-27 00:31:37.016 I/WindowManager( 1701): Check opening app=ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550}: allDrawn=false startingDisplayed=false startingMoved=true isRelaunching()=false mStartingWindow=null isOneStepWindowChanging=falseisOpenCombinationSplitScreen=false shouldWaitCombine=false
+07-27 00:31:37.016 D/WindowManager( 1701): getTopAnimActivity enter true, ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550}
+07-27 00:31:37.018 D/HwWindowManagerServiceEx( 1701): AnimationTurbo wms enter setIconToLayer ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550} front:android.graphics.Bitmap@9c1156b back:android.graphics.Bitmap@77ee8c8
+07-27 00:31:37.018 D/HwWindowManagerServiceEx( 1701): AnimationTurbo wms tok appComponentName: com.family.shizi/.MainActivity, appPackageName: com.family.shizi, appProcessName: com.family.shizi
+07-27 00:31:37.018 I/HwGameAssistantController( 1701): notifyBuoyAppSwitch other switch: com.family.shizi
+07-27 00:31:37.026 V/WindowManager( 1701): commitVisibility: ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550}: visible=true mVisibleRequested=true
+07-27 00:31:37.031 I/WindowManager( 1701): addWindow: Window{ffdc974 u0 Splash Screen com.family.shizi} currentDisplayId:0 requestDisplayId:0 token:Token{c71e998 ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550}} appearance:8 fl_fullscreen=false vsysui_fullscreen=false
+07-27 00:31:37.033 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:false, pkg:com.family.shizi visible:true,
+07-27 00:31:37.039 I/StatusBarDisable( 1701): setFlags what=0 which=1 pkg=Window{ffdc974 u0 Splash Screen com.family.shizi}
+07-27 00:31:37.040 I/WindowManager( 1701): wm_insets notifyInsetsControlChanged for:Window{ffdc974 u0 Splash Screen com.family.shizi}
+07-27 00:31:37.042 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:false, pkg:com.family.shizi visible:true,
+07-27 00:31:37.052 I/DE J DES( 1701): [effect] Pg pkg:com.family.shizi
+07-27 00:31:37.060 W/ActivityTaskManager( 1701): do not allow hiding recent tasks, task id: 550 , package = com.family.shizi
+07-27 00:31:37.061 I/ActivityThread( 2237): add activity client record, r= ActivityRecord{497823b token=android.os.BinderProxy@42c87c2 {com.family.shizi/com.family.shizi.MainActivity}} token= android.os.BinderProxy@42c87c2
+07-27 00:31:37.070 I/WindowManager( 1701): addWindow: Window{ade6637 u0 com.family.shizi/com.family.shizi.MainActivity} currentDisplayId:0 requestDisplayId:0 token:Token{c71e998 ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550}} appearance:8 fl_fullscreen=false vsysui_fullscreen=false
+07-27 00:31:37.073 I/TopResumedActivityChangeItem( 2237): execute start, ActivityClientRecord = ActivityRecord{497823b token=android.os.BinderProxy@42c87c2 {com.family.shizi/com.family.shizi.MainActivity}}
+07-27 00:31:37.073 I/HWMW_HwMagicStackManager( 1701): finish application, finishActivity:ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550} reason=app-request
+07-27 00:31:37.074 I/HwActivityTaskManagerServiceEx( 1701): call returnToHome, from: ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}, to: ActivityRecord{557c70 u0 com.huawei.android.launcher/.unihome.UniHomeLauncher t7}
+07-27 00:31:37.074 W/HwActivityTaskManagerServiceEx( 1701): appSwitch from: com.family.shizi to: com.huawei.android.launcher
+07-27 00:31:37.075 I/UidCloseNrStateMachine( 2723): UID hot switch, uid:10538, pkgName:com.family.shizi
+07-27 00:31:37.076 I/NetworkQoeChr( 2723): updateTopAppInfo: com.family.shizi, appState1, uid10538
+07-27 00:31:37.079 I/SmartDualCardConfig( 2723): getAppType,pkgName=com.family.shizi,appType=-1
+07-27 00:31:37.079 I/PowerMsgAdapter( 2723): UID hot switch, uid:10538, pkgName:com.family.shizi
+07-27 00:31:37.079 I/HcPreDnsQueryCtrl( 2723): mForeAppPackageName update=com.family.shizi
+07-27 00:31:37.080 I/Power2r4rHandover( 2723): 4rTo2rCondition, usbStatus = true, foreGrountApp = com.family.shizi, 4rTo2rCtrlRule = 1, is4rTo2rCheck = false, batteryMode = 1, mIs4r2rHandover = false
+07-27 00:31:37.082 I/WindowManager( 1701): persistSnapshot for activity:ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}} snapshotHome:false
+07-27 00:31:37.084 I/HwAudioServiceEx( 1701): ComponentInfo : className = com.family.shizi.MainActivity, flag = onResume, isHomeActivity = , isTop = true
+07-27 00:31:37.095 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:true,
+07-27 00:31:37.148 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:true,
+07-27 00:31:37.149 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:true,
+07-27 00:31:37.177 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:true,
+07-27 00:31:37.178 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:true,
+07-27 00:31:37.190 I/TopResumedActivityChangeItem( 2237): execute start, ActivityClientRecord = ActivityRecord{497823b token=android.os.BinderProxy@42c87c2 {com.family.shizi/com.family.shizi.MainActivity}}
+07-27 00:31:37.200 D/WindowManager( 1701): getTopAnimActivity enter false, ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}
+07-27 00:31:37.218 V/WindowManager( 1701): commitVisibility: ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}: visible=false mVisibleRequested=false
+07-27 00:31:37.228 I/WindowManager( 1701): wm_insets notifyInsetsControlChanged for:Window{ffdc974 u0 Splash Screen com.family.shizi EXITING}
+07-27 00:31:37.235 I/WindowManager( 1701): removeIfPossible: Window{ffdc974 u0 Splash Screen com.family.shizi EXITING} callers=com.android.server.wm.WindowState.removeIfPossible:3343 com.android.server.wm.WindowManagerService.removeWindow:2819 com.android.server.wm.Session.remove:228 android.view.ViewRootImpl.dispatchDetachedFromWindow:6694 android.view.ViewRootImpl.doDie:10435 
+07-27 00:31:37.235 I/WindowManager( 1701): Not removing Window{ffdc974 u0 Splash Screen com.family.shizi EXITING} due to exit animation 
+07-27 00:31:37.238 I/HwAudioServiceEx( 1701): ComponentInfo : className = com.family.shizi.MainActivity, flag = onPause, isHomeActivity = , isTop = false
+07-27 00:31:37.241 I/ActivityTaskManager( 1701): Stopping ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}: nowVisible=false animating=true finishing=true
+07-27 00:31:37.243 I/ActivityTaskManager( 1701): Stopping ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}: nowVisible=false animating=true finishing=true
+07-27 00:31:37.248 I/NetworkQoeChr( 2723): updateTopAppInfo: com.family.shizi, appState2, uid10538
+07-27 00:31:37.255 I/SmartDualCardConfig( 2723): getAppType,pkgName=com.family.shizi,appType=-1
+07-27 00:31:37.677 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:false,
+07-27 00:31:37.678 D/HwActivityTaskManagerServiceEx( 1701): loadRunningPackages packageInfo : pkg:com.huawei.android.launcher visible:true, pkg:com.family.shizi visible:false,
+07-27 00:31:37.995 I/WindowManager( 1701): Exit animation finished in Window{ffdc974 u0 Splash Screen com.family.shizi EXITING}: remove=true
+07-27 00:31:37.995 I/WindowManager( 1701): Removing Window{ffdc974 u0 Splash Screen com.family.shizi} from ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}
+07-27 00:31:38.018 I/WindowManager( 1701): tryStartExitingAnimation destroySurface win=Window{ade6637 u0 com.family.shizi/com.family.shizi.MainActivity}
+07-27 00:31:38.020 D/ActivityTaskManager( 1701): Ready to stop: ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}} animating=false finishing=true isInHistory=true
+07-27 00:31:38.031 I/ActivityThread( 2237): Remove activity client record, r= ActivityRecord{497823b token=android.os.BinderProxy@42c87c2 {com.family.shizi/com.family.shizi.MainActivity}} token= android.os.BinderProxy@42c87c2
+07-27 00:31:38.034 I/WindowManager( 1701): removeIfPossible: Window{ade6637 u0 com.family.shizi/com.family.shizi.MainActivity} callers=com.android.server.wm.WindowState.removeIfPossible:3343 com.android.server.wm.WindowManagerService.removeWindow:2819 com.android.server.wm.Session.remove:228 android.view.IWindowSession$Stub.onTransact:896 com.android.server.wm.Session.onTransact:179 
+07-27 00:31:38.035 I/WindowManager( 1701): Removing Window{ade6637 u0 com.family.shizi/com.family.shizi.MainActivity} from ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}
+07-27 00:31:38.038 I/WindowManager( 1701): removeWindowToken: displayid:0 binder:Token{c71e998 ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}} token:ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}
+07-27 00:31:38.038 I/WindowManager( 1701): removeWindowToken: displayid:0 binder:Token{c71e998 ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}}} token:null
+07-27 00:31:38.038 I/WindowManager( 1701): removeChild: child=ActivityRecord{53cf5f1 u0 com.family.shizi/.MainActivity t550 f}} reason=removeChild
+07-27 00:31:38.039 D/ActivityTaskManager( 1701): onParentChanged: mDisplayContent=null. this=Task{a51f057 #550 type=standard A=10538:com.family.shizi U=0 visible=false mode=fullscreen translucent=true sz=0}com.android.server.wm.WindowContainer.setParent:555 com.android.server.wm.WindowContainer.removeChild:747 com.android.server.wm.TaskDisplayArea.removeChildTask:495 com.android.server.wm.TaskDisplayArea.removeChild:473 com.android.server.wm.WindowContainer.removeImmediately:801 com.android.server.wm.Task.removeImmediately:4687 com.android.server.wm.Task.removeIfPossible:1493 com.android.server.wm.Task.removeChild:2478 
+07-27 00:31:38.893 I/ActivityManager( 1701): Force stopping com.family.shizi appid=10538 user=0: finished inst
+07-27 00:31:38.894 I/ActivityManager( 1701): Killing 2237:com.family.shizi/u0a538 (adj 0): stop com.family.shizi due to finished inst
+07-27 00:31:38.895 D/ActivityManager( 1701): cleanUpApplicationRecord app: 2237:com.family.shizi/u0a538, bad: false, restarting: false, allowRestart: false
+07-27 00:31:38.896 D/AndroidRuntime( 1680): Leaving RuntimeInit!
+07-27 00:31:38.898 I/ActivityManager( 1701): Start to clean task when force stop the app com.family.shizi , reason:finished inst
+07-27 00:31:38.940 I/ActivityManager( 1701): appDiedLocked: pid=2237, app=ProcessRecord{95b728e 0:com.family.shizi/u0a538}, fromBinderDied=true, reason=null
+07-27 00:31:38.940 V/ActivityManager( 1701): Got obituary of 2237:com.family.shizi
+07-27 00:31:38.940 W/ActivityManager( 1701): Spurious death: diff, app=ProcessRecord{95b728e 0:com.family.shizi/u0a538}, curProc=null
+07-27 00:31:40.286 I/PackageInstaller( 1701): uninstall package com.family.shizi for uid 2000, pid: 4756, pkg: null, userId: 0, flags: 2, receiver: IntentSender{9aac439: com.android.server.pm.PackageManagerShellCommand$LocalIntentReceiver$1@2951a7e}
+07-27 00:31:40.288 I/PackageManager( 1701): deletePackageX: pkg = com.family.shizi user = 0 deleteFlags: 2
+07-27 00:31:40.288 I/PackageManager( 1701): add frozen package: com.family.shizi, reason: deletePackageX
+07-27 00:31:40.288 D/PackageManager( 1701): deletePackageLI: com.family.shizi user UserHandle{-1} flags -2147483646 actioncom.android.server.pm.PackageManagerService$DeletePackageAction@302dbdf
+07-27 00:31:40.289 I/PackageManager( 1701): Removing non-system or removable preinstalled package: com.family.shizi, isRemovablePreinstalledApp = false
+07-27 00:31:40.289 I/ActivityManager( 1701): Force stopping com.family.shizi appid=10538 user=-1: deletePackageX
+07-27 00:31:40.289 I/PackageManager( 1701): removePackageDataLI: com.family.shizi, users: [0, 10, 128]
+07-27 00:31:40.292 I/ActivityManager( 1701): Start to clean task when force stop the app com.family.shizi , reason:deletePackageX
+07-27 00:31:40.300 W/PackageManager( 1701): com.android.server.pm.Installer$InstallerException: android.os.ServiceSpecificException: Failed to delete /data/user_de/10/com.family.shizi (code 2)
+07-27 00:31:40.303 W/PackageManager( 1701): com.android.server.pm.Installer$InstallerException: android.os.ServiceSpecificException: Failed to delete /data/user_de/128/com.family.shizi (code 2)
+07-27 00:31:40.303 I/Installer( 1701): destroyAppProfiles for com.family.shizi, userId -1
+07-27 00:31:40.346 I/PackageManager( 1701): Removing permission com.family.shizi.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION that used to be declared by com.family.shizi
+07-27 00:31:40.553 D/PackageManager( 1701): clear pref activity com.family.shizi outUserChanged {} for user -1from uid 1000
+07-27 00:31:40.875 I/HwPermissionRegistry( 1701): remove permission info for com.family.shizi
+07-27 00:31:41.053 D/PackageManager( 1701): remove frozen package:com.family.shizi
+07-27 00:31:41.056 I/HwHemPermissionManager( 1701): deleteMdmAppPermFile : com.family.shizi
+07-27 00:31:41.443 W/ActivityManager( 1701): Skipping broadcast of Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.family.shizi flg=0x4000010 (has extras) }: user 10 and its parent (if any) are stopped
+07-27 00:31:41.443 I/ActivityManager( 1701): Force stopping com.family.shizi appid=10538 user=0: pkg removed
+07-27 00:31:41.443 I/ActivityManager( 1701): Start to clean task when force stop the app com.family.shizi , reason:pkg removed
+07-27 00:31:41.453 W/ActivityManager( 1701): Skipping broadcast of Intent { act=android.intent.action.PACKAGE_REMOVED_INTERNAL dat=package:com.family.shizi flg=0x4000010 pkg=android (has extras) }: user 10 and its parent (if any) are stopped
+07-27 00:31:41.453 W/ActivityManager( 1701): Skipping broadcast of Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package:com.family.shizi flg=0x5000010 (has extras) }: user 10 and its parent (if any) are stopped
+07-27 00:31:41.598 I/PackageInstaller( 1701): uninstall package com.family.shizi.test for uid 2000, pid: 4768, pkg: null, userId: 0, flags: 2, receiver: IntentSender{603d77f: com.android.server.pm.PackageManagerShellCommand$LocalIntentReceiver$1@685a34c}
+07-27 00:31:41.779 I/PackageManager( 1701): deletePackageX: pkg = com.family.shizi.test user = 0 deleteFlags: 2
+07-27 00:31:41.779 I/PackageManager( 1701): add frozen package: com.family.shizi.test, reason: deletePackageX
+07-27 00:31:41.779 D/PackageManager( 1701): deletePackageLI: com.family.shizi.test user UserHandle{-1} flags -2147483646 actioncom.android.server.pm.PackageManagerService$DeletePackageAction@ef3b05a
+07-27 00:31:41.779 I/PackageManager( 1701): Removing non-system or removable preinstalled package: com.family.shizi.test, isRemovablePreinstalledApp = false
+07-27 00:31:41.780 I/PackageManager( 1701): removePackageDataLI: com.family.shizi.test, users: [0, 10, 128]
+07-27 00:31:41.790 W/PackageManager( 1701): com.android.server.pm.Installer$InstallerException: android.os.ServiceSpecificException: Failed to delete /data/user_de/10/com.family.shizi.test (code 2)
+07-27 00:31:41.791 W/PackageManager( 1701): com.android.server.pm.Installer$InstallerException: android.os.ServiceSpecificException: Failed to delete /data/user_de/128/com.family.shizi.test (code 2)
+07-27 00:31:41.791 I/Installer( 1701): destroyAppProfiles for com.family.shizi.test, userId -1
+07-27 00:31:41.812 W/ShortcutService( 1701): handlePackageRemoved: com.family.shizi user=0
+07-27 00:31:41.814 I/ShortcutService( 1701): com.family.shizi is removed from user 0
+07-27 00:31:41.982 D/PackageManager( 1701): clear pref activity com.family.shizi.test outUserChanged {} for user -1from uid 1000
+07-27 00:31:42.056 V/StorageManagerService( 1701): Package com.family.shizi does not have legacy storage
+07-27 00:31:42.067 D/DEF_PackageChangedBroadcastReceiver( 2723): onReceive com.family.shizi android.intent.action.PACKAGE_REMOVED replacing: false
+07-27 00:31:42.083 I/RollbackManager( 1701): broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.family.shizi
+07-27 00:31:42.091 W/BroadcastQueue( 1701): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.family.shizi flg=0x4000010 (has extras) } to com.huawei.appmarket/.service.installresult.control.InstallerReceiver
+07-27 00:31:42.117 I/DeviceIdleController( 1701): removePowerSaveWhitelistApp(name = com.family.shizi) uid=1000 pid=2655 callingPack=com.huawei.hwdetectrepair
+07-27 00:31:42.135 D/PackageManager( 1701): handlePackageEvent: android.intent.action.PACKAGE_REMOVED com.family.shizi
+07-27 00:31:42.135 I/ActivityManager( 1701): Force stopping com.family.shizi.test appid=10539 user=-1: deletePackageX
+07-27 00:31:42.136 I/SettingsProvider( 1701): removeSettingsForPackageLocked for com.family.shizi user 0
+07-27 00:31:42.136 I/ActivityManager( 1701): Killing 2546:com.family.shizi.test/u0a539 (adj 900): stop com.family.shizi.test due to deletePackageX
+07-27 00:31:42.142 D/ActivityManager( 1701): cleanUpApplicationRecord app: 2546:com.family.shizi.test/u0a539, bad: false, restarting: false, allowRestart: false
+07-27 00:31:42.143 I/ActivityManager( 1701): Start to clean task when force stop the app com.family.shizi.test , reason:deletePackageX
+07-27 00:31:42.172 I/AndroidRuntime( 4798): RuntimeInit: Starting application from zygote
+07-27 00:31:42.173 D/AndroidRuntime( 4798): Entered RuntimeInit!
+07-27 00:31:42.182 I/AppStateTracker( 1701): ACTION_PACKAGE_REMOVED remove uid = 10538,pkgName = com.family.shizi
+07-27 00:31:42.182 I/GameManagerService( 1701): Disabling downscale for com.family.shizi
+07-27 00:31:42.185 I/AndroidRuntime( 4798): MethodAndArgsCaller run()
+07-27 00:31:42.196 D/PackageManager( 1701): handlePackageEvent: android.intent.action.PACKAGE_REMOVED com.family.shizi
+07-27 00:31:42.204 I/Telecom ( 1701): CarModeTracker: Package com.family.shizi is not tracked.: SSH.oR@D8w
+07-27 00:31:42.217 I/AndroidRuntime( 4824): RuntimeInit: Starting application from zygote
+07-27 00:31:42.217 D/AndroidRuntime( 4824): Entered RuntimeInit!
+07-27 00:31:42.220 I/AndroidRuntime( 4824): MethodAndArgsCaller run()
+07-27 00:31:42.246 I/AndroidRuntime( 4847): RuntimeInit: Starting application from zygote
+07-27 00:31:42.246 D/AndroidRuntime( 4847): Entered RuntimeInit!
+07-27 00:31:42.249 I/AndroidRuntime( 4847): MethodAndArgsCaller run()
+07-27 00:31:42.259 D/CompanionDeviceManagerService( 1701): onPackageRemoved(packageName = com.family.shizi, uid = 10538)
+07-27 00:31:42.273 I/AndroidRuntime( 4869): RuntimeInit: Starting application from zygote
+07-27 00:31:42.273 D/AndroidRuntime( 4869): Entered RuntimeInit!
+07-27 00:31:42.276 I/AndroidRuntime( 4869): MethodAndArgsCaller run()
+07-27 00:31:42.276 I/ActivityManager( 1701): appDiedLocked: pid=2546, app=ProcessRecord{85b1695 0:com.family.shizi.test/u0a539}, fromBinderDied=true, reason=null
+07-27 00:31:42.276 V/ActivityManager( 1701): Got obituary of 2546:com.family.shizi.test
+07-27 00:31:42.276 W/ActivityManager( 1701): Spurious death: diff, app=ProcessRecord{85b1695 0:com.family.shizi.test/u0a539}, curProc=null
+07-27 00:31:42.289 I/ZenLog  ( 1701): config: com.family.shizi|removeAutomaticZenRules no changes
+07-27 00:31:42.289 I/ConditionProviders( 1701): Disallowing condition provider com.family.shizi (userSet: true)
+07-27 00:31:42.309 I/ZenLog  ( 1701): set_zen_mode: off,com.family.shizi|removeAutomaticZenRules
+07-27 00:31:42.362 I/AndroidRuntime( 4894): RuntimeInit: Starting application from zygote
+07-27 00:31:42.362 D/AndroidRuntime( 4894): Entered RuntimeInit!
+07-27 00:31:42.364 I/AndroidRuntime( 4894): MethodAndArgsCaller run()
+07-27 00:31:42.601 D/PackageManager( 1701): remove frozen package:com.family.shizi.test
+07-27 00:31:42.601 I/HwHemPermissionManager( 1701): deleteMdmAppPermFile : com.family.shizi.test
+07-27 00:31:42.647 I/SmartDualCardConfig( 2723): onPackageInstallStateUpdate uid=10538,appName=com.family.shizi,packageAddFlag=0
+07-27 00:31:42.671 I/AndroidRuntime( 4976): RuntimeInit: Starting application from zygote
+07-27 00:31:42.671 D/AndroidRuntime( 4976): Entered RuntimeInit!
+07-27 00:31:42.676 I/AndroidRuntime( 4976): MethodAndArgsCaller run()
+07-27 00:31:42.788 I/AndroidRuntime( 5027): RuntimeInit: Starting application from zygote
+07-27 00:31:42.788 D/AndroidRuntime( 5027): Entered RuntimeInit!
+07-27 00:31:42.791 I/AndroidRuntime( 5027): MethodAndArgsCaller run()
+07-27 00:31:42.974 I/AndroidRuntime( 5079): RuntimeInit: Starting application from zygote
+07-27 00:31:42.974 D/AndroidRuntime( 5079): Entered RuntimeInit!
+07-27 00:31:42.977 I/AndroidRuntime( 5079): MethodAndArgsCaller run()
+07-27 00:31:43.167 I/AndroidRuntime( 5125): RuntimeInit: Starting application from zygote
+07-27 00:31:43.167 D/AndroidRuntime( 5125): Entered RuntimeInit!
+07-27 00:31:43.171 I/AndroidRuntime( 5125): MethodAndArgsCaller run()
+07-27 00:31:43.193 I/AndroidRuntime( 5134): RuntimeInit: Starting application from zygote
+07-27 00:31:43.193 D/AndroidRuntime( 5134): Entered RuntimeInit!
+07-27 00:31:43.200 I/AndroidRuntime( 5134): MethodAndArgsCaller run()
+07-27 00:31:43.423 I/ActivityManager( 1701): Force stopping com.family.shizi.test appid=10539 user=0: pkg removed
+07-27 00:31:43.424 I/ActivityManager( 1701): Start to clean task when force stop the app com.family.shizi.test , reason:pkg removed
+07-27 00:31:43.664 W/ShortcutService( 1701): handlePackageRemoved: com.family.shizi.test user=0
+07-27 00:31:43.665 I/ShortcutService( 1701): com.family.shizi.test is removed from user 0
+07-27 00:31:43.666 D/CompanionDeviceManagerService( 1701): onPackageRemoved(packageName = com.family.shizi.test, uid = 10539)
+07-27 00:31:43.671 V/StorageManagerService( 1701): Package com.family.shizi.test does not have legacy storage
+07-27 00:31:43.677 D/PackageManager( 1701): handlePackageEvent: android.intent.action.PACKAGE_REMOVED com.family.shizi.test
+07-27 00:31:43.678 I/RollbackManager( 1701): broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.family.shizi.test
+07-27 00:31:43.680 I/SettingsProvider( 1701): removeSettingsForPackageLocked for com.family.shizi.test user 0
+07-27 00:31:43.696 I/AppBigFontFilterDataStorage( 1701): notifyAppInstallOrUninstall uninstall packagecom.family.shizi.test
+07-27 00:31:43.714 D/PackageManager( 1701): handlePackageEvent: android.intent.action.PACKAGE_REMOVED com.family.shizi.test
+07-27 00:31:43.714 I/AppStateTracker( 1701): ACTION_PACKAGE_REMOVED remove uid = 10539,pkgName = com.family.shizi.test
+07-27 00:31:43.736 I/GameManagerService( 1701): Disabling downscale for com.family.shizi.test
+07-27 00:31:43.746 I/Telecom ( 1701): CarModeTracker: Package com.family.shizi.test is not tracked.: SSH.oR@D9E
+07-27 00:31:43.751 I/ZenLog  ( 1701): config: com.family.shizi.test|removeAutomaticZenRules no changes
+07-27 00:31:43.751 I/ConditionProviders( 1701): Disallowing condition provider com.family.shizi.test (userSet: true)
+07-27 00:31:43.753 I/ZenLog  ( 1701): set_zen_mode: off,com.family.shizi.test|removeAutomaticZenRules
+07-27 00:31:43.917 W/BroadcastQueue( 1701): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.family.shizi.test flg=0x4000010 (has extras) } to com.huawei.appmarket/.service.installresult.control.InstallerReceiver
+07-27 00:31:43.923 I/SmartDualCardConfig( 2723): onPackageInstallStateUpdate uid=10539,appName=com.family.shizi.test,packageAddFlag=0
+07-27 00:31:44.032 D/DEF_PackageChangedBroadcastReceiver( 2723): onReceive com.family.shizi.test android.intent.action.PACKAGE_REMOVED replacing: false
+07-27 00:31:44.763 I/DeviceIdleController( 1701): removePowerSaveWhitelistApp(name = com.family.shizi.test) uid=1000 pid=2655 callingPack=com.huawei.hwdetectrepair
+07-27 00:31:48.683 D/PG_DBS_MAIN( 2770): EVENT_DELAY_REMOVE_PKG_STATS, pkgName: com.family.shizi.test, uid: 10539
+07-27 00:31:50.285 I/AndroidRuntime( 5301): RuntimeInit: Starting application from zygote
+07-27 00:31:50.285 D/AndroidRuntime( 5301): Entered RuntimeInit!
+07-27 00:31:50.289 I/AndroidRuntime( 5301): MethodAndArgsCaller run()
+07-27 00:31:50.304 I/PGAudioState( 2770): AUDIO_ADD_ACTIVE_TRACK, audioInfo : [trackId : 597, sessionId : 57, type : audio_in, threadType : RECORD, streamType : DEFAULT, pid : 26714, uid : 10085, createState : new, playState : stop, audioTrackVolume: 1.0, finalVolume : 0.0, loop : false, stopByZeroTime : 0]

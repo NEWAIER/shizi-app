@@ -1,0 +1,2 @@
+﻿assets/content/v1/content.json
+assets/content/v1/content.schema.json

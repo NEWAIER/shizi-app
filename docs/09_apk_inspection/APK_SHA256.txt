@@ -1,0 +1,1 @@
+6695b5a26fbc089eaf7c33e666edb26f74cd4703371245a9467e0b06d89d32c8  deliverables/shizi-mobile-flow-debug.apk

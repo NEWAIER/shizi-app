@@ -1,0 +1,13 @@
+AT-22/P0 RESOURCE INTEGRITY
+RESULT: PASS
+Evidence: verifyContentG2 + G2ResourceValidatorTest
+Resources: 50 required / 50 present / 50 non-empty / bytes 50 matched / SHA-256 50 matched
+Manifest: 38 MP3 + 12 WebP; no missing references, required orphans, or duplicate paths
+
+AT-34/P0 CONTENT STRUCTURE AND RESOURCE SEPARATION
+RESULT: PASS
+Evidence: verifyContentG1 + verifyContentG2 + ContentSchemaTest + ContentMutationTest + G2ResourceValidatorTest
+G1 remains independent when a resource is missing or tampered.
+IMAGE/CONTEXT -> images/*.webp; AUDIO and all audio fields -> audio/*.mp3.
+Big/small picture questions share audio/prompts/prompt_choose_picture_v1.mp3.
+No answer-leaking prompt was introduced.

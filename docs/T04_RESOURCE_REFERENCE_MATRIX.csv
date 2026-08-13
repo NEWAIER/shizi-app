@@ -1,0 +1,51 @@
+﻿content_path,content_reference_locations,actual_file,file_exists,manifest_entry,bytes_match,sha256_match
+audio/characters/char_da_v1.mp3,$.optionCatalog[12].asset | $.characters[2].audio.character,app/src/main/assets/content/v1/audio/characters/char_da_v1.mp3,True,True,True,True
+audio/characters/char_kou_v1.mp3,$.optionCatalog[11].asset | $.characters[1].audio.character,app/src/main/assets/content/v1/audio/characters/char_kou_v1.mp3,True,True,True,True
+audio/characters/char_ren_v1.mp3,$.optionCatalog[10].asset | $.characters[0].audio.character,app/src/main/assets/content/v1/audio/characters/char_ren_v1.mp3,True,True,True,True
+audio/characters/char_shan_v1.mp3,$.optionCatalog[14].asset | $.characters[4].audio.character,app/src/main/assets/content/v1/audio/characters/char_shan_v1.mp3,True,True,True,True
+audio/characters/char_xiao_v1.mp3,$.optionCatalog[13].asset | $.characters[3].audio.character,app/src/main/assets/content/v1/audio/characters/char_xiao_v1.mp3,True,True,True,True
+audio/meanings/meaning_da_v1.mp3,$.characters[2].audio.meaning,app/src/main/assets/content/v1/audio/meanings/meaning_da_v1.mp3,True,True,True,True
+audio/meanings/meaning_kou_v1.mp3,$.characters[1].audio.meaning,app/src/main/assets/content/v1/audio/meanings/meaning_kou_v1.mp3,True,True,True,True
+audio/meanings/meaning_ren_v1.mp3,$.characters[0].audio.meaning,app/src/main/assets/content/v1/audio/meanings/meaning_ren_v1.mp3,True,True,True,True
+audio/meanings/meaning_shan_v1.mp3,$.characters[4].audio.meaning,app/src/main/assets/content/v1/audio/meanings/meaning_shan_v1.mp3,True,True,True,True
+audio/meanings/meaning_xiao_v1.mp3,$.characters[3].audio.meaning,app/src/main/assets/content/v1/audio/meanings/meaning_xiao_v1.mp3,True,True,True,True
+audio/prompts/prompt_choose_picture_v1.mp3,$.characters[0].questionSeeds[1].promptAudio | $.characters[1].questionSeeds[1].promptAudio | $.characters[2].questionSeeds[1].promptAudio | $.characters[3].questionSeeds[1].promptAudio | $.characters[4].questionSeeds[1].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_choose_picture_v1.mp3,True,True,True,True
+audio/prompts/prompt_choose_sound_v1.mp3,$.characters[0].questionSeeds[2].promptAudio | $.characters[1].questionSeeds[2].promptAudio | $.characters[2].questionSeeds[2].promptAudio | $.characters[3].questionSeeds[2].promptAudio | $.characters[4].questionSeeds[2].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_choose_sound_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_da_v1.mp3,$.characters[2].questionSeeds[0].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_da_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_dashan_v1.mp3,$.characters[2].questionSeeds[4].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_dashan_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_kou_v1.mp3,$.characters[1].questionSeeds[0].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_kou_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_ren_v1.mp3,$.characters[0].questionSeeds[0].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_ren_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_same_v1.mp3,$.characters[0].questionSeeds[3].promptAudio | $.characters[1].questionSeeds[3].promptAudio | $.characters[2].questionSeeds[3].promptAudio | $.characters[3].questionSeeds[3].promptAudio | $.characters[4].questionSeeds[3].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_same_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_shan_v1.mp3,$.characters[4].questionSeeds[0].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_shan_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_xiao_v1.mp3,$.characters[3].questionSeeds[0].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_xiao_v1.mp3,True,True,True,True
+audio/prompts/prompt_find_xiaoshan_v1.mp3,$.characters[3].questionSeeds[4].promptAudio,app/src/main/assets/content/v1/audio/prompts/prompt_find_xiaoshan_v1.mp3,True,True,True,True
+audio/sentences/sentence_da_v1.mp3,$.characters[2].sentence.audioAsset,app/src/main/assets/content/v1/audio/sentences/sentence_da_v1.mp3,True,True,True,True
+audio/sentences/sentence_kou_v1.mp3,$.characters[1].sentence.audioAsset,app/src/main/assets/content/v1/audio/sentences/sentence_kou_v1.mp3,True,True,True,True
+audio/sentences/sentence_ren_v1.mp3,$.characters[0].sentence.audioAsset,app/src/main/assets/content/v1/audio/sentences/sentence_ren_v1.mp3,True,True,True,True
+audio/sentences/sentence_shan_v1.mp3,$.characters[4].sentence.audioAsset,app/src/main/assets/content/v1/audio/sentences/sentence_shan_v1.mp3,True,True,True,True
+audio/sentences/sentence_xiao_v1.mp3,$.characters[3].sentence.audioAsset,app/src/main/assets/content/v1/audio/sentences/sentence_xiao_v1.mp3,True,True,True,True
+audio/words/word_dakou_v1.mp3,$.characters[2].words[2].audioAsset,app/src/main/assets/content/v1/audio/words/word_dakou_v1.mp3,True,True,True,True
+audio/words/word_daren_v1.mp3,$.characters[0].words[0].audioAsset | $.characters[2].words[0].audioAsset,app/src/main/assets/content/v1/audio/words/word_daren_v1.mp3,True,True,True,True
+audio/words/word_dashan_v1.mp3,$.characters[2].words[1].audioAsset | $.characters[4].words[0].audioAsset,app/src/main/assets/content/v1/audio/words/word_dashan_v1.mp3,True,True,True,True
+audio/words/word_haoren_v1.mp3,$.characters[0].words[2].audioAsset,app/src/main/assets/content/v1/audio/words/word_haoren_v1.mp3,True,True,True,True
+audio/words/word_jiaren_v1.mp3,$.characters[0].words[1].audioAsset,app/src/main/assets/content/v1/audio/words/word_jiaren_v1.mp3,True,True,True,True
+audio/words/word_kaikou_v1.mp3,$.characters[1].words[0].audioAsset,app/src/main/assets/content/v1/audio/words/word_kaikou_v1.mp3,True,True,True,True
+audio/words/word_menkou_v1.mp3,$.characters[1].words[1].audioAsset,app/src/main/assets/content/v1/audio/words/word_menkou_v1.mp3,True,True,True,True
+audio/words/word_pashan_v1.mp3,$.characters[4].words[2].audioAsset,app/src/main/assets/content/v1/audio/words/word_pashan_v1.mp3,True,True,True,True
+audio/words/word_shanshang_v1.mp3,$.characters[4].words[1].audioAsset,app/src/main/assets/content/v1/audio/words/word_shanshang_v1.mp3,True,True,True,True
+audio/words/word_xiaokou_v1.mp3,$.characters[3].words[2].audioAsset,app/src/main/assets/content/v1/audio/words/word_xiaokou_v1.mp3,True,True,True,True
+audio/words/word_xiaoshan_v1.mp3,$.characters[3].words[1].audioAsset,app/src/main/assets/content/v1/audio/words/word_xiaoshan_v1.mp3,True,True,True,True
+audio/words/word_xiaoshou_v1.mp3,$.characters[3].words[0].audioAsset,app/src/main/assets/content/v1/audio/words/word_xiaoshou_v1.mp3,True,True,True,True
+audio/words/word_yikoushui_v1.mp3,$.characters[1].words[2].audioAsset,app/src/main/assets/content/v1/audio/words/word_yikoushui_v1.mp3,True,True,True,True
+images/characters/char_da_main_v1.webp,$.characters[2].imageAsset,app/src/main/assets/content/v1/images/characters/char_da_main_v1.webp,True,True,True,True
+images/characters/char_kou_main_v1.webp,$.characters[1].imageAsset,app/src/main/assets/content/v1/images/characters/char_kou_main_v1.webp,True,True,True,True
+images/characters/char_ren_main_v1.webp,$.characters[0].imageAsset,app/src/main/assets/content/v1/images/characters/char_ren_main_v1.webp,True,True,True,True
+images/characters/char_shan_main_v1.webp,$.characters[4].imageAsset,app/src/main/assets/content/v1/images/characters/char_shan_main_v1.webp,True,True,True,True
+images/characters/char_xiao_main_v1.webp,$.characters[3].imageAsset,app/src/main/assets/content/v1/images/characters/char_xiao_main_v1.webp,True,True,True,True
+images/options/context_dashan_v1.webp,$.optionCatalog[15].asset,app/src/main/assets/content/v1/images/options/context_dashan_v1.webp,True,True,True,True
+images/options/context_xiaoshan_v1.webp,$.optionCatalog[16].asset,app/src/main/assets/content/v1/images/options/context_xiaoshan_v1.webp,True,True,True,True
+images/options/image_big_watermelon_v1.webp,$.optionCatalog[8].asset,app/src/main/assets/content/v1/images/options/image_big_watermelon_v1.webp,True,True,True,True
+images/options/image_mountain_v1.webp,$.optionCatalog[7].asset,app/src/main/assets/content/v1/images/options/image_mountain_v1.webp,True,True,True,True
+images/options/image_mouth_v1.webp,$.optionCatalog[6].asset,app/src/main/assets/content/v1/images/options/image_mouth_v1.webp,True,True,True,True
+images/options/image_person_v1.webp,$.optionCatalog[5].asset,app/src/main/assets/content/v1/images/options/image_person_v1.webp,True,True,True,True
+images/options/image_small_watermelon_v1.webp,$.optionCatalog[9].asset,app/src/main/assets/content/v1/images/options/image_small_watermelon_v1.webp,True,True,True,True

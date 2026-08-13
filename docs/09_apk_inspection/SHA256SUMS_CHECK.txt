@@ -1,0 +1,14 @@
+﻿app/build/outputs/apk/debug/app-debug.apk: OK
+docs/DEVICE_CHECK.md: OK
+docs/TEST_REPORT.md: OK
+docs/AT01_AT43_MATRIX.md: OK
+docs/08_raw_logs/05_local_quality_after_connected_fixes.log: OK
+docs/08_raw_logs/07_connectedDebugAndroidTest_mate30_long_assertions_fixed.log: OK
+docs/09_apk_inspection/AAPT_PERMISSIONS.txt: OK
+docs/09_apk_inspection/AAPT_MANIFEST_XMLTREE.txt: OK
+docs/09_apk_inspection/APK_CONTENTS.txt: OK
+docs/09_apk_inspection/APK_SHA256.txt: OK
+docs/09_apk_inspection/DEVICE_ADB_DEVICES.txt: OK
+docs/09_apk_inspection/ADB_INSTALL.txt: OK
+docs/09_apk_inspection/ADB_MONKEY_COLD_START.txt: OK
+docs/09_apk_inspection/ADB_WINDOW_FOCUS.txt: OK

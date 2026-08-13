@@ -1,0 +1,5 @@
+﻿
+  mCurrentFocus=Window{eb1ef38 u0 com.family.shizi/com.family.shizi.MainActivity}
+  mFocusedApp=ActivityRecord{14fb4a4 u0 com.family.shizi/.MainActivity t535}
+
+

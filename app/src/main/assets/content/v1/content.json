@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "learningOrder": ["char_ren", "char_kou", "char_da", "char_xiao", "char_shan"],
+  "reviewOffsetsDays": [1, 3, 7, 14, 30, 60],
+  "optionCatalog": [
+    {"id": "text_char_ren", "kind": "TEXT", "characterId": "char_ren", "text": "人"},
+    {"id": "text_char_kou", "kind": "TEXT", "characterId": "char_kou", "text": "口"},
+    {"id": "text_char_da", "kind": "TEXT", "characterId": "char_da", "text": "大"},
+    {"id": "text_char_xiao", "kind": "TEXT", "characterId": "char_xiao", "text": "小"},
+    {"id": "text_char_shan", "kind": "TEXT", "characterId": "char_shan", "text": "山"},
+    {"id": "image_person", "kind": "IMAGE", "characterId": "char_ren", "asset": "images/options/image_person_v1.webp"},
+    {"id": "image_mouth", "kind": "IMAGE", "characterId": "char_kou", "asset": "images/options/image_mouth_v1.webp"},
+    {"id": "image_mountain", "kind": "IMAGE", "characterId": "char_shan", "asset": "images/options/image_mountain_v1.webp"},
+    {"id": "image_big_watermelon", "kind": "IMAGE", "characterId": "char_da", "asset": "images/options/image_big_watermelon_v1.webp"},
+    {"id": "image_small_watermelon", "kind": "IMAGE", "characterId": "char_xiao", "asset": "images/options/image_small_watermelon_v1.webp"},
+    {"id": "audio_char_ren", "kind": "AUDIO", "characterId": "char_ren", "asset": "audio/characters/char_ren_v1.mp3"},
+    {"id": "audio_char_kou", "kind": "AUDIO", "characterId": "char_kou", "asset": "audio/characters/char_kou_v1.mp3"},
+    {"id": "audio_char_da", "kind": "AUDIO", "characterId": "char_da", "asset": "audio/characters/char_da_v1.mp3"},
+    {"id": "audio_char_xiao", "kind": "AUDIO", "characterId": "char_xiao", "asset": "audio/characters/char_xiao_v1.mp3"},
+    {"id": "audio_char_shan", "kind": "AUDIO", "characterId": "char_shan", "asset": "audio/characters/char_shan_v1.mp3"},
+    {"id": "context_dashan", "kind": "CONTEXT", "characterId": "char_da", "text": "大山", "asset": "images/options/context_dashan_v1.webp"},
+    {"id": "context_xiaoshan", "kind": "CONTEXT", "characterId": "char_xiao", "text": "小山", "asset": "images/options/context_xiaoshan_v1.webp"}
+  ],
+  "characters": [
+    {
+      "id": "char_ren",
+      "character": "人",
+      "pinyin": "rén",
+      "toneNumber": 2,
+      "order": 1,
+      "meaningForChild": "像你、爸爸妈妈、老师这样，都是人。",
+      "imageAsset": "images/characters/char_ren_main_v1.webp",
+      "imageAlt": "一名完整站立、自然微笑的儿童",
+      "words": [
+        {"text": "大人", "audioAsset": "audio/words/word_daren_v1.mp3"},
+        {"text": "家人", "audioAsset": "audio/words/word_jiaren_v1.mp3"},
+        {"text": "好人", "audioAsset": "audio/words/word_haoren_v1.mp3"}
+      ],
+      "sentence": {"text": "这里有一个人。", "audioAsset": "audio/sentences/sentence_ren_v1.mp3"},
+      "audio": {
+        "character": "audio/characters/char_ren_v1.mp3",
+        "meaning": "audio/meanings/meaning_ren_v1.mp3"
+      },
+      "teachingPrompt": "这是谁呀？这是一个人。大人和小朋友都是人。",
+      "confusableRestrictions": ["入"],
+      "misconceptions": ["不能让图片暗示只有小朋友才是人"],
+      "questionSeeds": [
+        {
+          "id": "q_ren_listen_char",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_find_ren_v1.mp3",
+          "correctOptionId": "text_char_ren",
+          "optionIds": ["text_char_ren", "text_char_kou", "text_char_shan"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_ren_char_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/prompts/prompt_choose_picture_v1.mp3",
+          "correctOptionId": "image_person",
+          "optionIds": ["image_person", "image_mouth", "image_mountain"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_ren_char_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/prompts/prompt_choose_sound_v1.mp3",
+          "correctOptionId": "audio_char_ren",
+          "optionIds": ["audio_char_ren", "audio_char_kou"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_ren_shape",
+          "type": "SHAPE_RECOGNITION",
+          "promptAudio": "audio/prompts/prompt_find_same_v1.mp3",
+          "correctOptionId": "text_char_ren",
+          "optionIds": ["text_char_ren", "text_char_kou", "text_char_shan"],
+          "minLearnedCount": 2,
+          "evidenceCategory": "SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_kou",
+      "character": "口",
+      "pinyin": "kǒu",
+      "toneNumber": 3,
+      "order": 2,
+      "meaningForChild": "口就是嘴，用来吃东西，也用来说话。",
+      "imageAsset": "images/characters/char_kou_main_v1.webp",
+      "imageAlt": "儿童轻轻张开的嘴",
+      "words": [
+        {"text": "开口", "audioAsset": "audio/words/word_kaikou_v1.mp3"},
+        {"text": "门口", "audioAsset": "audio/words/word_menkou_v1.mp3"},
+        {"text": "一口水", "audioAsset": "audio/words/word_yikoushui_v1.mp3"}
+      ],
+      "sentence": {"text": "我开口说：你好！", "audioAsset": "audio/sentences/sentence_kou_v1.mp3"},
+      "audio": {
+        "character": "audio/characters/char_kou_v1.mp3",
+        "meaning": "audio/meanings/meaning_kou_v1.mp3"
+      },
+      "teachingPrompt": "口就是嘴。我们用口吃东西，也用口说话。",
+      "confusableRestrictions": ["日", "回", "囗"],
+      "misconceptions": ["主要教学义是嘴，不一次讲完所有义项"],
+      "questionSeeds": [
+        {
+          "id": "q_kou_listen_char",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_find_kou_v1.mp3",
+          "correctOptionId": "text_char_kou",
+          "optionIds": ["text_char_kou", "text_char_ren", "text_char_shan"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_kou_char_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/prompts/prompt_choose_picture_v1.mp3",
+          "correctOptionId": "image_mouth",
+          "optionIds": ["image_mouth", "image_person", "image_mountain"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_kou_char_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/prompts/prompt_choose_sound_v1.mp3",
+          "correctOptionId": "audio_char_kou",
+          "optionIds": ["audio_char_kou", "audio_char_ren"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_kou_shape",
+          "type": "SHAPE_RECOGNITION",
+          "promptAudio": "audio/prompts/prompt_find_same_v1.mp3",
+          "correctOptionId": "text_char_kou",
+          "optionIds": ["text_char_kou", "text_char_ren", "text_char_shan"],
+          "minLearnedCount": 2,
+          "evidenceCategory": "SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_da",
+      "character": "大",
+      "pinyin": "dà",
+      "toneNumber": 4,
+      "order": 3,
+      "meaningForChild": "两个同样的东西比一比，占地方更多的那个是大。",
+      "imageAsset": "images/characters/char_da_main_v1.webp",
+      "imageAlt": "两个同类西瓜中较大的一个",
+      "words": [
+        {"text": "大人", "audioAsset": "audio/words/word_daren_v1.mp3"},
+        {"text": "大山", "audioAsset": "audio/words/word_dashan_v1.mp3"},
+        {"text": "大口", "audioAsset": "audio/words/word_dakou_v1.mp3"}
+      ],
+      "sentence": {"text": "这个西瓜真大。", "audioAsset": "audio/sentences/sentence_da_v1.mp3"},
+      "audio": {
+        "character": "audio/characters/char_da_v1.mp3",
+        "meaning": "audio/meanings/meaning_da_v1.mp3"
+      },
+      "teachingPrompt": "两个西瓜比一比，这个占的地方更多，它很大。",
+      "confusableRestrictions": ["太", "天", "犬"],
+      "misconceptions": ["大小必须比较同类物，不把大当作物体名称"],
+      "questionSeeds": [
+        {
+          "id": "q_da_listen_char",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_find_da_v1.mp3",
+          "correctOptionId": "text_char_da",
+          "optionIds": ["text_char_da", "text_char_xiao", "text_char_ren"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_da_char_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/prompts/prompt_choose_picture_v1.mp3",
+          "correctOptionId": "image_big_watermelon",
+          "optionIds": ["image_big_watermelon", "image_small_watermelon"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_da_char_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/prompts/prompt_choose_sound_v1.mp3",
+          "correctOptionId": "audio_char_da",
+          "optionIds": ["audio_char_da", "audio_char_xiao"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_da_shape",
+          "type": "SHAPE_RECOGNITION",
+          "promptAudio": "audio/prompts/prompt_find_same_v1.mp3",
+          "correctOptionId": "text_char_da",
+          "optionIds": ["text_char_da", "text_char_xiao", "text_char_ren"],
+          "minLearnedCount": 2,
+          "evidenceCategory": "SHAPE"
+        },
+        {
+          "id": "q_da_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/prompts/prompt_find_dashan_v1.mp3",
+          "correctOptionId": "context_dashan",
+          "optionIds": ["context_dashan", "context_xiaoshan"],
+          "minLearnedCount": 4,
+          "evidenceCategory": "CONTEXT"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_xiao",
+      "character": "小",
+      "pinyin": "xiǎo",
+      "toneNumber": 3,
+      "order": 4,
+      "meaningForChild": "两个同样的东西比一比，占地方更少的那个是小。",
+      "imageAsset": "images/characters/char_xiao_main_v1.webp",
+      "imageAlt": "两个同类西瓜中较小的一个",
+      "words": [
+        {"text": "小手", "audioAsset": "audio/words/word_xiaoshou_v1.mp3"},
+        {"text": "小山", "audioAsset": "audio/words/word_xiaoshan_v1.mp3"},
+        {"text": "小口", "audioAsset": "audio/words/word_xiaokou_v1.mp3"}
+      ],
+      "sentence": {"text": "这只小猫很小。", "audioAsset": "audio/sentences/sentence_xiao_v1.mp3"},
+      "audio": {
+        "character": "audio/characters/char_xiao_v1.mp3",
+        "meaning": "audio/meanings/meaning_xiao_v1.mp3"
+      },
+      "teachingPrompt": "两个西瓜比一比，这个占的地方更少，它很小。",
+      "confusableRestrictions": ["少"],
+      "misconceptions": ["大小对比必须同一视角，不能用远近制造差异"],
+      "questionSeeds": [
+        {
+          "id": "q_xiao_listen_char",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_find_xiao_v1.mp3",
+          "correctOptionId": "text_char_xiao",
+          "optionIds": ["text_char_xiao", "text_char_da", "text_char_shan"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_xiao_char_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/prompts/prompt_choose_picture_v1.mp3",
+          "correctOptionId": "image_small_watermelon",
+          "optionIds": ["image_small_watermelon", "image_big_watermelon"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_xiao_char_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/prompts/prompt_choose_sound_v1.mp3",
+          "correctOptionId": "audio_char_xiao",
+          "optionIds": ["audio_char_xiao", "audio_char_da"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_xiao_shape",
+          "type": "SHAPE_RECOGNITION",
+          "promptAudio": "audio/prompts/prompt_find_same_v1.mp3",
+          "correctOptionId": "text_char_xiao",
+          "optionIds": ["text_char_xiao", "text_char_da", "text_char_shan"],
+          "minLearnedCount": 2,
+          "evidenceCategory": "SHAPE"
+        },
+        {
+          "id": "q_xiao_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/prompts/prompt_find_xiaoshan_v1.mp3",
+          "correctOptionId": "context_xiaoshan",
+          "optionIds": ["context_xiaoshan", "context_dashan"],
+          "minLearnedCount": 4,
+          "evidenceCategory": "CONTEXT"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_shan",
+      "character": "山",
+      "pinyin": "shān",
+      "toneNumber": 1,
+      "order": 5,
+      "meaningForChild": "山是地面上高高隆起的地方，常常有石头、树和山坡。",
+      "imageAsset": "images/characters/char_shan_main_v1.webp",
+      "imageAlt": "轮廓清晰、带山坡和少量树的自然山峰",
+      "words": [
+        {"text": "大山", "audioAsset": "audio/words/word_dashan_v1.mp3"},
+        {"text": "山上", "audioAsset": "audio/words/word_shanshang_v1.mp3"},
+        {"text": "爬山", "audioAsset": "audio/words/word_pashan_v1.mp3"}
+      ],
+      "sentence": {"text": "远处有一座山。", "audioAsset": "audio/sentences/sentence_shan_v1.mp3"},
+      "audio": {
+        "character": "audio/characters/char_shan_v1.mp3",
+        "meaning": "audio/meanings/meaning_shan_v1.mp3"
+      },
+      "teachingPrompt": "看，远处高高隆起的地方是一座山。",
+      "confusableRestrictions": ["出"],
+      "misconceptions": ["不能把屋顶、三角形或小土堆都解释成山"],
+      "questionSeeds": [
+        {
+          "id": "q_shan_listen_char",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_find_shan_v1.mp3",
+          "correctOptionId": "text_char_shan",
+          "optionIds": ["text_char_shan", "text_char_kou", "text_char_ren"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_shan_char_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/prompts/prompt_choose_picture_v1.mp3",
+          "correctOptionId": "image_mountain",
+          "optionIds": ["image_mountain", "image_person", "image_mouth"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_shan_char_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/prompts/prompt_choose_sound_v1.mp3",
+          "correctOptionId": "audio_char_shan",
+          "optionIds": ["audio_char_shan", "audio_char_kou"],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_shan_shape",
+          "type": "SHAPE_RECOGNITION",
+          "promptAudio": "audio/prompts/prompt_find_same_v1.mp3",
+          "correctOptionId": "text_char_shan",
+          "optionIds": ["text_char_shan", "text_char_kou", "text_char_ren"],
+          "minLearnedCount": 2,
+          "evidenceCategory": "SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,691 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "31eb7d047b4b575bae2c9aaeedb94581",
+    "entities": [
+      {
+        "tableName": "character_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`characterId` TEXT NOT NULL, `state` TEXT NOT NULL, `firstStartedAt` INTEGER, `firstLearnDate` TEXT, `initialTeachingStep` TEXT NOT NULL, `initialLessonCompleted` INTEGER NOT NULL, `reviewStage` TEXT NOT NULL, `nextReviewDate` TEXT, `appDelayedCheckStatus` TEXT NOT NULL, `appDelayedCheckAt` INTEGER, `currentOralStatus` TEXT NOT NULL, `currentOralCheckAt` INTEGER, `temporaryQualifiedAt` INTEGER, `stableQualifiedAt` INTEGER, `temporaryRollbackAt` INTEGER, `stableRollbackAt` INTEGER, `isErrorProne` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`characterId`))",
+        "fields": [
+          {
+            "fieldPath": "characterId",
+            "columnName": "characterId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstStartedAt",
+            "columnName": "firstStartedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "firstLearnDate",
+            "columnName": "firstLearnDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "initialTeachingStep",
+            "columnName": "initialTeachingStep",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "initialLessonCompleted",
+            "columnName": "initialLessonCompleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reviewStage",
+            "columnName": "reviewStage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nextReviewDate",
+            "columnName": "nextReviewDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "appDelayedCheckStatus",
+            "columnName": "appDelayedCheckStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "appDelayedCheckAt",
+            "columnName": "appDelayedCheckAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "currentOralStatus",
+            "columnName": "currentOralStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentOralCheckAt",
+            "columnName": "currentOralCheckAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "temporaryQualifiedAt",
+            "columnName": "temporaryQualifiedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "stableQualifiedAt",
+            "columnName": "stableQualifiedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "temporaryRollbackAt",
+            "columnName": "temporaryRollbackAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "stableRollbackAt",
+            "columnName": "stableRollbackAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isErrorProne",
+            "columnName": "isErrorProne",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "characterId"
+          ]
+        }
+      },
+      {
+        "tableName": "learning_session",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `localDate` TEXT NOT NULL, `status` TEXT NOT NULL, `startedAt` INTEGER, `completedAt` INTEGER, `currentItemIndex` INTEGER NOT NULL, `currentQuestionInstanceId` TEXT, `plannedNewCount` INTEGER NOT NULL, `plannedReviewCount` INTEGER NOT NULL, `limitMinutesSnapshot` INTEGER NOT NULL, `contentVersion` TEXT NOT NULL, `activeElapsedMs` INTEGER NOT NULL, `activeSegmentStartedAt` INTEGER, `pauseReason` TEXT, `endPendingReason` TEXT, `earlyEndReason` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localDate",
+            "columnName": "localDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startedAt",
+            "columnName": "startedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "currentItemIndex",
+            "columnName": "currentItemIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentQuestionInstanceId",
+            "columnName": "currentQuestionInstanceId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "plannedNewCount",
+            "columnName": "plannedNewCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plannedReviewCount",
+            "columnName": "plannedReviewCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limitMinutesSnapshot",
+            "columnName": "limitMinutesSnapshot",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentVersion",
+            "columnName": "contentVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeElapsedMs",
+            "columnName": "activeElapsedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeSegmentStartedAt",
+            "columnName": "activeSegmentStartedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "pauseReason",
+            "columnName": "pauseReason",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "endPendingReason",
+            "columnName": "endPendingReason",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "earlyEndReason",
+            "columnName": "earlyEndReason",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_learning_session_localDate_status",
+            "unique": false,
+            "columnNames": [
+              "localDate",
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_learning_session_localDate_status` ON `${TABLE_NAME}` (`localDate`, `status`)"
+          }
+        ]
+      },
+      {
+        "tableName": "session_item",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `sessionId` TEXT NOT NULL, `characterId` TEXT NOT NULL, `kind` TEXT NOT NULL, `sequence` INTEGER NOT NULL, `status` TEXT NOT NULL, `reviewStageAtStart` TEXT NOT NULL, `dueCheckPassed` INTEGER, `completedAt` INTEGER, `completedLocalDate` TEXT, PRIMARY KEY(`id`), FOREIGN KEY(`sessionId`) REFERENCES `learning_session`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionId",
+            "columnName": "sessionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characterId",
+            "columnName": "characterId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sequence",
+            "columnName": "sequence",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reviewStageAtStart",
+            "columnName": "reviewStageAtStart",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dueCheckPassed",
+            "columnName": "dueCheckPassed",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "completedLocalDate",
+            "columnName": "completedLocalDate",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_session_item_sessionId",
+            "unique": false,
+            "columnNames": [
+              "sessionId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_session_item_sessionId` ON `${TABLE_NAME}` (`sessionId`)"
+          },
+          {
+            "name": "index_session_item_characterId_kind_completedLocalDate_completedAt",
+            "unique": false,
+            "columnNames": [
+              "characterId",
+              "kind",
+              "completedLocalDate",
+              "completedAt"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_session_item_characterId_kind_completedLocalDate_completedAt` ON `${TABLE_NAME}` (`characterId`, `kind`, `completedLocalDate`, `completedAt`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "learning_session",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sessionId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "question_instance",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `sessionItemId` TEXT NOT NULL, `questionSeedId` TEXT NOT NULL, `questionType` TEXT NOT NULL, `evidenceCategory` TEXT NOT NULL, `optionIdsJson` TEXT NOT NULL, `correctOptionId` TEXT NOT NULL, `status` TEXT NOT NULL, `selectedOptionId` TEXT, `finalOutcome` TEXT, `purpose` TEXT NOT NULL, `isMilestoneQuestion` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`sessionItemId`) REFERENCES `session_item`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionItemId",
+            "columnName": "sessionItemId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionSeedId",
+            "columnName": "questionSeedId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionType",
+            "columnName": "questionType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "evidenceCategory",
+            "columnName": "evidenceCategory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "optionIdsJson",
+            "columnName": "optionIdsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctOptionId",
+            "columnName": "correctOptionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedOptionId",
+            "columnName": "selectedOptionId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "finalOutcome",
+            "columnName": "finalOutcome",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "purpose",
+            "columnName": "purpose",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isMilestoneQuestion",
+            "columnName": "isMilestoneQuestion",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_question_instance_sessionItemId",
+            "unique": false,
+            "columnNames": [
+              "sessionItemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_question_instance_sessionItemId` ON `${TABLE_NAME}` (`sessionItemId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "session_item",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sessionItemId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "practice_attempt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `questionInstanceId` TEXT NOT NULL, `characterId` TEXT NOT NULL, `attemptNumber` INTEGER NOT NULL, `selectedOptionId` TEXT NOT NULL, `isCorrect` INTEGER NOT NULL, `hintLevel` TEXT NOT NULL, `independentCorrect` INTEGER NOT NULL, `isAccidental` INTEGER NOT NULL, `answeredAt` INTEGER NOT NULL, `localDate` TEXT NOT NULL, `responseTimeMs` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`questionInstanceId`) REFERENCES `question_instance`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionInstanceId",
+            "columnName": "questionInstanceId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characterId",
+            "columnName": "characterId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attemptNumber",
+            "columnName": "attemptNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedOptionId",
+            "columnName": "selectedOptionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCorrect",
+            "columnName": "isCorrect",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hintLevel",
+            "columnName": "hintLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "independentCorrect",
+            "columnName": "independentCorrect",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isAccidental",
+            "columnName": "isAccidental",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "answeredAt",
+            "columnName": "answeredAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localDate",
+            "columnName": "localDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "responseTimeMs",
+            "columnName": "responseTimeMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_practice_attempt_questionInstanceId",
+            "unique": false,
+            "columnNames": [
+              "questionInstanceId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_practice_attempt_questionInstanceId` ON `${TABLE_NAME}` (`questionInstanceId`)"
+          },
+          {
+            "name": "index_practice_attempt_questionInstanceId_attemptNumber",
+            "unique": true,
+            "columnNames": [
+              "questionInstanceId",
+              "attemptNumber"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_practice_attempt_questionInstanceId_attemptNumber` ON `${TABLE_NAME}` (`questionInstanceId`, `attemptNumber`)"
+          },
+          {
+            "name": "index_practice_attempt_characterId_localDate",
+            "unique": false,
+            "columnNames": [
+              "characterId",
+              "localDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_practice_attempt_characterId_localDate` ON `${TABLE_NAME}` (`characterId`, `localDate`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "question_instance",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "questionInstanceId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "oral_check",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `characterId` TEXT NOT NULL, `result` TEXT NOT NULL, `checkedAt` INTEGER NOT NULL, `localDate` TEXT NOT NULL, `eligibleForStable` INTEGER NOT NULL, `revisionOf` TEXT, `isSuperseded` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characterId",
+            "columnName": "characterId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "result",
+            "columnName": "result",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "checkedAt",
+            "columnName": "checkedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localDate",
+            "columnName": "localDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eligibleForStable",
+            "columnName": "eligibleForStable",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisionOf",
+            "columnName": "revisionOf",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "isSuperseded",
+            "columnName": "isSuperseded",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_oral_check_characterId",
+            "unique": false,
+            "columnNames": [
+              "characterId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_oral_check_characterId` ON `${TABLE_NAME}` (`characterId`)"
+          },
+          {
+            "name": "index_oral_check_revisionOf",
+            "unique": false,
+            "columnNames": [
+              "revisionOf"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_oral_check_revisionOf` ON `${TABLE_NAME}` (`revisionOf`)"
+          }
+        ]
+      },
+      {
+        "tableName": "app_error_log",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `code` TEXT NOT NULL, `occurredAt` INTEGER NOT NULL, `context` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "occurredAt",
+            "columnName": "occurredAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "context",
+            "columnName": "context",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '31eb7d047b4b575bae2c9aaeedb94581')"
+    ]
+  }
+}
