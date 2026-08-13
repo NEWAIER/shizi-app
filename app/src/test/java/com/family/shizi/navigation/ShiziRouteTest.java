@@ -12,15 +12,16 @@ import org.junit.Test;
 
 public class ShiziRouteTest {
     @Test
-    public void fiveRoutesAreUniqueAndHomeStartsNavigation() {
+    public void routesAreUniqueAndHomeStartsNavigation() {
         List<String> routes = Arrays.stream(ShiziRoute.values())
                 .map(ShiziRoute::getRoute)
                 .collect(Collectors.toList());
         Set<String> uniqueRoutes = new HashSet<>(routes);
 
-        assertEquals(5, routes.size());
-        assertEquals(5, uniqueRoutes.size());
+        assertEquals(8, routes.size());
+        assertEquals(8, uniqueRoutes.size());
         assertEquals("home", ShiziRoute.Companion.getStartDestination());
-        assertTrue(routes.containsAll(Arrays.asList("home", "learn", "practice", "result", "parent")));
+        assertTrue(routes.containsAll(Arrays.asList(
+                "home", "learn", "practice", "result", "parent", "stage_test", "learned", "profile")));
     }
 }

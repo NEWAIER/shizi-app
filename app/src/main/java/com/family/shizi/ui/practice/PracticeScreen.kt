@@ -516,8 +516,8 @@ private fun ShapeRecognitionQuestion(
             style = MaterialTheme.typography.displayLarge,
             modifier = Modifier.padding(16.dp).testTag("practice_target_character"),
         )
-        Text("找出和这个字形状匹配的图片", style = MaterialTheme.typography.bodySmall)
-        ImageOptionGrid(options, teachingCorrectId, disabled, onSubmit)
+        Text("找出和这个字一样的汉字", style = MaterialTheme.typography.bodySmall)
+        TextOptionGrid(options, teachingCorrectId, disabled, onSubmit)
     }
 }
 
@@ -623,6 +623,44 @@ private fun TextOptionList(
             if (isCorrect) {
                 Text("正确答案", style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(bottom = 4.dp))
             }
+        }
+    }
+}
+
+/** Large 2×2 text cards used by SHAPE_RECOGNITION. Text options must never be sent to ImageOptionGrid. */
+@Composable
+fun TextOptionGrid(
+    options: List<OptionContent>,
+    teachingCorrectId: String?,
+    disabled: Boolean,
+    onSubmit: (String) -> Unit,
+) {
+    options.chunked(2).forEach { row ->
+        Row(modifier = Modifier.fillMaxWidth().padding(top = 12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            row.forEach { option ->
+                val isCorrect = teachingCorrectId == option.id
+                Card(
+                    modifier = Modifier
+                        .weight(1f)
+                        .aspectRatio(1f)
+                        .testTag("practice_text_option_${option.id}")
+                        .pointerInput(option.id) {
+                            detectTapGestures(onTap = {
+                                if (!disabled && teachingCorrectId == null) onSubmit(option.id)
+                            })
+                        },
+                    shape = RoundedCornerShape(22.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = if (isCorrect) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant,
+                    ),
+                ) {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(option.text.orEmpty(), style = MaterialTheme.typography.displayMedium)
+                        if (isCorrect) Text("答对啦！", modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 10.dp))
+                    }
+                }
+            }
+            if (row.size == 1) Spacer(Modifier.weight(1f))
         }
     }
 }

@@ -12,7 +12,10 @@ plugins {
 // checkout has the same module name (`app`), and the old shared directory caused
 // Windows file locks on R.jar and misleading downstream Java errors.
 val buildIdentity = Integer.toHexString(projectDir.absolutePath.lowercase().hashCode())
-val asciiBuildDir = File(System.getenv("TEMP") ?: "C:\\tmp", "shizi-build-${project.name}-$buildIdentity")
+val portableTempDir = System.getenv("TEMP")
+    ?.takeIf { it.isNotBlank() }
+    ?: System.getProperty("java.io.tmpdir")
+val asciiBuildDir = File(portableTempDir, "shizi-build-${project.name}-$buildIdentity")
 layout.buildDirectory.set(asciiBuildDir)
 
 android {

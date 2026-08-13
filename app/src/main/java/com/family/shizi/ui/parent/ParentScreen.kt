@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import com.family.shizi.ShiziApplication
 import com.family.shizi.data.db.OralCheckEntity
 import com.family.shizi.data.db.OralStatus
+import com.family.shizi.data.content.ContentLoader
 import com.family.shizi.data.repository.ShiziRepository
 import com.family.shizi.navigation.ShiziRoute
 import java.time.Instant
@@ -57,6 +58,7 @@ fun ParentScreen(
 ) {
     val context = LocalContext.current
     val app = context.applicationContext as ShiziApplication
+    val content = remember { ContentLoader.load(context) }
     val repo = app.repository
     val scope = rememberCoroutineScope()
     var selectedTab by remember { mutableStateOf(ParentTab.Report) }
@@ -76,9 +78,11 @@ fun ParentScreen(
             oralHistories = emptyMap()
             return
         }
-        reportLines = repo.buildParentReports().map { it.asLine() }
+        reportLines = repo.buildParentReports().map { report ->
+            report.asLine().replace(report.characterId, characterLabel(content, report.characterId))
+        }
             .ifEmpty { listOf("还没有学习记录") }
-        val ids = reportLines.mapNotNull { it.substringBefore(" | ").takeIf { id -> id.startsWith("char_") } }
+        val ids = repo.buildParentReports().map { it.characterId }
         oralHistories = ids.associateWith { repo.getOralHistory(it) }
     }
 
@@ -142,8 +146,9 @@ fun ParentScreen(
                 ParentTab.Report -> ParentReport(reportLines)
                 ParentTab.ErrorProne -> ParentErrorProne(reportLines)
                 ParentTab.Oral -> ParentOralChecks(
-                    characterIds = reportLines.mapNotNull { it.substringBefore(" | ").takeIf { id -> id.startsWith("char_") } },
+                    characterIds = oralHistories.keys.sorted(),
                     oralHistories = oralHistories,
+                    characterLabels = content.characters.associate { it.id to "${it.character}（${it.pinyin}）" },
                     onRecord = { characterId, result, revisionOf ->
                         scope.launch {
                             repo?.appendOralCheck(
@@ -316,6 +321,7 @@ private fun ParentErrorProne(lines: List<String>) {
 private fun ParentOralChecks(
     characterIds: List<String>,
     oralHistories: Map<String, List<OralCheckEntity>>,
+    characterLabels: Map<String, String>,
     onRecord: (String, OralStatus, String?) -> Unit,
 ) {
     LazyColumn(
@@ -330,7 +336,7 @@ private fun ParentOralChecks(
                 Text(characterId)
             } else {
                 Column(modifier = Modifier.fillMaxWidth()) {
-                    Text(characterId, style = MaterialTheme.typography.titleSmall)
+                    Text(characterLabels[characterId] ?: "已学字", style = MaterialTheme.typography.titleSmall)
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         Button(onClick = { onRecord(characterId, OralStatus.INDEPENDENT_PASS, null) }, modifier = Modifier.weight(1f)) {
                             Text("独立读出")
@@ -375,6 +381,9 @@ private fun ParentOralChecks(
         }
     }
 }
+
+private fun characterLabel(content: com.family.shizi.data.content.ContentPackage, id: String): String =
+    content.characters.firstOrNull { it.id == id }?.let { "${it.character}（${it.pinyin}）" } ?: "已学字"
 
 @Composable
 private fun ParentSettings(

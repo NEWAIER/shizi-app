@@ -35,36 +35,21 @@ abstract class ShiziDatabase : RoomDatabase() {
         @Volatile private var instance: ShiziDatabase? = null
 
         /**
-         * Opens the database with a fallback strategy:
-         * 1) Try normal open.
-         * 2) On corruption/failure, delete the DB file and rebuild.
-         * 3) If even rebuild fails, return null so the app can enter parent-recovery state.
+         * Opens the existing database without destructive fallback. A failed open must preserve
+         * the original files for diagnosis and an explicitly parent-confirmed recovery action.
          */
-        fun getInstance(context: Context): ShiziDatabase? {
+        fun getInstance(
+            context: Context,
+            databaseName: String = DATABASE_NAME,
+            opener: (Context) -> ShiziDatabase = { appContext ->
+                Room.databaseBuilder(appContext, ShiziDatabase::class.java, databaseName).build()
+            },
+        ): ShiziDatabase? {
             instance?.let { return it }
             synchronized(this) {
                 instance?.let { return it }
                 val appContext = context.applicationContext
-                return try {
-                    Room.databaseBuilder(
-                        appContext,
-                        ShiziDatabase::class.java,
-                        DATABASE_NAME,
-                    ).build().also { instance = it }
-                } catch (t: Throwable) {
-                    // Attempt destructive fallback: delete corrupted DB and rebuild
-                    try {
-                        appContext.deleteDatabase(DATABASE_NAME)
-                        Room.databaseBuilder(
-                            appContext,
-                            ShiziDatabase::class.java,
-                            DATABASE_NAME,
-                        ).build().also { instance = it }
-                    } catch (t2: Throwable) {
-                        // Even rebuild failed — app must not crash; return null
-                        null
-                    }
-                }
+                return runCatching { opener(appContext).also { instance = it } }.getOrNull()
             }
         }
 

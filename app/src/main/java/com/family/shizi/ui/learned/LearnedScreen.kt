@@ -41,7 +41,6 @@ import java.time.LocalDate
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.launch
 
 data class LearnedUiState(val loading: Boolean = true, val characters: List<CharacterProgressEntity> = emptyList())
 
@@ -106,7 +105,7 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
 }
 
 @Composable
-private fun LearnedCharacterCard(
+fun LearnedCharacterCard(
     progress: CharacterProgressEntity,
     character: CharacterContent?,
     onPlay: (CharacterContent) -> Unit,
@@ -120,7 +119,11 @@ private fun LearnedCharacterCard(
     } ?: "继续巩固，会记得更牢"
     Card(modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(18.dp)) {
-            Text(progress.characterId, style = MaterialTheme.typography.displaySmall)
+            Text(
+                childCharacterTitle(character),
+                style = MaterialTheme.typography.displaySmall,
+                modifier = Modifier.testTag("learned_character_title"),
+            )
             Text(stateName(progress.state), modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.titleMedium)
             character?.let {
                 Text("${it.pinyin} · ${it.meaningForChild}", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
@@ -136,6 +139,8 @@ private fun LearnedCharacterCard(
         }
     }
 }
+
+fun childCharacterTitle(character: CharacterContent?): String = character?.character ?: "已学字"
 
 private fun stateName(state: LearningState): String = when (state) {
     LearningState.FIRST_LEARNING -> "正在认识"

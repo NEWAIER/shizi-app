@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun DatabaseRecoveryScreen() {
+fun DatabaseRecoveryScreen() {
     Scaffold { innerPadding ->
         Column(
             modifier = Modifier
@@ -80,16 +80,15 @@ private fun DatabaseRecoveryScreen() {
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(top = 8.dp),
             )
-            // Note: actual clear action requires repository which is null here.
-            // In a real scenario, the user would need to reinstall or use system settings.
             Button(
-                onClick = { /* No-op: recovery requires external intervention when DB is completely broken */ },
+                // A broken database is deliberately never deleted from this screen. Recovery is
+                // routed to the adult-gated parent flow after diagnostics are preserved.
+                onClick = { },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 24.dp)
                     .testTag("db_recovery_clear"),
-            ) {
-                Text("请在系统设置中清除应用数据")
+            ) { Text("请联系家长处理")
             }
         }
     }
