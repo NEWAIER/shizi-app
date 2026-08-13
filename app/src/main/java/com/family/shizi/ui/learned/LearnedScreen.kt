@@ -91,7 +91,7 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
                         onPlay = { character -> player.play(character.audio.character) },
                     )
                 }
-                if (learned.size >= 3) {
+                if (learned.size >= content.course.stageTestThreshold) {
                     item {
                         Button(
                             onClick = { onNavigate(ShiziRoute.StageTest) },

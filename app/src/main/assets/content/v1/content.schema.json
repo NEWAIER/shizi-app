@@ -8,10 +8,10 @@
   "properties": {
     "schemaVersion": {"const": 1},
     "contentVersion": {"type": "string", "minLength": 1},
+    "course": {"$ref": "#/$defs/courseConfig"},
     "learningOrder": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
+      "minItems": 1,
       "uniqueItems": true,
       "items": {"$ref": "#/$defs/nonEmptyString"}
     },
@@ -28,8 +28,7 @@
     },
     "characters": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
+      "minItems": 1,
       "items": {"$ref": "#/$defs/characterContent"}
     }
   },
@@ -90,6 +89,36 @@
         "meaning": {"$ref": "#/$defs/audioPath"}
       }
     },
+    "readingContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pinyin", "toneNumber"],
+      "properties": {
+        "pinyin": {"$ref": "#/$defs/nonEmptyString"},
+        "toneNumber": {"type": "integer", "minimum": 1, "maximum": 4},
+        "audioAsset": {"$ref": "#/$defs/audioPath"}
+      }
+    },
+    "badgeMilestone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "learnedCount", "title", "detail"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nonEmptyString"},
+        "learnedCount": {"type": "integer", "minimum": 1},
+        "title": {"$ref": "#/$defs/nonEmptyString"},
+        "detail": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "courseConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stageTestThreshold", "badgeMilestones"],
+      "properties": {
+        "stageTestThreshold": {"type": "integer", "minimum": 1},
+        "badgeMilestones": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/badgeMilestone"}}
+      }
+    },
     "questionSeed": {
       "type": "object",
       "additionalProperties": false,
@@ -104,7 +133,7 @@
           "minItems": 1,
           "items": {"$ref": "#/$defs/nonEmptyString"}
         },
-        "minLearnedCount": {"type": "integer", "minimum": 0, "maximum": 5},
+        "minLearnedCount": {"type": "integer", "minimum": 0},
         "evidenceCategory": {"enum": ["SHAPE_TO_MEANING", "SOUND_TO_SHAPE", "SHAPE_TO_SOUND", "SHAPE", "CONTEXT"]}
       }
     },
@@ -128,7 +157,8 @@
         "character": {"$ref": "#/$defs/nonEmptyString"},
         "pinyin": {"$ref": "#/$defs/nonEmptyString"},
         "toneNumber": {"type": "integer", "minimum": 1, "maximum": 4},
-        "order": {"type": "integer", "minimum": 1, "maximum": 5},
+        "readings": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/readingContent"}},
+        "order": {"type": "integer", "minimum": 1},
         "meaningForChild": {"$ref": "#/$defs/nonEmptyString"},
         "imageAsset": {"$ref": "#/$defs/imagePath"},
         "imageAlt": {"$ref": "#/$defs/nonEmptyString"},

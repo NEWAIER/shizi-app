@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import com.family.shizi.ShiziApplication
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.data.content.ContentLoader
+import com.family.shizi.data.content.ContentRepository
 import com.family.shizi.data.content.OptionContent
 import com.family.shizi.data.content.OptionKind
 import com.family.shizi.data.content.QuestionType
@@ -557,12 +558,13 @@ private fun ImageOptionGrid(
     onSubmit: (String) -> Unit,
 ) {
     val context = LocalContext.current
+    val assetRoot = remember { ContentRepository.get(context).active().descriptor.assetRoot }
     options.chunked(2).forEach { row ->
         Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             row.forEach { option ->
-                val bitmap = remember(option.asset) {
+                val bitmap = remember(option.asset, assetRoot) {
                     option.asset?.takeIf { it.endsWith(".webp") }?.let { asset ->
-                        context.assets.open("content/v1/$asset").use { BitmapFactory.decodeStream(it) }
+                        context.assets.open("${assetRoot.trimEnd('/')}/$asset").use { BitmapFactory.decodeStream(it) }
                     }
                 }
                 val isCorrect = teachingCorrectId == option.id

@@ -5,6 +5,7 @@ import com.family.shizi.BuildConfig
 import com.family.shizi.data.content.AndroidAssetByteSource
 import com.family.shizi.data.content.AssetManifestLoader
 import com.family.shizi.data.content.ContentLoader
+import com.family.shizi.data.content.ContentRepository
 import com.family.shizi.data.content.ContentValidator
 import com.family.shizi.data.content.G2ResourceValidator
 import com.family.shizi.data.db.ShiziDatabase
@@ -105,8 +106,9 @@ class DiagnosticsExporter(private val database: ShiziDatabase) {
         val apkHash = computeApkSha256(context)
 
         // Manifest version from manifest asset if available
+        val manifestPath = ContentRepository.get(context).active().descriptor.manifestPath
         val manifestVersion = runCatching {
-            context.assets.open("content/v1/manifest.json").use { input ->
+            context.assets.open(manifestPath).use { input ->
                 val text = input.bufferedReader().readText()
                 val versionMatch = Regex(""""version"\s*:\s*"([^"]+)""").find(text)
                 versionMatch?.groupValues?.get(1) ?: settings.contentVersion
@@ -188,7 +190,8 @@ class DiagnosticsExporter(private val database: ShiziDatabase) {
             }
 
             val manifestHash = computeManifestHash(context)
-            val manifestJson = context.assets.open("content/v1/manifest.json").use { it.readBytes() }
+            val manifestPath = ContentRepository.get(context).active().descriptor.manifestPath
+            val manifestJson = context.assets.open(manifestPath).use { it.readBytes() }
             val expectedManifestHash = manifest.resources.firstOrNull { it.path == "manifest.json" }?.sha256
             val manifestHashOk = expectedManifestHash == null || manifestHash == expectedManifestHash
 
@@ -218,7 +221,8 @@ class DiagnosticsExporter(private val database: ShiziDatabase) {
 
     private fun computeManifestHash(context: Context): String {
         return try {
-            context.assets.open("content/v1/manifest.json").use { input ->
+            val manifestPath = ContentRepository.get(context).active().descriptor.manifestPath
+            context.assets.open(manifestPath).use { input ->
                 val digest = MessageDigest.getInstance("SHA-256")
                 val buffer = ByteArray(8192)
                 var read: Int

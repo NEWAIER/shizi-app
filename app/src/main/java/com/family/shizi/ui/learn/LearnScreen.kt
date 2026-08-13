@@ -48,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import com.family.shizi.ShiziApplication
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.data.content.ContentLoader
+import com.family.shizi.data.content.ContentRepository
 import com.family.shizi.data.db.EarlyEndReason
 import com.family.shizi.data.db.InitialTeachingStep
 import com.family.shizi.data.db.ItemKind
@@ -132,8 +133,9 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
 
     val character = content.characters.firstOrNull { it.id == characterId }
-    val bitmap = remember(character?.imageAsset) {
-        character?.imageAsset?.let { asset -> context.assets.open("content/v1/$asset").use(BitmapFactory::decodeStream) }
+    val assetRoot = remember { ContentRepository.get(context).active().descriptor.assetRoot }
+    val bitmap = remember(character?.imageAsset, assetRoot) {
+        character?.imageAsset?.let { asset -> context.assets.open("${assetRoot.trimEnd('/')}/$asset").use(BitmapFactory::decodeStream) }
     }
     val display = learningDisplay(character, step)
 

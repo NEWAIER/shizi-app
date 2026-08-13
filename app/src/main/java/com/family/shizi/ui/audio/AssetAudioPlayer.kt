@@ -12,6 +12,7 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
+import com.family.shizi.data.content.ContentRepository
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicLong
 
@@ -27,6 +28,7 @@ class AssetAudioPlayer(
     private val onError: (AudioPlayerError) -> Unit = {},
 ) {
     private val appContext = context.applicationContext
+    private val assetRoot by lazy { ContentRepository.get(appContext).active().descriptor.assetRoot.trimEnd('/') }
     private val handler = Handler(Looper.getMainLooper())
     private val tokenCounter = AtomicLong(0L)
     private val permanentlyReleased = AtomicBoolean(false)
@@ -131,7 +133,7 @@ class AssetAudioPlayer(
                 exoPlayer.stop()
                 exoPlayer.clearMediaItems()
                 exoPlayer.setMediaItems(
-                    assetPaths.map { MediaItem.fromUri("asset:///content/v1/$it") },
+                    assetPaths.map { MediaItem.fromUri("asset:///$assetRoot/$it") },
                 )
                 exoPlayer.prepare()
                 exoPlayer.play()
@@ -191,7 +193,7 @@ class AssetAudioPlayer(
 
     private fun assetCanBeOpened(assetPath: String): Boolean =
         runCatching {
-            appContext.assets.openFd("content/v1/$assetPath").use { descriptor ->
+            appContext.assets.openFd("$assetRoot/$assetPath").use { descriptor ->
                 descriptor.length >= 0L
             }
         }.getOrDefault(false)

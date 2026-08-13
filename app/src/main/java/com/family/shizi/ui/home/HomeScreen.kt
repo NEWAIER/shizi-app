@@ -77,7 +77,7 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
             DailyTaskCard(
                 icon = "🏆",
                 title = "阶段测试",
-                detail = if (state.canTakeStageTest) "只考认识过的字" else "认识 3 个字后开启",
+                detail = if (state.canTakeStageTest) "只考认识过的字" else "认识 ${state.stageTestThreshold} 个字后开启",
                 action = if (state.canTakeStageTest) "去测试" else "继续学习",
                 enabled = state.canTakeStageTest,
                 tag = "home_stage_test_task",

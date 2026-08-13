@@ -26,6 +26,7 @@ data class HomeUiState(
     val learnedCount: Int = 0,
     val dueReviewCount: Int = 0,
     val dailyNewTarget: Int = 3,
+    val stageTestThreshold: Int = 3,
     val canTakeStageTest: Boolean = false,
     val error: String? = null,
 )
@@ -82,7 +83,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     learnedCount = learnedCount,
                     dueReviewCount = dueReviewCount,
                     dailyNewTarget = settings.dailyNewCharacterCount,
-                    canTakeStageTest = learnedCount >= 3,
+                    stageTestThreshold = content.course.stageTestThreshold,
+                    canTakeStageTest = learnedCount >= content.course.stageTestThreshold,
                 )
                 val existing = repo.getUsableSession(today)
                 _uiState.value = when {

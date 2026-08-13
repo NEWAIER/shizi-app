@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://family.local/schemas/shizi-pack-v2.schema.json",
+  "title": "Shizi pack V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["packId", "version", "contentPath", "manifestPath", "assetRoot"],
+  "properties": {
+    "$schema": {"type": "string", "minLength": 1},
+    "packId": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "contentPath": {"type": "string", "pattern": "^content/.+\\.json$"},
+    "manifestPath": {"type": "string", "pattern": "^content/.+\\.json$"},
+    "assetRoot": {"type": "string", "pattern": "^content/.+$"},
+    "legacyCompatibleVersions": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  }
+}

@@ -5,7 +5,7 @@ import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 
 object ContentLoader {
-    const val CONTENT_ASSET_PATH = "content/v1/content.json"
+    const val CONTENT_ASSET_PATH = "content/v1/content.json" // Legacy compatibility only.
     const val SCHEMA_ASSET_PATH = "content/v1/content.schema.json"
 
     private val strictJson = Json {
@@ -28,8 +28,5 @@ object ContentLoader {
         )
     }
 
-    fun load(context: Context): ContentPackage =
-        context.assets.open(CONTENT_ASSET_PATH).bufferedReader(Charsets.UTF_8).use {
-            decode(it.readText())
-        }
+    fun load(context: Context): ContentPackage = ContentRepository.get(context).active().content
 }

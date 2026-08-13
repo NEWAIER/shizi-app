@@ -32,6 +32,7 @@ object ContentValidator {
         checkUnique(content.characters.flatMap { it.questionSeeds }.map { it.id }, "$.questionSeeds.id", ::error)
 
         val characterIds = content.characters.map { it.id }
+        val maximumLearnedCount = (content.learningOrder.size - 1).coerceAtLeast(0)
         if (content.learningOrder != content.characters.sortedBy { it.order }.map { it.id } ||
             content.learningOrder.toSet() != characterIds.toSet() ||
             content.learningOrder.size != characterIds.size
@@ -72,7 +73,7 @@ object ContentValidator {
             if (!presentTypes.containsAll(requiredFirstTypes) || first.map { it.type }.toSet().size != 3 ||
                 first.any { it.minLearnedCount != 0 } || presentTypes.size < 4 || evidence.size < 4 ||
                 !presentTypes.containsAll(d14Types) || d14.map { it.type }.toSet().size != 2 ||
-                d14.any { it.minLearnedCount !in 0..5 }
+                d14.any { it.minLearnedCount !in 0..maximumLearnedCount }
             ) {
                 error(ContentErrorCode.CONTENT_REACHABILITY_FAILED, "$base.questionSeeds", "First 3, D14 2, and 4 evidence types must be reachable")
             }
@@ -100,8 +101,8 @@ object ContentValidator {
                         }
                     }
                 }
-                if (question.minLearnedCount !in 0..5) {
-                    error(ContentErrorCode.CONTENT_REACHABILITY_FAILED, "$path.minLearnedCount", "Must be between 0 and 5")
+                if (question.minLearnedCount !in 0..maximumLearnedCount) {
+                    error(ContentErrorCode.CONTENT_REACHABILITY_FAILED, "$path.minLearnedCount", "Must be between 0 and $maximumLearnedCount")
                 }
             }
 

@@ -25,6 +25,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewModelScope
 import com.family.shizi.ShiziApplication
+import com.family.shizi.data.content.ContentLoader
+import com.family.shizi.data.content.BadgeMilestone
 import com.family.shizi.data.db.CharacterProgressEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -38,6 +40,7 @@ data class ProfileUiState(
     val masteredCount: Int = 0,
     val learningDays: Int = 0,
     val dailyTarget: Int = 3,
+    val badgeMilestones: List<BadgeMilestone> = emptyList(),
 )
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
@@ -47,6 +50,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     init { viewModelScope.launch {
         val progress = repository?.getCharacterProgress().orEmpty()
         val settings = repository?.settings?.first()
+        val content = ContentLoader.load(application)
         _state.value = ProfileUiState(
             loading = false,
             nickname = settings?.nickname?.ifBlank { "小朋友" } ?: "小朋友",
@@ -54,6 +58,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
             masteredCount = progress.count { it.state.name.contains("MASTERED") },
             learningDays = repository?.getCompletedLearningDayCount() ?: 0,
             dailyTarget = settings?.dailyNewCharacterCount ?: 3,
+            badgeMilestones = content.course.badgeMilestones,
         )
     } }
 }
@@ -80,9 +85,9 @@ fun ProfileScreen() {
         }
         Text("我的徽章", modifier = Modifier.padding(top = 28.dp), style = MaterialTheme.typography.titleLarge)
         Row(modifier = Modifier.fillMaxWidth().padding(top = 12.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            AchievementBadge("启蒙星", "认识第一个字", state.learnedCount >= 1)
-            AchievementBadge("三字小能手", "认识3个字", state.learnedCount >= 3)
-            AchievementBadge("五字达人", "认识5个字", state.learnedCount >= 5)
+            state.badgeMilestones.take(3).forEach { milestone ->
+                AchievementBadge(milestone.title, milestone.detail, state.learnedCount >= milestone.learnedCount)
+            }
         }
     }
 }

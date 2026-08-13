@@ -266,7 +266,8 @@ class ShiziRepository(
                 .distinctBy { it.characterId }
                 .filter { due.none { review -> review.characterId == it.characterId } }
             // Due reviews keep priority, then honor the family-selected new-character count.
-            val dailyNewLimit = settings.dailyNewCharacterCount.coerceIn(1, content.learningOrder.size)
+            // Family preference is independent from library size: a 300-character pack still has a 1..5 daily limit.
+            val dailyNewLimit = settings.dailyNewCharacterCount.coerceIn(1, 5).coerceAtMost(content.learningOrder.size)
             val existingProgress = database.characterProgressDao().getAll().associateBy { it.characterId }
             val unfinishedNewIds = unfinishedNew.map { it.characterId }.toSet()
             val inProgressNew = content.learningOrder
@@ -390,8 +391,8 @@ class ShiziRepository(
     ): LearningSessionEntity = database.withTransaction {
         val learned = content.learningOrder.filter { characterId ->
             database.characterProgressDao().getById(characterId)?.initialLessonCompleted == true
-        }.take(3)
-        require(learned.size >= 3) { "至少认识3个字后才能开始阶段测试" }
+        }.take(content.course.stageTestThreshold)
+        require(learned.size >= content.course.stageTestThreshold) { "尚未达到课程设定的阶段测试字数" }
         val session = LearningSessionEntity(
             id = idProvider.newId(),
             localDate = LocalDate.now(clock.zone),

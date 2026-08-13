@@ -7,9 +7,9 @@ fun interface AssetByteSource {
     fun read(path: String): ByteArray?
 }
 
-class AndroidAssetByteSource(private val context: Context) : AssetByteSource {
+class AndroidAssetByteSource(private val context: Context, private val assetRoot: String = ContentRepository.get(context).active().descriptor.assetRoot) : AssetByteSource {
     override fun read(path: String): ByteArray? = try {
-        context.assets.open("content/v1/$path").use { it.readBytes() }
+        context.assets.open("${assetRoot.trimEnd('/')}/$path").use { it.readBytes() }
     } catch (_: Exception) {
         null
     }

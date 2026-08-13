@@ -110,13 +110,13 @@ dependencies {
 
 val verifyContentG1 by tasks.registering {
     group = "verification"
-    description = "Runs the strict T03 content, schema, G1, and mutation test suite."
+    description = "Runs V2 catalog, pack/schema, legacy compatibility, G1, and mutation tests."
     dependsOn("testDebugUnitTest")
 }
 
 val verifyContentG2 by tasks.registering {
     group = "verification"
-    description = "Runs the T04 real resource, manifest, media metadata, review gate, and mutation tests."
+    description = "Runs V2 active-pack resource, manifest, media metadata, review gate, and mutation tests."
     dependsOn("testDebugUnitTest")
 }
 

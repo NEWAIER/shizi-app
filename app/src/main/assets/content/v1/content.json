@@ -1,6 +1,14 @@
 {
   "schemaVersion": 1,
   "contentVersion": "1.0.0",
+  "course": {
+    "stageTestThreshold": 3,
+    "badgeMilestones": [
+      {"id": "first_character", "learnedCount": 1, "title": "启蒙星", "detail": "认识第一个字"},
+      {"id": "three_characters", "learnedCount": 3, "title": "三字小能手", "detail": "认识3个字"},
+      {"id": "five_characters", "learnedCount": 5, "title": "五字达人", "detail": "认识5个字"}
+    ]
+  },
   "learningOrder": ["char_ren", "char_kou", "char_da", "char_xiao", "char_shan"],
   "reviewOffsetsDays": [1, 3, 7, 14, 30, 60],
   "optionCatalog": [
