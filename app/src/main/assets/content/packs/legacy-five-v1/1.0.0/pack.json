@@ -5,5 +5,5 @@
   "contentPath": "content/v1/content.json",
   "manifestPath": "content/v1/manifest.json",
   "assetRoot": "content/v1",
-  "legacyCompatibleVersions": ["legacy-five-v1", "1.0.0"]
+  "legacyCompatibleVersions": ["legacy-five-v1"]
 }

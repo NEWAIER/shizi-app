@@ -38,6 +38,18 @@ object ContentCatalogResolver {
 
     fun resolveVersion(catalog: ContentCatalog, version: String): ContentPackDescriptor? =
         catalog.packs.firstOrNull { it.version == version || version in it.legacyCompatibleVersions }
+
+    fun versionConflicts(catalog: ContentCatalog): List<String> {
+        val seen = mutableMapOf<String, String>()
+        val conflicts = mutableListOf<String>()
+        catalog.packs.forEach { pack ->
+            (listOf(pack.version) + pack.legacyCompatibleVersions).forEach { version ->
+                val previous = seen.putIfAbsent(version, pack.packId)
+                if (previous != null) conflicts += "$version resolves to both $previous and ${pack.packId}"
+            }
+        }
+        return conflicts
+    }
 }
 
 /**
@@ -48,7 +60,8 @@ class ContentRepository private constructor(private val appContext: Context) {
     private val cache = mutableMapOf<Pair<String, String>, LoadedContent>()
     private val json = Json { ignoreUnknownKeys = false; isLenient = false; coerceInputValues = false }
     private val catalog: ContentCatalog by lazy {
-        appContext.assets.open(CATALOG_PATH).bufferedReader(Charsets.UTF_8).use { json.decodeFromString(it.readText()) }
+        appContext.assets.open(CATALOG_PATH).bufferedReader(Charsets.UTF_8).use { json.decodeFromString<ContentCatalog>(it.readText()) }
+            .also { require(ContentCatalogResolver.versionConflicts(it).isEmpty()) { "Content catalog has ambiguous versions" } }
     }
 
     @Synchronized fun active(): LoadedContent = load(catalog.activePackId, null)

@@ -66,7 +66,7 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
     val content = remember { ContentLoader.load(context) }
     val scope = rememberCoroutineScope()
     val player = remember {
-        AssetAudioPlayer(context) { error -> scope.launch { app.repository?.logAudioError(error) } }
+        AssetAudioPlayer(context, onError = { error -> scope.launch { app.repository?.logAudioError(error) } })
             .also { it.attachLifecycle(lifecycleOwner) }
     }
     DisposableEffect(player) { onDispose { player.stop() } }

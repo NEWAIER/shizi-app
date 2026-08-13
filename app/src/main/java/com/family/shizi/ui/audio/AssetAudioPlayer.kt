@@ -26,9 +26,9 @@ import java.util.concurrent.atomic.AtomicLong
 class AssetAudioPlayer(
     context: Context,
     private val onError: (AudioPlayerError) -> Unit = {},
+    private val assetRootProvider: () -> String = { ContentRepository.get(context).active().descriptor.assetRoot },
 ) {
     private val appContext = context.applicationContext
-    private val assetRoot by lazy { ContentRepository.get(appContext).active().descriptor.assetRoot.trimEnd('/') }
     private val handler = Handler(Looper.getMainLooper())
     private val tokenCounter = AtomicLong(0L)
     private val permanentlyReleased = AtomicBoolean(false)
@@ -133,7 +133,7 @@ class AssetAudioPlayer(
                 exoPlayer.stop()
                 exoPlayer.clearMediaItems()
                 exoPlayer.setMediaItems(
-                    assetPaths.map { MediaItem.fromUri("asset:///$assetRoot/$it") },
+                    assetPaths.map { MediaItem.fromUri("asset:///${assetRootProvider().trimEnd('/')}/$it") },
                 )
                 exoPlayer.prepare()
                 exoPlayer.play()
@@ -193,7 +193,7 @@ class AssetAudioPlayer(
 
     private fun assetCanBeOpened(assetPath: String): Boolean =
         runCatching {
-            appContext.assets.openFd("$assetRoot/$assetPath").use { descriptor ->
+            appContext.assets.openFd("${assetRootProvider().trimEnd('/')}/$assetPath").use { descriptor ->
                 descriptor.length >= 0L
             }
         }.getOrDefault(false)

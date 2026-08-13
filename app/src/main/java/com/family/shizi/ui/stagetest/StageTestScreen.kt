@@ -39,6 +39,7 @@ data class StageTestUiState(
     val loading: Boolean = true,
     val learned: List<CharacterProgressEntity> = emptyList(),
     val latestSummary: com.family.shizi.data.repository.ShiziRepository.StageTestSummary? = null,
+    val stageTestThreshold: Int = 3,
 )
 
 class StageTestViewModel(application: Application) : AndroidViewModel(application) {
@@ -49,10 +50,12 @@ class StageTestViewModel(application: Application) : AndroidViewModel(applicatio
     init { refresh() }
 
     private fun refresh() = viewModelScope.launch {
+        val content = ContentLoader.load(application)
         _state.value = StageTestUiState(
             loading = false,
             learned = repository?.getCharacterProgress().orEmpty().filter { it.initialLessonCompleted },
             latestSummary = repository?.getLatestStageTestSummary(),
+            stageTestThreshold = content.course.stageTestThreshold,
         )
     }
 
@@ -73,6 +76,7 @@ fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
     val viewModel: StageTestViewModel = viewModel()
     val state by viewModel.state.collectAsState()
     val count = state.learned.size
+    val threshold = state.stageTestThreshold
     val latest = state.latestSummary
     Column(
         modifier = Modifier.fillMaxSize().padding(horizontal = 24.dp, vertical = 24.dp).testTag("page_stage_test"),
@@ -97,9 +101,9 @@ fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
         }
         Card(modifier = Modifier.fillMaxWidth().padding(top = if (latest == null) 22.dp else 14.dp)) {
             Column(modifier = Modifier.padding(22.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("已认识 $count / 3 个字", style = MaterialTheme.typography.titleLarge)
-                if (count < 3) {
-                    Text("再认识 ${3 - count} 个字，就可以开启第一关测试。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
+                Text("已认识 $count / $threshold 个字", style = MaterialTheme.typography.titleLarge)
+                if (count < threshold) {
+                    Text("再认识 ${threshold - count} 个字，就可以开启第一关测试。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
                     Button(onClick = { onNavigate(ShiziRoute.Home) }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_go_learn")) { Text("去学习") }
                 } else {
                     Text("第一关准备好了！测试只会从已经认识的字中出题。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)

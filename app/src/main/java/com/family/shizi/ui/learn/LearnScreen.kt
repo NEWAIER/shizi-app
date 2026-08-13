@@ -69,10 +69,11 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
         return
     }
     val lifecycleOwner = LocalLifecycleOwner.current
-    val content = remember { ContentLoader.load(context) }
+    var content by remember { mutableStateOf(ContentLoader.load(context)) }
+    var assetRoot by remember { mutableStateOf(ContentRepository.get(context).active().descriptor.assetRoot) }
     val scope = rememberCoroutineScope()
     val player = remember {
-        AssetAudioPlayer(context) { error: AudioPlayerError -> scope.launch { repo.logAudioError(error) } }
+        AssetAudioPlayer(context, { error: AudioPlayerError -> scope.launch { repo.logAudioError(error) } }) { assetRoot }
             .also { it.attachLifecycle(lifecycleOwner) }
     }
     var characterId by remember { mutableStateOf<String?>(null) }
@@ -92,6 +93,11 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
             return@LaunchedEffect
         }
         currentSessionId = snapshot.session?.id
+        snapshot.session?.let { session ->
+            val loaded = ContentRepository.get(context).loadForSession(session)
+            content = loaded.content
+            assetRoot = loaded.descriptor.assetRoot
+        }
         if (snapshot.item.kind != ItemKind.NEW) {
             onNavigate(ShiziRoute.Practice)
             return@LaunchedEffect
@@ -133,7 +139,6 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
 
     val character = content.characters.firstOrNull { it.id == characterId }
-    val assetRoot = remember { ContentRepository.get(context).active().descriptor.assetRoot }
     val bitmap = remember(character?.imageAsset, assetRoot) {
         character?.imageAsset?.let { asset -> context.assets.open("${assetRoot.trimEnd('/')}/$asset").use(BitmapFactory::decodeStream) }
     }

@@ -75,12 +75,13 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         return
     }
     val lifecycleOwner = LocalLifecycleOwner.current
-    val content = remember { ContentLoader.load(context) }
+    var content by remember { mutableStateOf(ContentLoader.load(context)) }
+    var assetRoot by remember { mutableStateOf(ContentRepository.get(context).active().descriptor.assetRoot) }
     val scope = rememberCoroutineScope()
     val player = remember {
-        AssetAudioPlayer(context) { error ->
+        AssetAudioPlayer(context, { error ->
             scope.launch { repo.logAudioError(error) }
-        }.also { it.attachLifecycle(lifecycleOwner) }
+        }) { assetRoot }.also { it.attachLifecycle(lifecycleOwner) }
     }
     var question by remember { mutableStateOf<QuestionInstanceEntity?>(null) }
     var options by remember { mutableStateOf<List<OptionContent>>(emptyList()) }
@@ -102,6 +103,11 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         val snapshot = repo.getCurrentPracticeSnapshot()
         val session = snapshot.session
         currentSessionId = session?.id
+        session?.let { loadedSession ->
+            val loaded = ContentRepository.get(context).loadForSession(loadedSession)
+            content = loaded.content
+            assetRoot = loaded.descriptor.assetRoot
+        }
         currentItemKind = snapshot.item?.kind
         currentReviewStage = snapshot.item?.reviewStageAtStart ?: ReviewStage.NONE
         val pending = snapshot.question
@@ -112,12 +118,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         val optionIds = pending?.optionIdsJson?.let { runCatching { json.decodeFromString<List<String>>(it) }.getOrNull() }.orEmpty()
         val seededOptions = optionIds.mapNotNull { id -> content.optionCatalog.firstOrNull { it.id == id } }
         // Every picture question is a stable 2×2 board: the original correct answer plus three real picture distractors.
-        options = if (pending?.questionType == QuestionType.CHARACTER_CHOOSE_IMAGE.name) {
-            (seededOptions + content.optionCatalog
-                .filter { it.kind == OptionKind.IMAGE && seededOptions.none { seeded -> seeded.id == it.id } }
-                .take(4 - seededOptions.size))
-                .take(4)
-        } else seededOptions
+        options = seededOptions
         selectedAudioOptionId = null
         questionShownAtMs = SystemClock.elapsedRealtime()
         submissionInFlight = false
@@ -312,7 +313,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                 ) {
                     when (QuestionType.valueOf(q.questionType)) {
                         QuestionType.CHARACTER_CHOOSE_IMAGE ->
-                            CharChooseImageQuestion(q, options, character, teachingCorrectId, submissionInFlight, ::submitAnswer)
+                            CharChooseImageQuestion(q, options, character, teachingCorrectId, submissionInFlight, ::submitAnswer, assetRoot)
                         QuestionType.LISTEN_CHOOSE_CHARACTER ->
                             ListenChooseCharQuestion(q, options, character, player, teachingCorrectId, submissionInFlight, ::submitAnswer)
                         QuestionType.CHARACTER_CHOOSE_AUDIO ->
@@ -320,7 +321,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         QuestionType.SHAPE_RECOGNITION ->
                             ShapeRecognitionQuestion(q, options, character, teachingCorrectId, submissionInFlight, ::submitAnswer)
                         QuestionType.LIFE_WORD_CONTEXT ->
-                            LifeWordContextQuestion(q, options, character, player, teachingCorrectId, submissionInFlight, ::submitAnswer)
+                            LifeWordContextQuestion(q, options, character, player, teachingCorrectId, submissionInFlight, ::submitAnswer, assetRoot)
                     }
                 }
             } ?: Button(
@@ -393,6 +394,7 @@ private fun CharChooseImageQuestion(
     teachingCorrectId: String?,
     disabled: Boolean,
     onSubmit: (String) -> Unit,
+    assetRoot: String,
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
         Text("看字选图", style = MaterialTheme.typography.labelLarge, modifier = Modifier.testTag("practice_question_type"))
@@ -403,7 +405,7 @@ private fun CharChooseImageQuestion(
             modifier = Modifier.padding(16.dp).testTag("practice_target_character"),
         )
         Text("这个字对应的图片是哪张？", style = MaterialTheme.typography.bodySmall)
-        ImageOptionGrid(options, teachingCorrectId, disabled, onSubmit)
+        ImageOptionGrid(options, teachingCorrectId, disabled, onSubmit, assetRoot)
     }
 }
 
@@ -533,6 +535,7 @@ private fun LifeWordContextQuestion(
     teachingCorrectId: String?,
     disabled: Boolean,
     onSubmit: (String) -> Unit,
+    assetRoot: String,
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
         Text("听音选图", style = MaterialTheme.typography.labelLarge, modifier = Modifier.testTag("practice_question_type"))
@@ -544,7 +547,7 @@ private fun LifeWordContextQuestion(
             modifier = Modifier.padding(16.dp).testTag("practice_replay_audio"),
         ) { Text("再听一遍") }
         Text("听到的内容对应哪张图？", style = MaterialTheme.typography.bodySmall)
-        ImageOptionGrid(options, teachingCorrectId, disabled, onSubmit)
+        ImageOptionGrid(options, teachingCorrectId, disabled, onSubmit, assetRoot)
     }
 }
 
@@ -556,9 +559,9 @@ private fun ImageOptionGrid(
     teachingCorrectId: String?,
     disabled: Boolean,
     onSubmit: (String) -> Unit,
+    assetRoot: String,
 ) {
     val context = LocalContext.current
-    val assetRoot = remember { ContentRepository.get(context).active().descriptor.assetRoot }
     options.chunked(2).forEach { row ->
         Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             row.forEach { option ->
