@@ -27,6 +27,7 @@ def load_module(name: str, relative: str):
 tts = load_module("generate_edge_tts", "tools/audio-generator/generate_edge_tts.py")
 media = load_module("validate_media", "tools/content-builder/validate_media.py")
 batches = load_module("build_tts_batches", "tools/content-builder/build_tts_batches.py")
+starter_builder = load_module("build_starter_thirty", "tools/content-builder/build_starter_thirty.py")
 
 
 def options(output_dir: Path, force: bool = False) -> argparse.Namespace:
@@ -231,6 +232,25 @@ class ProductionBatchTests(unittest.TestCase):
         self.assertIn("audio-tool-quality:", workflow); self.assertIn("android-quality:", workflow)
         mode = subprocess.check_output(["git", "ls-files", "--stage", "gradlew"], cwd=ROOT, text=True)
         self.assertTrue(mode.startswith("100755 "))
+
+
+class QuestionMatrixTests(unittest.TestCase):
+    def test_starter_thirty_question_matrix_is_complete_and_frozen(self) -> None:
+        source = ROOT / "content-source" / "starter-thirty-v1"
+        with (source / "options.csv").open(encoding="utf-8", newline="") as file: options = {row["option_id"]: row for row in csv.DictReader(file)}
+        with (source / "questions.csv").open(encoding="utf-8", newline="") as file: questions = list(csv.DictReader(file))
+        with (source / "characters.csv").open(encoding="utf-8", newline="") as file: characters = list(csv.DictReader(file))
+        self.assertEqual(25, len(characters)); self.assertEqual(125, len(questions)); self.assertEqual(125, len({row["question_id"] for row in questions})); self.assertEqual(len(options), len(set(options)))
+        expected = {"LISTEN_CHOOSE_CHARACTER", "CHARACTER_CHOOSE_IMAGE", "CHARACTER_CHOOSE_AUDIO", "SHAPE_RECOGNITION", "LIFE_WORD_CONTEXT"}
+        for character in characters:
+            current = [row for row in questions if row["character_id"] == character["id"]]
+            self.assertEqual(expected, {row["question_type"] for row in current})
+            for question in current:
+                option_ids = json.loads(question["option_ids"])
+                self.assertEqual(1, option_ids.count(question["correct_option_id"])); self.assertTrue(all(value in options for value in option_ids))
+                self.assertEqual(question["evidence_category"], starter_builder.EVIDENCE[question["question_type"]])
+                self.assertTrue(1 <= int(question["min_learned_count"]) <= 25); self.assertEqual("PENDING", question["parent_review_status"])
+        self.assertTrue(all(".." not in row["asset_path"] and "\\" not in row["asset_path"] for row in options.values()))
 
 
 if __name__ == "__main__":
