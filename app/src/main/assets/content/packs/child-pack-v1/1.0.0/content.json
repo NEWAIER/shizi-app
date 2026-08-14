@@ -1011,9 +1011,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u4eba_listen",
+          "id": "q_char_u4eba_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u4eba_v1.mp3",
           "correctOptionId": "text_char_u4eba",
           "optionIds": [
             "text_char_u4eba",
@@ -1023,6 +1023,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u4eba_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u4eba_v1.mp3",
+          "correctOptionId": "text_char_u4eba",
+          "optionIds": [
+            "text_char_u4eba",
+            "text_char_u53e3",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u4eba_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u4eba_v1.mp3",
+          "correctOptionId": "text_char_u4eba",
+          "optionIds": [
+            "text_char_u4eba",
+            "text_char_u53e3",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u4eba_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u4eba_v1.mp3",
+          "correctOptionId": "text_char_u4eba",
+          "optionIds": [
+            "text_char_u4eba",
+            "text_char_u53e3",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1064,9 +1106,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u53e3_listen",
+          "id": "q_char_u53e3_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u53e3_v1.mp3",
           "correctOptionId": "text_char_u53e3",
           "optionIds": [
             "text_char_u53e3",
@@ -1076,6 +1118,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u53e3_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u53e3_v1.mp3",
+          "correctOptionId": "text_char_u53e3",
+          "optionIds": [
+            "text_char_u53e3",
+            "text_char_u4eba",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u53e3_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u53e3_v1.mp3",
+          "correctOptionId": "text_char_u53e3",
+          "optionIds": [
+            "text_char_u53e3",
+            "text_char_u4eba",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u53e3_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u53e3_v1.mp3",
+          "correctOptionId": "text_char_u53e3",
+          "optionIds": [
+            "text_char_u53e3",
+            "text_char_u4eba",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1117,9 +1201,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5927_listen",
+          "id": "q_char_u5927_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5927_v1.mp3",
           "correctOptionId": "text_char_u5927",
           "optionIds": [
             "text_char_u5927",
@@ -1129,6 +1213,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5927_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5927_v1.mp3",
+          "correctOptionId": "text_char_u5927",
+          "optionIds": [
+            "text_char_u5927",
+            "text_char_u5c0f",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5927_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5927_v1.mp3",
+          "correctOptionId": "text_char_u5927",
+          "optionIds": [
+            "text_char_u5927",
+            "text_char_u5c0f",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5927_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5927_v1.mp3",
+          "correctOptionId": "text_char_u5927",
+          "optionIds": [
+            "text_char_u5927",
+            "text_char_u5c0f",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1170,9 +1296,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5c0f_listen",
+          "id": "q_char_u5c0f_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5c0f_v1.mp3",
           "correctOptionId": "text_char_u5c0f",
           "optionIds": [
             "text_char_u5c0f",
@@ -1182,6 +1308,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5c0f_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5c0f_v1.mp3",
+          "correctOptionId": "text_char_u5c0f",
+          "optionIds": [
+            "text_char_u5c0f",
+            "text_char_u5927",
+            "text_char_u624b",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5c0f_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5c0f_v1.mp3",
+          "correctOptionId": "text_char_u5c0f",
+          "optionIds": [
+            "text_char_u5c0f",
+            "text_char_u5927",
+            "text_char_u624b",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5c0f_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5c0f_v1.mp3",
+          "correctOptionId": "text_char_u5c0f",
+          "optionIds": [
+            "text_char_u5c0f",
+            "text_char_u5927",
+            "text_char_u624b",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1223,9 +1391,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u624b_listen",
+          "id": "q_char_u624b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u624b_v1.mp3",
           "correctOptionId": "text_char_u624b",
           "optionIds": [
             "text_char_u624b",
@@ -1235,6 +1403,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u624b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u624b_v1.mp3",
+          "correctOptionId": "text_char_u624b",
+          "optionIds": [
+            "text_char_u624b",
+            "text_char_u5934",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u624b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u624b_v1.mp3",
+          "correctOptionId": "text_char_u624b",
+          "optionIds": [
+            "text_char_u624b",
+            "text_char_u5934",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u624b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u624b_v1.mp3",
+          "correctOptionId": "text_char_u624b",
+          "optionIds": [
+            "text_char_u624b",
+            "text_char_u5934",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1276,9 +1486,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5934_listen",
+          "id": "q_char_u5934_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5934_v1.mp3",
           "correctOptionId": "text_char_u5934",
           "optionIds": [
             "text_char_u5934",
@@ -1288,6 +1498,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5934_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5934_v1.mp3",
+          "correctOptionId": "text_char_u5934",
+          "optionIds": [
+            "text_char_u5934",
+            "text_char_u624b",
+            "text_char_u5927",
+            "text_char_u5c0f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5934_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5934_v1.mp3",
+          "correctOptionId": "text_char_u5934",
+          "optionIds": [
+            "text_char_u5934",
+            "text_char_u624b",
+            "text_char_u5927",
+            "text_char_u5c0f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5934_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5934_v1.mp3",
+          "correctOptionId": "text_char_u5934",
+          "optionIds": [
+            "text_char_u5934",
+            "text_char_u624b",
+            "text_char_u5927",
+            "text_char_u5c0f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1329,9 +1581,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u7238_listen",
+          "id": "q_char_u7238_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u7238_v1.mp3",
           "correctOptionId": "text_char_u7238",
           "optionIds": [
             "text_char_u7238",
@@ -1341,6 +1593,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u7238_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u7238_v1.mp3",
+          "correctOptionId": "text_char_u7238",
+          "optionIds": [
+            "text_char_u7238",
+            "text_char_u5988",
+            "text_char_u4eba",
+            "text_char_u5bb6"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u7238_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u7238_v1.mp3",
+          "correctOptionId": "text_char_u7238",
+          "optionIds": [
+            "text_char_u7238",
+            "text_char_u5988",
+            "text_char_u4eba",
+            "text_char_u5bb6"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u7238_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u7238_v1.mp3",
+          "correctOptionId": "text_char_u7238",
+          "optionIds": [
+            "text_char_u7238",
+            "text_char_u5988",
+            "text_char_u4eba",
+            "text_char_u5bb6"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1382,9 +1676,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5988_listen",
+          "id": "q_char_u5988_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5988_v1.mp3",
           "correctOptionId": "text_char_u5988",
           "optionIds": [
             "text_char_u5988",
@@ -1394,6 +1688,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5988_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5988_v1.mp3",
+          "correctOptionId": "text_char_u5988",
+          "optionIds": [
+            "text_char_u5988",
+            "text_char_u7238",
+            "text_char_u5bb6",
+            "text_char_u95e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5988_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5988_v1.mp3",
+          "correctOptionId": "text_char_u5988",
+          "optionIds": [
+            "text_char_u5988",
+            "text_char_u7238",
+            "text_char_u5bb6",
+            "text_char_u95e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5988_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5988_v1.mp3",
+          "correctOptionId": "text_char_u5988",
+          "optionIds": [
+            "text_char_u5988",
+            "text_char_u7238",
+            "text_char_u5bb6",
+            "text_char_u95e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1435,9 +1771,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5bb6_listen",
+          "id": "q_char_u5bb6_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5bb6_v1.mp3",
           "correctOptionId": "text_char_u5bb6",
           "optionIds": [
             "text_char_u5bb6",
@@ -1447,6 +1783,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5bb6_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5bb6_v1.mp3",
+          "correctOptionId": "text_char_u5bb6",
+          "optionIds": [
+            "text_char_u5bb6",
+            "text_char_u95e8",
+            "text_char_u7238",
+            "text_char_u5988"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5bb6_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5bb6_v1.mp3",
+          "correctOptionId": "text_char_u5bb6",
+          "optionIds": [
+            "text_char_u5bb6",
+            "text_char_u95e8",
+            "text_char_u7238",
+            "text_char_u5988"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5bb6_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5bb6_v1.mp3",
+          "correctOptionId": "text_char_u5bb6",
+          "optionIds": [
+            "text_char_u5bb6",
+            "text_char_u95e8",
+            "text_char_u7238",
+            "text_char_u5988"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1488,9 +1866,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u95e8_listen",
+          "id": "q_char_u95e8_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u95e8_v1.mp3",
           "correctOptionId": "text_char_u95e8",
           "optionIds": [
             "text_char_u95e8",
@@ -1500,6 +1878,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u95e8_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u95e8_v1.mp3",
+          "correctOptionId": "text_char_u95e8",
+          "optionIds": [
+            "text_char_u95e8",
+            "text_char_u5bb6",
+            "text_char_u53e3",
+            "text_char_u4e0a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u95e8_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u95e8_v1.mp3",
+          "correctOptionId": "text_char_u95e8",
+          "optionIds": [
+            "text_char_u95e8",
+            "text_char_u5bb6",
+            "text_char_u53e3",
+            "text_char_u4e0a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u95e8_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u95e8_v1.mp3",
+          "correctOptionId": "text_char_u95e8",
+          "optionIds": [
+            "text_char_u95e8",
+            "text_char_u5bb6",
+            "text_char_u53e3",
+            "text_char_u4e0a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1541,9 +1961,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5c71_listen",
+          "id": "q_char_u5c71_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5c71_v1.mp3",
           "correctOptionId": "text_char_u5c71",
           "optionIds": [
             "text_char_u5c71",
@@ -1553,6 +1973,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5c71_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5c71_v1.mp3",
+          "correctOptionId": "text_char_u5c71",
+          "optionIds": [
+            "text_char_u5c71",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u5929"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5c71_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5c71_v1.mp3",
+          "correctOptionId": "text_char_u5c71",
+          "optionIds": [
+            "text_char_u5c71",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u5929"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5c71_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5c71_v1.mp3",
+          "correctOptionId": "text_char_u5c71",
+          "optionIds": [
+            "text_char_u5c71",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u5929"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1594,9 +2056,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u6c34_listen",
+          "id": "q_char_u6c34_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u6c34_v1.mp3",
           "correctOptionId": "text_char_u6c34",
           "optionIds": [
             "text_char_u6c34",
@@ -1606,6 +2068,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u6c34_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u6c34_v1.mp3",
+          "correctOptionId": "text_char_u6c34",
+          "optionIds": [
+            "text_char_u6c34",
+            "text_char_u5c71",
+            "text_char_u706b",
+            "text_char_u96e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u6c34_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u6c34_v1.mp3",
+          "correctOptionId": "text_char_u6c34",
+          "optionIds": [
+            "text_char_u6c34",
+            "text_char_u5c71",
+            "text_char_u706b",
+            "text_char_u96e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u6c34_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u6c34_v1.mp3",
+          "correctOptionId": "text_char_u6c34",
+          "optionIds": [
+            "text_char_u6c34",
+            "text_char_u5c71",
+            "text_char_u706b",
+            "text_char_u96e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1647,9 +2151,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u706b_listen",
+          "id": "q_char_u706b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u706b_v1.mp3",
           "correctOptionId": "text_char_u706b",
           "optionIds": [
             "text_char_u706b",
@@ -1659,6 +2163,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u706b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u706b_v1.mp3",
+          "correctOptionId": "text_char_u706b",
+          "optionIds": [
+            "text_char_u706b",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u706b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u706b_v1.mp3",
+          "correctOptionId": "text_char_u706b",
+          "optionIds": [
+            "text_char_u706b",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u706b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u706b_v1.mp3",
+          "correctOptionId": "text_char_u706b",
+          "optionIds": [
+            "text_char_u706b",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1700,9 +2246,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u6728_listen",
+          "id": "q_char_u6728_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u6728_v1.mp3",
           "correctOptionId": "text_char_u6728",
           "optionIds": [
             "text_char_u6728",
@@ -1712,6 +2258,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u6728_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u6728_v1.mp3",
+          "correctOptionId": "text_char_u6728",
+          "optionIds": [
+            "text_char_u6728",
+            "text_char_u706b",
+            "text_char_u5c71",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u6728_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u6728_v1.mp3",
+          "correctOptionId": "text_char_u6728",
+          "optionIds": [
+            "text_char_u6728",
+            "text_char_u706b",
+            "text_char_u5c71",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u6728_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u6728_v1.mp3",
+          "correctOptionId": "text_char_u6728",
+          "optionIds": [
+            "text_char_u6728",
+            "text_char_u706b",
+            "text_char_u5c71",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1753,9 +2341,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u65e5_listen",
+          "id": "q_char_u65e5_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u65e5_v1.mp3",
           "correctOptionId": "text_char_u65e5",
           "optionIds": [
             "text_char_u65e5",
@@ -1765,6 +2353,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u65e5_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u65e5_v1.mp3",
+          "correctOptionId": "text_char_u65e5",
+          "optionIds": [
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u5929",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u65e5_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u65e5_v1.mp3",
+          "correctOptionId": "text_char_u65e5",
+          "optionIds": [
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u5929",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u65e5_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u65e5_v1.mp3",
+          "correctOptionId": "text_char_u65e5",
+          "optionIds": [
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u5929",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1806,9 +2436,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u6708_listen",
+          "id": "q_char_u6708_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u6708_v1.mp3",
           "correctOptionId": "text_char_u6708",
           "optionIds": [
             "text_char_u6708",
@@ -1818,6 +2448,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u6708_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u6708_v1.mp3",
+          "correctOptionId": "text_char_u6708",
+          "optionIds": [
+            "text_char_u6708",
+            "text_char_u65e5",
+            "text_char_u5929",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u6708_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u6708_v1.mp3",
+          "correctOptionId": "text_char_u6708",
+          "optionIds": [
+            "text_char_u6708",
+            "text_char_u65e5",
+            "text_char_u5929",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u6708_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u6708_v1.mp3",
+          "correctOptionId": "text_char_u6708",
+          "optionIds": [
+            "text_char_u6708",
+            "text_char_u65e5",
+            "text_char_u5929",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1859,9 +2531,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5929_listen",
+          "id": "q_char_u5929_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5929_v1.mp3",
           "correctOptionId": "text_char_u5929",
           "optionIds": [
             "text_char_u5929",
@@ -1871,6 +2543,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5929_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5929_v1.mp3",
+          "correctOptionId": "text_char_u5929",
+          "optionIds": [
+            "text_char_u5929",
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5929_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5929_v1.mp3",
+          "correctOptionId": "text_char_u5929",
+          "optionIds": [
+            "text_char_u5929",
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5929_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5929_v1.mp3",
+          "correctOptionId": "text_char_u5929",
+          "optionIds": [
+            "text_char_u5929",
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1912,9 +2626,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u4e91_listen",
+          "id": "q_char_u4e91_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u4e91_v1.mp3",
           "correctOptionId": "text_char_u4e91",
           "optionIds": [
             "text_char_u4e91",
@@ -1924,6 +2638,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u4e91_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u4e91_v1.mp3",
+          "correctOptionId": "text_char_u4e91",
+          "optionIds": [
+            "text_char_u4e91",
+            "text_char_u96e8",
+            "text_char_u5929",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u4e91_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u4e91_v1.mp3",
+          "correctOptionId": "text_char_u4e91",
+          "optionIds": [
+            "text_char_u4e91",
+            "text_char_u96e8",
+            "text_char_u5929",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u4e91_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u4e91_v1.mp3",
+          "correctOptionId": "text_char_u4e91",
+          "optionIds": [
+            "text_char_u4e91",
+            "text_char_u96e8",
+            "text_char_u5929",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -1965,9 +2721,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u96e8_listen",
+          "id": "q_char_u96e8_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u96e8_v1.mp3",
           "correctOptionId": "text_char_u96e8",
           "optionIds": [
             "text_char_u96e8",
@@ -1977,6 +2733,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u96e8_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u96e8_v1.mp3",
+          "correctOptionId": "text_char_u96e8",
+          "optionIds": [
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u6c34",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u96e8_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u96e8_v1.mp3",
+          "correctOptionId": "text_char_u96e8",
+          "optionIds": [
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u6c34",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u96e8_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u96e8_v1.mp3",
+          "correctOptionId": "text_char_u96e8",
+          "optionIds": [
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u6c34",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2018,9 +2816,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u98ce_listen",
+          "id": "q_char_u98ce_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u98ce_v1.mp3",
           "correctOptionId": "text_char_u98ce",
           "optionIds": [
             "text_char_u98ce",
@@ -2030,6 +2828,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u98ce_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u98ce_v1.mp3",
+          "correctOptionId": "text_char_u98ce",
+          "optionIds": [
+            "text_char_u98ce",
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u706b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u98ce_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u98ce_v1.mp3",
+          "correctOptionId": "text_char_u98ce",
+          "optionIds": [
+            "text_char_u98ce",
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u706b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u98ce_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u98ce_v1.mp3",
+          "correctOptionId": "text_char_u98ce",
+          "optionIds": [
+            "text_char_u98ce",
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u706b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2071,9 +2911,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u725b_listen",
+          "id": "q_char_u725b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u725b_v1.mp3",
           "correctOptionId": "text_char_u725b",
           "optionIds": [
             "text_char_u725b",
@@ -2083,6 +2923,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u725b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u725b_v1.mp3",
+          "correctOptionId": "text_char_u725b",
+          "optionIds": [
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9a6c",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u725b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u725b_v1.mp3",
+          "correctOptionId": "text_char_u725b",
+          "optionIds": [
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9a6c",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u725b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u725b_v1.mp3",
+          "correctOptionId": "text_char_u725b",
+          "optionIds": [
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9a6c",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2124,9 +3006,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u7f8a_listen",
+          "id": "q_char_u7f8a_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u7f8a_v1.mp3",
           "correctOptionId": "text_char_u7f8a",
           "optionIds": [
             "text_char_u7f8a",
@@ -2136,6 +3018,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u7f8a_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u7f8a_v1.mp3",
+          "correctOptionId": "text_char_u7f8a",
+          "optionIds": [
+            "text_char_u7f8a",
+            "text_char_u725b",
+            "text_char_u5154",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u7f8a_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u7f8a_v1.mp3",
+          "correctOptionId": "text_char_u7f8a",
+          "optionIds": [
+            "text_char_u7f8a",
+            "text_char_u725b",
+            "text_char_u5154",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u7f8a_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u7f8a_v1.mp3",
+          "correctOptionId": "text_char_u7f8a",
+          "optionIds": [
+            "text_char_u7f8a",
+            "text_char_u725b",
+            "text_char_u5154",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2177,9 +3101,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u9e1f_listen",
+          "id": "q_char_u9e1f_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u9e1f_v1.mp3",
           "correctOptionId": "text_char_u9e1f",
           "optionIds": [
             "text_char_u9e1f",
@@ -2189,6 +3113,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u9e1f_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u9e1f_v1.mp3",
+          "correctOptionId": "text_char_u9e1f",
+          "optionIds": [
+            "text_char_u9e1f",
+            "text_char_u9c7c",
+            "text_char_u725b",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u9e1f_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u9e1f_v1.mp3",
+          "correctOptionId": "text_char_u9e1f",
+          "optionIds": [
+            "text_char_u9e1f",
+            "text_char_u9c7c",
+            "text_char_u725b",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u9e1f_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u9e1f_v1.mp3",
+          "correctOptionId": "text_char_u9e1f",
+          "optionIds": [
+            "text_char_u9e1f",
+            "text_char_u9c7c",
+            "text_char_u725b",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2230,9 +3196,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u9c7c_listen",
+          "id": "q_char_u9c7c_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u9c7c_v1.mp3",
           "correctOptionId": "text_char_u9c7c",
           "optionIds": [
             "text_char_u9c7c",
@@ -2242,6 +3208,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u9c7c_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u9c7c_v1.mp3",
+          "correctOptionId": "text_char_u9c7c",
+          "optionIds": [
+            "text_char_u9c7c",
+            "text_char_u9e1f",
+            "text_char_u725b",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u9c7c_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u9c7c_v1.mp3",
+          "correctOptionId": "text_char_u9c7c",
+          "optionIds": [
+            "text_char_u9c7c",
+            "text_char_u9e1f",
+            "text_char_u725b",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u9c7c_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u9c7c_v1.mp3",
+          "correctOptionId": "text_char_u9c7c",
+          "optionIds": [
+            "text_char_u9c7c",
+            "text_char_u9e1f",
+            "text_char_u725b",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2283,9 +3291,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u9a6c_listen",
+          "id": "q_char_u9a6c_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u9a6c_v1.mp3",
           "correctOptionId": "text_char_u9a6c",
           "optionIds": [
             "text_char_u9a6c",
@@ -2295,6 +3303,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u9a6c_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u9a6c_v1.mp3",
+          "correctOptionId": "text_char_u9a6c",
+          "optionIds": [
+            "text_char_u9a6c",
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u9a6c_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u9a6c_v1.mp3",
+          "correctOptionId": "text_char_u9a6c",
+          "optionIds": [
+            "text_char_u9a6c",
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u9a6c_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u9a6c_v1.mp3",
+          "correctOptionId": "text_char_u9a6c",
+          "optionIds": [
+            "text_char_u9a6c",
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2336,9 +3386,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u732b_listen",
+          "id": "q_char_u732b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u732b_v1.mp3",
           "correctOptionId": "text_char_u732b",
           "optionIds": [
             "text_char_u732b",
@@ -2348,6 +3398,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u732b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u732b_v1.mp3",
+          "correctOptionId": "text_char_u732b",
+          "optionIds": [
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u5154",
+            "text_char_u866b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u732b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u732b_v1.mp3",
+          "correctOptionId": "text_char_u732b",
+          "optionIds": [
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u5154",
+            "text_char_u866b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u732b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u732b_v1.mp3",
+          "correctOptionId": "text_char_u732b",
+          "optionIds": [
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u5154",
+            "text_char_u866b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2389,9 +3481,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u72d7_listen",
+          "id": "q_char_u72d7_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u72d7_v1.mp3",
           "correctOptionId": "text_char_u72d7",
           "optionIds": [
             "text_char_u72d7",
@@ -2401,6 +3493,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u72d7_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u72d7_v1.mp3",
+          "correctOptionId": "text_char_u72d7",
+          "optionIds": [
+            "text_char_u72d7",
+            "text_char_u732b",
+            "text_char_u725b",
+            "text_char_u9a6c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u72d7_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u72d7_v1.mp3",
+          "correctOptionId": "text_char_u72d7",
+          "optionIds": [
+            "text_char_u72d7",
+            "text_char_u732b",
+            "text_char_u725b",
+            "text_char_u9a6c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u72d7_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u72d7_v1.mp3",
+          "correctOptionId": "text_char_u72d7",
+          "optionIds": [
+            "text_char_u72d7",
+            "text_char_u732b",
+            "text_char_u725b",
+            "text_char_u9a6c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2442,9 +3576,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5154_listen",
+          "id": "q_char_u5154_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5154_v1.mp3",
           "correctOptionId": "text_char_u5154",
           "optionIds": [
             "text_char_u5154",
@@ -2454,6 +3588,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5154_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5154_v1.mp3",
+          "correctOptionId": "text_char_u5154",
+          "optionIds": [
+            "text_char_u5154",
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5154_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5154_v1.mp3",
+          "correctOptionId": "text_char_u5154",
+          "optionIds": [
+            "text_char_u5154",
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5154_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5154_v1.mp3",
+          "correctOptionId": "text_char_u5154",
+          "optionIds": [
+            "text_char_u5154",
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2495,9 +3671,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u866b_listen",
+          "id": "q_char_u866b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u866b_v1.mp3",
           "correctOptionId": "text_char_u866b",
           "optionIds": [
             "text_char_u866b",
@@ -2507,6 +3683,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u866b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u866b_v1.mp3",
+          "correctOptionId": "text_char_u866b",
+          "optionIds": [
+            "text_char_u866b",
+            "text_char_u82b1",
+            "text_char_u9e1f",
+            "text_char_u9c7c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u866b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u866b_v1.mp3",
+          "correctOptionId": "text_char_u866b",
+          "optionIds": [
+            "text_char_u866b",
+            "text_char_u82b1",
+            "text_char_u9e1f",
+            "text_char_u9c7c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u866b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u866b_v1.mp3",
+          "correctOptionId": "text_char_u866b",
+          "optionIds": [
+            "text_char_u866b",
+            "text_char_u82b1",
+            "text_char_u9e1f",
+            "text_char_u9c7c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2548,9 +3766,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u82b1_listen",
+          "id": "q_char_u82b1_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u82b1_v1.mp3",
           "correctOptionId": "text_char_u82b1",
           "optionIds": [
             "text_char_u82b1",
@@ -2560,6 +3778,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u82b1_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u82b1_v1.mp3",
+          "correctOptionId": "text_char_u82b1",
+          "optionIds": [
+            "text_char_u82b1",
+            "text_char_u6728",
+            "text_char_u866b",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u82b1_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u82b1_v1.mp3",
+          "correctOptionId": "text_char_u82b1",
+          "optionIds": [
+            "text_char_u82b1",
+            "text_char_u6728",
+            "text_char_u866b",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u82b1_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u82b1_v1.mp3",
+          "correctOptionId": "text_char_u82b1",
+          "optionIds": [
+            "text_char_u82b1",
+            "text_char_u6728",
+            "text_char_u866b",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2601,9 +3861,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u8863_listen",
+          "id": "q_char_u8863_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u8863_v1.mp3",
           "correctOptionId": "text_char_u8863",
           "optionIds": [
             "text_char_u8863",
@@ -2613,6 +3873,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u8863_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u8863_v1.mp3",
+          "correctOptionId": "text_char_u8863",
+          "optionIds": [
+            "text_char_u8863",
+            "text_char_u98df",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u8863_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u8863_v1.mp3",
+          "correctOptionId": "text_char_u8863",
+          "optionIds": [
+            "text_char_u8863",
+            "text_char_u98df",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u8863_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u8863_v1.mp3",
+          "correctOptionId": "text_char_u8863",
+          "optionIds": [
+            "text_char_u8863",
+            "text_char_u98df",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2654,9 +3956,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u98df_listen",
+          "id": "q_char_u98df_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u98df_v1.mp3",
           "correctOptionId": "text_char_u98df",
           "optionIds": [
             "text_char_u98df",
@@ -2666,6 +3968,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u98df_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u98df_v1.mp3",
+          "correctOptionId": "text_char_u98df",
+          "optionIds": [
+            "text_char_u98df",
+            "text_char_u8863",
+            "text_char_u996d",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u98df_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u98df_v1.mp3",
+          "correctOptionId": "text_char_u98df",
+          "optionIds": [
+            "text_char_u98df",
+            "text_char_u8863",
+            "text_char_u996d",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u98df_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u98df_v1.mp3",
+          "correctOptionId": "text_char_u98df",
+          "optionIds": [
+            "text_char_u98df",
+            "text_char_u8863",
+            "text_char_u996d",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2707,9 +4051,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u7c73_listen",
+          "id": "q_char_u7c73_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u7c73_v1.mp3",
           "correctOptionId": "text_char_u7c73",
           "optionIds": [
             "text_char_u7c73",
@@ -2719,6 +4063,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u7c73_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u7c73_v1.mp3",
+          "correctOptionId": "text_char_u7c73",
+          "optionIds": [
+            "text_char_u7c73",
+            "text_char_u996d",
+            "text_char_u98df",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u7c73_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u7c73_v1.mp3",
+          "correctOptionId": "text_char_u7c73",
+          "optionIds": [
+            "text_char_u7c73",
+            "text_char_u996d",
+            "text_char_u98df",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u7c73_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u7c73_v1.mp3",
+          "correctOptionId": "text_char_u7c73",
+          "optionIds": [
+            "text_char_u7c73",
+            "text_char_u996d",
+            "text_char_u98df",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2760,9 +4146,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u996d_listen",
+          "id": "q_char_u996d_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u996d_v1.mp3",
           "correctOptionId": "text_char_u996d",
           "optionIds": [
             "text_char_u996d",
@@ -2772,6 +4158,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u996d_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u996d_v1.mp3",
+          "correctOptionId": "text_char_u996d",
+          "optionIds": [
+            "text_char_u996d",
+            "text_char_u7c73",
+            "text_char_u98df",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u996d_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u996d_v1.mp3",
+          "correctOptionId": "text_char_u996d",
+          "optionIds": [
+            "text_char_u996d",
+            "text_char_u7c73",
+            "text_char_u98df",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u996d_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u996d_v1.mp3",
+          "correctOptionId": "text_char_u996d",
+          "optionIds": [
+            "text_char_u996d",
+            "text_char_u7c73",
+            "text_char_u98df",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2813,9 +4241,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u676f_listen",
+          "id": "q_char_u676f_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u676f_v1.mp3",
           "correctOptionId": "text_char_u676f",
           "optionIds": [
             "text_char_u676f",
@@ -2825,6 +4253,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u676f_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u676f_v1.mp3",
+          "correctOptionId": "text_char_u676f",
+          "optionIds": [
+            "text_char_u676f",
+            "text_char_u6c34",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u676f_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u676f_v1.mp3",
+          "correctOptionId": "text_char_u676f",
+          "optionIds": [
+            "text_char_u676f",
+            "text_char_u6c34",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u676f_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u676f_v1.mp3",
+          "correctOptionId": "text_char_u676f",
+          "optionIds": [
+            "text_char_u676f",
+            "text_char_u6c34",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2866,9 +4336,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u4e66_listen",
+          "id": "q_char_u4e66_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u4e66_v1.mp3",
           "correctOptionId": "text_char_u4e66",
           "optionIds": [
             "text_char_u4e66",
@@ -2878,6 +4348,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u4e66_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u4e66_v1.mp3",
+          "correctOptionId": "text_char_u4e66",
+          "optionIds": [
+            "text_char_u4e66",
+            "text_char_u770b",
+            "text_char_u8f66",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u4e66_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u4e66_v1.mp3",
+          "correctOptionId": "text_char_u4e66",
+          "optionIds": [
+            "text_char_u4e66",
+            "text_char_u770b",
+            "text_char_u8f66",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u4e66_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u4e66_v1.mp3",
+          "correctOptionId": "text_char_u4e66",
+          "optionIds": [
+            "text_char_u4e66",
+            "text_char_u770b",
+            "text_char_u8f66",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2919,9 +4431,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u8f66_listen",
+          "id": "q_char_u8f66_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u8f66_v1.mp3",
           "correctOptionId": "text_char_u8f66",
           "optionIds": [
             "text_char_u8f66",
@@ -2931,6 +4443,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u8f66_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u8f66_v1.mp3",
+          "correctOptionId": "text_char_u8f66",
+          "optionIds": [
+            "text_char_u8f66",
+            "text_char_u9a6c",
+            "text_char_u4e66",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u8f66_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u8f66_v1.mp3",
+          "correctOptionId": "text_char_u8f66",
+          "optionIds": [
+            "text_char_u8f66",
+            "text_char_u9a6c",
+            "text_char_u4e66",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u8f66_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u8f66_v1.mp3",
+          "correctOptionId": "text_char_u8f66",
+          "optionIds": [
+            "text_char_u8f66",
+            "text_char_u9a6c",
+            "text_char_u4e66",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -2972,9 +4526,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u706f_listen",
+          "id": "q_char_u706f_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u706f_v1.mp3",
           "correctOptionId": "text_char_u706f",
           "optionIds": [
             "text_char_u706f",
@@ -2984,6 +4538,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u706f_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u706f_v1.mp3",
+          "correctOptionId": "text_char_u706f",
+          "optionIds": [
+            "text_char_u706f",
+            "text_char_u706b",
+            "text_char_u5e8a",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u706f_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u706f_v1.mp3",
+          "correctOptionId": "text_char_u706f",
+          "optionIds": [
+            "text_char_u706f",
+            "text_char_u706b",
+            "text_char_u5e8a",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u706f_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u706f_v1.mp3",
+          "correctOptionId": "text_char_u706f",
+          "optionIds": [
+            "text_char_u706f",
+            "text_char_u706b",
+            "text_char_u5e8a",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3025,9 +4621,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5e8a_listen",
+          "id": "q_char_u5e8a_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5e8a_v1.mp3",
           "correctOptionId": "text_char_u5e8a",
           "optionIds": [
             "text_char_u5e8a",
@@ -3037,6 +4633,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5e8a_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5e8a_v1.mp3",
+          "correctOptionId": "text_char_u5e8a",
+          "optionIds": [
+            "text_char_u5e8a",
+            "text_char_u684c",
+            "text_char_u5bb6",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5e8a_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5e8a_v1.mp3",
+          "correctOptionId": "text_char_u5e8a",
+          "optionIds": [
+            "text_char_u5e8a",
+            "text_char_u684c",
+            "text_char_u5bb6",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5e8a_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5e8a_v1.mp3",
+          "correctOptionId": "text_char_u5e8a",
+          "optionIds": [
+            "text_char_u5e8a",
+            "text_char_u684c",
+            "text_char_u5bb6",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3078,9 +4716,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u684c_listen",
+          "id": "q_char_u684c_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u684c_v1.mp3",
           "correctOptionId": "text_char_u684c",
           "optionIds": [
             "text_char_u684c",
@@ -3090,6 +4728,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u684c_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u684c_v1.mp3",
+          "correctOptionId": "text_char_u684c",
+          "optionIds": [
+            "text_char_u684c",
+            "text_char_u5e8a",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u684c_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u684c_v1.mp3",
+          "correctOptionId": "text_char_u684c",
+          "optionIds": [
+            "text_char_u684c",
+            "text_char_u5e8a",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u684c_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u684c_v1.mp3",
+          "correctOptionId": "text_char_u684c",
+          "optionIds": [
+            "text_char_u684c",
+            "text_char_u5e8a",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3131,9 +4811,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u770b_listen",
+          "id": "q_char_u770b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u770b_v1.mp3",
           "correctOptionId": "text_char_u770b",
           "optionIds": [
             "text_char_u770b",
@@ -3143,6 +4823,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u770b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u770b_v1.mp3",
+          "correctOptionId": "text_char_u770b",
+          "optionIds": [
+            "text_char_u770b",
+            "text_char_u542c",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u770b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u770b_v1.mp3",
+          "correctOptionId": "text_char_u770b",
+          "optionIds": [
+            "text_char_u770b",
+            "text_char_u542c",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u770b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u770b_v1.mp3",
+          "correctOptionId": "text_char_u770b",
+          "optionIds": [
+            "text_char_u770b",
+            "text_char_u542c",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3184,9 +4906,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u542c_listen",
+          "id": "q_char_u542c_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u542c_v1.mp3",
           "correctOptionId": "text_char_u542c",
           "optionIds": [
             "text_char_u542c",
@@ -3196,6 +4918,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u542c_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u542c_v1.mp3",
+          "correctOptionId": "text_char_u542c",
+          "optionIds": [
+            "text_char_u542c",
+            "text_char_u770b",
+            "text_char_u9e1f",
+            "text_char_u4e66"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u542c_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u542c_v1.mp3",
+          "correctOptionId": "text_char_u542c",
+          "optionIds": [
+            "text_char_u542c",
+            "text_char_u770b",
+            "text_char_u9e1f",
+            "text_char_u4e66"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u542c_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u542c_v1.mp3",
+          "correctOptionId": "text_char_u542c",
+          "optionIds": [
+            "text_char_u542c",
+            "text_char_u770b",
+            "text_char_u9e1f",
+            "text_char_u4e66"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3237,9 +5001,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u8d70_listen",
+          "id": "q_char_u8d70_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u8d70_v1.mp3",
           "correctOptionId": "text_char_u8d70",
           "optionIds": [
             "text_char_u8d70",
@@ -3249,6 +5013,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u8d70_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u8d70_v1.mp3",
+          "correctOptionId": "text_char_u8d70",
+          "optionIds": [
+            "text_char_u8d70",
+            "text_char_u8dd1",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u8d70_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u8d70_v1.mp3",
+          "correctOptionId": "text_char_u8d70",
+          "optionIds": [
+            "text_char_u8d70",
+            "text_char_u8dd1",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u8d70_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u8d70_v1.mp3",
+          "correctOptionId": "text_char_u8d70",
+          "optionIds": [
+            "text_char_u8d70",
+            "text_char_u8dd1",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3290,9 +5096,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u8dd1_listen",
+          "id": "q_char_u8dd1_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u8dd1_v1.mp3",
           "correctOptionId": "text_char_u8dd1",
           "optionIds": [
             "text_char_u8dd1",
@@ -3302,6 +5108,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u8dd1_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u8dd1_v1.mp3",
+          "correctOptionId": "text_char_u8dd1",
+          "optionIds": [
+            "text_char_u8dd1",
+            "text_char_u8d70",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u8dd1_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u8dd1_v1.mp3",
+          "correctOptionId": "text_char_u8dd1",
+          "optionIds": [
+            "text_char_u8dd1",
+            "text_char_u8d70",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u8dd1_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u8dd1_v1.mp3",
+          "correctOptionId": "text_char_u8dd1",
+          "optionIds": [
+            "text_char_u8dd1",
+            "text_char_u8d70",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3343,9 +5191,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u6765_listen",
+          "id": "q_char_u6765_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u6765_v1.mp3",
           "correctOptionId": "text_char_u6765",
           "optionIds": [
             "text_char_u6765",
@@ -3355,6 +5203,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u6765_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u6765_v1.mp3",
+          "correctOptionId": "text_char_u6765",
+          "optionIds": [
+            "text_char_u6765",
+            "text_char_u53bb",
+            "text_char_u8d70",
+            "text_char_u8dd1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u6765_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u6765_v1.mp3",
+          "correctOptionId": "text_char_u6765",
+          "optionIds": [
+            "text_char_u6765",
+            "text_char_u53bb",
+            "text_char_u8d70",
+            "text_char_u8dd1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u6765_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u6765_v1.mp3",
+          "correctOptionId": "text_char_u6765",
+          "optionIds": [
+            "text_char_u6765",
+            "text_char_u53bb",
+            "text_char_u8d70",
+            "text_char_u8dd1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3396,9 +5286,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u53bb_listen",
+          "id": "q_char_u53bb_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u53bb_v1.mp3",
           "correctOptionId": "text_char_u53bb",
           "optionIds": [
             "text_char_u53bb",
@@ -3408,6 +5298,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u53bb_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u53bb_v1.mp3",
+          "correctOptionId": "text_char_u53bb",
+          "optionIds": [
+            "text_char_u53bb",
+            "text_char_u6765",
+            "text_char_u4e0a",
+            "text_char_u4e0b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u53bb_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u53bb_v1.mp3",
+          "correctOptionId": "text_char_u53bb",
+          "optionIds": [
+            "text_char_u53bb",
+            "text_char_u6765",
+            "text_char_u4e0a",
+            "text_char_u4e0b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u53bb_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u53bb_v1.mp3",
+          "correctOptionId": "text_char_u53bb",
+          "optionIds": [
+            "text_char_u53bb",
+            "text_char_u6765",
+            "text_char_u4e0a",
+            "text_char_u4e0b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3449,9 +5381,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u4e0a_listen",
+          "id": "q_char_u4e0a_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u4e0a_v1.mp3",
           "correctOptionId": "text_char_u4e0a",
           "optionIds": [
             "text_char_u4e0a",
@@ -3461,6 +5393,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u4e0a_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u4e0a_v1.mp3",
+          "correctOptionId": "text_char_u4e0a",
+          "optionIds": [
+            "text_char_u4e0a",
+            "text_char_u4e0b",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u4e0a_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u4e0a_v1.mp3",
+          "correctOptionId": "text_char_u4e0a",
+          "optionIds": [
+            "text_char_u4e0a",
+            "text_char_u4e0b",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u4e0a_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u4e0a_v1.mp3",
+          "correctOptionId": "text_char_u4e0a",
+          "optionIds": [
+            "text_char_u4e0a",
+            "text_char_u4e0b",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3502,9 +5476,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u4e0b_listen",
+          "id": "q_char_u4e0b_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u4e0b_v1.mp3",
           "correctOptionId": "text_char_u4e0b",
           "optionIds": [
             "text_char_u4e0b",
@@ -3514,6 +5488,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u4e0b_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u4e0b_v1.mp3",
+          "correctOptionId": "text_char_u4e0b",
+          "optionIds": [
+            "text_char_u4e0b",
+            "text_char_u4e0a",
+            "text_char_u53bb",
+            "text_char_u5f00"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u4e0b_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u4e0b_v1.mp3",
+          "correctOptionId": "text_char_u4e0b",
+          "optionIds": [
+            "text_char_u4e0b",
+            "text_char_u4e0a",
+            "text_char_u53bb",
+            "text_char_u5f00"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u4e0b_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u4e0b_v1.mp3",
+          "correctOptionId": "text_char_u4e0b",
+          "optionIds": [
+            "text_char_u4e0b",
+            "text_char_u4e0a",
+            "text_char_u53bb",
+            "text_char_u5f00"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3555,9 +5571,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5f00_listen",
+          "id": "q_char_u5f00_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5f00_v1.mp3",
           "correctOptionId": "text_char_u5f00",
           "optionIds": [
             "text_char_u5f00",
@@ -3567,6 +5583,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5f00_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5f00_v1.mp3",
+          "correctOptionId": "text_char_u5f00",
+          "optionIds": [
+            "text_char_u5f00",
+            "text_char_u5173",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5f00_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5f00_v1.mp3",
+          "correctOptionId": "text_char_u5f00",
+          "optionIds": [
+            "text_char_u5f00",
+            "text_char_u5173",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5f00_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5f00_v1.mp3",
+          "correctOptionId": "text_char_u5f00",
+          "optionIds": [
+            "text_char_u5f00",
+            "text_char_u5173",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {
@@ -3608,9 +5666,9 @@
       "misconceptions": [],
       "questionSeeds": [
         {
-          "id": "q_char_u5173_listen",
+          "id": "q_char_u5173_listen_listen_choose_character",
           "type": "LISTEN_CHOOSE_CHARACTER",
-          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "promptAudio": "audio/characters/char_u5173_v1.mp3",
           "correctOptionId": "text_char_u5173",
           "optionIds": [
             "text_char_u5173",
@@ -3620,6 +5678,48 @@
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SOUND_TO_SHAPE"
+        },
+        {
+          "id": "q_char_u5173_listen_character_choose_image",
+          "type": "CHARACTER_CHOOSE_IMAGE",
+          "promptAudio": "audio/characters/char_u5173_v1.mp3",
+          "correctOptionId": "text_char_u5173",
+          "optionIds": [
+            "text_char_u5173",
+            "text_char_u5f00",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_MEANING"
+        },
+        {
+          "id": "q_char_u5173_listen_character_choose_audio",
+          "type": "CHARACTER_CHOOSE_AUDIO",
+          "promptAudio": "audio/characters/char_u5173_v1.mp3",
+          "correctOptionId": "text_char_u5173",
+          "optionIds": [
+            "text_char_u5173",
+            "text_char_u5f00",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SHAPE_TO_SOUND"
+        },
+        {
+          "id": "q_char_u5173_listen_life_word_context",
+          "type": "LIFE_WORD_CONTEXT",
+          "promptAudio": "audio/characters/char_u5173_v1.mp3",
+          "correctOptionId": "text_char_u5173",
+          "optionIds": [
+            "text_char_u5173",
+            "text_char_u5f00",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "CONTEXT"
         }
       ],
       "contentReview": {

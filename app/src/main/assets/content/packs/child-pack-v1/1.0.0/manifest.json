@@ -11,8 +11,8 @@
     },
     {
       "path": "content.json",
-      "sha256": "cfe7a2b1a7cf95ece5c7edaa3771173b8a8b466f7defd0b42e95c1724fd7f18c",
-      "bytes": 116313,
+      "sha256": "3f41512fe7978894cca305877eb0f2d53f603694236b42b797c7b2a22583374c",
+      "bytes": 189713,
       "required": true
     },
     {
