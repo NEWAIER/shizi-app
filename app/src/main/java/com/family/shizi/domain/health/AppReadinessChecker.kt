@@ -22,7 +22,8 @@ class AppReadinessChecker(private val context: Context) {
         val manifest = AssetManifestLoader.load(context)
         val g2 = G2ResourceValidator.validate(content, manifest, AndroidAssetByteSource(context))
         if (!g2.isValid) {
-            return AppReadiness(false, "资源校验失败：${g2.errors.first().code}")
+            val first = g2.errors.first()
+            return AppReadiness(false, "资源校验失败：${first.code} · ${first.path}")
         }
         return AppReadiness(true, "OK")
     }

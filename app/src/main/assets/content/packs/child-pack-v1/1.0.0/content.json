@@ -991,20 +991,20 @@
       "words": [
         {
           "text": "大人",
-          "audioAsset": "audio/words/u4eba_1_v1.mp3"
+          "audioAsset": "audio/words/char_u4eba_1_v1.mp3"
         },
         {
           "text": "家人",
-          "audioAsset": "audio/words/u4eba_2_v1.mp3"
+          "audioAsset": "audio/words/char_u4eba_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我和妈妈都是人。",
-        "audioAsset": "audio/sentences/u4eba_v1.mp3"
+        "audioAsset": "audio/sentences/char_u4eba_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u4eba_v1.mp3",
-        "meaning": "audio/meanings/meaning_u4eba_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u4eba_v1.mp3"
       },
       "teachingPrompt": "人就是你和我这样的朋友。",
       "confusableRestrictions": [],
@@ -1086,20 +1086,20 @@
       "words": [
         {
           "text": "开口",
-          "audioAsset": "audio/words/u53e3_1_v1.mp3"
+          "audioAsset": "audio/words/char_u53e3_1_v1.mp3"
         },
         {
           "text": "门口",
-          "audioAsset": "audio/words/u53e3_2_v1.mp3"
+          "audioAsset": "audio/words/char_u53e3_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我开口说你好。",
-        "audioAsset": "audio/sentences/u53e3_v1.mp3"
+        "audioAsset": "audio/sentences/char_u53e3_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u53e3_v1.mp3",
-        "meaning": "audio/meanings/meaning_u53e3_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u53e3_v1.mp3"
       },
       "teachingPrompt": "口就是嘴巴，可以吃东西和说话。",
       "confusableRestrictions": [],
@@ -1181,20 +1181,20 @@
       "words": [
         {
           "text": "大人",
-          "audioAsset": "audio/words/u5927_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5927_1_v1.mp3"
         },
         {
           "text": "大山",
-          "audioAsset": "audio/words/u5927_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5927_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "这是一只大大的熊。",
-        "audioAsset": "audio/sentences/u5927_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5927_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5927_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5927_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5927_v1.mp3"
       },
       "teachingPrompt": "大表示占的地方更多或个子更高。",
       "confusableRestrictions": [],
@@ -1276,20 +1276,20 @@
       "words": [
         {
           "text": "小手",
-          "audioAsset": "audio/words/u5c0f_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5c0f_1_v1.mp3"
         },
         {
           "text": "小猫",
-          "audioAsset": "audio/words/u5c0f_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5c0f_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小猫在睡觉。",
-        "audioAsset": "audio/sentences/u5c0f_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5c0f_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5c0f_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5c0f_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5c0f_v1.mp3"
       },
       "teachingPrompt": "小表示占的地方更少或个子更矮。",
       "confusableRestrictions": [],
@@ -1371,20 +1371,20 @@
       "words": [
         {
           "text": "小手",
-          "audioAsset": "audio/words/u624b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u624b_1_v1.mp3"
         },
         {
           "text": "手指",
-          "audioAsset": "audio/words/u624b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u624b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我用手拿杯子。",
-        "audioAsset": "audio/sentences/u624b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u624b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u624b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u624b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u624b_v1.mp3"
       },
       "teachingPrompt": "手可以拿东西、挥一挥和做动作。",
       "confusableRestrictions": [],
@@ -1466,20 +1466,20 @@
       "words": [
         {
           "text": "头发",
-          "audioAsset": "audio/words/u5934_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5934_1_v1.mp3"
         },
         {
           "text": "点头",
-          "audioAsset": "audio/words/u5934_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5934_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我点点头说好。",
-        "audioAsset": "audio/sentences/u5934_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5934_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5934_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5934_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5934_v1.mp3"
       },
       "teachingPrompt": "头在身体的最上面，有眼睛耳朵和嘴巴。",
       "confusableRestrictions": [],
@@ -1561,20 +1561,20 @@
       "words": [
         {
           "text": "爸爸",
-          "audioAsset": "audio/words/u7238_1_v1.mp3"
+          "audioAsset": "audio/words/char_u7238_1_v1.mp3"
         },
         {
           "text": "爸妈",
-          "audioAsset": "audio/words/u7238_2_v1.mp3"
+          "audioAsset": "audio/words/char_u7238_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "爸爸陪我看书。",
-        "audioAsset": "audio/sentences/u7238_v1.mp3"
+        "audioAsset": "audio/sentences/char_u7238_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u7238_v1.mp3",
-        "meaning": "audio/meanings/meaning_u7238_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u7238_v1.mp3"
       },
       "teachingPrompt": "爸爸是照顾和陪伴我们的家人。",
       "confusableRestrictions": [],
@@ -1656,20 +1656,20 @@
       "words": [
         {
           "text": "妈妈",
-          "audioAsset": "audio/words/u5988_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5988_1_v1.mp3"
         },
         {
           "text": "爸妈",
-          "audioAsset": "audio/words/u5988_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5988_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "妈妈给我一个拥抱。",
-        "audioAsset": "audio/sentences/u5988_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5988_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5988_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5988_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5988_v1.mp3"
       },
       "teachingPrompt": "妈妈是照顾和陪伴我们的家人。",
       "confusableRestrictions": [],
@@ -1751,20 +1751,20 @@
       "words": [
         {
           "text": "家人",
-          "audioAsset": "audio/words/u5bb6_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5bb6_1_v1.mp3"
         },
         {
           "text": "回家",
-          "audioAsset": "audio/words/u5bb6_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5bb6_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我喜欢回家。",
-        "audioAsset": "audio/sentences/u5bb6_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5bb6_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5bb6_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5bb6_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5bb6_v1.mp3"
       },
       "teachingPrompt": "家是我们生活和休息的地方。",
       "confusableRestrictions": [],
@@ -1846,20 +1846,20 @@
       "words": [
         {
           "text": "门口",
-          "audioAsset": "audio/words/u95e8_1_v1.mp3"
+          "audioAsset": "audio/words/char_u95e8_1_v1.mp3"
         },
         {
           "text": "开门",
-          "audioAsset": "audio/words/u95e8_2_v1.mp3"
+          "audioAsset": "audio/words/char_u95e8_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我从门口走进家。",
-        "audioAsset": "audio/sentences/u95e8_v1.mp3"
+        "audioAsset": "audio/sentences/char_u95e8_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u95e8_v1.mp3",
-        "meaning": "audio/meanings/meaning_u95e8_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u95e8_v1.mp3"
       },
       "teachingPrompt": "门可以打开和关上，进出房间要经过门。",
       "confusableRestrictions": [],
@@ -1941,20 +1941,20 @@
       "words": [
         {
           "text": "大山",
-          "audioAsset": "audio/words/u5c71_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5c71_1_v1.mp3"
         },
         {
           "text": "山上",
-          "audioAsset": "audio/words/u5c71_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5c71_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "远处有一座山。",
-        "audioAsset": "audio/sentences/u5c71_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5c71_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5c71_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5c71_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5c71_v1.mp3"
       },
       "teachingPrompt": "山是地面上高高隆起的地方。",
       "confusableRestrictions": [],
@@ -2036,20 +2036,20 @@
       "words": [
         {
           "text": "喝水",
-          "audioAsset": "audio/words/u6c34_1_v1.mp3"
+          "audioAsset": "audio/words/char_u6c34_1_v1.mp3"
         },
         {
           "text": "水杯",
-          "audioAsset": "audio/words/u6c34_2_v1.mp3"
+          "audioAsset": "audio/words/char_u6c34_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "宝宝每天都要喝水。",
-        "audioAsset": "audio/sentences/u6c34_v1.mp3"
+        "audioAsset": "audio/sentences/char_u6c34_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u6c34_v1.mp3",
-        "meaning": "audio/meanings/meaning_u6c34_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u6c34_v1.mp3"
       },
       "teachingPrompt": "水可以喝，也可以洗手和洗东西。",
       "confusableRestrictions": [],
@@ -2131,20 +2131,20 @@
       "words": [
         {
           "text": "火车",
-          "audioAsset": "audio/words/u706b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u706b_1_v1.mp3"
         },
         {
           "text": "火苗",
-          "audioAsset": "audio/words/u706b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u706b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小火苗在炉子里。",
-        "audioAsset": "audio/sentences/u706b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u706b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u706b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u706b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u706b_v1.mp3"
       },
       "teachingPrompt": "火会发光发热，要和大人一起安全使用。",
       "confusableRestrictions": [],
@@ -2226,20 +2226,20 @@
       "words": [
         {
           "text": "木头",
-          "audioAsset": "audio/words/u6728_1_v1.mp3"
+          "audioAsset": "audio/words/char_u6728_1_v1.mp3"
         },
         {
           "text": "木门",
-          "audioAsset": "audio/words/u6728_2_v1.mp3"
+          "audioAsset": "audio/words/char_u6728_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "这是一扇木门。",
-        "audioAsset": "audio/sentences/u6728_v1.mp3"
+        "audioAsset": "audio/sentences/char_u6728_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u6728_v1.mp3",
-        "meaning": "audio/meanings/meaning_u6728_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u6728_v1.mp3"
       },
       "teachingPrompt": "木头来自树，可以做成很多东西。",
       "confusableRestrictions": [],
@@ -2321,20 +2321,20 @@
       "words": [
         {
           "text": "日出",
-          "audioAsset": "audio/words/u65e5_1_v1.mp3"
+          "audioAsset": "audio/words/char_u65e5_1_v1.mp3"
         },
         {
           "text": "日子",
-          "audioAsset": "audio/words/u65e5_2_v1.mp3"
+          "audioAsset": "audio/words/char_u65e5_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "今天是快乐的一日。",
-        "audioAsset": "audio/sentences/u65e5_v1.mp3"
+        "audioAsset": "audio/sentences/char_u65e5_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u65e5_v1.mp3",
-        "meaning": "audio/meanings/meaning_u65e5_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u65e5_v1.mp3"
       },
       "teachingPrompt": "太阳出来的白天可以叫日。",
       "confusableRestrictions": [],
@@ -2416,20 +2416,20 @@
       "words": [
         {
           "text": "月亮",
-          "audioAsset": "audio/words/u6708_1_v1.mp3"
+          "audioAsset": "audio/words/char_u6708_1_v1.mp3"
         },
         {
           "text": "月光",
-          "audioAsset": "audio/words/u6708_2_v1.mp3"
+          "audioAsset": "audio/words/char_u6708_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "月亮照着小路。",
-        "audioAsset": "audio/sentences/u6708_v1.mp3"
+        "audioAsset": "audio/sentences/char_u6708_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u6708_v1.mp3",
-        "meaning": "audio/meanings/meaning_u6708_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u6708_v1.mp3"
       },
       "teachingPrompt": "月亮在晚上天空中发光。",
       "confusableRestrictions": [],
@@ -2511,20 +2511,20 @@
       "words": [
         {
           "text": "今天",
-          "audioAsset": "audio/words/u5929_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5929_1_v1.mp3"
         },
         {
           "text": "天空",
-          "audioAsset": "audio/words/u5929_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5929_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "今天的天空很蓝。",
-        "audioAsset": "audio/sentences/u5929_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5929_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5929_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5929_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5929_v1.mp3"
       },
       "teachingPrompt": "头顶上很高很大的地方就是天空。",
       "confusableRestrictions": [],
@@ -2606,20 +2606,20 @@
       "words": [
         {
           "text": "白云",
-          "audioAsset": "audio/words/u4e91_1_v1.mp3"
+          "audioAsset": "audio/words/char_u4e91_1_v1.mp3"
         },
         {
           "text": "云朵",
-          "audioAsset": "audio/words/u4e91_2_v1.mp3"
+          "audioAsset": "audio/words/char_u4e91_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "白云在天空中飘。",
-        "audioAsset": "audio/sentences/u4e91_v1.mp3"
+        "audioAsset": "audio/sentences/char_u4e91_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u4e91_v1.mp3",
-        "meaning": "audio/meanings/meaning_u4e91_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u4e91_v1.mp3"
       },
       "teachingPrompt": "云是一团团飘在天空中的白色或灰色东西。",
       "confusableRestrictions": [],
@@ -2701,20 +2701,20 @@
       "words": [
         {
           "text": "下雨",
-          "audioAsset": "audio/words/u96e8_1_v1.mp3"
+          "audioAsset": "audio/words/char_u96e8_1_v1.mp3"
         },
         {
           "text": "雨伞",
-          "audioAsset": "audio/words/u96e8_2_v1.mp3"
+          "audioAsset": "audio/words/char_u96e8_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "下雨了我要撑伞。",
-        "audioAsset": "audio/sentences/u96e8_v1.mp3"
+        "audioAsset": "audio/sentences/char_u96e8_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u96e8_v1.mp3",
-        "meaning": "audio/meanings/meaning_u96e8_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u96e8_v1.mp3"
       },
       "teachingPrompt": "雨是从云里落下来的小水滴。",
       "confusableRestrictions": [],
@@ -2796,20 +2796,20 @@
       "words": [
         {
           "text": "大风",
-          "audioAsset": "audio/words/u98ce_1_v1.mp3"
+          "audioAsset": "audio/words/char_u98ce_1_v1.mp3"
         },
         {
           "text": "风车",
-          "audioAsset": "audio/words/u98ce_2_v1.mp3"
+          "audioAsset": "audio/words/char_u98ce_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "风吹动了风车。",
-        "audioAsset": "audio/sentences/u98ce_v1.mp3"
+        "audioAsset": "audio/sentences/char_u98ce_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u98ce_v1.mp3",
-        "meaning": "audio/meanings/meaning_u98ce_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u98ce_v1.mp3"
       },
       "teachingPrompt": "风看不见，但能吹动树叶和头发。",
       "confusableRestrictions": [],
@@ -2891,20 +2891,20 @@
       "words": [
         {
           "text": "奶牛",
-          "audioAsset": "audio/words/u725b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u725b_1_v1.mp3"
         },
         {
           "text": "小牛",
-          "audioAsset": "audio/words/u725b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u725b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "奶牛在草地上吃草。",
-        "audioAsset": "audio/sentences/u725b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u725b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u725b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u725b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u725b_v1.mp3"
       },
       "teachingPrompt": "牛是生活在农场里的大动物。",
       "confusableRestrictions": [],
@@ -2986,20 +2986,20 @@
       "words": [
         {
           "text": "小羊",
-          "audioAsset": "audio/words/u7f8a_1_v1.mp3"
+          "audioAsset": "audio/words/char_u7f8a_1_v1.mp3"
         },
         {
           "text": "山羊",
-          "audioAsset": "audio/words/u7f8a_2_v1.mp3"
+          "audioAsset": "audio/words/char_u7f8a_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小羊在草地上跑。",
-        "audioAsset": "audio/sentences/u7f8a_v1.mp3"
+        "audioAsset": "audio/sentences/char_u7f8a_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u7f8a_v1.mp3",
-        "meaning": "audio/meanings/meaning_u7f8a_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u7f8a_v1.mp3"
       },
       "teachingPrompt": "羊有软软的毛，喜欢在草地上吃草。",
       "confusableRestrictions": [],
@@ -3081,20 +3081,20 @@
       "words": [
         {
           "text": "小鸟",
-          "audioAsset": "audio/words/u9e1f_1_v1.mp3"
+          "audioAsset": "audio/words/char_u9e1f_1_v1.mp3"
         },
         {
           "text": "鸟儿",
-          "audioAsset": "audio/words/u9e1f_2_v1.mp3"
+          "audioAsset": "audio/words/char_u9e1f_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小鸟站在树枝上。",
-        "audioAsset": "audio/sentences/u9e1f_v1.mp3"
+        "audioAsset": "audio/sentences/char_u9e1f_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u9e1f_v1.mp3",
-        "meaning": "audio/meanings/meaning_u9e1f_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u9e1f_v1.mp3"
       },
       "teachingPrompt": "鸟有翅膀，可以在天空中飞。",
       "confusableRestrictions": [],
@@ -3176,20 +3176,20 @@
       "words": [
         {
           "text": "小鱼",
-          "audioAsset": "audio/words/u9c7c_1_v1.mp3"
+          "audioAsset": "audio/words/char_u9c7c_1_v1.mp3"
         },
         {
           "text": "金鱼",
-          "audioAsset": "audio/words/u9c7c_2_v1.mp3"
+          "audioAsset": "audio/words/char_u9c7c_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小鱼在水里游。",
-        "audioAsset": "audio/sentences/u9c7c_v1.mp3"
+        "audioAsset": "audio/sentences/char_u9c7c_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u9c7c_v1.mp3",
-        "meaning": "audio/meanings/meaning_u9c7c_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u9c7c_v1.mp3"
       },
       "teachingPrompt": "鱼生活在水里，用鱼鳍游泳。",
       "confusableRestrictions": [],
@@ -3271,20 +3271,20 @@
       "words": [
         {
           "text": "小马",
-          "audioAsset": "audio/words/u9a6c_1_v1.mp3"
+          "audioAsset": "audio/words/char_u9a6c_1_v1.mp3"
         },
         {
           "text": "马车",
-          "audioAsset": "audio/words/u9a6c_2_v1.mp3"
+          "audioAsset": "audio/words/char_u9a6c_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小马在草地上跑。",
-        "audioAsset": "audio/sentences/u9a6c_v1.mp3"
+        "audioAsset": "audio/sentences/char_u9a6c_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u9a6c_v1.mp3",
-        "meaning": "audio/meanings/meaning_u9a6c_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u9a6c_v1.mp3"
       },
       "teachingPrompt": "马是有四条腿的大动物，可以奔跑。",
       "confusableRestrictions": [],
@@ -3366,20 +3366,20 @@
       "words": [
         {
           "text": "小猫",
-          "audioAsset": "audio/words/u732b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u732b_1_v1.mp3"
         },
         {
           "text": "花猫",
-          "audioAsset": "audio/words/u732b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u732b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小猫在晒太阳。",
-        "audioAsset": "audio/sentences/u732b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u732b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u732b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u732b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u732b_v1.mp3"
       },
       "teachingPrompt": "猫有软软的毛，喜欢轻轻地走路。",
       "confusableRestrictions": [],
@@ -3461,20 +3461,20 @@
       "words": [
         {
           "text": "小狗",
-          "audioAsset": "audio/words/u72d7_1_v1.mp3"
+          "audioAsset": "audio/words/char_u72d7_1_v1.mp3"
         },
         {
           "text": "黑狗",
-          "audioAsset": "audio/words/u72d7_2_v1.mp3"
+          "audioAsset": "audio/words/char_u72d7_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小狗摇着尾巴。",
-        "audioAsset": "audio/sentences/u72d7_v1.mp3"
+        "audioAsset": "audio/sentences/char_u72d7_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u72d7_v1.mp3",
-        "meaning": "audio/meanings/meaning_u72d7_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u72d7_v1.mp3"
       },
       "teachingPrompt": "狗是会摇尾巴的动物，是人的好朋友。",
       "confusableRestrictions": [],
@@ -3556,20 +3556,20 @@
       "words": [
         {
           "text": "小兔",
-          "audioAsset": "audio/words/u5154_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5154_1_v1.mp3"
         },
         {
           "text": "白兔",
-          "audioAsset": "audio/words/u5154_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5154_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小兔在吃胡萝卜。",
-        "audioAsset": "audio/sentences/u5154_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5154_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5154_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5154_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5154_v1.mp3"
       },
       "teachingPrompt": "兔子有长耳朵，喜欢跳来跳去。",
       "confusableRestrictions": [],
@@ -3651,20 +3651,20 @@
       "words": [
         {
           "text": "小虫",
-          "audioAsset": "audio/words/u866b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u866b_1_v1.mp3"
         },
         {
           "text": "虫子",
-          "audioAsset": "audio/words/u866b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u866b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小虫在叶子上爬。",
-        "audioAsset": "audio/sentences/u866b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u866b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u866b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u866b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u866b_v1.mp3"
       },
       "teachingPrompt": "虫是很小的动物，有的会爬有的会飞。",
       "confusableRestrictions": [],
@@ -3746,20 +3746,20 @@
       "words": [
         {
           "text": "红花",
-          "audioAsset": "audio/words/u82b1_1_v1.mp3"
+          "audioAsset": "audio/words/char_u82b1_1_v1.mp3"
         },
         {
           "text": "花朵",
-          "audioAsset": "audio/words/u82b1_2_v1.mp3"
+          "audioAsset": "audio/words/char_u82b1_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "春天的花开了。",
-        "audioAsset": "audio/sentences/u82b1_v1.mp3"
+        "audioAsset": "audio/sentences/char_u82b1_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u82b1_v1.mp3",
-        "meaning": "audio/meanings/meaning_u82b1_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u82b1_v1.mp3"
       },
       "teachingPrompt": "花有漂亮的颜色和香味。",
       "confusableRestrictions": [],
@@ -3841,20 +3841,20 @@
       "words": [
         {
           "text": "衣服",
-          "audioAsset": "audio/words/u8863_1_v1.mp3"
+          "audioAsset": "audio/words/char_u8863_1_v1.mp3"
         },
         {
           "text": "上衣",
-          "audioAsset": "audio/words/u8863_2_v1.mp3"
+          "audioAsset": "audio/words/char_u8863_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我穿好衣服出门。",
-        "audioAsset": "audio/sentences/u8863_v1.mp3"
+        "audioAsset": "audio/sentences/char_u8863_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u8863_v1.mp3",
-        "meaning": "audio/meanings/meaning_u8863_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u8863_v1.mp3"
       },
       "teachingPrompt": "衣服穿在身上，可以保暖和保护身体。",
       "confusableRestrictions": [],
@@ -3936,20 +3936,20 @@
       "words": [
         {
           "text": "食物",
-          "audioAsset": "audio/words/u98df_1_v1.mp3"
+          "audioAsset": "audio/words/char_u98df_1_v1.mp3"
         },
         {
           "text": "食品",
-          "audioAsset": "audio/words/u98df_2_v1.mp3"
+          "audioAsset": "audio/words/char_u98df_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "好吃的食物让我开心。",
-        "audioAsset": "audio/sentences/u98df_v1.mp3"
+        "audioAsset": "audio/sentences/char_u98df_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u98df_v1.mp3",
-        "meaning": "audio/meanings/meaning_u98df_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u98df_v1.mp3"
       },
       "teachingPrompt": "食物可以吃，让身体有力气。",
       "confusableRestrictions": [],
@@ -4031,20 +4031,20 @@
       "words": [
         {
           "text": "大米",
-          "audioAsset": "audio/words/u7c73_1_v1.mp3"
+          "audioAsset": "audio/words/char_u7c73_1_v1.mp3"
         },
         {
           "text": "米饭",
-          "audioAsset": "audio/words/u7c73_2_v1.mp3"
+          "audioAsset": "audio/words/char_u7c73_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "妈妈煮了香香的米饭。",
-        "audioAsset": "audio/sentences/u7c73_v1.mp3"
+        "audioAsset": "audio/sentences/char_u7c73_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u7c73_v1.mp3",
-        "meaning": "audio/meanings/meaning_u7c73_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u7c73_v1.mp3"
       },
       "teachingPrompt": "米是做米饭的粮食，一粒粒白白的。",
       "confusableRestrictions": [],
@@ -4126,20 +4126,20 @@
       "words": [
         {
           "text": "吃饭",
-          "audioAsset": "audio/words/u996d_1_v1.mp3"
+          "audioAsset": "audio/words/char_u996d_1_v1.mp3"
         },
         {
           "text": "米饭",
-          "audioAsset": "audio/words/u996d_2_v1.mp3"
+          "audioAsset": "audio/words/char_u996d_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我坐好吃饭。",
-        "audioAsset": "audio/sentences/u996d_v1.mp3"
+        "audioAsset": "audio/sentences/char_u996d_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u996d_v1.mp3",
-        "meaning": "audio/meanings/meaning_u996d_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u996d_v1.mp3"
       },
       "teachingPrompt": "饭是我们每天吃的食物。",
       "confusableRestrictions": [],
@@ -4221,20 +4221,20 @@
       "words": [
         {
           "text": "水杯",
-          "audioAsset": "audio/words/u676f_1_v1.mp3"
+          "audioAsset": "audio/words/char_u676f_1_v1.mp3"
         },
         {
           "text": "杯子",
-          "audioAsset": "audio/words/u676f_2_v1.mp3"
+          "audioAsset": "audio/words/char_u676f_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我的水杯是蓝色的。",
-        "audioAsset": "audio/sentences/u676f_v1.mp3"
+        "audioAsset": "audio/sentences/char_u676f_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u676f_v1.mp3",
-        "meaning": "audio/meanings/meaning_u676f_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u676f_v1.mp3"
       },
       "teachingPrompt": "杯子可以装水和饮料。",
       "confusableRestrictions": [],
@@ -4316,20 +4316,20 @@
       "words": [
         {
           "text": "看书",
-          "audioAsset": "audio/words/u4e66_1_v1.mp3"
+          "audioAsset": "audio/words/char_u4e66_1_v1.mp3"
         },
         {
           "text": "书本",
-          "audioAsset": "audio/words/u4e66_2_v1.mp3"
+          "audioAsset": "audio/words/char_u4e66_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我和妈妈一起看书。",
-        "audioAsset": "audio/sentences/u4e66_v1.mp3"
+        "audioAsset": "audio/sentences/char_u4e66_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u4e66_v1.mp3",
-        "meaning": "audio/meanings/meaning_u4e66_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u4e66_v1.mp3"
       },
       "teachingPrompt": "书里有故事和很多知识。",
       "confusableRestrictions": [],
@@ -4411,20 +4411,20 @@
       "words": [
         {
           "text": "汽车",
-          "audioAsset": "audio/words/u8f66_1_v1.mp3"
+          "audioAsset": "audio/words/char_u8f66_1_v1.mp3"
         },
         {
           "text": "车子",
-          "audioAsset": "audio/words/u8f66_2_v1.mp3"
+          "audioAsset": "audio/words/char_u8f66_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "爸爸开车送我。",
-        "audioAsset": "audio/sentences/u8f66_v1.mp3"
+        "audioAsset": "audio/sentences/char_u8f66_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u8f66_v1.mp3",
-        "meaning": "audio/meanings/meaning_u8f66_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u8f66_v1.mp3"
       },
       "teachingPrompt": "车可以载人或东西，在路上行驶。",
       "confusableRestrictions": [],
@@ -4506,20 +4506,20 @@
       "words": [
         {
           "text": "开灯",
-          "audioAsset": "audio/words/u706f_1_v1.mp3"
+          "audioAsset": "audio/words/char_u706f_1_v1.mp3"
         },
         {
           "text": "灯光",
-          "audioAsset": "audio/words/u706f_2_v1.mp3"
+          "audioAsset": "audio/words/char_u706f_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "晚上我打开小灯。",
-        "audioAsset": "audio/sentences/u706f_v1.mp3"
+        "audioAsset": "audio/sentences/char_u706f_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u706f_v1.mp3",
-        "meaning": "audio/meanings/meaning_u706f_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u706f_v1.mp3"
       },
       "teachingPrompt": "灯可以发光，帮助我们看清楚。",
       "confusableRestrictions": [],
@@ -4601,20 +4601,20 @@
       "words": [
         {
           "text": "小床",
-          "audioAsset": "audio/words/u5e8a_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5e8a_1_v1.mp3"
         },
         {
           "text": "床上",
-          "audioAsset": "audio/words/u5e8a_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5e8a_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我在床上睡觉。",
-        "audioAsset": "audio/sentences/u5e8a_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5e8a_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5e8a_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5e8a_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5e8a_v1.mp3"
       },
       "teachingPrompt": "床是睡觉和休息的地方。",
       "confusableRestrictions": [],
@@ -4696,20 +4696,20 @@
       "words": [
         {
           "text": "桌子",
-          "audioAsset": "audio/words/u684c_1_v1.mp3"
+          "audioAsset": "audio/words/char_u684c_1_v1.mp3"
         },
         {
           "text": "书桌",
-          "audioAsset": "audio/words/u684c_2_v1.mp3"
+          "audioAsset": "audio/words/char_u684c_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "书放在桌上。",
-        "audioAsset": "audio/sentences/u684c_v1.mp3"
+        "audioAsset": "audio/sentences/char_u684c_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u684c_v1.mp3",
-        "meaning": "audio/meanings/meaning_u684c_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u684c_v1.mp3"
       },
       "teachingPrompt": "桌子有平平的桌面，可以放东西。",
       "confusableRestrictions": [],
@@ -4791,20 +4791,20 @@
       "words": [
         {
           "text": "看见",
-          "audioAsset": "audio/words/u770b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u770b_1_v1.mp3"
         },
         {
           "text": "看书",
-          "audioAsset": "audio/words/u770b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u770b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我看见一朵花。",
-        "audioAsset": "audio/sentences/u770b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u770b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u770b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u770b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u770b_v1.mp3"
       },
       "teachingPrompt": "看是用眼睛发现和认识东西。",
       "confusableRestrictions": [],
@@ -4886,20 +4886,20 @@
       "words": [
         {
           "text": "听见",
-          "audioAsset": "audio/words/u542c_1_v1.mp3"
+          "audioAsset": "audio/words/char_u542c_1_v1.mp3"
         },
         {
           "text": "听话",
-          "audioAsset": "audio/words/u542c_2_v1.mp3"
+          "audioAsset": "audio/words/char_u542c_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我听见小鸟叫。",
-        "audioAsset": "audio/sentences/u542c_v1.mp3"
+        "audioAsset": "audio/sentences/char_u542c_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u542c_v1.mp3",
-        "meaning": "audio/meanings/meaning_u542c_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u542c_v1.mp3"
       },
       "teachingPrompt": "听是用耳朵听到声音。",
       "confusableRestrictions": [],
@@ -4981,20 +4981,20 @@
       "words": [
         {
           "text": "走路",
-          "audioAsset": "audio/words/u8d70_1_v1.mp3"
+          "audioAsset": "audio/words/char_u8d70_1_v1.mp3"
         },
         {
           "text": "走开",
-          "audioAsset": "audio/words/u8d70_2_v1.mp3"
+          "audioAsset": "audio/words/char_u8d70_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我和爸爸一起走路。",
-        "audioAsset": "audio/sentences/u8d70_v1.mp3"
+        "audioAsset": "audio/sentences/char_u8d70_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u8d70_v1.mp3",
-        "meaning": "audio/meanings/meaning_u8d70_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u8d70_v1.mp3"
       },
       "teachingPrompt": "走是一步一步向前移动。",
       "confusableRestrictions": [],
@@ -5076,20 +5076,20 @@
       "words": [
         {
           "text": "跑步",
-          "audioAsset": "audio/words/u8dd1_1_v1.mp3"
+          "audioAsset": "audio/words/char_u8dd1_1_v1.mp3"
         },
         {
           "text": "快跑",
-          "audioAsset": "audio/words/u8dd1_2_v1.mp3"
+          "audioAsset": "audio/words/char_u8dd1_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小朋友在操场上跑步。",
-        "audioAsset": "audio/sentences/u8dd1_v1.mp3"
+        "audioAsset": "audio/sentences/char_u8dd1_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u8dd1_v1.mp3",
-        "meaning": "audio/meanings/meaning_u8dd1_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u8dd1_v1.mp3"
       },
       "teachingPrompt": "跑是比走得更快地向前移动。",
       "confusableRestrictions": [],
@@ -5171,20 +5171,20 @@
       "words": [
         {
           "text": "回来",
-          "audioAsset": "audio/words/u6765_1_v1.mp3"
+          "audioAsset": "audio/words/char_u6765_1_v1.mp3"
         },
         {
           "text": "来吧",
-          "audioAsset": "audio/words/u6765_2_v1.mp3"
+          "audioAsset": "audio/words/char_u6765_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小狗跑过来说你好。",
-        "audioAsset": "audio/sentences/u6765_v1.mp3"
+        "audioAsset": "audio/sentences/char_u6765_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u6765_v1.mp3",
-        "meaning": "audio/meanings/meaning_u6765_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u6765_v1.mp3"
       },
       "teachingPrompt": "来表示从别的地方到这里。",
       "confusableRestrictions": [],
@@ -5266,20 +5266,20 @@
       "words": [
         {
           "text": "出去",
-          "audioAsset": "audio/words/u53bb_1_v1.mp3"
+          "audioAsset": "audio/words/char_u53bb_1_v1.mp3"
         },
         {
           "text": "回去",
-          "audioAsset": "audio/words/u53bb_2_v1.mp3"
+          "audioAsset": "audio/words/char_u53bb_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我们一起去公园。",
-        "audioAsset": "audio/sentences/u53bb_v1.mp3"
+        "audioAsset": "audio/sentences/char_u53bb_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u53bb_v1.mp3",
-        "meaning": "audio/meanings/meaning_u53bb_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u53bb_v1.mp3"
       },
       "teachingPrompt": "去表示从这里到别的地方。",
       "confusableRestrictions": [],
@@ -5361,20 +5361,20 @@
       "words": [
         {
           "text": "上面",
-          "audioAsset": "audio/words/u4e0a_1_v1.mp3"
+          "audioAsset": "audio/words/char_u4e0a_1_v1.mp3"
         },
         {
           "text": "上山",
-          "audioAsset": "audio/words/u4e0a_2_v1.mp3"
+          "audioAsset": "audio/words/char_u4e0a_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "小鸟在树上。",
-        "audioAsset": "audio/sentences/u4e0a_v1.mp3"
+        "audioAsset": "audio/sentences/char_u4e0a_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u4e0a_v1.mp3",
-        "meaning": "audio/meanings/meaning_u4e0a_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u4e0a_v1.mp3"
       },
       "teachingPrompt": "上表示在高处或向高处移动。",
       "confusableRestrictions": [],
@@ -5456,20 +5456,20 @@
       "words": [
         {
           "text": "下面",
-          "audioAsset": "audio/words/u4e0b_1_v1.mp3"
+          "audioAsset": "audio/words/char_u4e0b_1_v1.mp3"
         },
         {
           "text": "下雨",
-          "audioAsset": "audio/words/u4e0b_2_v1.mp3"
+          "audioAsset": "audio/words/char_u4e0b_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "雨滴从天上落下。",
-        "audioAsset": "audio/sentences/u4e0b_v1.mp3"
+        "audioAsset": "audio/sentences/char_u4e0b_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u4e0b_v1.mp3",
-        "meaning": "audio/meanings/meaning_u4e0b_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u4e0b_v1.mp3"
       },
       "teachingPrompt": "下表示在低处或向低处移动。",
       "confusableRestrictions": [],
@@ -5551,20 +5551,20 @@
       "words": [
         {
           "text": "开门",
-          "audioAsset": "audio/words/u5f00_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5f00_1_v1.mp3"
         },
         {
           "text": "开灯",
-          "audioAsset": "audio/words/u5f00_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5f00_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "我开门回家。",
-        "audioAsset": "audio/sentences/u5f00_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5f00_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5f00_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5f00_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5f00_v1.mp3"
       },
       "teachingPrompt": "开表示把关着的东西打开。",
       "confusableRestrictions": [],
@@ -5646,20 +5646,20 @@
       "words": [
         {
           "text": "关门",
-          "audioAsset": "audio/words/u5173_1_v1.mp3"
+          "audioAsset": "audio/words/char_u5173_1_v1.mp3"
         },
         {
           "text": "关灯",
-          "audioAsset": "audio/words/u5173_2_v1.mp3"
+          "audioAsset": "audio/words/char_u5173_2_v1.mp3"
         }
       ],
       "sentence": {
         "text": "睡觉前要关灯。",
-        "audioAsset": "audio/sentences/u5173_v1.mp3"
+        "audioAsset": "audio/sentences/char_u5173_v1.mp3"
       },
       "audio": {
         "character": "audio/characters/char_u5173_v1.mp3",
-        "meaning": "audio/meanings/meaning_u5173_v1.mp3"
+        "meaning": "audio/meanings/meaning_char_u5173_v1.mp3"
       },
       "teachingPrompt": "关表示把打开的东西合上。",
       "confusableRestrictions": [],

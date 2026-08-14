@@ -88,9 +88,9 @@ def main() -> None:
             "meaningForChild": row["meaning_for_child"],
             "imageAsset": f"images/characters/{character_id}_main_v1.webp",
             "imageAlt": row["image_prompt"],
-            "words": [{"text": word, "audioAsset": f"audio/words/{suffix}_{index}_v1.mp3"} for index, word in enumerate(words, start=1)],
-            "sentence": {"text": row["sentence"], "audioAsset": f"audio/sentences/{suffix}_v1.mp3"},
-            "audio": {"character": f"audio/characters/{character_id}_v1.mp3", "meaning": f"audio/meanings/meaning_{suffix}_v1.mp3"},
+            "words": [{"text": word, "audioAsset": f"audio/words/{character_id}_{index}_v1.mp3"} for index, word in enumerate(words, start=1)],
+            "sentence": {"text": row["sentence"], "audioAsset": f"audio/sentences/{character_id}_v1.mp3"},
+            "audio": {"character": f"audio/characters/{character_id}_v1.mp3", "meaning": f"audio/meanings/meaning_{character_id}_v1.mp3"},
             "teachingPrompt": row["meaning_for_child"],
             "confusableRestrictions": [],
             "misconceptions": [],
@@ -126,10 +126,6 @@ def main() -> None:
     package_status = "ACTIVE" if all_active else "CANDIDATE"
     pack_path.write_text(json.dumps({"packId": PACK_VERSION, "version": PACK_VERSION, "status": package_status, "characterCount": 50, "contentPath": "content.json", "manifestPath": "manifest.json"}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     resources = []
-    for relative in (Path("pack.json"), Path("content.json")):
-        path = args.output / relative
-        payload = path.read_bytes()
-        resources.append({"path": path.name, "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload), "required": True})
     for row in media:
         if row["character_id"] != "ALL":
             continue
@@ -161,7 +157,7 @@ def main() -> None:
             shutil.copy2(source, target)
             payload = target.read_bytes()
             resources.append({"path": relative.as_posix(), "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload), "required": True})
-    manifest_path.write_text(json.dumps({"manifestVersion": 1, "packId": PACK_VERSION, "status": package_status, "resources": resources, "mediaRows": len(media), "reviewRows": len(reviews)}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest_path.write_text(json.dumps({"manifestVersion": 1, "resources": resources}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Child pack written: {args.output} ({len(compiled_characters)} characters, status={package_status})")
 
 

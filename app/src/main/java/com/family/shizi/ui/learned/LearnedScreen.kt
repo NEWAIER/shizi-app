@@ -82,8 +82,8 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
         Column(modifier = Modifier.fillMaxSize().testTag("page_learned"), horizontalAlignment = Alignment.CenterHorizontally) {
             ChildTopBar("字宝宝图鉴")
             Text("已经认识 ${learned.size} 个字 · 轻点听一听，长按看详情", modifier = Modifier.padding(bottom = 8.dp), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
-        if (!state.loading && learned.isEmpty()) {
-            EmptyState("还没有字卡", "先去学习第一个字，字宝宝会住进这里。", Modifier.padding(top = 24.dp))
+        if (state.loading) {
+            EmptyState("正在打开字宝宝图鉴", "马上就好。", Modifier.padding(top = 24.dp))
         } else {
             LazyVerticalGrid(
                 columns = GridCells.Fixed(5),
@@ -91,13 +91,14 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                items(learned.size, key = { learned[it].characterId }) { index ->
-                    val progress = learned[index]
-                    LearnedCharacterCard(
-                        progress = progress,
-                        character = content.characters.firstOrNull { it.id == progress.characterId },
-                        onPlay = { character -> player.play(character.audio.character) },
-                        onLongPress = { character -> detailCharacter = character },
+                items(content.characters.size, key = { content.characters[it].id }) { index ->
+                    val character = content.characters[index]
+                    val progress = state.characters.firstOrNull { it.characterId == character.id }
+                    CatalogCharacterCard(
+                        character = character,
+                        learned = progress?.initialLessonCompleted == true,
+                        onPlay = { player.play(character.audio.character) },
+                        onLongPress = { detailCharacter = character },
                     )
                 }
                 if (learned.size >= content.course.stageTestThreshold) {
@@ -125,6 +126,28 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
             },
             confirmButton = { TextButton(onClick = { detailCharacter = null }) { Text("知道啦") } },
         )
+    }
+}
+
+@Composable
+private fun CatalogCharacterCard(
+    character: CharacterContent,
+    learned: Boolean,
+    onPlay: () -> Unit,
+    onLongPress: () -> Unit,
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("catalog_character_${character.id}")
+            .pointerInput(character.id) {
+                detectTapGestures(onTap = { if (learned) onPlay() }, onLongPress = { onLongPress() })
+            },
+    ) {
+        Column(modifier = Modifier.padding(vertical = 12.dp, horizontal = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(character.character, style = MaterialTheme.typography.headlineMedium)
+            Text(if (learned) "已认识" else "待认识", modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.labelSmall)
+        }
     }
 }
 

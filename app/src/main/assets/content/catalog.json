@@ -16,7 +16,7 @@
       "contentPath": "content/packs/child-pack-v1/1.0.0/content.json",
       "manifestPath": "content/packs/child-pack-v1/1.0.0/manifest.json",
       "assetRoot": "content/packs/child-pack-v1/1.0.0",
-      "legacyCompatibleVersions": ["child-pack-v1"]
+      "legacyCompatibleVersions": []
     }
   ]
 }
