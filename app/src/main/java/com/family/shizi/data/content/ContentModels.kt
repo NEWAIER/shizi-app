@@ -7,10 +7,20 @@ data class ContentPackage(
     val schemaVersion: Int,
     val contentVersion: String,
     val course: CourseConfig = CourseConfig(),
+    /** Optional layered source metadata. V1 runtime packages remain valid when absent. */
+    val layers: ContentLayerRefs? = null,
     val learningOrder: List<String>,
     val reviewOffsetsDays: List<Int>,
     val optionCatalog: List<OptionContent>,
     val characters: List<CharacterContent>,
+)
+
+@Serializable
+data class ContentLayerRefs(
+    val foundationVersion: String,
+    val childContentVersion: String,
+    val experienceVersion: String,
+    val sourcePolicy: String = "opensource-foundation-plus-original-child-experience",
 )
 
 @Serializable

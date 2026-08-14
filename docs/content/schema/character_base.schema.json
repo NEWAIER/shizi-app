@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shizi://content/character-base-v1",
+  "title": "Character Foundation Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "character", "unicode", "pinyin", "tone", "strokeCount", "source"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^char_u[0-9a-f]+$"},
+    "character": {"type": "string", "minLength": 1, "maxLength": 1},
+    "unicode": {"type": "string", "pattern": "^U\\+[0-9A-F]+$"},
+    "pinyin": {"type": "string", "minLength": 1},
+    "tone": {"type": "integer", "minimum": 1, "maximum": 5},
+    "strokeCount": {"type": "integer", "minimum": 1},
+    "radical": {"type": "string"},
+    "frequency": {"type": ["integer", "null"], "minimum": 1},
+    "source": {"type": "string", "minLength": 1},
+    "sourceLicense": {"type": "string", "minLength": 1},
+    "sourceSnapshot": {"type": "string", "minLength": 1}
+  }
+}

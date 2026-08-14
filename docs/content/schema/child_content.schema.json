@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shizi://content/child-content-v1",
+  "title": "Child Content Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["characterId", "meaningForChild", "teachingPrompt", "words", "sentence", "imageTheme", "reviewStatus"],
+  "properties": {
+    "characterId": {"type": "string", "pattern": "^char_u[0-9a-f]+$"},
+    "meaningForChild": {"type": "string", "minLength": 8, "maxLength": 45},
+    "teachingPrompt": {"type": "string", "minLength": 1, "maxLength": 60},
+    "words": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string", "minLength": 1}},
+    "sentence": {"type": "string", "minLength": 1, "maxLength": 35},
+    "imageTheme": {"type": "string", "minLength": 1},
+    "misconceptions": {"type": "array", "items": {"type": "string"}},
+    "reviewStatus": {"enum": ["DRAFT", "TEXT_REVIEWED", "MEDIA_REVIEWED", "PARENT_REVIEWED", "ACTIVE"]}
+  }
+}

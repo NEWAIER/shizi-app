@@ -1,0 +1,10 @@
+{
+  "characterId": "char_u6c34",
+  "meaningForChild": "水可以喝，也可以洗手、洗脸。",
+  "teachingPrompt": "看，这是水。我们每天都会用到水。",
+  "words": ["喝水", "开水"],
+  "sentence": "我每天都要喝水。",
+  "imageTheme": "孩子用小杯子喝水，旁边有清楚的水杯",
+  "misconceptions": ["不把所有透明液体都当成水"],
+  "reviewStatus": "DRAFT"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shizi://content/experience-v1",
+  "title": "Experience Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["characterId", "learningOrder", "questionSeeds", "rewardProfile", "reviewProfile"],
+  "properties": {
+    "characterId": {"type": "string", "pattern": "^char_u[0-9a-f]+$"},
+    "learningOrder": {"type": "integer", "minimum": 1},
+    "questionSeeds": {"type": "array", "items": {"type": "string"}},
+    "rewardProfile": {"type": "string", "minLength": 1},
+    "reviewProfile": {"type": "string", "minLength": 1},
+    "unlockAfter": {"type": "array", "items": {"type": "string"}}
+  }
+}
