@@ -4,6 +4,11 @@ import android.graphics.BitmapFactory
 import android.os.SystemClock
 import android.speech.tts.TextToSpeech
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -65,6 +70,7 @@ import com.family.shizi.data.db.QuestionInstanceEntity
 import com.family.shizi.data.db.ReviewStage
 import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.audio.AssetAudioPlayer
+import com.family.shizi.ui.components.StarReward
 import java.time.Instant
 import java.time.LocalDate
 import java.util.Locale
@@ -96,6 +102,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
     var celebrationSpeechReady by remember { mutableStateOf(false) }
     var celebrationVisible by remember { mutableStateOf(false) }
+    var starRewardVisible by remember { mutableStateOf(false) }
     val celebrationSpeech = remember(context) {
         TextToSpeech(context) { status ->
             if (status == TextToSpeech.SUCCESS) {
@@ -297,6 +304,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                     attempt.isCorrect -> {
                         teachingCorrectId = q.correctOptionId
                         status = "找到了！"
+                        starRewardVisible = true
                         val correctOption = options.firstOrNull { it.id == q.correctOptionId }
                         val targetAudio = correctOption?.asset?.takeIf { it.endsWith(".mp3") }
                             ?: correctOption?.characterId?.let { correctCharacterId ->
@@ -304,6 +312,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                             }
                         targetAudio?.let { runCatching { player.play(it) } }
                         delay(800)
+                        starRewardVisible = false
                         when {
                             result.sessionCompleted || result.endedEarly -> onNavigate(ShiziRoute.Result)
                             result.itemCompleted -> {
@@ -388,6 +397,14 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 20.dp).testTag("practice_finish"),
             ) { Text("看结果") }
+            }
+            AnimatedVisibility(
+                visible = starRewardVisible && !celebrationVisible,
+                enter = fadeIn() + scaleIn(initialScale = 0.75f),
+                exit = fadeOut() + scaleOut(targetScale = 1.15f),
+                modifier = Modifier.align(Alignment.TopCenter).padding(top = 18.dp),
+            ) {
+                StarReward(stars = 1, modifier = Modifier.testTag("practice_star_reward"))
             }
             if (celebrationVisible) CelebrationOverlay()
         }
