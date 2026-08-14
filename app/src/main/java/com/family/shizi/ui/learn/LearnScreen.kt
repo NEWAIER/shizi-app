@@ -2,6 +2,13 @@ package com.family.shizi.ui.learn
 
 import android.graphics.BitmapFactory
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.togetherWith
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -207,11 +214,19 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
             )
             Text("第 ${display.number} 步，共 3 步", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.labelMedium)
 
-            Card(
-                modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
-                shape = RoundedCornerShape(28.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+            AnimatedContent(
+                targetState = step,
+                transitionSpec = {
+                    (fadeIn(animationSpec = tween(260)) + scaleIn(initialScale = 0.94f, animationSpec = tween(260))) togetherWith
+                        (fadeOut(animationSpec = tween(180)) + scaleOut(targetScale = 1.04f, animationSpec = tween(180)))
+                },
+                label = "learn_step_transition",
             ) {
+                Card(
+                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                    shape = RoundedCornerShape(28.dp),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+                ) {
                 Column(
                     modifier = Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
@@ -228,6 +243,7 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
                     Text(display.mainText, modifier = Modifier.padding(top = 14.dp).testTag("learn_step_text"),
                         style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
                     display.detailText?.let { Text(it, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center) }
+                }
                 }
             }
 
