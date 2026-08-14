@@ -1,0 +1,10 @@
+[
+  {
+    "characterId": "char_u6c34",
+    "learningOrder": 1,
+    "questionSeeds": ["listen_choose_character", "character_choose_image", "find_same_character"],
+    "rewardProfile": "new-character-default",
+    "reviewProfile": "spaced-review-default",
+    "unlockAfter": []
+  }
+]
