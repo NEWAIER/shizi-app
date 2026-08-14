@@ -693,6 +693,7 @@
       "id": "audio_char_u4eba",
       "kind": "AUDIO",
       "characterId": "char_u4eba",
+      "pinyin": "rén",
       "asset": "audio/characters/char_u4eba_v1.mp3"
     },
     {
@@ -711,6 +712,7 @@
       "id": "audio_char_u53e3",
       "kind": "AUDIO",
       "characterId": "char_u53e3",
+      "pinyin": "kǒu",
       "asset": "audio/characters/char_u53e3_v1.mp3"
     },
     {
@@ -729,6 +731,7 @@
       "id": "audio_char_u5927",
       "kind": "AUDIO",
       "characterId": "char_u5927",
+      "pinyin": "dà",
       "asset": "audio/characters/char_u5927_v1.mp3"
     },
     {
@@ -747,6 +750,7 @@
       "id": "audio_char_u5c0f",
       "kind": "AUDIO",
       "characterId": "char_u5c0f",
+      "pinyin": "xiǎo",
       "asset": "audio/characters/char_u5c0f_v1.mp3"
     },
     {
@@ -765,6 +769,7 @@
       "id": "audio_char_u624b",
       "kind": "AUDIO",
       "characterId": "char_u624b",
+      "pinyin": "shǒu",
       "asset": "audio/characters/char_u624b_v1.mp3"
     },
     {
@@ -783,6 +788,7 @@
       "id": "audio_char_u5934",
       "kind": "AUDIO",
       "characterId": "char_u5934",
+      "pinyin": "tóu",
       "asset": "audio/characters/char_u5934_v1.mp3"
     },
     {
@@ -801,6 +807,7 @@
       "id": "audio_char_u7238",
       "kind": "AUDIO",
       "characterId": "char_u7238",
+      "pinyin": "bà",
       "asset": "audio/characters/char_u7238_v1.mp3"
     },
     {
@@ -819,6 +826,7 @@
       "id": "audio_char_u5988",
       "kind": "AUDIO",
       "characterId": "char_u5988",
+      "pinyin": "mā",
       "asset": "audio/characters/char_u5988_v1.mp3"
     },
     {
@@ -837,6 +845,7 @@
       "id": "audio_char_u5bb6",
       "kind": "AUDIO",
       "characterId": "char_u5bb6",
+      "pinyin": "jiā",
       "asset": "audio/characters/char_u5bb6_v1.mp3"
     },
     {
@@ -855,6 +864,7 @@
       "id": "audio_char_u95e8",
       "kind": "AUDIO",
       "characterId": "char_u95e8",
+      "pinyin": "mén",
       "asset": "audio/characters/char_u95e8_v1.mp3"
     },
     {
@@ -873,6 +883,7 @@
       "id": "audio_char_u5c71",
       "kind": "AUDIO",
       "characterId": "char_u5c71",
+      "pinyin": "shān",
       "asset": "audio/characters/char_u5c71_v1.mp3"
     },
     {
@@ -891,6 +902,7 @@
       "id": "audio_char_u6c34",
       "kind": "AUDIO",
       "characterId": "char_u6c34",
+      "pinyin": "shuǐ",
       "asset": "audio/characters/char_u6c34_v1.mp3"
     },
     {
@@ -909,6 +921,7 @@
       "id": "audio_char_u706b",
       "kind": "AUDIO",
       "characterId": "char_u706b",
+      "pinyin": "huǒ",
       "asset": "audio/characters/char_u706b_v1.mp3"
     },
     {
@@ -927,6 +940,7 @@
       "id": "audio_char_u6728",
       "kind": "AUDIO",
       "characterId": "char_u6728",
+      "pinyin": "mù",
       "asset": "audio/characters/char_u6728_v1.mp3"
     },
     {
@@ -945,6 +959,7 @@
       "id": "audio_char_u65e5",
       "kind": "AUDIO",
       "characterId": "char_u65e5",
+      "pinyin": "rì",
       "asset": "audio/characters/char_u65e5_v1.mp3"
     },
     {
@@ -963,6 +978,7 @@
       "id": "audio_char_u6708",
       "kind": "AUDIO",
       "characterId": "char_u6708",
+      "pinyin": "yuè",
       "asset": "audio/characters/char_u6708_v1.mp3"
     },
     {
@@ -981,6 +997,7 @@
       "id": "audio_char_u5929",
       "kind": "AUDIO",
       "characterId": "char_u5929",
+      "pinyin": "tiān",
       "asset": "audio/characters/char_u5929_v1.mp3"
     },
     {
@@ -999,6 +1016,7 @@
       "id": "audio_char_u4e91",
       "kind": "AUDIO",
       "characterId": "char_u4e91",
+      "pinyin": "yún",
       "asset": "audio/characters/char_u4e91_v1.mp3"
     },
     {
@@ -1017,6 +1035,7 @@
       "id": "audio_char_u96e8",
       "kind": "AUDIO",
       "characterId": "char_u96e8",
+      "pinyin": "yǔ",
       "asset": "audio/characters/char_u96e8_v1.mp3"
     },
     {
@@ -1035,6 +1054,7 @@
       "id": "audio_char_u98ce",
       "kind": "AUDIO",
       "characterId": "char_u98ce",
+      "pinyin": "fēng",
       "asset": "audio/characters/char_u98ce_v1.mp3"
     },
     {
@@ -1053,6 +1073,7 @@
       "id": "audio_char_u725b",
       "kind": "AUDIO",
       "characterId": "char_u725b",
+      "pinyin": "niú",
       "asset": "audio/characters/char_u725b_v1.mp3"
     },
     {
@@ -1071,6 +1092,7 @@
       "id": "audio_char_u7f8a",
       "kind": "AUDIO",
       "characterId": "char_u7f8a",
+      "pinyin": "yáng",
       "asset": "audio/characters/char_u7f8a_v1.mp3"
     },
     {
@@ -1089,6 +1111,7 @@
       "id": "audio_char_u9e1f",
       "kind": "AUDIO",
       "characterId": "char_u9e1f",
+      "pinyin": "niǎo",
       "asset": "audio/characters/char_u9e1f_v1.mp3"
     },
     {
@@ -1107,6 +1130,7 @@
       "id": "audio_char_u9c7c",
       "kind": "AUDIO",
       "characterId": "char_u9c7c",
+      "pinyin": "yú",
       "asset": "audio/characters/char_u9c7c_v1.mp3"
     },
     {
@@ -1125,6 +1149,7 @@
       "id": "audio_char_u9a6c",
       "kind": "AUDIO",
       "characterId": "char_u9a6c",
+      "pinyin": "mǎ",
       "asset": "audio/characters/char_u9a6c_v1.mp3"
     },
     {
@@ -1143,6 +1168,7 @@
       "id": "audio_char_u732b",
       "kind": "AUDIO",
       "characterId": "char_u732b",
+      "pinyin": "māo",
       "asset": "audio/characters/char_u732b_v1.mp3"
     },
     {
@@ -1161,6 +1187,7 @@
       "id": "audio_char_u72d7",
       "kind": "AUDIO",
       "characterId": "char_u72d7",
+      "pinyin": "gǒu",
       "asset": "audio/characters/char_u72d7_v1.mp3"
     },
     {
@@ -1179,6 +1206,7 @@
       "id": "audio_char_u5154",
       "kind": "AUDIO",
       "characterId": "char_u5154",
+      "pinyin": "tù",
       "asset": "audio/characters/char_u5154_v1.mp3"
     },
     {
@@ -1197,6 +1225,7 @@
       "id": "audio_char_u866b",
       "kind": "AUDIO",
       "characterId": "char_u866b",
+      "pinyin": "chóng",
       "asset": "audio/characters/char_u866b_v1.mp3"
     },
     {
@@ -1215,6 +1244,7 @@
       "id": "audio_char_u82b1",
       "kind": "AUDIO",
       "characterId": "char_u82b1",
+      "pinyin": "huā",
       "asset": "audio/characters/char_u82b1_v1.mp3"
     },
     {
@@ -1233,6 +1263,7 @@
       "id": "audio_char_u8863",
       "kind": "AUDIO",
       "characterId": "char_u8863",
+      "pinyin": "yī",
       "asset": "audio/characters/char_u8863_v1.mp3"
     },
     {
@@ -1251,6 +1282,7 @@
       "id": "audio_char_u98df",
       "kind": "AUDIO",
       "characterId": "char_u98df",
+      "pinyin": "shí",
       "asset": "audio/characters/char_u98df_v1.mp3"
     },
     {
@@ -1269,6 +1301,7 @@
       "id": "audio_char_u7c73",
       "kind": "AUDIO",
       "characterId": "char_u7c73",
+      "pinyin": "mǐ",
       "asset": "audio/characters/char_u7c73_v1.mp3"
     },
     {
@@ -1287,6 +1320,7 @@
       "id": "audio_char_u996d",
       "kind": "AUDIO",
       "characterId": "char_u996d",
+      "pinyin": "fàn",
       "asset": "audio/characters/char_u996d_v1.mp3"
     },
     {
@@ -1305,6 +1339,7 @@
       "id": "audio_char_u676f",
       "kind": "AUDIO",
       "characterId": "char_u676f",
+      "pinyin": "bēi",
       "asset": "audio/characters/char_u676f_v1.mp3"
     },
     {
@@ -1323,6 +1358,7 @@
       "id": "audio_char_u4e66",
       "kind": "AUDIO",
       "characterId": "char_u4e66",
+      "pinyin": "shū",
       "asset": "audio/characters/char_u4e66_v1.mp3"
     },
     {
@@ -1341,6 +1377,7 @@
       "id": "audio_char_u8f66",
       "kind": "AUDIO",
       "characterId": "char_u8f66",
+      "pinyin": "chē",
       "asset": "audio/characters/char_u8f66_v1.mp3"
     },
     {
@@ -1359,6 +1396,7 @@
       "id": "audio_char_u706f",
       "kind": "AUDIO",
       "characterId": "char_u706f",
+      "pinyin": "dēng",
       "asset": "audio/characters/char_u706f_v1.mp3"
     },
     {
@@ -1377,6 +1415,7 @@
       "id": "audio_char_u5e8a",
       "kind": "AUDIO",
       "characterId": "char_u5e8a",
+      "pinyin": "chuáng",
       "asset": "audio/characters/char_u5e8a_v1.mp3"
     },
     {
@@ -1395,6 +1434,7 @@
       "id": "audio_char_u684c",
       "kind": "AUDIO",
       "characterId": "char_u684c",
+      "pinyin": "zhuō",
       "asset": "audio/characters/char_u684c_v1.mp3"
     },
     {
@@ -1413,6 +1453,7 @@
       "id": "audio_char_u770b",
       "kind": "AUDIO",
       "characterId": "char_u770b",
+      "pinyin": "kàn",
       "asset": "audio/characters/char_u770b_v1.mp3"
     },
     {
@@ -1431,6 +1472,7 @@
       "id": "audio_char_u542c",
       "kind": "AUDIO",
       "characterId": "char_u542c",
+      "pinyin": "tīng",
       "asset": "audio/characters/char_u542c_v1.mp3"
     },
     {
@@ -1449,6 +1491,7 @@
       "id": "audio_char_u8d70",
       "kind": "AUDIO",
       "characterId": "char_u8d70",
+      "pinyin": "zǒu",
       "asset": "audio/characters/char_u8d70_v1.mp3"
     },
     {
@@ -1467,6 +1510,7 @@
       "id": "audio_char_u8dd1",
       "kind": "AUDIO",
       "characterId": "char_u8dd1",
+      "pinyin": "pǎo",
       "asset": "audio/characters/char_u8dd1_v1.mp3"
     },
     {
@@ -1485,6 +1529,7 @@
       "id": "audio_char_u6765",
       "kind": "AUDIO",
       "characterId": "char_u6765",
+      "pinyin": "lái",
       "asset": "audio/characters/char_u6765_v1.mp3"
     },
     {
@@ -1503,6 +1548,7 @@
       "id": "audio_char_u53bb",
       "kind": "AUDIO",
       "characterId": "char_u53bb",
+      "pinyin": "qù",
       "asset": "audio/characters/char_u53bb_v1.mp3"
     },
     {
@@ -1521,6 +1567,7 @@
       "id": "audio_char_u4e0a",
       "kind": "AUDIO",
       "characterId": "char_u4e0a",
+      "pinyin": "shàng",
       "asset": "audio/characters/char_u4e0a_v1.mp3"
     },
     {
@@ -1539,6 +1586,7 @@
       "id": "audio_char_u4e0b",
       "kind": "AUDIO",
       "characterId": "char_u4e0b",
+      "pinyin": "xià",
       "asset": "audio/characters/char_u4e0b_v1.mp3"
     },
     {
@@ -1557,6 +1605,7 @@
       "id": "audio_char_u5f00",
       "kind": "AUDIO",
       "characterId": "char_u5f00",
+      "pinyin": "kāi",
       "asset": "audio/characters/char_u5f00_v1.mp3"
     },
     {
@@ -1575,6 +1624,7 @@
       "id": "audio_char_u5173",
       "kind": "AUDIO",
       "characterId": "char_u5173",
+      "pinyin": "guān",
       "asset": "audio/characters/char_u5173_v1.mp3"
     }
   ],

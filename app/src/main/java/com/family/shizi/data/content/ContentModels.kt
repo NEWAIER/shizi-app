@@ -94,6 +94,7 @@ data class OptionContent(
     val kind: OptionKind,
     val characterId: String,
     val text: String? = null,
+    val pinyin: String? = null,
     val asset: String? = null,
 )
 

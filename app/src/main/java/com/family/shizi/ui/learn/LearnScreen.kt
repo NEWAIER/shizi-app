@@ -173,7 +173,8 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
             if (thisPlayback != playbackId) return@playSequence
             scope.launch {
                 statusMessage = "听完啦！"
-                delay(800)
+                // Give the child a small, predictable pause before the next learning beat.
+                delay(1_500)
                 if (thisPlayback == playbackId && !pauseDialogVisible) {
                     advanceTeachingStep()
                 }
@@ -255,7 +256,7 @@ private fun learningDisplay(character: CharacterContent?, step: InitialTeachingS
         InitialTeachingStep.A_CONTEXT -> LearningDisplay(1, 1f / 3f, "先认识这个字", c.teachingPrompt, "它读作：${c.pinyin}", listOf(c.audio.character), "听字音", true)
         InitialTeachingStep.B_SOUND_MEANING -> LearningDisplay(2, 2f / 3f, "再看看它的意思", c.meaningForChild, "跟着声音想一想。", listOf(c.audio.meaning), "听意思", true)
         InitialTeachingStep.C_WORD_SENTENCE -> LearningDisplay(3, 1f, "最后一起读", c.words.joinToString("   ") { it.text }, c.sentence.text,
-            c.words.map { it.audioAsset } + c.sentence.audioAsset, "听词语和句子", false)
+            c.words.map { it.audioAsset } + c.sentence.audioAsset, "听词语和句子", true)
         else -> LearningDisplay(3, 1f, "准备闯关", "我们来练一练", null, listOf(c.audio.character), "再听一遍", false)
     }
 }

@@ -2,8 +2,10 @@ package com.family.shizi.ui.practice
 
 import android.graphics.BitmapFactory
 import android.os.SystemClock
+import android.speech.tts.TextToSpeech
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,9 +34,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.pointer.pointerInput
@@ -59,6 +67,9 @@ import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.audio.AssetAudioPlayer
 import java.time.Instant
 import java.time.LocalDate
+import java.util.Locale
+import kotlin.math.cos
+import kotlin.math.sin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
@@ -82,6 +93,19 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         AssetAudioPlayer(context, { error ->
             scope.launch { repo.logAudioError(error) }
         }) { assetRoot }.also { it.attachLifecycle(lifecycleOwner) }
+    }
+    var celebrationSpeechReady by remember { mutableStateOf(false) }
+    var celebrationVisible by remember { mutableStateOf(false) }
+    val celebrationSpeech = remember(context) {
+        TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                // Keep the voice prompt short and friendly for a four-year-old.
+                celebrationSpeechReady = true
+            }
+        }
+    }
+    DisposableEffect(celebrationSpeech) {
+        onDispose { celebrationSpeech.shutdown() }
     }
     var question by remember { mutableStateOf<QuestionInstanceEntity?>(null) }
     var options by remember { mutableStateOf<List<OptionContent>>(emptyList()) }
@@ -116,8 +140,20 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         questionNumber = pending?.let { current -> allQuestions.indexOfFirst { it.id == current.id } + 1 } ?: questionTotal
         val optionIds = pending?.optionIdsJson?.let { runCatching { json.decodeFromString<List<String>>(it) }.getOrNull() }.orEmpty()
         val seededOptions = optionIds.mapNotNull { id -> content.optionCatalog.firstOrNull { it.id == id } }
-        // Every picture question is a stable 2×2 board: the original correct answer plus three real picture distractors.
-        options = seededOptions
+        val questionType = pending?.questionType?.let { runCatching { QuestionType.valueOf(it) }.getOrNull() }
+        // Older local sessions may still contain text option ids. Normalize them to the
+        // visual/audio option kind required by the current question UI.
+        options = when (questionType) {
+            QuestionType.CHARACTER_CHOOSE_IMAGE, QuestionType.LIFE_WORD_CONTEXT ->
+                seededOptions.map { option ->
+                    content.optionCatalog.firstOrNull { it.kind == OptionKind.IMAGE && it.characterId == option.characterId } ?: option
+                }.distinctBy { it.characterId }.take(4)
+            QuestionType.CHARACTER_CHOOSE_AUDIO ->
+                seededOptions.map { option ->
+                    content.optionCatalog.firstOrNull { it.kind == OptionKind.AUDIO && it.characterId == option.characterId } ?: option
+                }.distinctBy { it.characterId }.take(4)
+            else -> seededOptions.distinctBy { it.characterId }.take(4)
+        }
         questionShownAtMs = SystemClock.elapsedRealtime()
         submissionInFlight = false
         teachingCorrectId = null
@@ -214,6 +250,14 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                 )
                 val attempt = result.attempt
                 submissionInFlight = false
+                suspend fun celebrateCompletedCharacter() {
+                    celebrationVisible = true
+                    if (celebrationSpeechReady) {
+                        celebrationSpeech.speak("你太棒了！", TextToSpeech.QUEUE_FLUSH, null, "character_complete")
+                    }
+                    delay(2_000)
+                    celebrationVisible = false
+                }
                 when {
                     attempt.isAccidental -> {
                         multiTouchDetected = false
@@ -242,7 +286,11 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         delay(2500)
                         when {
                             result.sessionCompleted || result.endedEarly -> onNavigate(ShiziRoute.Result)
-                            result.itemCompleted -> onNavigate(repo.resolveNextRoute(currentSessionId ?: return@runCatching))
+                            result.itemCompleted -> {
+                                status = "你太棒了！"
+                                celebrateCompletedCharacter()
+                                onNavigate(repo.resolveNextRoute(currentSessionId ?: return@runCatching))
+                            }
                             else -> reload()
                         }
                     }
@@ -258,7 +306,11 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         delay(800)
                         when {
                             result.sessionCompleted || result.endedEarly -> onNavigate(ShiziRoute.Result)
-                            result.itemCompleted -> onNavigate(repo.resolveNextRoute(currentSessionId ?: return@runCatching))
+                            result.itemCompleted -> {
+                                status = "你太棒了！"
+                                celebrateCompletedCharacter()
+                                onNavigate(repo.resolveNextRoute(currentSessionId ?: return@runCatching))
+                            }
                             else -> reload()
                         }
                     }
@@ -276,13 +328,14 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
 
     Scaffold { innerPadding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+        Box(modifier = Modifier.fillMaxSize()) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
             ChildReviewHeader(
                 itemKind = currentItemKind,
                 reviewStage = currentReviewStage,
@@ -335,6 +388,56 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 20.dp).testTag("practice_finish"),
             ) { Text("看结果") }
+            }
+            if (celebrationVisible) CelebrationOverlay()
+        }
+    }
+}
+
+@Composable
+private fun CelebrationOverlay() {
+    val transition = rememberInfiniteTransition(label = "fireworks")
+    val phase by transition.animateFloat(
+        initialValue = 0f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(900), RepeatMode.Restart),
+        label = "firework_phase",
+    )
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center,
+    ) {
+        Canvas(modifier = Modifier.fillMaxSize()) {
+            val bursts = listOf(
+                Triple(size.width * 0.25f, size.height * 0.30f, Color(0xFFFFC857)),
+                Triple(size.width * 0.75f, size.height * 0.34f, Color(0xFFFF6B8A)),
+                Triple(size.width * 0.50f, size.height * 0.20f, Color(0xFF55C7B0)),
+            )
+            bursts.forEach { (cx, cy, color) ->
+                repeat(12) { index ->
+                    val angle = index * (2f * Math.PI.toFloat() / 12f)
+                    val radius = 18f + phase * 115f
+                    drawCircle(
+                        color = color,
+                        radius = 7f - phase * 3f,
+                        center = androidx.compose.ui.geometry.Offset(
+                            cx + cos(angle) * radius,
+                            cy + sin(angle) * radius,
+                        ),
+                    )
+                }
+            }
+        }
+        Card(
+            shape = RoundedCornerShape(28.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.96f)),
+        ) {
+            Text(
+                "你太棒了！",
+                modifier = Modifier.padding(horizontal = 34.dp, vertical = 22.dp).testTag("celebration_message"),
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.primary,
+            )
         }
     }
 }
@@ -430,7 +533,7 @@ private fun ListenChooseCharQuestion(
             modifier = Modifier.padding(16.dp).testTag("practice_replay_audio"),
         ) { Text("再听一遍") }
         Text("听到的字是哪个？", style = MaterialTheme.typography.bodySmall)
-        TextOptionList(options, teachingCorrectId, disabled, onSubmit)
+        TextOptionGrid(options, teachingCorrectId, disabled, onSubmit)
     }
 }
 
@@ -455,34 +558,7 @@ private fun CharChooseAudioQuestion(
             modifier = Modifier.padding(16.dp).testTag("practice_target_character"),
         )
         Text("这个字的读音是哪个？点一下就知道", style = MaterialTheme.typography.bodySmall)
-        options.filter { it.kind == OptionKind.AUDIO }.forEach { option ->
-            val isCorrect = teachingCorrectId == option.id
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 8.dp)
-                    .testTag("practice_option_${option.id}")
-                    .pointerInput(option.id) {
-                        detectTapGestures(onTap = {
-                            if (!disabled && teachingCorrectId == null) {
-                                runCatching { player.play(option.asset ?: return@detectTapGestures) }
-                                onSubmit(option.id)
-                            }
-                        })
-                    },
-                colors = CardDefaults.cardColors(
-                    containerColor = when {
-                        isCorrect -> MaterialTheme.colorScheme.primaryContainer
-                        else -> MaterialTheme.colorScheme.surfaceVariant
-                    },
-                ),
-            ) {
-                Column(modifier = Modifier.fillMaxWidth().padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("点击试听", style = MaterialTheme.typography.bodyMedium)
-                    if (isCorrect) Text("正确答案", style = MaterialTheme.typography.labelSmall)
-                }
-            }
-        }
+        AudioOptionGrid(options.filter { it.kind == OptionKind.AUDIO }, player, teachingCorrectId, disabled, onSubmit)
     }
 }
 
@@ -547,7 +623,7 @@ private fun ImageOptionGrid(
     assetRoot: String,
 ) {
     val context = LocalContext.current
-    options.chunked(2).forEach { row ->
+    options.distinctBy { it.characterId }.take(4).chunked(2).forEach { row ->
         Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             row.forEach { option ->
                 val bitmap = remember(option.asset, assetRoot) {
@@ -571,6 +647,47 @@ private fun ImageOptionGrid(
                             )
                         }
                         if (isCorrect) Text("答对啦！", style = MaterialTheme.typography.labelLarge)
+                    }
+                }
+            }
+            if (row.size == 1) Spacer(Modifier.weight(1f))
+        }
+    }
+}
+
+@Composable
+private fun AudioOptionGrid(
+    options: List<OptionContent>,
+    player: AssetAudioPlayer,
+    teachingCorrectId: String?,
+    disabled: Boolean,
+    onSubmit: (String) -> Unit,
+) {
+    options.chunked(2).forEach { row ->
+        Row(modifier = Modifier.fillMaxWidth().padding(top = 12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            row.forEach { option ->
+                val isCorrect = teachingCorrectId == option.id
+                Card(
+                    modifier = Modifier
+                        .weight(1f)
+                        .aspectRatio(1f)
+                        .testTag("practice_option_${option.id}")
+                        .pointerInput(option.id) {
+                            detectTapGestures(onTap = {
+                                if (!disabled && teachingCorrectId == null) {
+                                    option.asset?.let { runCatching { player.play(it) } }
+                                    onSubmit(option.id)
+                                }
+                            })
+                        },
+                    shape = RoundedCornerShape(22.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = if (isCorrect) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant,
+                    ),
+                ) {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(option.pinyin.orEmpty(), style = MaterialTheme.typography.headlineMedium)
+                        if (isCorrect) Text("答对啦！", modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 10.dp))
                     }
                 }
             }

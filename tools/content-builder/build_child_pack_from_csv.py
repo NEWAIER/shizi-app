@@ -88,6 +88,7 @@ def main() -> None:
             "id": f"audio_{row['id']}",
             "kind": "AUDIO",
             "characterId": row["id"],
+            "pinyin": row["pinyin"],
             "asset": f"audio/characters/{row['id']}_v1.mp3",
         })
     compiled_characters = []
