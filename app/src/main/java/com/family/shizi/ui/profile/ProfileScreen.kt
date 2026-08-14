@@ -2,15 +2,19 @@ package com.family.shizi.ui.profile
 
 import android.app.Application
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -23,9 +27,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewModelScope
@@ -41,6 +48,7 @@ import com.family.shizi.ui.components.BadgeCard
 import com.family.shizi.ui.components.ChildPage
 import com.family.shizi.ui.components.ChildTopBar
 import com.family.shizi.ui.components.AvatarCard
+import com.family.shizi.R
 
 data class ProfileUiState(
     val loading: Boolean = true,
@@ -111,7 +119,12 @@ fun ProfileScreen() {
         ) {
             Column(Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("欢迎来到我的星球", style = MaterialTheme.typography.titleLarge)
-                AvatarCard(name = avatarName(state.avatarId), selected = true, onClick = {}, modifier = Modifier.padding(top = 12.dp))
+                Image(
+                    painter = painterResource(R.drawable.xiaohe_launcher),
+                    contentDescription = "小禾伙伴",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.size(108.dp).clip(CircleShape).padding(top = 8.dp),
+                )
                 Text("${state.nickname}，你真棒！", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.headlineSmall)
                 Text("Lv.${state.honorLevel} · ${state.levelTitle}", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
                 Text("${state.totalStars} 颗星星", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.displaySmall, color = MaterialTheme.colorScheme.primary)
@@ -121,7 +134,7 @@ fun ProfileScreen() {
         Text("选择一个小伙伴", modifier = Modifier.padding(top = 22.dp), style = MaterialTheme.typography.titleLarge)
         Row(modifier = Modifier.fillMaxWidth().padding(top = 12.dp).horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             avatarOptions.forEach { (id, name) ->
-                AvatarCard(name = name, selected = state.avatarId == id, onClick = { viewModel.selectAvatar(id) })
+                ProfileAvatarCard(name = name, selected = state.avatarId == id, onClick = { viewModel.selectAvatar(id) })
             }
         }
         Card(modifier = Modifier.fillMaxWidth().padding(top = 22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)) {
@@ -138,12 +151,50 @@ fun ProfileScreen() {
         badges.chunked(2).forEach { row ->
             Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 row.forEach { milestone ->
-                    BadgeCard(milestone.title, milestone.detail, state.learnedCount >= milestone.learnedCount, modifier = Modifier.weight(1f))
+                    VisualBadgeCard(milestone.title, milestone.detail, state.learnedCount >= milestone.learnedCount, modifier = Modifier.weight(1f))
                 }
                 if (row.size == 1) Spacer(modifier = Modifier.weight(1f))
             }
         }
       }
+    }
+}
+
+@Composable
+private fun ProfileAvatarCard(name: String, selected: Boolean, onClick: () -> Unit) {
+    Card(
+        modifier = Modifier.size(width = 86.dp, height = 104.dp).clip(MaterialTheme.shapes.large),
+        onClick = onClick,
+        colors = CardDefaults.cardColors(containerColor = if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant),
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth().padding(6.dp)) {
+            Image(
+                painter = painterResource(R.drawable.xiaohe_launcher),
+                contentDescription = name,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(62.dp).clip(CircleShape),
+            )
+            Text(name, style = MaterialTheme.typography.labelSmall, maxLines = 1)
+        }
+    }
+}
+
+@Composable
+private fun VisualBadgeCard(title: String, detail: String, unlocked: Boolean, modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(containerColor = if (unlocked) MaterialTheme.colorScheme.tertiaryContainer else MaterialTheme.colorScheme.surfaceVariant),
+    ) {
+        Column(Modifier.fillMaxWidth().padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Box(
+                modifier = Modifier.size(42.dp).clip(CircleShape),
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(if (unlocked) "★" else "☆", style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.primary)
+            }
+            Text(title, style = MaterialTheme.typography.labelMedium, maxLines = 1)
+            Text(if (unlocked) "已点亮" else detail, style = MaterialTheme.typography.labelSmall, maxLines = 1)
+        }
     }
 }
 
