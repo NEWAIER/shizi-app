@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Generate and audit real MP3 audition files with edge-tts.
+"""Generate auditable local MP3 files with Edge TTS (development only).
 
-This is a development-only tool. It never belongs in the Android runtime and it
-never writes placeholder files: failed output is deleted and the process exits 1.
+The Android app never imports this tool or calls a network TTS service.  Each
+generated file has a stable provenance fingerprint.  Existing files are reused
+only when their recorded fingerprint *and* SHA-256 still match the requested
+text, voice and prosody settings; otherwise --force is required.
 """
 from __future__ import annotations
 
@@ -15,13 +17,16 @@ import os
 import re
 import shutil
 import subprocess
-import sys
-import time
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
+from typing import Any
 
 import edge_tts
 from mutagen.mp3 import MP3
+
+ROOT = Path(__file__).resolve().parents[2]
+CSV_FIELDS = ("id", "text", "filename")
+RETRY_COUNT = 3
 
 
 def args() -> argparse.Namespace:
@@ -32,7 +37,7 @@ def args() -> argparse.Namespace:
     parser.add_argument("--rate", default="-8%")
     parser.add_argument("--volume", default="+0%")
     parser.add_argument("--pitch", default="+0Hz")
-    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--force", action="store_true", help="Permit replacing a mismatched existing MP3")
     parser.add_argument("--index", type=Path, help="Markdown index path")
     parser.add_argument("--manifest", type=Path, help="JSON manifest path")
     return parser.parse_args()
@@ -46,109 +51,190 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def non_silent_mp3(path: Path) -> bool:
-    # A real encoded MP3 must parse and contain frame payload beyond its header.
-    header = path.read_bytes()[:4]
-    has_id3 = header[:3] == b"ID3"
-    # MPEG audio frames start with eleven 1 bits. Edge may emit FFF3/FFF2 rather
-    # than only FFFB, so accept every valid Layer III frame sync variant.
-    has_mpeg_frame = len(header) >= 2 and header[0] == 0xFF and (header[1] & 0xE0) == 0xE0
-    return path.stat().st_size > 1024 and (has_id3 or has_mpeg_frame)
+def canonical_filename(value: str) -> str:
+    """Accept only a portable relative MP3 path below --output-dir."""
+    if not value or "\\" in value:
+        raise ValueError(f"filename must use a relative POSIX path: {value!r}")
+    path = PurePosixPath(value)
+    windows_path = PureWindowsPath(value)
+    if path.is_absolute() or windows_path.is_absolute() or windows_path.drive or any(part in ("", ".", "..") for part in path.parts):
+        raise ValueError(f"filename escapes output directory: {value!r}")
+    if path.suffix.lower() != ".mp3":
+        raise ValueError(f"filename must end in .mp3: {value!r}")
+    return path.as_posix()
+
+
+def load_rows(source: Path) -> list[dict[str, str]]:
+    with source.open(encoding="utf-8", newline="") as file:
+        reader = csv.DictReader(file)
+        if tuple(reader.fieldnames or ()) != CSV_FIELDS:
+            raise ValueError(f"CSV header must be exactly {CSV_FIELDS}")
+        rows = list(reader)
+    if not rows:
+        raise ValueError("CSV must contain at least one row")
+    ids: set[str] = set()
+    filenames: set[str] = set()
+    for row in rows:
+        row["id"] = row["id"].strip()
+        row["text"] = row["text"].strip()
+        row["filename"] = canonical_filename(row["filename"].strip())
+        if not row["id"] or not row["text"]:
+            raise ValueError("CSV id and text must not be empty")
+        if row["id"] in ids:
+            raise ValueError(f"duplicate CSV id: {row['id']}")
+        if row["filename"] in filenames:
+            raise ValueError(f"duplicate CSV filename: {row['filename']}")
+        ids.add(row["id"])
+        filenames.add(row["filename"])
+    return rows
+
+
+def output_target(output_dir: Path, filename: str) -> Path:
+    root = output_dir.resolve()
+    target = (root / filename).resolve()
+    if target != root and root not in target.parents:
+        raise ValueError(f"output path escapes output directory: {filename!r}")
+    return target
+
+
+def portable_output_path(target: Path, output_dir: Path) -> str:
+    """Use POSIX relative paths so reports are reproducible on Windows/Linux."""
+    try:
+        return target.resolve().relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        return target.resolve().relative_to(output_dir.resolve().parent).as_posix()
+
+
+def provenance(row: dict[str, str], options: argparse.Namespace) -> str:
+    payload = {
+        "id": row["id"], "text": row["text"], "filename": row["filename"],
+        "voice": options.voice, "rate": options.rate, "volume": options.volume,
+        "pitch": options.pitch, "edgeTtsVersion": edge_tts.__version__,
+    }
+    return hashlib.sha256(json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def manifest_path(options: argparse.Namespace) -> Path:
+    return options.manifest or options.output_dir / "audition_manifest.json"
+
+
+def load_existing(options: argparse.Namespace) -> dict[str, dict[str, Any]]:
+    path = manifest_path(options)
+    if not path.is_file():
+        return {}
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"invalid existing manifest: {path}: {exc}") from exc
+    if not isinstance(raw, list):
+        raise ValueError(f"existing manifest must be a JSON list: {path}")
+    return {str(item.get("id")): item for item in raw if isinstance(item, dict) and item.get("id")}
 
 
 def decoded_audio_is_not_silent(path: Path) -> bool:
-    """Decode the file and reject audio with no meaningful PCM volume.
-
-    ffmpeg is a development-machine prerequisite only.  It is never bundled in
-    the Android app; edge-tts output is still a local MP3 asset.
-    """
     ffmpeg = shutil.which("ffmpeg")
     if not ffmpeg:
         raise RuntimeError("ffmpeg is required to verify decoded audio is not silent")
     result = subprocess.run(
         [ffmpeg, "-hide_banner", "-i", str(path), "-af", "volumedetect", "-f", "null", os.devnull],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        timeout=30,
-        check=False,
+        capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30, check=False,
     )
-    output = result.stdout + result.stderr
-    match = re.search(r"mean_volume:\s*(-?[\d.]+) dB", output)
+    match = re.search(r"mean_volume:\s*(-?[\d.]+) dB", result.stdout + result.stderr)
     if result.returncode != 0 or not match:
-        raise RuntimeError(f"could not measure decoded audio volume: {path}")
+        raise RuntimeError(f"could not decode and measure MP3: {path}")
     return float(match.group(1)) > -90.0
 
 
-async def synthesize(text: str, target: Path, voice: str, rate: str, volume: str, pitch: str) -> None:
-    communicator = edge_tts.Communicate(text=text, voice=voice, rate=rate, volume=volume, pitch=pitch)
+def validate_mp3(path: Path) -> int:
+    if not path.is_file() or path.stat().st_size <= 1024:
+        raise RuntimeError(f"MP3 is missing or too small: {path}")
+    duration_ms = round(MP3(path).info.length * 1000)
+    if duration_ms <= 300 or not decoded_audio_is_not_silent(path):
+        raise RuntimeError(f"MP3 is invalid, too short, or silent: {path}")
+    return duration_ms
+
+
+def legacy_metadata_matches(entry: dict[str, Any], row: dict[str, str], options: argparse.Namespace) -> bool:
+    """One-time migration path for the v1 audition manifest without a fingerprint."""
+    return all(entry.get(key) == value for key, value in {
+        "id": row["id"], "text": row["text"], "voice": options.voice,
+        "rate": options.rate, "volume": options.volume, "pitch": options.pitch,
+    }.items())
+
+
+def can_reuse(entry: dict[str, Any] | None, row: dict[str, str], target: Path, options: argparse.Namespace) -> bool:
+    if not entry or not target.is_file():
+        return False
+    fingerprint = provenance(row, options)
+    fingerprint_matches = entry.get("inputFingerprint") == fingerprint
+    migratable_v1 = not entry.get("inputFingerprint") and legacy_metadata_matches(entry, row, options)
+    if not (fingerprint_matches or migratable_v1):
+        return False
+    return entry.get("sha256") == sha256(target)
+
+
+async def synthesize(text: str, target: Path, options: argparse.Namespace) -> None:
+    communicator = edge_tts.Communicate(text=text, voice=options.voice, rate=options.rate, volume=options.volume, pitch=options.pitch)
     await communicator.save(str(target))
 
 
-async def generate_one(row: dict[str, str], options: argparse.Namespace) -> dict[str, object]:
-    target = options.output_dir / row["filename"]
+def record(row: dict[str, str], target: Path, options: argparse.Namespace, status: str, generated_at: str | None) -> dict[str, Any]:
+    return {
+        "id": row["id"], "text": row["text"], "outputPath": portable_output_path(target, options.output_dir),
+        "voice": options.voice, "rate": options.rate, "volume": options.volume, "pitch": options.pitch,
+        "fileSize": target.stat().st_size, "durationMs": validate_mp3(target), "sha256": sha256(target),
+        "inputFingerprint": provenance(row, options), "generationStatus": status,
+        "generatedAt": generated_at, "edgeTtsVersion": edge_tts.__version__,
+    }
+
+
+async def generate_one(row: dict[str, str], options: argparse.Namespace, existing: dict[str, Any] | None) -> dict[str, Any]:
+    target = output_target(options.output_dir, row["filename"])
     target.parent.mkdir(parents=True, exist_ok=True)
-    generated_at = datetime.now(timezone.utc).isoformat()
+    if target.exists() and can_reuse(existing, row, target, options):
+        return record(row, target, options, "GENERATED", existing.get("generatedAt"))
     if target.exists() and not options.force:
+        return {"id": row["id"], "text": row["text"], "outputPath": portable_output_path(target, options.output_dir), "voice": options.voice, "rate": options.rate, "volume": options.volume, "pitch": options.pitch, "inputFingerprint": provenance(row, options), "generationStatus": "FAILED", "generatedAt": None, "error": "existing file provenance does not match; rerun with --force to replace it"}
+
+    temporary = target.with_name(f".{target.name}.edge-tts.tmp")
+    last_error = "unknown error"
+    for attempt in range(1, RETRY_COUNT + 1):
         try:
-            audio = MP3(target)
-            if non_silent_mp3(target) and audio.info.length > 0.3:
-                return report(row, target, options, "EXISTING_VALID", generated_at)
-        except Exception:
-            pass
-        target.unlink(missing_ok=True)
-    last_error = None
-    for attempt in range(1, 4):
-        try:
-            target.unlink(missing_ok=True)
-            await synthesize(row["text"], target, options.voice, options.rate, options.volume, options.pitch)
-            return report(row, target, options, "GENERATED", generated_at)
-        except Exception as exc:  # keep the original error in the manifest
+            temporary.unlink(missing_ok=True)
+            await synthesize(row["text"], temporary, options)
+            validate_mp3(temporary)
+            temporary.replace(target)  # Atomic replacement; retain prior file on failures.
+            return record(row, target, options, "GENERATED", datetime.now(timezone.utc).isoformat())
+        except Exception as exc:
             last_error = f"attempt {attempt}: {type(exc).__name__}: {exc}"
-            target.unlink(missing_ok=True)
-            if attempt < 3:
+            temporary.unlink(missing_ok=True)
+            if attempt < RETRY_COUNT:
                 await asyncio.sleep(attempt)
-    return {"id": row["id"], "text": row["text"], "outputPath": str(target), "voice": options.voice, "rate": options.rate, "volume": options.volume, "pitch": options.pitch, "generationStatus": "FAILED", "error": last_error, "generatedAt": generated_at}
+    return {"id": row["id"], "text": row["text"], "outputPath": portable_output_path(target, options.output_dir), "voice": options.voice, "rate": options.rate, "volume": options.volume, "pitch": options.pitch, "inputFingerprint": provenance(row, options), "generationStatus": "FAILED", "generatedAt": None, "error": last_error}
 
 
-def report(row: dict[str, str], target: Path, options: argparse.Namespace, status: str, generated_at: str) -> dict[str, object]:
-    audio = MP3(target)
-    if not non_silent_mp3(target) or not decoded_audio_is_not_silent(target):
-        target.unlink(missing_ok=True)
-        raise RuntimeError(f"not a non-silent MP3: {target}")
-    duration_ms = round(audio.info.length * 1000)
-    if duration_ms <= 300:
-        target.unlink(missing_ok=True)
-        raise RuntimeError(f"duration is too short: {target}")
-    return {"id": row["id"], "text": row["text"], "outputPath": str(target), "voice": options.voice, "rate": options.rate, "volume": options.volume, "pitch": options.pitch, "fileSize": target.stat().st_size, "durationMs": duration_ms, "sha256": sha256(target), "generationStatus": status, "generatedAt": generated_at, "edgeTtsVersion": edge_tts.__version__}
-
-
-def write_reports(items: list[dict[str, object]], options: argparse.Namespace) -> None:
-    manifest = options.manifest or options.output_dir / "audition_manifest.json"
+def write_reports(items: list[dict[str, Any]], options: argparse.Namespace) -> None:
+    manifest = manifest_path(options)
     index = options.index or options.output_dir / "AUDITION_INDEX.md"
     manifest.parent.mkdir(parents=True, exist_ok=True)
     manifest.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     lines = ["# Edge TTS 试听包", "", "以下项目必须由真人试听确认：单字声调；‘一’是否为 yī；‘一个’与‘一天’的自然连读；4—7岁儿童语速；声音温和清楚；首尾是否截断；是否有噪声或异常停顿。", "", "| 文件 | 状态 | 大小 | 时长(ms) | SHA-256 |", "|---|---:|---:|---:|---|"]
     for item in items:
-        lines.append(f"| {Path(str(item['outputPath'])).name} | {item['generationStatus']} | {item.get('fileSize', '')} | {item.get('durationMs', '')} | {item.get('sha256', '')} |")
+        lines.append(f"| {item['outputPath']} | {item['generationStatus']} | {item.get('fileSize', '')} | {item.get('durationMs', '')} | {item.get('sha256', '')} |")
     index.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 async def main() -> int:
     options = args()
-    with options.input.open(encoding="utf-8", newline="") as file:
-        rows = list(csv.DictReader(file))
-    required = {"id", "text", "filename"}
-    if not rows or set(rows[0]) != required:
-        raise ValueError(f"CSV header must be exactly {sorted(required)}")
+    options.output_dir = options.output_dir.resolve()
+    rows = load_rows(options.input)
+    existing = load_existing(options)
     items = []
-    for row in rows:  # serial requests, with a small polite gap
-        items.append(await generate_one(row, options))
+    for row in rows:  # Serial requests, with a polite gap. CI never calls this path.
+        items.append(await generate_one(row, options, existing.get(row["id"])))
         await asyncio.sleep(0.4)
     write_reports(items, options)
-    failures = [item for item in items if item["generationStatus"] == "FAILED"]
-    return 1 if failures else 0
+    return 1 if any(item["generationStatus"] == "FAILED" for item in items) else 0
 
 
 if __name__ == "__main__":

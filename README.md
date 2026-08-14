@@ -27,6 +27,16 @@
 
 APK 输出：`app/build/outputs/apk/debug/app-debug.apk`。
 
+## 开发期音频试听
+
+Edge TTS 仅在开发机生成本地候选 MP3，绝不进入 Android 运行时网络路径。依赖固定在 `tools/audio-generator/requirements.txt`；生成器会校验 CSV 的重复项和路径逃逸、保存输入指纹及 SHA-256，并通过 `ffmpeg` 解码检查音频。试听报告使用跨平台的 POSIX 相对路径。
+
+```powershell
+.venv-tts\Scripts\python.exe tools\audio-generator\generate_edge_tts.py --input tools\audio-generator\audition.csv --output-dir artifacts\tts-audition\zh-CN-XiaoyiNeural --voice zh-CN-XiaoyiNeural
+```
+
+已有文件只有在文本、声音、速率、音量、音高、Edge TTS 版本和 SHA-256 均与清单一致时才会复用；需要覆盖不匹配文件时必须显式传入 `--force`。
+
 ## 说明
 
 本仓库不提交本机 SDK、Gradle 缓存、构建产物和 APK；这些均由 `.gitignore` 排除。应用仍处于调试原型阶段，不用于正式发布或儿童正式试用。
