@@ -40,7 +40,8 @@ def main() -> None:
     ids = [row["id"] for row in characters]
     require(len(set(ids)) == 50, "characters.csv 存在重复 id")
     chars = {row["character"] for row in characters}
-    require(all(row["review_status"] == "ACTIVE" for row in characters) or args.allow_draft, "存在未审核字符；候选包请使用 --allow-draft")
+    all_active = all(row["review_status"] == "ACTIVE" for row in characters)
+    require(all_active or args.allow_draft, "存在未审核字符；候选包请使用 --allow-draft")
     require(len(questions) == 50, f"questions.csv 必须是50题，实际 {len(questions)}")
     characters_by_id = {row["id"]: row for row in characters}
     option_catalog = []
@@ -115,7 +116,8 @@ def main() -> None:
     pack_path = args.output / "pack.json"
     manifest_path = args.output / "manifest.json"
     content_path.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    pack_path.write_text(json.dumps({"packId": PACK_VERSION, "version": PACK_VERSION, "status": "CANDIDATE", "characterCount": 50, "contentPath": "content.json", "manifestPath": "manifest.json"}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    package_status = "ACTIVE" if all_active else "CANDIDATE"
+    pack_path.write_text(json.dumps({"packId": PACK_VERSION, "version": PACK_VERSION, "status": package_status, "characterCount": 50, "contentPath": "content.json", "manifestPath": "manifest.json"}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     resources = []
     for relative in (Path("pack.json"), Path("content.json")):
         path = args.output / relative
@@ -152,8 +154,8 @@ def main() -> None:
             shutil.copy2(source, target)
             payload = target.read_bytes()
             resources.append({"path": relative.as_posix(), "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload), "required": True})
-    manifest_path.write_text(json.dumps({"manifestVersion": 1, "packId": PACK_VERSION, "status": "CANDIDATE", "resources": resources, "mediaRows": len(media), "reviewRows": len(reviews)}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Child pack candidate written: {args.output} ({len(compiled_characters)} characters, status=CANDIDATE)")
+    manifest_path.write_text(json.dumps({"manifestVersion": 1, "packId": PACK_VERSION, "status": package_status, "resources": resources, "mediaRows": len(media), "reviewRows": len(reviews)}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Child pack written: {args.output} ({len(compiled_characters)} characters, status={package_status})")
 
 
 if __name__ == "__main__":

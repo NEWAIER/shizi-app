@@ -1,5 +1,5 @@
 review_id,scope,character_id,check_type,reviewer_role,result,notes
-review_pack_scope,PACK,ALL,character_set,PRODUCT,DRAFT,确认50字范围与五组顺序
-review_text_all,CHARACTER,ALL,child_text,PARENT,DRAFT,检查释义词语例句是否适合4岁儿童
-review_media_all,CHARACTER,ALL,media_quality,DEVELOPER,DRAFT,检查图片音频路径和质量
-review_question_all,QUESTION,ALL,distractor_safety,PARENT,DRAFT,检查选项是否造成歧义
+review_pack_scope,PACK,ALL,character_set,PRODUCT,ACTIVE,确认50字范围与五组顺序
+review_text_all,CHARACTER,ALL,child_text,PARENT,ACTIVE,检查释义词语例句是否适合4岁儿童
+review_media_all,CHARACTER,ALL,media_quality,DEVELOPER,ACTIVE,检查图片音频路径和质量
+review_question_all,QUESTION,ALL,distractor_safety,PARENT,ACTIVE,检查选项是否造成歧义

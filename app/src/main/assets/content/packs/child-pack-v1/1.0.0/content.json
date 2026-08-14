@@ -1,0 +1,3633 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "child-pack-v1",
+  "layers": {
+    "foundationVersion": "csv-child-pack-v1",
+    "childContentVersion": "child-pack-v1",
+    "experienceVersion": "child-pack-experience-v1"
+  },
+  "childLearningPack": {
+    "schemaVersion": 1,
+    "packVersion": "child-pack-v1",
+    "characters": [
+      {
+        "characterId": "char_u4eba",
+        "meaningForChild": "人就是你和我这样的朋友。",
+        "words": [
+          "大人",
+          "家人"
+        ],
+        "sentence": "我和妈妈都是人。",
+        "learningGoal": "理解“人”的意思，并能在生活词语中认出它。",
+        "imageRequest": "温暖儿童插画：孩子和妈妈手牵手，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u53e3",
+        "meaningForChild": "口就是嘴巴，可以吃东西和说话。",
+        "words": [
+          "开口",
+          "门口"
+        ],
+        "sentence": "我开口说你好。",
+        "learningGoal": "理解“口”的意思，并能在生活词语中认出它。",
+        "imageRequest": "儿童张嘴微笑并指向嘴巴，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5927",
+        "meaningForChild": "大表示占的地方更多或个子更高。",
+        "words": [
+          "大人",
+          "大山"
+        ],
+        "sentence": "这是一只大大的熊。",
+        "learningGoal": "理解“大”的意思，并能在生活词语中认出它。",
+        "imageRequest": "两个同类物体明显大小对比，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5c0f",
+        "meaningForChild": "小表示占的地方更少或个子更矮。",
+        "words": [
+          "小手",
+          "小猫"
+        ],
+        "sentence": "小猫在睡觉。",
+        "learningGoal": "理解“小”的意思，并能在生活词语中认出它。",
+        "imageRequest": "大小对比中较小的可爱小猫，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u624b",
+        "meaningForChild": "手可以拿东西、挥一挥和做动作。",
+        "words": [
+          "小手",
+          "手指"
+        ],
+        "sentence": "我用手拿杯子。",
+        "learningGoal": "理解“手”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子伸出手拿杯子，主体清楚，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5934",
+        "meaningForChild": "头在身体的最上面，有眼睛耳朵和嘴巴。",
+        "words": [
+          "头发",
+          "点头"
+        ],
+        "sentence": "我点点头说好。",
+        "learningGoal": "理解“头”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子侧脸和头部轮廓，表情自然，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u7238",
+        "meaningForChild": "爸爸是照顾和陪伴我们的家人。",
+        "words": [
+          "爸爸",
+          "爸妈"
+        ],
+        "sentence": "爸爸陪我看书。",
+        "learningGoal": "理解“爸”的意思，并能在生活词语中认出它。",
+        "imageRequest": "爸爸和孩子一起看绘本，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5988",
+        "meaningForChild": "妈妈是照顾和陪伴我们的家人。",
+        "words": [
+          "妈妈",
+          "爸妈"
+        ],
+        "sentence": "妈妈给我一个拥抱。",
+        "learningGoal": "理解“妈”的意思，并能在生活词语中认出它。",
+        "imageRequest": "妈妈和孩子拥抱，温暖家庭场景，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5bb6",
+        "meaningForChild": "家是我们生活和休息的地方。",
+        "words": [
+          "家人",
+          "回家"
+        ],
+        "sentence": "我喜欢回家。",
+        "learningGoal": "理解“家”的意思，并能在生活词语中认出它。",
+        "imageRequest": "温暖的小房子和家人，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u95e8",
+        "meaningForChild": "门可以打开和关上，进出房间要经过门。",
+        "words": [
+          "门口",
+          "开门"
+        ],
+        "sentence": "我从门口走进家。",
+        "learningGoal": "理解“门”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子站在明亮房门前，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5c71",
+        "meaningForChild": "山是地面上高高隆起的地方。",
+        "words": [
+          "大山",
+          "山上"
+        ],
+        "sentence": "远处有一座山。",
+        "learningGoal": "理解“山”的意思，并能在生活词语中认出它。",
+        "imageRequest": "轮廓清楚的绿色山峰和小路，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u6c34",
+        "meaningForChild": "水可以喝，也可以洗手和洗东西。",
+        "words": [
+          "喝水",
+          "水杯"
+        ],
+        "sentence": "宝宝每天都要喝水。",
+        "learningGoal": "理解“水”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子用小杯子喝水，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u706b",
+        "meaningForChild": "火会发光发热，要和大人一起安全使用。",
+        "words": [
+          "火车",
+          "火苗"
+        ],
+        "sentence": "小火苗在炉子里。",
+        "learningGoal": "理解“火”的意思，并能在生活词语中认出它。",
+        "imageRequest": "安全的小火苗和炉灶，不出现危险接触，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u6728",
+        "meaningForChild": "木头来自树，可以做成很多东西。",
+        "words": [
+          "木头",
+          "木门"
+        ],
+        "sentence": "这是一扇木门。",
+        "learningGoal": "理解“木”的意思，并能在生活词语中认出它。",
+        "imageRequest": "树木和木门的简单关系图，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u65e5",
+        "meaningForChild": "太阳出来的白天可以叫日。",
+        "words": [
+          "日出",
+          "日子"
+        ],
+        "sentence": "今天是快乐的一日。",
+        "learningGoal": "理解“日”的意思，并能在生活词语中认出它。",
+        "imageRequest": "太阳从地平线升起的白天，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u6708",
+        "meaningForChild": "月亮在晚上天空中发光。",
+        "words": [
+          "月亮",
+          "月光"
+        ],
+        "sentence": "月亮照着小路。",
+        "learningGoal": "理解“月”的意思，并能在生活词语中认出它。",
+        "imageRequest": "月亮和柔和月光下的小路，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5929",
+        "meaningForChild": "头顶上很高很大的地方就是天空。",
+        "words": [
+          "今天",
+          "天空"
+        ],
+        "sentence": "今天的天空很蓝。",
+        "learningGoal": "理解“天”的意思，并能在生活词语中认出它。",
+        "imageRequest": "蓝天白云和孩子抬头看，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u4e91",
+        "meaningForChild": "云是一团团飘在天空中的白色或灰色东西。",
+        "words": [
+          "白云",
+          "云朵"
+        ],
+        "sentence": "白云在天空中飘。",
+        "learningGoal": "理解“云”的意思，并能在生活词语中认出它。",
+        "imageRequest": "蓝天中几朵柔软白云，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u96e8",
+        "meaningForChild": "雨是从云里落下来的小水滴。",
+        "words": [
+          "下雨",
+          "雨伞"
+        ],
+        "sentence": "下雨了我要撑伞。",
+        "learningGoal": "理解“雨”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子撑彩色雨伞走在小雨中，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u98ce",
+        "meaningForChild": "风看不见，但能吹动树叶和头发。",
+        "words": [
+          "大风",
+          "风车"
+        ],
+        "sentence": "风吹动了风车。",
+        "learningGoal": "理解“风”的意思，并能在生活词语中认出它。",
+        "imageRequest": "树叶和风车被风吹动，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u725b",
+        "meaningForChild": "牛是生活在农场里的大动物。",
+        "words": [
+          "奶牛",
+          "小牛"
+        ],
+        "sentence": "奶牛在草地上吃草。",
+        "learningGoal": "理解“牛”的意思，并能在生活词语中认出它。",
+        "imageRequest": "奶牛和小牛在绿色草地，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u7f8a",
+        "meaningForChild": "羊有软软的毛，喜欢在草地上吃草。",
+        "words": [
+          "小羊",
+          "山羊"
+        ],
+        "sentence": "小羊在草地上跑。",
+        "learningGoal": "理解“羊”的意思，并能在生活词语中认出它。",
+        "imageRequest": "可爱小羊在草地上，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u9e1f",
+        "meaningForChild": "鸟有翅膀，可以在天空中飞。",
+        "words": [
+          "小鸟",
+          "鸟儿"
+        ],
+        "sentence": "小鸟站在树枝上。",
+        "learningGoal": "理解“鸟”的意思，并能在生活词语中认出它。",
+        "imageRequest": "小鸟站在树枝上准备飞，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u9c7c",
+        "meaningForChild": "鱼生活在水里，用鱼鳍游泳。",
+        "words": [
+          "小鱼",
+          "金鱼"
+        ],
+        "sentence": "小鱼在水里游。",
+        "learningGoal": "理解“鱼”的意思，并能在生活词语中认出它。",
+        "imageRequest": "几条彩色小鱼在清水中，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u9a6c",
+        "meaningForChild": "马是有四条腿的大动物，可以奔跑。",
+        "words": [
+          "小马",
+          "马车"
+        ],
+        "sentence": "小马在草地上跑。",
+        "learningGoal": "理解“马”的意思，并能在生活词语中认出它。",
+        "imageRequest": "小马在草地上奔跑，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u732b",
+        "meaningForChild": "猫有软软的毛，喜欢轻轻地走路。",
+        "words": [
+          "小猫",
+          "花猫"
+        ],
+        "sentence": "小猫在晒太阳。",
+        "learningGoal": "理解“猫”的意思，并能在生活词语中认出它。",
+        "imageRequest": "小猫在窗边晒太阳，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u72d7",
+        "meaningForChild": "狗是会摇尾巴的动物，是人的好朋友。",
+        "words": [
+          "小狗",
+          "黑狗"
+        ],
+        "sentence": "小狗摇着尾巴。",
+        "learningGoal": "理解“狗”的意思，并能在生活词语中认出它。",
+        "imageRequest": "小狗开心地摇尾巴，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5154",
+        "meaningForChild": "兔子有长耳朵，喜欢跳来跳去。",
+        "words": [
+          "小兔",
+          "白兔"
+        ],
+        "sentence": "小兔在吃胡萝卜。",
+        "learningGoal": "理解“兔”的意思，并能在生活词语中认出它。",
+        "imageRequest": "白兔抱着胡萝卜，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u866b",
+        "meaningForChild": "虫是很小的动物，有的会爬有的会飞。",
+        "words": [
+          "小虫",
+          "虫子"
+        ],
+        "sentence": "小虫在叶子上爬。",
+        "learningGoal": "理解“虫”的意思，并能在生活词语中认出它。",
+        "imageRequest": "叶子上的小瓢虫，主体清楚，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u82b1",
+        "meaningForChild": "花有漂亮的颜色和香味。",
+        "words": [
+          "红花",
+          "花朵"
+        ],
+        "sentence": "春天的花开了。",
+        "learningGoal": "理解“花”的意思，并能在生活词语中认出它。",
+        "imageRequest": "一朵明亮的花和两片叶子，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u8863",
+        "meaningForChild": "衣服穿在身上，可以保暖和保护身体。",
+        "words": [
+          "衣服",
+          "上衣"
+        ],
+        "sentence": "我穿好衣服出门。",
+        "learningGoal": "理解“衣”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子穿着整洁彩色衣服，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u98df",
+        "meaningForChild": "食物可以吃，让身体有力气。",
+        "words": [
+          "食物",
+          "食品"
+        ],
+        "sentence": "好吃的食物让我开心。",
+        "learningGoal": "理解“食”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子面前有健康食物，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u7c73",
+        "meaningForChild": "米是做米饭的粮食，一粒粒白白的。",
+        "words": [
+          "大米",
+          "米饭"
+        ],
+        "sentence": "妈妈煮了香香的米饭。",
+        "learningGoal": "理解“米”的意思，并能在生活词语中认出它。",
+        "imageRequest": "碗里的白米和米饭，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u996d",
+        "meaningForChild": "饭是我们每天吃的食物。",
+        "words": [
+          "吃饭",
+          "米饭"
+        ],
+        "sentence": "我坐好吃饭。",
+        "learningGoal": "理解“饭”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子坐在餐桌前吃饭，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u676f",
+        "meaningForChild": "杯子可以装水和饮料。",
+        "words": [
+          "水杯",
+          "杯子"
+        ],
+        "sentence": "我的水杯是蓝色的。",
+        "learningGoal": "理解“杯”的意思，并能在生活词语中认出它。",
+        "imageRequest": "一个儿童蓝色水杯，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u4e66",
+        "meaningForChild": "书里有故事和很多知识。",
+        "words": [
+          "看书",
+          "书本"
+        ],
+        "sentence": "我和妈妈一起看书。",
+        "learningGoal": "理解“书”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子和妈妈翻看绘本，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u8f66",
+        "meaningForChild": "车可以载人或东西，在路上行驶。",
+        "words": [
+          "汽车",
+          "车子"
+        ],
+        "sentence": "爸爸开车送我。",
+        "learningGoal": "理解“车”的意思，并能在生活词语中认出它。",
+        "imageRequest": "一辆圆润可爱的儿童汽车，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u706f",
+        "meaningForChild": "灯可以发光，帮助我们看清楚。",
+        "words": [
+          "开灯",
+          "灯光"
+        ],
+        "sentence": "晚上我打开小灯。",
+        "learningGoal": "理解“灯”的意思，并能在生活词语中认出它。",
+        "imageRequest": "房间里的温暖小台灯，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5e8a",
+        "meaningForChild": "床是睡觉和休息的地方。",
+        "words": [
+          "小床",
+          "床上"
+        ],
+        "sentence": "我在床上睡觉。",
+        "learningGoal": "理解“床”的意思，并能在生活词语中认出它。",
+        "imageRequest": "温暖整洁的儿童床，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u684c",
+        "meaningForChild": "桌子有平平的桌面，可以放东西。",
+        "words": [
+          "桌子",
+          "书桌"
+        ],
+        "sentence": "书放在桌上。",
+        "learningGoal": "理解“桌”的意思，并能在生活词语中认出它。",
+        "imageRequest": "儿童书桌上放着书和杯子，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u770b",
+        "meaningForChild": "看是用眼睛发现和认识东西。",
+        "words": [
+          "看见",
+          "看书"
+        ],
+        "sentence": "我看见一朵花。",
+        "learningGoal": "理解“看”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子睁大眼睛看花，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u542c",
+        "meaningForChild": "听是用耳朵听到声音。",
+        "words": [
+          "听见",
+          "听话"
+        ],
+        "sentence": "我听见小鸟叫。",
+        "learningGoal": "理解“听”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子侧耳听小鸟声音，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u8d70",
+        "meaningForChild": "走是一步一步向前移动。",
+        "words": [
+          "走路",
+          "走开"
+        ],
+        "sentence": "我和爸爸一起走路。",
+        "learningGoal": "理解“走”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子牵着爸爸的手走路，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u8dd1",
+        "meaningForChild": "跑是比走得更快地向前移动。",
+        "words": [
+          "跑步",
+          "快跑"
+        ],
+        "sentence": "小朋友在操场上跑步。",
+        "learningGoal": "理解“跑”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子在安全操场上跑步，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u6765",
+        "meaningForChild": "来表示从别的地方到这里。",
+        "words": [
+          "回来",
+          "来吧"
+        ],
+        "sentence": "小狗跑过来说你好。",
+        "learningGoal": "理解“来”的意思，并能在生活词语中认出它。",
+        "imageRequest": "小狗从远处跑向孩子，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u53bb",
+        "meaningForChild": "去表示从这里到别的地方。",
+        "words": [
+          "出去",
+          "回去"
+        ],
+        "sentence": "我们一起去公园。",
+        "learningGoal": "理解“去”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子和家人走向公园，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u4e0a",
+        "meaningForChild": "上表示在高处或向高处移动。",
+        "words": [
+          "上面",
+          "上山"
+        ],
+        "sentence": "小鸟在树上。",
+        "learningGoal": "理解“上”的意思，并能在生活词语中认出它。",
+        "imageRequest": "小鸟站在树的上面，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u4e0b",
+        "meaningForChild": "下表示在低处或向低处移动。",
+        "words": [
+          "下面",
+          "下雨"
+        ],
+        "sentence": "雨滴从天上落下。",
+        "learningGoal": "理解“下”的意思，并能在生活词语中认出它。",
+        "imageRequest": "雨滴从云朵落向地面，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5f00",
+        "meaningForChild": "开表示把关着的东西打开。",
+        "words": [
+          "开门",
+          "开灯"
+        ],
+        "sentence": "我开门回家。",
+        "learningGoal": "理解“开”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子轻轻打开家门，无文字",
+        "audioRequest": "character meaning words sentence"
+      },
+      {
+        "characterId": "char_u5173",
+        "meaningForChild": "关表示把打开的东西合上。",
+        "words": [
+          "关门",
+          "关灯"
+        ],
+        "sentence": "睡觉前要关灯。",
+        "learningGoal": "理解“关”的意思，并能在生活词语中认出它。",
+        "imageRequest": "孩子睡前关掉小台灯，无文字",
+        "audioRequest": "character meaning words sentence"
+      }
+    ]
+  },
+  "course": {
+    "stageTestThreshold": 3,
+    "badgeMilestones": []
+  },
+  "learningOrder": [
+    "char_u4eba",
+    "char_u53e3",
+    "char_u5927",
+    "char_u5c0f",
+    "char_u624b",
+    "char_u5934",
+    "char_u7238",
+    "char_u5988",
+    "char_u5bb6",
+    "char_u95e8",
+    "char_u5c71",
+    "char_u6c34",
+    "char_u706b",
+    "char_u6728",
+    "char_u65e5",
+    "char_u6708",
+    "char_u5929",
+    "char_u4e91",
+    "char_u96e8",
+    "char_u98ce",
+    "char_u725b",
+    "char_u7f8a",
+    "char_u9e1f",
+    "char_u9c7c",
+    "char_u9a6c",
+    "char_u732b",
+    "char_u72d7",
+    "char_u5154",
+    "char_u866b",
+    "char_u82b1",
+    "char_u8863",
+    "char_u98df",
+    "char_u7c73",
+    "char_u996d",
+    "char_u676f",
+    "char_u4e66",
+    "char_u8f66",
+    "char_u706f",
+    "char_u5e8a",
+    "char_u684c",
+    "char_u770b",
+    "char_u542c",
+    "char_u8d70",
+    "char_u8dd1",
+    "char_u6765",
+    "char_u53bb",
+    "char_u4e0a",
+    "char_u4e0b",
+    "char_u5f00",
+    "char_u5173"
+  ],
+  "reviewOffsetsDays": [
+    1,
+    3,
+    7,
+    14,
+    30,
+    60
+  ],
+  "optionCatalog": [
+    {
+      "id": "text_char_u4eba",
+      "kind": "TEXT",
+      "characterId": "char_u4eba",
+      "text": "人"
+    },
+    {
+      "id": "text_char_u53e3",
+      "kind": "TEXT",
+      "characterId": "char_u53e3",
+      "text": "口"
+    },
+    {
+      "id": "text_char_u5927",
+      "kind": "TEXT",
+      "characterId": "char_u5927",
+      "text": "大"
+    },
+    {
+      "id": "text_char_u5c0f",
+      "kind": "TEXT",
+      "characterId": "char_u5c0f",
+      "text": "小"
+    },
+    {
+      "id": "text_char_u624b",
+      "kind": "TEXT",
+      "characterId": "char_u624b",
+      "text": "手"
+    },
+    {
+      "id": "text_char_u5934",
+      "kind": "TEXT",
+      "characterId": "char_u5934",
+      "text": "头"
+    },
+    {
+      "id": "text_char_u7238",
+      "kind": "TEXT",
+      "characterId": "char_u7238",
+      "text": "爸"
+    },
+    {
+      "id": "text_char_u5988",
+      "kind": "TEXT",
+      "characterId": "char_u5988",
+      "text": "妈"
+    },
+    {
+      "id": "text_char_u5bb6",
+      "kind": "TEXT",
+      "characterId": "char_u5bb6",
+      "text": "家"
+    },
+    {
+      "id": "text_char_u95e8",
+      "kind": "TEXT",
+      "characterId": "char_u95e8",
+      "text": "门"
+    },
+    {
+      "id": "text_char_u5c71",
+      "kind": "TEXT",
+      "characterId": "char_u5c71",
+      "text": "山"
+    },
+    {
+      "id": "text_char_u6c34",
+      "kind": "TEXT",
+      "characterId": "char_u6c34",
+      "text": "水"
+    },
+    {
+      "id": "text_char_u706b",
+      "kind": "TEXT",
+      "characterId": "char_u706b",
+      "text": "火"
+    },
+    {
+      "id": "text_char_u6728",
+      "kind": "TEXT",
+      "characterId": "char_u6728",
+      "text": "木"
+    },
+    {
+      "id": "text_char_u65e5",
+      "kind": "TEXT",
+      "characterId": "char_u65e5",
+      "text": "日"
+    },
+    {
+      "id": "text_char_u6708",
+      "kind": "TEXT",
+      "characterId": "char_u6708",
+      "text": "月"
+    },
+    {
+      "id": "text_char_u5929",
+      "kind": "TEXT",
+      "characterId": "char_u5929",
+      "text": "天"
+    },
+    {
+      "id": "text_char_u4e91",
+      "kind": "TEXT",
+      "characterId": "char_u4e91",
+      "text": "云"
+    },
+    {
+      "id": "text_char_u96e8",
+      "kind": "TEXT",
+      "characterId": "char_u96e8",
+      "text": "雨"
+    },
+    {
+      "id": "text_char_u98ce",
+      "kind": "TEXT",
+      "characterId": "char_u98ce",
+      "text": "风"
+    },
+    {
+      "id": "text_char_u725b",
+      "kind": "TEXT",
+      "characterId": "char_u725b",
+      "text": "牛"
+    },
+    {
+      "id": "text_char_u7f8a",
+      "kind": "TEXT",
+      "characterId": "char_u7f8a",
+      "text": "羊"
+    },
+    {
+      "id": "text_char_u9e1f",
+      "kind": "TEXT",
+      "characterId": "char_u9e1f",
+      "text": "鸟"
+    },
+    {
+      "id": "text_char_u9c7c",
+      "kind": "TEXT",
+      "characterId": "char_u9c7c",
+      "text": "鱼"
+    },
+    {
+      "id": "text_char_u9a6c",
+      "kind": "TEXT",
+      "characterId": "char_u9a6c",
+      "text": "马"
+    },
+    {
+      "id": "text_char_u732b",
+      "kind": "TEXT",
+      "characterId": "char_u732b",
+      "text": "猫"
+    },
+    {
+      "id": "text_char_u72d7",
+      "kind": "TEXT",
+      "characterId": "char_u72d7",
+      "text": "狗"
+    },
+    {
+      "id": "text_char_u5154",
+      "kind": "TEXT",
+      "characterId": "char_u5154",
+      "text": "兔"
+    },
+    {
+      "id": "text_char_u866b",
+      "kind": "TEXT",
+      "characterId": "char_u866b",
+      "text": "虫"
+    },
+    {
+      "id": "text_char_u82b1",
+      "kind": "TEXT",
+      "characterId": "char_u82b1",
+      "text": "花"
+    },
+    {
+      "id": "text_char_u8863",
+      "kind": "TEXT",
+      "characterId": "char_u8863",
+      "text": "衣"
+    },
+    {
+      "id": "text_char_u98df",
+      "kind": "TEXT",
+      "characterId": "char_u98df",
+      "text": "食"
+    },
+    {
+      "id": "text_char_u7c73",
+      "kind": "TEXT",
+      "characterId": "char_u7c73",
+      "text": "米"
+    },
+    {
+      "id": "text_char_u996d",
+      "kind": "TEXT",
+      "characterId": "char_u996d",
+      "text": "饭"
+    },
+    {
+      "id": "text_char_u676f",
+      "kind": "TEXT",
+      "characterId": "char_u676f",
+      "text": "杯"
+    },
+    {
+      "id": "text_char_u4e66",
+      "kind": "TEXT",
+      "characterId": "char_u4e66",
+      "text": "书"
+    },
+    {
+      "id": "text_char_u8f66",
+      "kind": "TEXT",
+      "characterId": "char_u8f66",
+      "text": "车"
+    },
+    {
+      "id": "text_char_u706f",
+      "kind": "TEXT",
+      "characterId": "char_u706f",
+      "text": "灯"
+    },
+    {
+      "id": "text_char_u5e8a",
+      "kind": "TEXT",
+      "characterId": "char_u5e8a",
+      "text": "床"
+    },
+    {
+      "id": "text_char_u684c",
+      "kind": "TEXT",
+      "characterId": "char_u684c",
+      "text": "桌"
+    },
+    {
+      "id": "text_char_u770b",
+      "kind": "TEXT",
+      "characterId": "char_u770b",
+      "text": "看"
+    },
+    {
+      "id": "text_char_u542c",
+      "kind": "TEXT",
+      "characterId": "char_u542c",
+      "text": "听"
+    },
+    {
+      "id": "text_char_u8d70",
+      "kind": "TEXT",
+      "characterId": "char_u8d70",
+      "text": "走"
+    },
+    {
+      "id": "text_char_u8dd1",
+      "kind": "TEXT",
+      "characterId": "char_u8dd1",
+      "text": "跑"
+    },
+    {
+      "id": "text_char_u6765",
+      "kind": "TEXT",
+      "characterId": "char_u6765",
+      "text": "来"
+    },
+    {
+      "id": "text_char_u53bb",
+      "kind": "TEXT",
+      "characterId": "char_u53bb",
+      "text": "去"
+    },
+    {
+      "id": "text_char_u4e0a",
+      "kind": "TEXT",
+      "characterId": "char_u4e0a",
+      "text": "上"
+    },
+    {
+      "id": "text_char_u4e0b",
+      "kind": "TEXT",
+      "characterId": "char_u4e0b",
+      "text": "下"
+    },
+    {
+      "id": "text_char_u5f00",
+      "kind": "TEXT",
+      "characterId": "char_u5f00",
+      "text": "开"
+    },
+    {
+      "id": "text_char_u5173",
+      "kind": "TEXT",
+      "characterId": "char_u5173",
+      "text": "关"
+    }
+  ],
+  "characters": [
+    {
+      "id": "char_u4eba",
+      "character": "人",
+      "pinyin": "rén",
+      "toneNumber": 2,
+      "order": 1,
+      "meaningForChild": "人就是你和我这样的朋友。",
+      "imageAsset": "images/characters/char_u4eba_main_v1.webp",
+      "imageAlt": "温暖儿童插画：孩子和妈妈手牵手，无文字",
+      "words": [
+        {
+          "text": "大人",
+          "audioAsset": "audio/words/u4eba_1_v1.mp3"
+        },
+        {
+          "text": "家人",
+          "audioAsset": "audio/words/u4eba_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我和妈妈都是人。",
+        "audioAsset": "audio/sentences/u4eba_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u4eba_v1.mp3",
+        "meaning": "audio/meanings/meaning_u4eba_v1.mp3"
+      },
+      "teachingPrompt": "人就是你和我这样的朋友。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u4eba_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u4eba",
+          "optionIds": [
+            "text_char_u4eba",
+            "text_char_u53e3",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u53e3",
+      "character": "口",
+      "pinyin": "kǒu",
+      "toneNumber": 3,
+      "order": 2,
+      "meaningForChild": "口就是嘴巴，可以吃东西和说话。",
+      "imageAsset": "images/characters/char_u53e3_main_v1.webp",
+      "imageAlt": "儿童张嘴微笑并指向嘴巴，无文字",
+      "words": [
+        {
+          "text": "开口",
+          "audioAsset": "audio/words/u53e3_1_v1.mp3"
+        },
+        {
+          "text": "门口",
+          "audioAsset": "audio/words/u53e3_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我开口说你好。",
+        "audioAsset": "audio/sentences/u53e3_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u53e3_v1.mp3",
+        "meaning": "audio/meanings/meaning_u53e3_v1.mp3"
+      },
+      "teachingPrompt": "口就是嘴巴，可以吃东西和说话。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u53e3_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u53e3",
+          "optionIds": [
+            "text_char_u53e3",
+            "text_char_u4eba",
+            "text_char_u5927",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5927",
+      "character": "大",
+      "pinyin": "dà",
+      "toneNumber": 4,
+      "order": 3,
+      "meaningForChild": "大表示占的地方更多或个子更高。",
+      "imageAsset": "images/characters/char_u5927_main_v1.webp",
+      "imageAlt": "两个同类物体明显大小对比，无文字",
+      "words": [
+        {
+          "text": "大人",
+          "audioAsset": "audio/words/u5927_1_v1.mp3"
+        },
+        {
+          "text": "大山",
+          "audioAsset": "audio/words/u5927_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "这是一只大大的熊。",
+        "audioAsset": "audio/sentences/u5927_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5927_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5927_v1.mp3"
+      },
+      "teachingPrompt": "大表示占的地方更多或个子更高。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5927_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5927",
+          "optionIds": [
+            "text_char_u5927",
+            "text_char_u5c0f",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5c0f",
+      "character": "小",
+      "pinyin": "xiǎo",
+      "toneNumber": 3,
+      "order": 4,
+      "meaningForChild": "小表示占的地方更少或个子更矮。",
+      "imageAsset": "images/characters/char_u5c0f_main_v1.webp",
+      "imageAlt": "大小对比中较小的可爱小猫，无文字",
+      "words": [
+        {
+          "text": "小手",
+          "audioAsset": "audio/words/u5c0f_1_v1.mp3"
+        },
+        {
+          "text": "小猫",
+          "audioAsset": "audio/words/u5c0f_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小猫在睡觉。",
+        "audioAsset": "audio/sentences/u5c0f_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5c0f_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5c0f_v1.mp3"
+      },
+      "teachingPrompt": "小表示占的地方更少或个子更矮。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5c0f_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5c0f",
+          "optionIds": [
+            "text_char_u5c0f",
+            "text_char_u5927",
+            "text_char_u624b",
+            "text_char_u5c71"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u624b",
+      "character": "手",
+      "pinyin": "shǒu",
+      "toneNumber": 3,
+      "order": 5,
+      "meaningForChild": "手可以拿东西、挥一挥和做动作。",
+      "imageAsset": "images/characters/char_u624b_main_v1.webp",
+      "imageAlt": "孩子伸出手拿杯子，主体清楚，无文字",
+      "words": [
+        {
+          "text": "小手",
+          "audioAsset": "audio/words/u624b_1_v1.mp3"
+        },
+        {
+          "text": "手指",
+          "audioAsset": "audio/words/u624b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我用手拿杯子。",
+        "audioAsset": "audio/sentences/u624b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u624b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u624b_v1.mp3"
+      },
+      "teachingPrompt": "手可以拿东西、挥一挥和做动作。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u624b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u624b",
+          "optionIds": [
+            "text_char_u624b",
+            "text_char_u5934",
+            "text_char_u4eba",
+            "text_char_u53e3"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5934",
+      "character": "头",
+      "pinyin": "tóu",
+      "toneNumber": 2,
+      "order": 6,
+      "meaningForChild": "头在身体的最上面，有眼睛耳朵和嘴巴。",
+      "imageAsset": "images/characters/char_u5934_main_v1.webp",
+      "imageAlt": "孩子侧脸和头部轮廓，表情自然，无文字",
+      "words": [
+        {
+          "text": "头发",
+          "audioAsset": "audio/words/u5934_1_v1.mp3"
+        },
+        {
+          "text": "点头",
+          "audioAsset": "audio/words/u5934_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我点点头说好。",
+        "audioAsset": "audio/sentences/u5934_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5934_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5934_v1.mp3"
+      },
+      "teachingPrompt": "头在身体的最上面，有眼睛耳朵和嘴巴。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5934_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5934",
+          "optionIds": [
+            "text_char_u5934",
+            "text_char_u624b",
+            "text_char_u5927",
+            "text_char_u5c0f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u7238",
+      "character": "爸",
+      "pinyin": "bà",
+      "toneNumber": 4,
+      "order": 7,
+      "meaningForChild": "爸爸是照顾和陪伴我们的家人。",
+      "imageAsset": "images/characters/char_u7238_main_v1.webp",
+      "imageAlt": "爸爸和孩子一起看绘本，无文字",
+      "words": [
+        {
+          "text": "爸爸",
+          "audioAsset": "audio/words/u7238_1_v1.mp3"
+        },
+        {
+          "text": "爸妈",
+          "audioAsset": "audio/words/u7238_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "爸爸陪我看书。",
+        "audioAsset": "audio/sentences/u7238_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u7238_v1.mp3",
+        "meaning": "audio/meanings/meaning_u7238_v1.mp3"
+      },
+      "teachingPrompt": "爸爸是照顾和陪伴我们的家人。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u7238_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u7238",
+          "optionIds": [
+            "text_char_u7238",
+            "text_char_u5988",
+            "text_char_u4eba",
+            "text_char_u5bb6"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5988",
+      "character": "妈",
+      "pinyin": "mā",
+      "toneNumber": 1,
+      "order": 8,
+      "meaningForChild": "妈妈是照顾和陪伴我们的家人。",
+      "imageAsset": "images/characters/char_u5988_main_v1.webp",
+      "imageAlt": "妈妈和孩子拥抱，温暖家庭场景，无文字",
+      "words": [
+        {
+          "text": "妈妈",
+          "audioAsset": "audio/words/u5988_1_v1.mp3"
+        },
+        {
+          "text": "爸妈",
+          "audioAsset": "audio/words/u5988_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "妈妈给我一个拥抱。",
+        "audioAsset": "audio/sentences/u5988_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5988_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5988_v1.mp3"
+      },
+      "teachingPrompt": "妈妈是照顾和陪伴我们的家人。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5988_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5988",
+          "optionIds": [
+            "text_char_u5988",
+            "text_char_u7238",
+            "text_char_u5bb6",
+            "text_char_u95e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5bb6",
+      "character": "家",
+      "pinyin": "jiā",
+      "toneNumber": 1,
+      "order": 9,
+      "meaningForChild": "家是我们生活和休息的地方。",
+      "imageAsset": "images/characters/char_u5bb6_main_v1.webp",
+      "imageAlt": "温暖的小房子和家人，无文字",
+      "words": [
+        {
+          "text": "家人",
+          "audioAsset": "audio/words/u5bb6_1_v1.mp3"
+        },
+        {
+          "text": "回家",
+          "audioAsset": "audio/words/u5bb6_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我喜欢回家。",
+        "audioAsset": "audio/sentences/u5bb6_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5bb6_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5bb6_v1.mp3"
+      },
+      "teachingPrompt": "家是我们生活和休息的地方。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5bb6_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5bb6",
+          "optionIds": [
+            "text_char_u5bb6",
+            "text_char_u95e8",
+            "text_char_u7238",
+            "text_char_u5988"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u95e8",
+      "character": "门",
+      "pinyin": "mén",
+      "toneNumber": 2,
+      "order": 10,
+      "meaningForChild": "门可以打开和关上，进出房间要经过门。",
+      "imageAsset": "images/characters/char_u95e8_main_v1.webp",
+      "imageAlt": "孩子站在明亮房门前，无文字",
+      "words": [
+        {
+          "text": "门口",
+          "audioAsset": "audio/words/u95e8_1_v1.mp3"
+        },
+        {
+          "text": "开门",
+          "audioAsset": "audio/words/u95e8_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我从门口走进家。",
+        "audioAsset": "audio/sentences/u95e8_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u95e8_v1.mp3",
+        "meaning": "audio/meanings/meaning_u95e8_v1.mp3"
+      },
+      "teachingPrompt": "门可以打开和关上，进出房间要经过门。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u95e8_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u95e8",
+          "optionIds": [
+            "text_char_u95e8",
+            "text_char_u5bb6",
+            "text_char_u53e3",
+            "text_char_u4e0a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5c71",
+      "character": "山",
+      "pinyin": "shān",
+      "toneNumber": 1,
+      "order": 11,
+      "meaningForChild": "山是地面上高高隆起的地方。",
+      "imageAsset": "images/characters/char_u5c71_main_v1.webp",
+      "imageAlt": "轮廓清楚的绿色山峰和小路，无文字",
+      "words": [
+        {
+          "text": "大山",
+          "audioAsset": "audio/words/u5c71_1_v1.mp3"
+        },
+        {
+          "text": "山上",
+          "audioAsset": "audio/words/u5c71_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "远处有一座山。",
+        "audioAsset": "audio/sentences/u5c71_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5c71_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5c71_v1.mp3"
+      },
+      "teachingPrompt": "山是地面上高高隆起的地方。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5c71_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5c71",
+          "optionIds": [
+            "text_char_u5c71",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u5929"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u6c34",
+      "character": "水",
+      "pinyin": "shuǐ",
+      "toneNumber": 3,
+      "order": 12,
+      "meaningForChild": "水可以喝，也可以洗手和洗东西。",
+      "imageAsset": "images/characters/char_u6c34_main_v1.webp",
+      "imageAlt": "孩子用小杯子喝水，无文字",
+      "words": [
+        {
+          "text": "喝水",
+          "audioAsset": "audio/words/u6c34_1_v1.mp3"
+        },
+        {
+          "text": "水杯",
+          "audioAsset": "audio/words/u6c34_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "宝宝每天都要喝水。",
+        "audioAsset": "audio/sentences/u6c34_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u6c34_v1.mp3",
+        "meaning": "audio/meanings/meaning_u6c34_v1.mp3"
+      },
+      "teachingPrompt": "水可以喝，也可以洗手和洗东西。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u6c34_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u6c34",
+          "optionIds": [
+            "text_char_u6c34",
+            "text_char_u5c71",
+            "text_char_u706b",
+            "text_char_u96e8"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u706b",
+      "character": "火",
+      "pinyin": "huǒ",
+      "toneNumber": 3,
+      "order": 13,
+      "meaningForChild": "火会发光发热，要和大人一起安全使用。",
+      "imageAsset": "images/characters/char_u706b_main_v1.webp",
+      "imageAlt": "安全的小火苗和炉灶，不出现危险接触，无文字",
+      "words": [
+        {
+          "text": "火车",
+          "audioAsset": "audio/words/u706b_1_v1.mp3"
+        },
+        {
+          "text": "火苗",
+          "audioAsset": "audio/words/u706b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小火苗在炉子里。",
+        "audioAsset": "audio/sentences/u706b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u706b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u706b_v1.mp3"
+      },
+      "teachingPrompt": "火会发光发热，要和大人一起安全使用。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u706b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u706b",
+          "optionIds": [
+            "text_char_u706b",
+            "text_char_u6c34",
+            "text_char_u6728",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u6728",
+      "character": "木",
+      "pinyin": "mù",
+      "toneNumber": 4,
+      "order": 14,
+      "meaningForChild": "木头来自树，可以做成很多东西。",
+      "imageAsset": "images/characters/char_u6728_main_v1.webp",
+      "imageAlt": "树木和木门的简单关系图，无文字",
+      "words": [
+        {
+          "text": "木头",
+          "audioAsset": "audio/words/u6728_1_v1.mp3"
+        },
+        {
+          "text": "木门",
+          "audioAsset": "audio/words/u6728_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "这是一扇木门。",
+        "audioAsset": "audio/sentences/u6728_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u6728_v1.mp3",
+        "meaning": "audio/meanings/meaning_u6728_v1.mp3"
+      },
+      "teachingPrompt": "木头来自树，可以做成很多东西。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u6728_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u6728",
+          "optionIds": [
+            "text_char_u6728",
+            "text_char_u706b",
+            "text_char_u5c71",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u65e5",
+      "character": "日",
+      "pinyin": "rì",
+      "toneNumber": 4,
+      "order": 15,
+      "meaningForChild": "太阳出来的白天可以叫日。",
+      "imageAsset": "images/characters/char_u65e5_main_v1.webp",
+      "imageAlt": "太阳从地平线升起的白天，无文字",
+      "words": [
+        {
+          "text": "日出",
+          "audioAsset": "audio/words/u65e5_1_v1.mp3"
+        },
+        {
+          "text": "日子",
+          "audioAsset": "audio/words/u65e5_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "今天是快乐的一日。",
+        "audioAsset": "audio/sentences/u65e5_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u65e5_v1.mp3",
+        "meaning": "audio/meanings/meaning_u65e5_v1.mp3"
+      },
+      "teachingPrompt": "太阳出来的白天可以叫日。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u65e5_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u65e5",
+          "optionIds": [
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u5929",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u6708",
+      "character": "月",
+      "pinyin": "yuè",
+      "toneNumber": 4,
+      "order": 16,
+      "meaningForChild": "月亮在晚上天空中发光。",
+      "imageAsset": "images/characters/char_u6708_main_v1.webp",
+      "imageAlt": "月亮和柔和月光下的小路，无文字",
+      "words": [
+        {
+          "text": "月亮",
+          "audioAsset": "audio/words/u6708_1_v1.mp3"
+        },
+        {
+          "text": "月光",
+          "audioAsset": "audio/words/u6708_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "月亮照着小路。",
+        "audioAsset": "audio/sentences/u6708_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u6708_v1.mp3",
+        "meaning": "audio/meanings/meaning_u6708_v1.mp3"
+      },
+      "teachingPrompt": "月亮在晚上天空中发光。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u6708_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u6708",
+          "optionIds": [
+            "text_char_u6708",
+            "text_char_u65e5",
+            "text_char_u5929",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5929",
+      "character": "天",
+      "pinyin": "tiān",
+      "toneNumber": 1,
+      "order": 17,
+      "meaningForChild": "头顶上很高很大的地方就是天空。",
+      "imageAsset": "images/characters/char_u5929_main_v1.webp",
+      "imageAlt": "蓝天白云和孩子抬头看，无文字",
+      "words": [
+        {
+          "text": "今天",
+          "audioAsset": "audio/words/u5929_1_v1.mp3"
+        },
+        {
+          "text": "天空",
+          "audioAsset": "audio/words/u5929_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "今天的天空很蓝。",
+        "audioAsset": "audio/sentences/u5929_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5929_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5929_v1.mp3"
+      },
+      "teachingPrompt": "头顶上很高很大的地方就是天空。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5929_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5929",
+          "optionIds": [
+            "text_char_u5929",
+            "text_char_u65e5",
+            "text_char_u6708",
+            "text_char_u4e91"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u4e91",
+      "character": "云",
+      "pinyin": "yún",
+      "toneNumber": 2,
+      "order": 18,
+      "meaningForChild": "云是一团团飘在天空中的白色或灰色东西。",
+      "imageAsset": "images/characters/char_u4e91_main_v1.webp",
+      "imageAlt": "蓝天中几朵柔软白云，无文字",
+      "words": [
+        {
+          "text": "白云",
+          "audioAsset": "audio/words/u4e91_1_v1.mp3"
+        },
+        {
+          "text": "云朵",
+          "audioAsset": "audio/words/u4e91_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "白云在天空中飘。",
+        "audioAsset": "audio/sentences/u4e91_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u4e91_v1.mp3",
+        "meaning": "audio/meanings/meaning_u4e91_v1.mp3"
+      },
+      "teachingPrompt": "云是一团团飘在天空中的白色或灰色东西。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u4e91_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u4e91",
+          "optionIds": [
+            "text_char_u4e91",
+            "text_char_u96e8",
+            "text_char_u5929",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u96e8",
+      "character": "雨",
+      "pinyin": "yǔ",
+      "toneNumber": 3,
+      "order": 19,
+      "meaningForChild": "雨是从云里落下来的小水滴。",
+      "imageAsset": "images/characters/char_u96e8_main_v1.webp",
+      "imageAlt": "孩子撑彩色雨伞走在小雨中，无文字",
+      "words": [
+        {
+          "text": "下雨",
+          "audioAsset": "audio/words/u96e8_1_v1.mp3"
+        },
+        {
+          "text": "雨伞",
+          "audioAsset": "audio/words/u96e8_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "下雨了我要撑伞。",
+        "audioAsset": "audio/sentences/u96e8_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u96e8_v1.mp3",
+        "meaning": "audio/meanings/meaning_u96e8_v1.mp3"
+      },
+      "teachingPrompt": "雨是从云里落下来的小水滴。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u96e8_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u96e8",
+          "optionIds": [
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u6c34",
+            "text_char_u98ce"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u98ce",
+      "character": "风",
+      "pinyin": "fēng",
+      "toneNumber": 1,
+      "order": 20,
+      "meaningForChild": "风看不见，但能吹动树叶和头发。",
+      "imageAsset": "images/characters/char_u98ce_main_v1.webp",
+      "imageAlt": "树叶和风车被风吹动，无文字",
+      "words": [
+        {
+          "text": "大风",
+          "audioAsset": "audio/words/u98ce_1_v1.mp3"
+        },
+        {
+          "text": "风车",
+          "audioAsset": "audio/words/u98ce_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "风吹动了风车。",
+        "audioAsset": "audio/sentences/u98ce_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u98ce_v1.mp3",
+        "meaning": "audio/meanings/meaning_u98ce_v1.mp3"
+      },
+      "teachingPrompt": "风看不见，但能吹动树叶和头发。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u98ce_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u98ce",
+          "optionIds": [
+            "text_char_u98ce",
+            "text_char_u96e8",
+            "text_char_u4e91",
+            "text_char_u706b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u725b",
+      "character": "牛",
+      "pinyin": "niú",
+      "toneNumber": 2,
+      "order": 21,
+      "meaningForChild": "牛是生活在农场里的大动物。",
+      "imageAsset": "images/characters/char_u725b_main_v1.webp",
+      "imageAlt": "奶牛和小牛在绿色草地，无文字",
+      "words": [
+        {
+          "text": "奶牛",
+          "audioAsset": "audio/words/u725b_1_v1.mp3"
+        },
+        {
+          "text": "小牛",
+          "audioAsset": "audio/words/u725b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "奶牛在草地上吃草。",
+        "audioAsset": "audio/sentences/u725b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u725b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u725b_v1.mp3"
+      },
+      "teachingPrompt": "牛是生活在农场里的大动物。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u725b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u725b",
+          "optionIds": [
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9a6c",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u7f8a",
+      "character": "羊",
+      "pinyin": "yáng",
+      "toneNumber": 2,
+      "order": 22,
+      "meaningForChild": "羊有软软的毛，喜欢在草地上吃草。",
+      "imageAsset": "images/characters/char_u7f8a_main_v1.webp",
+      "imageAlt": "可爱小羊在草地上，无文字",
+      "words": [
+        {
+          "text": "小羊",
+          "audioAsset": "audio/words/u7f8a_1_v1.mp3"
+        },
+        {
+          "text": "山羊",
+          "audioAsset": "audio/words/u7f8a_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小羊在草地上跑。",
+        "audioAsset": "audio/sentences/u7f8a_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u7f8a_v1.mp3",
+        "meaning": "audio/meanings/meaning_u7f8a_v1.mp3"
+      },
+      "teachingPrompt": "羊有软软的毛，喜欢在草地上吃草。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u7f8a_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u7f8a",
+          "optionIds": [
+            "text_char_u7f8a",
+            "text_char_u725b",
+            "text_char_u5154",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u9e1f",
+      "character": "鸟",
+      "pinyin": "niǎo",
+      "toneNumber": 3,
+      "order": 23,
+      "meaningForChild": "鸟有翅膀，可以在天空中飞。",
+      "imageAsset": "images/characters/char_u9e1f_main_v1.webp",
+      "imageAlt": "小鸟站在树枝上准备飞，无文字",
+      "words": [
+        {
+          "text": "小鸟",
+          "audioAsset": "audio/words/u9e1f_1_v1.mp3"
+        },
+        {
+          "text": "鸟儿",
+          "audioAsset": "audio/words/u9e1f_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小鸟站在树枝上。",
+        "audioAsset": "audio/sentences/u9e1f_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u9e1f_v1.mp3",
+        "meaning": "audio/meanings/meaning_u9e1f_v1.mp3"
+      },
+      "teachingPrompt": "鸟有翅膀，可以在天空中飞。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u9e1f_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u9e1f",
+          "optionIds": [
+            "text_char_u9e1f",
+            "text_char_u9c7c",
+            "text_char_u725b",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u9c7c",
+      "character": "鱼",
+      "pinyin": "yú",
+      "toneNumber": 2,
+      "order": 24,
+      "meaningForChild": "鱼生活在水里，用鱼鳍游泳。",
+      "imageAsset": "images/characters/char_u9c7c_main_v1.webp",
+      "imageAlt": "几条彩色小鱼在清水中，无文字",
+      "words": [
+        {
+          "text": "小鱼",
+          "audioAsset": "audio/words/u9c7c_1_v1.mp3"
+        },
+        {
+          "text": "金鱼",
+          "audioAsset": "audio/words/u9c7c_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小鱼在水里游。",
+        "audioAsset": "audio/sentences/u9c7c_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u9c7c_v1.mp3",
+        "meaning": "audio/meanings/meaning_u9c7c_v1.mp3"
+      },
+      "teachingPrompt": "鱼生活在水里，用鱼鳍游泳。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u9c7c_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u9c7c",
+          "optionIds": [
+            "text_char_u9c7c",
+            "text_char_u9e1f",
+            "text_char_u725b",
+            "text_char_u82b1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u9a6c",
+      "character": "马",
+      "pinyin": "mǎ",
+      "toneNumber": 3,
+      "order": 25,
+      "meaningForChild": "马是有四条腿的大动物，可以奔跑。",
+      "imageAsset": "images/characters/char_u9a6c_main_v1.webp",
+      "imageAlt": "小马在草地上奔跑，无文字",
+      "words": [
+        {
+          "text": "小马",
+          "audioAsset": "audio/words/u9a6c_1_v1.mp3"
+        },
+        {
+          "text": "马车",
+          "audioAsset": "audio/words/u9a6c_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小马在草地上跑。",
+        "audioAsset": "audio/sentences/u9a6c_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u9a6c_v1.mp3",
+        "meaning": "audio/meanings/meaning_u9a6c_v1.mp3"
+      },
+      "teachingPrompt": "马是有四条腿的大动物，可以奔跑。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u9a6c_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u9a6c",
+          "optionIds": [
+            "text_char_u9a6c",
+            "text_char_u725b",
+            "text_char_u7f8a",
+            "text_char_u9e1f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u732b",
+      "character": "猫",
+      "pinyin": "māo",
+      "toneNumber": 1,
+      "order": 26,
+      "meaningForChild": "猫有软软的毛，喜欢轻轻地走路。",
+      "imageAsset": "images/characters/char_u732b_main_v1.webp",
+      "imageAlt": "小猫在窗边晒太阳，无文字",
+      "words": [
+        {
+          "text": "小猫",
+          "audioAsset": "audio/words/u732b_1_v1.mp3"
+        },
+        {
+          "text": "花猫",
+          "audioAsset": "audio/words/u732b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小猫在晒太阳。",
+        "audioAsset": "audio/sentences/u732b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u732b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u732b_v1.mp3"
+      },
+      "teachingPrompt": "猫有软软的毛，喜欢轻轻地走路。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u732b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u732b",
+          "optionIds": [
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u5154",
+            "text_char_u866b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u72d7",
+      "character": "狗",
+      "pinyin": "gǒu",
+      "toneNumber": 3,
+      "order": 27,
+      "meaningForChild": "狗是会摇尾巴的动物，是人的好朋友。",
+      "imageAsset": "images/characters/char_u72d7_main_v1.webp",
+      "imageAlt": "小狗开心地摇尾巴，无文字",
+      "words": [
+        {
+          "text": "小狗",
+          "audioAsset": "audio/words/u72d7_1_v1.mp3"
+        },
+        {
+          "text": "黑狗",
+          "audioAsset": "audio/words/u72d7_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小狗摇着尾巴。",
+        "audioAsset": "audio/sentences/u72d7_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u72d7_v1.mp3",
+        "meaning": "audio/meanings/meaning_u72d7_v1.mp3"
+      },
+      "teachingPrompt": "狗是会摇尾巴的动物，是人的好朋友。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u72d7_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u72d7",
+          "optionIds": [
+            "text_char_u72d7",
+            "text_char_u732b",
+            "text_char_u725b",
+            "text_char_u9a6c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5154",
+      "character": "兔",
+      "pinyin": "tù",
+      "toneNumber": 4,
+      "order": 28,
+      "meaningForChild": "兔子有长耳朵，喜欢跳来跳去。",
+      "imageAsset": "images/characters/char_u5154_main_v1.webp",
+      "imageAlt": "白兔抱着胡萝卜，无文字",
+      "words": [
+        {
+          "text": "小兔",
+          "audioAsset": "audio/words/u5154_1_v1.mp3"
+        },
+        {
+          "text": "白兔",
+          "audioAsset": "audio/words/u5154_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小兔在吃胡萝卜。",
+        "audioAsset": "audio/sentences/u5154_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5154_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5154_v1.mp3"
+      },
+      "teachingPrompt": "兔子有长耳朵，喜欢跳来跳去。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5154_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5154",
+          "optionIds": [
+            "text_char_u5154",
+            "text_char_u732b",
+            "text_char_u72d7",
+            "text_char_u7f8a"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u866b",
+      "character": "虫",
+      "pinyin": "chóng",
+      "toneNumber": 2,
+      "order": 29,
+      "meaningForChild": "虫是很小的动物，有的会爬有的会飞。",
+      "imageAsset": "images/characters/char_u866b_main_v1.webp",
+      "imageAlt": "叶子上的小瓢虫，主体清楚，无文字",
+      "words": [
+        {
+          "text": "小虫",
+          "audioAsset": "audio/words/u866b_1_v1.mp3"
+        },
+        {
+          "text": "虫子",
+          "audioAsset": "audio/words/u866b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小虫在叶子上爬。",
+        "audioAsset": "audio/sentences/u866b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u866b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u866b_v1.mp3"
+      },
+      "teachingPrompt": "虫是很小的动物，有的会爬有的会飞。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u866b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u866b",
+          "optionIds": [
+            "text_char_u866b",
+            "text_char_u82b1",
+            "text_char_u9e1f",
+            "text_char_u9c7c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u82b1",
+      "character": "花",
+      "pinyin": "huā",
+      "toneNumber": 1,
+      "order": 30,
+      "meaningForChild": "花有漂亮的颜色和香味。",
+      "imageAsset": "images/characters/char_u82b1_main_v1.webp",
+      "imageAlt": "一朵明亮的花和两片叶子，无文字",
+      "words": [
+        {
+          "text": "红花",
+          "audioAsset": "audio/words/u82b1_1_v1.mp3"
+        },
+        {
+          "text": "花朵",
+          "audioAsset": "audio/words/u82b1_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "春天的花开了。",
+        "audioAsset": "audio/sentences/u82b1_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u82b1_v1.mp3",
+        "meaning": "audio/meanings/meaning_u82b1_v1.mp3"
+      },
+      "teachingPrompt": "花有漂亮的颜色和香味。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u82b1_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u82b1",
+          "optionIds": [
+            "text_char_u82b1",
+            "text_char_u6728",
+            "text_char_u866b",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u8863",
+      "character": "衣",
+      "pinyin": "yī",
+      "toneNumber": 1,
+      "order": 31,
+      "meaningForChild": "衣服穿在身上，可以保暖和保护身体。",
+      "imageAsset": "images/characters/char_u8863_main_v1.webp",
+      "imageAlt": "孩子穿着整洁彩色衣服，无文字",
+      "words": [
+        {
+          "text": "衣服",
+          "audioAsset": "audio/words/u8863_1_v1.mp3"
+        },
+        {
+          "text": "上衣",
+          "audioAsset": "audio/words/u8863_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我穿好衣服出门。",
+        "audioAsset": "audio/sentences/u8863_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u8863_v1.mp3",
+        "meaning": "audio/meanings/meaning_u8863_v1.mp3"
+      },
+      "teachingPrompt": "衣服穿在身上，可以保暖和保护身体。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u8863_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u8863",
+          "optionIds": [
+            "text_char_u8863",
+            "text_char_u98df",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u98df",
+      "character": "食",
+      "pinyin": "shí",
+      "toneNumber": 2,
+      "order": 32,
+      "meaningForChild": "食物可以吃，让身体有力气。",
+      "imageAsset": "images/characters/char_u98df_main_v1.webp",
+      "imageAlt": "孩子面前有健康食物，无文字",
+      "words": [
+        {
+          "text": "食物",
+          "audioAsset": "audio/words/u98df_1_v1.mp3"
+        },
+        {
+          "text": "食品",
+          "audioAsset": "audio/words/u98df_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "好吃的食物让我开心。",
+        "audioAsset": "audio/sentences/u98df_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u98df_v1.mp3",
+        "meaning": "audio/meanings/meaning_u98df_v1.mp3"
+      },
+      "teachingPrompt": "食物可以吃，让身体有力气。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u98df_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u98df",
+          "optionIds": [
+            "text_char_u98df",
+            "text_char_u8863",
+            "text_char_u996d",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u7c73",
+      "character": "米",
+      "pinyin": "mǐ",
+      "toneNumber": 3,
+      "order": 33,
+      "meaningForChild": "米是做米饭的粮食，一粒粒白白的。",
+      "imageAsset": "images/characters/char_u7c73_main_v1.webp",
+      "imageAlt": "碗里的白米和米饭，无文字",
+      "words": [
+        {
+          "text": "大米",
+          "audioAsset": "audio/words/u7c73_1_v1.mp3"
+        },
+        {
+          "text": "米饭",
+          "audioAsset": "audio/words/u7c73_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "妈妈煮了香香的米饭。",
+        "audioAsset": "audio/sentences/u7c73_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u7c73_v1.mp3",
+        "meaning": "audio/meanings/meaning_u7c73_v1.mp3"
+      },
+      "teachingPrompt": "米是做米饭的粮食，一粒粒白白的。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u7c73_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u7c73",
+          "optionIds": [
+            "text_char_u7c73",
+            "text_char_u996d",
+            "text_char_u98df",
+            "text_char_u6c34"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u996d",
+      "character": "饭",
+      "pinyin": "fàn",
+      "toneNumber": 4,
+      "order": 34,
+      "meaningForChild": "饭是我们每天吃的食物。",
+      "imageAsset": "images/characters/char_u996d_main_v1.webp",
+      "imageAlt": "孩子坐在餐桌前吃饭，无文字",
+      "words": [
+        {
+          "text": "吃饭",
+          "audioAsset": "audio/words/u996d_1_v1.mp3"
+        },
+        {
+          "text": "米饭",
+          "audioAsset": "audio/words/u996d_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我坐好吃饭。",
+        "audioAsset": "audio/sentences/u996d_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u996d_v1.mp3",
+        "meaning": "audio/meanings/meaning_u996d_v1.mp3"
+      },
+      "teachingPrompt": "饭是我们每天吃的食物。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u996d_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u996d",
+          "optionIds": [
+            "text_char_u996d",
+            "text_char_u7c73",
+            "text_char_u98df",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u676f",
+      "character": "杯",
+      "pinyin": "bēi",
+      "toneNumber": 1,
+      "order": 35,
+      "meaningForChild": "杯子可以装水和饮料。",
+      "imageAsset": "images/characters/char_u676f_main_v1.webp",
+      "imageAlt": "一个儿童蓝色水杯，无文字",
+      "words": [
+        {
+          "text": "水杯",
+          "audioAsset": "audio/words/u676f_1_v1.mp3"
+        },
+        {
+          "text": "杯子",
+          "audioAsset": "audio/words/u676f_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我的水杯是蓝色的。",
+        "audioAsset": "audio/sentences/u676f_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u676f_v1.mp3",
+        "meaning": "audio/meanings/meaning_u676f_v1.mp3"
+      },
+      "teachingPrompt": "杯子可以装水和饮料。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u676f_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u676f",
+          "optionIds": [
+            "text_char_u676f",
+            "text_char_u6c34",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u4e66",
+      "character": "书",
+      "pinyin": "shū",
+      "toneNumber": 1,
+      "order": 36,
+      "meaningForChild": "书里有故事和很多知识。",
+      "imageAsset": "images/characters/char_u4e66_main_v1.webp",
+      "imageAlt": "孩子和妈妈翻看绘本，无文字",
+      "words": [
+        {
+          "text": "看书",
+          "audioAsset": "audio/words/u4e66_1_v1.mp3"
+        },
+        {
+          "text": "书本",
+          "audioAsset": "audio/words/u4e66_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我和妈妈一起看书。",
+        "audioAsset": "audio/sentences/u4e66_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u4e66_v1.mp3",
+        "meaning": "audio/meanings/meaning_u4e66_v1.mp3"
+      },
+      "teachingPrompt": "书里有故事和很多知识。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u4e66_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u4e66",
+          "optionIds": [
+            "text_char_u4e66",
+            "text_char_u770b",
+            "text_char_u8f66",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u8f66",
+      "character": "车",
+      "pinyin": "chē",
+      "toneNumber": 1,
+      "order": 37,
+      "meaningForChild": "车可以载人或东西，在路上行驶。",
+      "imageAsset": "images/characters/char_u8f66_main_v1.webp",
+      "imageAlt": "一辆圆润可爱的儿童汽车，无文字",
+      "words": [
+        {
+          "text": "汽车",
+          "audioAsset": "audio/words/u8f66_1_v1.mp3"
+        },
+        {
+          "text": "车子",
+          "audioAsset": "audio/words/u8f66_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "爸爸开车送我。",
+        "audioAsset": "audio/sentences/u8f66_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u8f66_v1.mp3",
+        "meaning": "audio/meanings/meaning_u8f66_v1.mp3"
+      },
+      "teachingPrompt": "车可以载人或东西，在路上行驶。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u8f66_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u8f66",
+          "optionIds": [
+            "text_char_u8f66",
+            "text_char_u9a6c",
+            "text_char_u4e66",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u706f",
+      "character": "灯",
+      "pinyin": "dēng",
+      "toneNumber": 1,
+      "order": 38,
+      "meaningForChild": "灯可以发光，帮助我们看清楚。",
+      "imageAsset": "images/characters/char_u706f_main_v1.webp",
+      "imageAlt": "房间里的温暖小台灯，无文字",
+      "words": [
+        {
+          "text": "开灯",
+          "audioAsset": "audio/words/u706f_1_v1.mp3"
+        },
+        {
+          "text": "灯光",
+          "audioAsset": "audio/words/u706f_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "晚上我打开小灯。",
+        "audioAsset": "audio/sentences/u706f_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u706f_v1.mp3",
+        "meaning": "audio/meanings/meaning_u706f_v1.mp3"
+      },
+      "teachingPrompt": "灯可以发光，帮助我们看清楚。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u706f_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u706f",
+          "optionIds": [
+            "text_char_u706f",
+            "text_char_u706b",
+            "text_char_u5e8a",
+            "text_char_u684c"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5e8a",
+      "character": "床",
+      "pinyin": "chuáng",
+      "toneNumber": 2,
+      "order": 39,
+      "meaningForChild": "床是睡觉和休息的地方。",
+      "imageAsset": "images/characters/char_u5e8a_main_v1.webp",
+      "imageAlt": "温暖整洁的儿童床，无文字",
+      "words": [
+        {
+          "text": "小床",
+          "audioAsset": "audio/words/u5e8a_1_v1.mp3"
+        },
+        {
+          "text": "床上",
+          "audioAsset": "audio/words/u5e8a_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我在床上睡觉。",
+        "audioAsset": "audio/sentences/u5e8a_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5e8a_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5e8a_v1.mp3"
+      },
+      "teachingPrompt": "床是睡觉和休息的地方。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5e8a_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5e8a",
+          "optionIds": [
+            "text_char_u5e8a",
+            "text_char_u684c",
+            "text_char_u5bb6",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u684c",
+      "character": "桌",
+      "pinyin": "zhuō",
+      "toneNumber": 1,
+      "order": 40,
+      "meaningForChild": "桌子有平平的桌面，可以放东西。",
+      "imageAsset": "images/characters/char_u684c_main_v1.webp",
+      "imageAlt": "儿童书桌上放着书和杯子，无文字",
+      "words": [
+        {
+          "text": "桌子",
+          "audioAsset": "audio/words/u684c_1_v1.mp3"
+        },
+        {
+          "text": "书桌",
+          "audioAsset": "audio/words/u684c_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "书放在桌上。",
+        "audioAsset": "audio/sentences/u684c_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u684c_v1.mp3",
+        "meaning": "audio/meanings/meaning_u684c_v1.mp3"
+      },
+      "teachingPrompt": "桌子有平平的桌面，可以放东西。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u684c_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u684c",
+          "optionIds": [
+            "text_char_u684c",
+            "text_char_u5e8a",
+            "text_char_u4e66",
+            "text_char_u676f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u770b",
+      "character": "看",
+      "pinyin": "kàn",
+      "toneNumber": 4,
+      "order": 41,
+      "meaningForChild": "看是用眼睛发现和认识东西。",
+      "imageAsset": "images/characters/char_u770b_main_v1.webp",
+      "imageAlt": "孩子睁大眼睛看花，无文字",
+      "words": [
+        {
+          "text": "看见",
+          "audioAsset": "audio/words/u770b_1_v1.mp3"
+        },
+        {
+          "text": "看书",
+          "audioAsset": "audio/words/u770b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我看见一朵花。",
+        "audioAsset": "audio/sentences/u770b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u770b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u770b_v1.mp3"
+      },
+      "teachingPrompt": "看是用眼睛发现和认识东西。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u770b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u770b",
+          "optionIds": [
+            "text_char_u770b",
+            "text_char_u542c",
+            "text_char_u4e66",
+            "text_char_u7c73"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u542c",
+      "character": "听",
+      "pinyin": "tīng",
+      "toneNumber": 1,
+      "order": 42,
+      "meaningForChild": "听是用耳朵听到声音。",
+      "imageAsset": "images/characters/char_u542c_main_v1.webp",
+      "imageAlt": "孩子侧耳听小鸟声音，无文字",
+      "words": [
+        {
+          "text": "听见",
+          "audioAsset": "audio/words/u542c_1_v1.mp3"
+        },
+        {
+          "text": "听话",
+          "audioAsset": "audio/words/u542c_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我听见小鸟叫。",
+        "audioAsset": "audio/sentences/u542c_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u542c_v1.mp3",
+        "meaning": "audio/meanings/meaning_u542c_v1.mp3"
+      },
+      "teachingPrompt": "听是用耳朵听到声音。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u542c_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u542c",
+          "optionIds": [
+            "text_char_u542c",
+            "text_char_u770b",
+            "text_char_u9e1f",
+            "text_char_u4e66"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u8d70",
+      "character": "走",
+      "pinyin": "zǒu",
+      "toneNumber": 3,
+      "order": 43,
+      "meaningForChild": "走是一步一步向前移动。",
+      "imageAsset": "images/characters/char_u8d70_main_v1.webp",
+      "imageAlt": "孩子牵着爸爸的手走路，无文字",
+      "words": [
+        {
+          "text": "走路",
+          "audioAsset": "audio/words/u8d70_1_v1.mp3"
+        },
+        {
+          "text": "走开",
+          "audioAsset": "audio/words/u8d70_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我和爸爸一起走路。",
+        "audioAsset": "audio/sentences/u8d70_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u8d70_v1.mp3",
+        "meaning": "audio/meanings/meaning_u8d70_v1.mp3"
+      },
+      "teachingPrompt": "走是一步一步向前移动。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u8d70_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u8d70",
+          "optionIds": [
+            "text_char_u8d70",
+            "text_char_u8dd1",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u8dd1",
+      "character": "跑",
+      "pinyin": "pǎo",
+      "toneNumber": 3,
+      "order": 44,
+      "meaningForChild": "跑是比走得更快地向前移动。",
+      "imageAsset": "images/characters/char_u8dd1_main_v1.webp",
+      "imageAlt": "孩子在安全操场上跑步，无文字",
+      "words": [
+        {
+          "text": "跑步",
+          "audioAsset": "audio/words/u8dd1_1_v1.mp3"
+        },
+        {
+          "text": "快跑",
+          "audioAsset": "audio/words/u8dd1_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小朋友在操场上跑步。",
+        "audioAsset": "audio/sentences/u8dd1_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u8dd1_v1.mp3",
+        "meaning": "audio/meanings/meaning_u8dd1_v1.mp3"
+      },
+      "teachingPrompt": "跑是比走得更快地向前移动。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u8dd1_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u8dd1",
+          "optionIds": [
+            "text_char_u8dd1",
+            "text_char_u8d70",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u6765",
+      "character": "来",
+      "pinyin": "lái",
+      "toneNumber": 2,
+      "order": 45,
+      "meaningForChild": "来表示从别的地方到这里。",
+      "imageAsset": "images/characters/char_u6765_main_v1.webp",
+      "imageAlt": "小狗从远处跑向孩子，无文字",
+      "words": [
+        {
+          "text": "回来",
+          "audioAsset": "audio/words/u6765_1_v1.mp3"
+        },
+        {
+          "text": "来吧",
+          "audioAsset": "audio/words/u6765_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小狗跑过来说你好。",
+        "audioAsset": "audio/sentences/u6765_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u6765_v1.mp3",
+        "meaning": "audio/meanings/meaning_u6765_v1.mp3"
+      },
+      "teachingPrompt": "来表示从别的地方到这里。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u6765_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u6765",
+          "optionIds": [
+            "text_char_u6765",
+            "text_char_u53bb",
+            "text_char_u8d70",
+            "text_char_u8dd1"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u53bb",
+      "character": "去",
+      "pinyin": "qù",
+      "toneNumber": 4,
+      "order": 46,
+      "meaningForChild": "去表示从这里到别的地方。",
+      "imageAsset": "images/characters/char_u53bb_main_v1.webp",
+      "imageAlt": "孩子和家人走向公园，无文字",
+      "words": [
+        {
+          "text": "出去",
+          "audioAsset": "audio/words/u53bb_1_v1.mp3"
+        },
+        {
+          "text": "回去",
+          "audioAsset": "audio/words/u53bb_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我们一起去公园。",
+        "audioAsset": "audio/sentences/u53bb_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u53bb_v1.mp3",
+        "meaning": "audio/meanings/meaning_u53bb_v1.mp3"
+      },
+      "teachingPrompt": "去表示从这里到别的地方。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u53bb_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u53bb",
+          "optionIds": [
+            "text_char_u53bb",
+            "text_char_u6765",
+            "text_char_u4e0a",
+            "text_char_u4e0b"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u4e0a",
+      "character": "上",
+      "pinyin": "shàng",
+      "toneNumber": 4,
+      "order": 47,
+      "meaningForChild": "上表示在高处或向高处移动。",
+      "imageAsset": "images/characters/char_u4e0a_main_v1.webp",
+      "imageAlt": "小鸟站在树的上面，无文字",
+      "words": [
+        {
+          "text": "上面",
+          "audioAsset": "audio/words/u4e0a_1_v1.mp3"
+        },
+        {
+          "text": "上山",
+          "audioAsset": "audio/words/u4e0a_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "小鸟在树上。",
+        "audioAsset": "audio/sentences/u4e0a_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u4e0a_v1.mp3",
+        "meaning": "audio/meanings/meaning_u4e0a_v1.mp3"
+      },
+      "teachingPrompt": "上表示在高处或向高处移动。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u4e0a_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u4e0a",
+          "optionIds": [
+            "text_char_u4e0a",
+            "text_char_u4e0b",
+            "text_char_u6765",
+            "text_char_u53bb"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u4e0b",
+      "character": "下",
+      "pinyin": "xià",
+      "toneNumber": 4,
+      "order": 48,
+      "meaningForChild": "下表示在低处或向低处移动。",
+      "imageAsset": "images/characters/char_u4e0b_main_v1.webp",
+      "imageAlt": "雨滴从云朵落向地面，无文字",
+      "words": [
+        {
+          "text": "下面",
+          "audioAsset": "audio/words/u4e0b_1_v1.mp3"
+        },
+        {
+          "text": "下雨",
+          "audioAsset": "audio/words/u4e0b_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "雨滴从天上落下。",
+        "audioAsset": "audio/sentences/u4e0b_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u4e0b_v1.mp3",
+        "meaning": "audio/meanings/meaning_u4e0b_v1.mp3"
+      },
+      "teachingPrompt": "下表示在低处或向低处移动。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u4e0b_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u4e0b",
+          "optionIds": [
+            "text_char_u4e0b",
+            "text_char_u4e0a",
+            "text_char_u53bb",
+            "text_char_u5f00"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5f00",
+      "character": "开",
+      "pinyin": "kāi",
+      "toneNumber": 1,
+      "order": 49,
+      "meaningForChild": "开表示把关着的东西打开。",
+      "imageAsset": "images/characters/char_u5f00_main_v1.webp",
+      "imageAlt": "孩子轻轻打开家门，无文字",
+      "words": [
+        {
+          "text": "开门",
+          "audioAsset": "audio/words/u5f00_1_v1.mp3"
+        },
+        {
+          "text": "开灯",
+          "audioAsset": "audio/words/u5f00_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "我开门回家。",
+        "audioAsset": "audio/sentences/u5f00_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5f00_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5f00_v1.mp3"
+      },
+      "teachingPrompt": "开表示把关着的东西打开。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5f00_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5f00",
+          "optionIds": [
+            "text_char_u5f00",
+            "text_char_u5173",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    },
+    {
+      "id": "char_u5173",
+      "character": "关",
+      "pinyin": "guān",
+      "toneNumber": 1,
+      "order": 50,
+      "meaningForChild": "关表示把打开的东西合上。",
+      "imageAsset": "images/characters/char_u5173_main_v1.webp",
+      "imageAlt": "孩子睡前关掉小台灯，无文字",
+      "words": [
+        {
+          "text": "关门",
+          "audioAsset": "audio/words/u5173_1_v1.mp3"
+        },
+        {
+          "text": "关灯",
+          "audioAsset": "audio/words/u5173_2_v1.mp3"
+        }
+      ],
+      "sentence": {
+        "text": "睡觉前要关灯。",
+        "audioAsset": "audio/sentences/u5173_v1.mp3"
+      },
+      "audio": {
+        "character": "audio/characters/char_u5173_v1.mp3",
+        "meaning": "audio/meanings/meaning_u5173_v1.mp3"
+      },
+      "teachingPrompt": "关表示把打开的东西合上。",
+      "confusableRestrictions": [],
+      "misconceptions": [],
+      "questionSeeds": [
+        {
+          "id": "q_char_u5173_listen",
+          "type": "LISTEN_CHOOSE_CHARACTER",
+          "promptAudio": "audio/prompts/prompt_listen_choose_character_v1.mp3",
+          "correctOptionId": "text_char_u5173",
+          "optionIds": [
+            "text_char_u5173",
+            "text_char_u5f00",
+            "text_char_u95e8",
+            "text_char_u706f"
+          ],
+          "minLearnedCount": 0,
+          "evidenceCategory": "SOUND_TO_SHAPE"
+        }
+      ],
+      "contentReview": {
+        "textReviewed": true,
+        "assetReviewedByDeveloper": true,
+        "assetReviewedByParent": true,
+        "blockedReason": null
+      }
+    }
+  ]
+}

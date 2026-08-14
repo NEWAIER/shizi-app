@@ -1,5 +1,5 @@
 media_id,character_id,media_type,asset_path,source_prompt,required,review_status
-character_audio_all,ALL,AUDIO,audio/characters/{id}_v1.mp3,标准普通话字音，温柔清晰，适合4岁儿童,true,DRAFT
-meaning_audio_all,ALL,AUDIO,audio/meanings/meaning_{id}_v1.mp3,儿童释义、词语和例句，语速慢，停顿自然,true,DRAFT
-character_image_all,ALL,IMAGE,images/characters/{id}_main_v1.webp,使用 characters.csv 的 image_prompt 生成统一绘本风格,true,DRAFT
-question_prompt_listen,ALL,AUDIO,audio/prompts/prompt_listen_choose_character_v1.mp3,请听一听，找出一样的字。,true,DRAFT
+character_audio_all,ALL,AUDIO,audio/characters/{id}_v1.mp3,标准普通话字音，温柔清晰，适合4岁儿童,true,ACTIVE
+meaning_audio_all,ALL,AUDIO,audio/meanings/meaning_{id}_v1.mp3,儿童释义、词语和例句，语速慢，停顿自然,true,ACTIVE
+character_image_all,ALL,IMAGE,images/characters/{id}_main_v1.webp,使用 characters.csv 的 image_prompt 生成统一绘本风格,true,ACTIVE
+question_prompt_listen,ALL,AUDIO,audio/prompts/prompt_listen_choose_character_v1.mp3,请听一听，找出一样的字。,true,ACTIVE

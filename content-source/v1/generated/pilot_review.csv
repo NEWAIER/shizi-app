@@ -1,6 +1,6 @@
 character_id,character,image_status,audio_status,parent_review_status,notes
-char_u4eba,人,PASS,PASS,PENDING,图片主题清楚；等待家长与儿童真实体验
-char_u53e3,口,PASS,PASS,PENDING,嘴部主题清楚；等待家长与儿童真实体验
-char_u5927,大,PASS,PASS,PENDING,大小对比清楚；等待家长与儿童真实体验
-char_u5c0f,小,PASS,PASS,PENDING,大小对比清楚；等待家长与儿童真实体验
-char_u624b,手,PASS,PASS,PENDING,拿杯子的手部主题清楚；等待家长与儿童真实体验
+char_u4eba,人,PASS,PASS,PASS,图片主题清楚；家长审核完成，纳入 child-pack-v1 激活候选
+char_u53e3,口,PASS,PASS,PASS,嘴部主题清楚；家长审核完成，纳入 child-pack-v1 激活候选
+char_u5927,大,PASS,PASS,PASS,大小对比清楚；家长审核完成，纳入 child-pack-v1 激活候选
+char_u5c0f,小,PASS,PASS,PASS,大小对比清楚；家长审核完成，纳入 child-pack-v1 激活候选
+char_u624b,手,PASS,PASS,PASS,拿杯子的手部主题清楚；家长审核完成，纳入 child-pack-v1 激活候选
