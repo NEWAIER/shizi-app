@@ -12,7 +12,9 @@
         android:fullBackupContent="false"
         android:usesCleartextTraffic="false"
         android:theme="@style/AppTheme"
-        android:label="识字 APP 5字原型">
+        android:label="小禾识字"
+        android:icon="@drawable/xiaohe_launcher"
+        android:roundIcon="@drawable/xiaohe_launcher">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"

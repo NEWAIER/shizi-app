@@ -7,12 +7,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -100,37 +100,47 @@ fun ProfileScreen() {
     val state by viewModel.state.collectAsState()
     ChildPage {
       Column(
-        modifier = Modifier.fillMaxSize().testTag("page_profile"),
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).testTag("page_profile"),
         horizontalAlignment = Alignment.CenterHorizontally,
       ) {
-        ChildTopBar("我的")
-        AvatarCard(name = avatarName(state.avatarId), selected = true, onClick = {}, modifier = Modifier.padding(top = 8.dp))
-        Text("${state.nickname}，你真棒！", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.titleLarge)
-        Text("Lv.${state.honorLevel} ${state.levelTitle} · ${state.totalStars} 颗星星", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
-        Text("距离下一等级还差 ${((state.nextLevelStars - state.totalStars).coerceAtLeast(0))} 颗星星", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
+        ChildTopBar("我的星球")
+        Card(
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+            shape = MaterialTheme.shapes.extraLarge,
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+        ) {
+            Column(Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("欢迎来到我的星球", style = MaterialTheme.typography.titleLarge)
+                AvatarCard(name = avatarName(state.avatarId), selected = true, onClick = {}, modifier = Modifier.padding(top = 12.dp))
+                Text("${state.nickname}，你真棒！", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.headlineSmall)
+                Text("Lv.${state.honorLevel} · ${state.levelTitle}", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
+                Text("${state.totalStars} 颗星星", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.displaySmall, color = MaterialTheme.colorScheme.primary)
+                Text("再收集 ${((state.nextLevelStars - state.totalStars).coerceAtLeast(0))} 颗星星就升级啦", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
+            }
+        }
+        Text("选择一个小伙伴", modifier = Modifier.padding(top = 22.dp), style = MaterialTheme.typography.titleLarge)
         Row(modifier = Modifier.fillMaxWidth().padding(top = 12.dp).horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             avatarOptions.forEach { (id, name) ->
                 AvatarCard(name = name, selected = state.avatarId == id, onClick = { viewModel.selectAvatar(id) })
             }
         }
-        Card(modifier = Modifier.fillMaxWidth().padding(top = 22.dp)) {
+        Card(modifier = Modifier.fillMaxWidth().padding(top = 22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)) {
             Column(modifier = Modifier.padding(22.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("认识了 ${state.learnedCount} 个字", style = MaterialTheme.typography.titleLarge)
-                Text("掌握了 ${state.masteredCount} 个字", modifier = Modifier.padding(top = 14.dp), style = MaterialTheme.typography.titleLarge)
-                Text("坚持学习 ${state.learningDays} 天", modifier = Modifier.padding(top = 14.dp), style = MaterialTheme.typography.titleLarge)
-                Text("今天最多认识 ${state.dailyTarget} 个新字", modifier = Modifier.padding(top = 14.dp), style = MaterialTheme.typography.bodyLarge)
-                Text("每次认真学习，都会点亮一颗小星星。", modifier = Modifier.padding(top = 18.dp), textAlign = TextAlign.Center)
+                Text("我的成长小记录", style = MaterialTheme.typography.titleLarge)
+                Text("认识了 ${state.learnedCount} 个字宝宝", modifier = Modifier.padding(top = 14.dp), style = MaterialTheme.typography.titleMedium)
+                Text("掌握了 ${state.masteredCount} 个字", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.titleMedium)
+                Text("陪伴学习 ${state.learningDays} 天", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.titleMedium)
+                Text("每天认识 ${state.dailyTarget} 个新朋友", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.bodyLarge)
             }
         }
-        Text("我的徽章", modifier = Modifier.padding(top = 28.dp), style = MaterialTheme.typography.titleLarge)
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            items(if (state.badgeMilestones.isEmpty()) childBadgeMilestones else state.badgeMilestones) { milestone ->
-                BadgeCard(milestone.title, milestone.detail, state.learnedCount >= milestone.learnedCount)
+        Text("我的星星徽章", modifier = Modifier.padding(top = 28.dp), style = MaterialTheme.typography.titleLarge)
+        val badges = if (state.badgeMilestones.isEmpty()) childBadgeMilestones else state.badgeMilestones
+        badges.chunked(2).forEach { row ->
+            Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                row.forEach { milestone ->
+                    BadgeCard(milestone.title, milestone.detail, state.learnedCount >= milestone.learnedCount, modifier = Modifier.weight(1f))
+                }
+                if (row.size == 1) Spacer(modifier = Modifier.weight(1f))
             }
         }
       }
