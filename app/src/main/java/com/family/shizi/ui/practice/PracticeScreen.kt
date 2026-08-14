@@ -231,7 +231,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         }
                         options = options.filter { it.id in reducedOptionIds }
                         teachingCorrectId = q.correctOptionId
-                        status = "正确答案是这个，跟老师读一遍"
+                        status = "没关系，老师陪你再看一遍"
                         // Play correct option audio if available
                         val correctOpt = options.firstOrNull { it.id == q.correctOptionId }
                         val correctAudio = correctOpt?.asset?.takeIf { it.endsWith(".mp3") }

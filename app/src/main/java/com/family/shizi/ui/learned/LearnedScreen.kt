@@ -80,8 +80,8 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
     val learned = state.characters.filter { it.initialLessonCompleted }
     ChildPage {
         Column(modifier = Modifier.fillMaxSize().testTag("page_learned"), horizontalAlignment = Alignment.CenterHorizontally) {
-            ChildTopBar("字卡")
-            Text("已经认识 ${learned.size} 个字", modifier = Modifier.padding(bottom = 8.dp), style = MaterialTheme.typography.titleMedium)
+            ChildTopBar("字宝宝图鉴")
+            Text("已经认识 ${learned.size} 个字 · 轻点听一听，长按看详情", modifier = Modifier.padding(bottom = 8.dp), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
         if (!state.loading && learned.isEmpty()) {
             EmptyState("还没有字卡", "先去学习第一个字，字宝宝会住进这里。", Modifier.padding(top = 24.dp))
         } else {
@@ -150,7 +150,7 @@ fun LearnedCharacterCard(
                 modifier = Modifier.testTag("learned_character_title"),
             )
             Text(stateName(progress.state), modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.labelSmall)
-            Text("轻点播放 · 长按详情", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.labelSmall, textAlign = TextAlign.Center)
+            Text("轻点听声音 · 长按看详情", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.labelSmall, textAlign = TextAlign.Center)
         }
     }
 }

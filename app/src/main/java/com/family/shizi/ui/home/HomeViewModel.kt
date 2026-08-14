@@ -29,6 +29,8 @@ data class HomeUiState(
     val stageTestThreshold: Int = 3,
     val canTakeStageTest: Boolean = false,
     val error: String? = null,
+    val todayCharacter: String = "水",
+    val todayPinyin: String = "shuǐ",
 )
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
@@ -78,6 +80,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 val progress = repo.getCharacterProgress()
                 val learnedCount = progress.count { it.initialLessonCompleted }
                 val dueReviewCount = progress.count { it.nextReviewDate?.let { date -> date <= today } == true }
+                val learnedIds = progress.filter { it.initialLessonCompleted }.map { it.characterId }.toSet()
+                val todayCharacter = content.characters.firstOrNull { it.id !in learnedIds } ?: content.characters.firstOrNull()
                 val base = HomeUiState(
                     onboardingCompleted = true,
                     learnedCount = learnedCount,
@@ -85,6 +89,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     dailyNewTarget = settings.dailyNewCharacterCount,
                     stageTestThreshold = content.course.stageTestThreshold,
                     canTakeStageTest = learnedCount >= content.course.stageTestThreshold,
+                    todayCharacter = todayCharacter?.character ?: "水",
+                    todayPinyin = todayCharacter?.pinyin ?: "shuǐ",
                 )
                 val existing = repo.getUsableSession(today)
                 _uiState.value = when {
