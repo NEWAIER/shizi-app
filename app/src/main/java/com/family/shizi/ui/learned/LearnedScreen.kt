@@ -3,6 +3,7 @@ package com.family.shizi.ui.learned
 import android.app.Application
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,6 +13,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -81,7 +83,7 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
     ChildPage {
         Column(modifier = Modifier.fillMaxSize().testTag("page_learned"), horizontalAlignment = Alignment.CenterHorizontally) {
             ChildTopBar("字宝宝图鉴")
-            Text("已经认识 ${learned.size} 个字 · 轻点听一听，长按看详情", modifier = Modifier.padding(bottom = 8.dp), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
+            Text("字宝宝收藏 ${learned.size}/${content.characters.size}", modifier = Modifier.padding(bottom = 4.dp), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
         if (state.loading) {
             EmptyState("正在打开字宝宝图鉴", "马上就好。", Modifier.padding(top = 24.dp))
         } else {
@@ -139,14 +141,18 @@ private fun CatalogCharacterCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .aspectRatio(0.78f)
             .testTag("catalog_character_${character.id}")
             .pointerInput(character.id) {
                 detectTapGestures(onTap = { if (learned) onPlay() }, onLongPress = { onLongPress() })
             },
+        colors = CardDefaults.cardColors(
+            containerColor = if (learned) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant,
+        ),
     ) {
-        Column(modifier = Modifier.padding(vertical = 12.dp, horizontal = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(character.character, style = MaterialTheme.typography.headlineMedium)
-            Text(if (learned) "已认识" else "待认识", modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.labelSmall)
+        Column(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp, horizontal = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(character.character, style = MaterialTheme.typography.headlineSmall, color = if (learned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(if (learned) "★" else "·", modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.titleMedium, color = if (learned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline)
         }
     }
 }
