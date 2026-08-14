@@ -16,6 +16,9 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -42,6 +45,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.family.shizi.navigation.ShiziRoute
+import com.family.shizi.R
 import com.family.shizi.ui.components.ChildPrimaryButton
 import com.family.shizi.ui.components.MascotBubble
 import com.family.shizi.ui.theme.ShiziShapes
@@ -64,17 +68,19 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
             verticalArrangement = Arrangement.Top,
         ) {
             Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Box(
-                    modifier = Modifier.size(52.dp).background(MaterialTheme.colorScheme.secondaryContainer, CircleShape),
-                    contentAlignment = Alignment.Center,
-                ) { Text("字", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary) }
+                Image(
+                    painter = painterResource(R.drawable.xiaohe_launcher),
+                    contentDescription = "小禾头像",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.size(58.dp).clip(CircleShape),
+                )
                 Column(modifier = Modifier.padding(start = 12.dp)) {
                     Text("欢迎回来", style = MaterialTheme.typography.titleLarge, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
-                    Text("小朋友，今天也一起玩字宝宝", style = MaterialTheme.typography.bodyMedium)
+                    Text("小朋友，今天认识${state.todayCharacter}宝宝吗？", style = MaterialTheme.typography.bodyMedium)
                 }
             }
-            Text("今天认识一个新朋友", modifier = Modifier.padding(top = 24.dp).testTag("page_home"), style = MaterialTheme.typography.headlineMedium, textAlign = TextAlign.Center)
-            Text("它正在等你打招呼", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center)
+            Text("今天认识一个新朋友", modifier = Modifier.padding(top = 18.dp).testTag("page_home"), style = MaterialTheme.typography.headlineMedium, textAlign = TextAlign.Center)
+            Text("${state.todayCharacter}宝宝正在等你打招呼", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center)
             state.error?.let { Text(it, modifier = Modifier.padding(top = 8.dp), color = MaterialTheme.colorScheme.error, textAlign = TextAlign.Center) }
             Card(
                 modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
@@ -101,6 +107,13 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
                 progress = { (state.learnedCount / 50f).coerceIn(0f, 1f) },
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp).height(10.dp).clip(RoundedCornerShape(99.dp)).testTag("home_progress"),
             )
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+                Text("今日进度 ${state.learnedCount}/50", style = MaterialTheme.typography.labelLarge)
+                Text("星星 ${state.totalStars}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+            }
         }
 
         // A discreet bubble keeps parent controls out of the child learning area.

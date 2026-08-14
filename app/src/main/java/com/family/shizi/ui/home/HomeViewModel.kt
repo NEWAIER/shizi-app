@@ -28,6 +28,7 @@ data class HomeUiState(
     val dailyNewTarget: Int = 3,
     val stageTestThreshold: Int = 3,
     val canTakeStageTest: Boolean = false,
+    val totalStars: Int = 0,
     val error: String? = null,
     val todayCharacter: String = "水",
     val todayPinyin: String = "shuǐ",
@@ -79,12 +80,16 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 val settings = repo.settings.first()
                 val progress = repo.getCharacterProgress()
                 val learnedCount = progress.count { it.initialLessonCompleted }
+                val masteredCount = progress.count { it.state.name.contains("MASTERED") }
+                val learningDays = repo.getCompletedLearningDayCount()
+                val totalStars = learnedCount * 10 + masteredCount * 5 + learningDays * 2
                 val dueReviewCount = progress.count { it.nextReviewDate?.let { date -> date <= today } == true }
                 val learnedIds = progress.filter { it.initialLessonCompleted }.map { it.characterId }.toSet()
                 val todayCharacter = content.characters.firstOrNull { it.id !in learnedIds } ?: content.characters.firstOrNull()
                 val base = HomeUiState(
                     onboardingCompleted = true,
                     learnedCount = learnedCount,
+                    totalStars = totalStars,
                     dueReviewCount = dueReviewCount,
                     dailyNewTarget = settings.dailyNewCharacterCount,
                     stageTestThreshold = content.course.stageTestThreshold,
