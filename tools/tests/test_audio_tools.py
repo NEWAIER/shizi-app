@@ -26,6 +26,7 @@ def load_module(name: str, relative: str):
 
 tts = load_module("generate_edge_tts", "tools/audio-generator/generate_edge_tts.py")
 media = load_module("validate_media", "tools/content-builder/validate_media.py")
+batches = load_module("build_tts_batches", "tools/content-builder/build_tts_batches.py")
 
 
 def options(output_dir: Path, force: bool = False) -> argparse.Namespace:
@@ -194,6 +195,42 @@ class ActualMediaValidationTests(unittest.TestCase):
             for invalid in (wrong, fake, oversized):
                 with self.subTest(invalid=invalid.name), self.assertRaises(media.MediaValidationError):
                     media.validate_webp(invalid)
+
+
+class ProductionBatchTests(unittest.TestCase):
+    def test_real_source_creates_five_correct_30_item_batches_stably(self) -> None:
+        built = batches.build(batches.load())
+        self.assertEqual(5, len(built)); self.assertTrue(all(len(batch) == 30 for batch in built))
+        source_by_id = {row["id"]: row["character_id"] for row in batches.load()}
+        for index, characters in enumerate(batches.BATCHES):
+            self.assertEqual({batches.CHARACTER_IDS[value] for value in characters}, {source_by_id[row["id"]] for row in built[index]})
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp); batches.write(target, built)
+            first = (target / "all-150.csv").read_bytes(); batches.write(target, built)
+            self.assertEqual(first, (target / "all-150.csv").read_bytes())
+
+    def test_source_rejects_duplicate_missing_empty_and_escape_values(self) -> None:
+        header = list(batches.FIELDS)
+        good = ["a", "char_u4e00", "character", "一", "audio/a.mp3"]
+        cases = [
+            (header, [good, good], "duplicate id or output_file"),
+            (header[:-1], [good[:-1]], "source fields"),
+            (header, [["a", "char_u4e00", "character", "", "audio/a.mp3"]], "id and text"),
+            (header, [["a", "char_u4e00", "character", "一", "../a.mp3"]], "invalid output_file"),
+        ]
+        with tempfile.TemporaryDirectory() as temp:
+            for fields, rows, message in cases:
+                path = Path(temp) / "bad.csv"
+                with path.open("w", newline="", encoding="utf-8") as file:
+                    writer = csv.writer(file); writer.writerow(fields); writer.writerows((rows * 150)[:150])
+                with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                    batches.load(path)
+
+    def test_ci_jobs_and_gradlew_mode_are_committed(self) -> None:
+        workflow = (ROOT / ".github/workflows/android-quality.yml").read_text(encoding="utf-8")
+        self.assertIn("audio-tool-quality:", workflow); self.assertIn("android-quality:", workflow)
+        mode = subprocess.check_output(["git", "ls-files", "--stage", "gradlew"], cwd=ROOT, text=True)
+        self.assertTrue(mode.startswith("100755 "))
 
 
 if __name__ == "__main__":

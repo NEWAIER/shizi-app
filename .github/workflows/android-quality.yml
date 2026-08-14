@@ -7,23 +7,16 @@ on:
     branches: [main]
 
 jobs:
-  verify:
+  audio-tool-quality:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: android-actions/setup-android@v3
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Grant Gradle wrapper permission
-        run: chmod +x gradlew
       - name: Install offline-testable audio tool dependencies
         run: python -m pip install -r tools/audio-generator/requirements.txt
       - name: Python audio generator and media validator tests
@@ -34,6 +27,16 @@ jobs:
         run: python tools/audio-generator/build_audition_report.py --check
       - name: Ensure verification does not modify tracked files
         run: git diff --exit-code
+  android-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: android-actions/setup-android@v3
       - name: Unit tests
         run: ./gradlew testDebugUnitTest --console=plain
       - name: G1 content validation
