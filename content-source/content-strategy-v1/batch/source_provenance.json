@@ -1,0 +1,10 @@
+{
+  "sourceId": "opensource-placeholder",
+  "sourceName": "待接入的公开基础汉字数据源",
+  "sourceUrl": null,
+  "license": "TO_BE_CONFIRMED",
+  "snapshotId": "TO_BE_CONFIRMED",
+  "snapshotSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "status": "DRAFT",
+  "notes": "仅用于架构联调；未完成来源和许可证确认，不得发布。"
+}
