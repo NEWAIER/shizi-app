@@ -266,8 +266,8 @@ class ShiziRepository(
                 .distinctBy { it.characterId }
                 .filter { due.none { review -> review.characterId == it.characterId } }
             // Due reviews keep priority, then honor the family-selected new-character count.
-            // Family preference is independent from library size: a 300-character pack still has a 1..5 daily limit.
-            val dailyNewLimit = settings.dailyNewCharacterCount.coerceIn(1, 5).coerceAtMost(content.learningOrder.size)
+            // The setting is read for every today's-session creation, so a parent change applies immediately today.
+            val dailyNewLimit = settings.dailyNewCharacterCount.coerceIn(1, 10).coerceAtMost(content.learningOrder.size)
             val existingProgress = database.characterProgressDao().getAll().associateBy { it.characterId }
             val unfinishedNewIds = unfinishedNew.map { it.characterId }.toSet()
             val inProgressNew = content.learningOrder

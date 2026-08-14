@@ -124,8 +124,8 @@ fun ProfileScreen() {
             Column(Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("欢迎来到我的星球", style = MaterialTheme.typography.titleLarge)
                 Image(
-                    painter = painterResource(R.drawable.xiaohe_launcher),
-                    contentDescription = "小禾伙伴",
+                    painter = painterResource(avatarDrawable(state.avatarId)),
+                    contentDescription = avatarName(state.avatarId),
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.size(108.dp).clip(CircleShape).padding(top = 8.dp),
                 )
@@ -142,7 +142,7 @@ fun ProfileScreen() {
         Text("选择一个小伙伴", modifier = Modifier.padding(top = 22.dp), style = MaterialTheme.typography.titleLarge)
         Row(modifier = Modifier.fillMaxWidth().padding(top = 12.dp).horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             avatarOptions.forEach { (id, name) ->
-                ProfileAvatarCard(name = name, selected = state.avatarId == id, onClick = { viewModel.selectAvatar(id) })
+                ProfileAvatarCard(id = id, name = name, selected = state.avatarId == id, onClick = { viewModel.selectAvatar(id) })
             }
         }
         Card(modifier = Modifier.fillMaxWidth().padding(top = 22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)) {
@@ -174,7 +174,7 @@ fun ProfileScreen() {
 }
 
 @Composable
-private fun ProfileAvatarCard(name: String, selected: Boolean, onClick: () -> Unit) {
+private fun ProfileAvatarCard(id: String, name: String, selected: Boolean, onClick: () -> Unit) {
     Card(
         modifier = Modifier.size(width = 86.dp, height = 104.dp).clip(MaterialTheme.shapes.large),
         onClick = onClick,
@@ -182,7 +182,7 @@ private fun ProfileAvatarCard(name: String, selected: Boolean, onClick: () -> Un
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth().padding(6.dp)) {
             Image(
-                painter = painterResource(R.drawable.xiaohe_launcher),
+                painter = painterResource(avatarDrawable(id)),
                 contentDescription = name,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(62.dp).clip(CircleShape),
@@ -215,6 +215,17 @@ private val avatarOptions = listOf(
     "bear" to "小熊", "rabbit" to "小兔", "fox" to "小狐狸", "cat" to "小猫",
     "dog" to "小狗", "panda" to "熊猫", "dino" to "小恐龙", "lion" to "小狮子",
 )
+
+private fun avatarDrawable(id: String): Int = when (id) {
+    "rabbit" -> R.drawable.avatar_rabbit
+    "fox" -> R.drawable.avatar_fox
+    "cat" -> R.drawable.avatar_cat
+    "dog" -> R.drawable.avatar_dog
+    "panda" -> R.drawable.avatar_panda
+    "dino" -> R.drawable.avatar_dino
+    "lion" -> R.drawable.avatar_lion
+    else -> R.drawable.avatar_bear
+}
 
 private val childBadgeMilestones = listOf(
     BadgeMilestone("first", "第一颗星", "第一次完成学习", 1),

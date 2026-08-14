@@ -100,7 +100,16 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
                         character = character,
                         learned = progress?.initialLessonCompleted == true,
                         onPlay = { player.play(character.audio.character) },
-                        onLongPress = { detailCharacter = character },
+                        onLongPress = {
+                            detailCharacter = character
+                            player.playSequence(
+                                buildList {
+                                    add(character.audio.character)
+                                    addAll(character.words.map { it.audioAsset })
+                                    add(character.sentence.audioAsset)
+                                },
+                            )
+                        },
                     )
                 }
                 if (learned.size >= content.course.stageTestThreshold) {
@@ -144,7 +153,7 @@ private fun CatalogCharacterCard(
             .aspectRatio(0.78f)
             .testTag("catalog_character_${character.id}")
             .pointerInput(character.id) {
-                detectTapGestures(onTap = { if (learned) onPlay() }, onLongPress = { onLongPress() })
+                detectTapGestures(onTap = { onPlay() }, onLongPress = { onLongPress() })
             },
         colors = CardDefaults.cardColors(
             containerColor = if (learned) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant,

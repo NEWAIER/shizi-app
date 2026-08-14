@@ -403,15 +403,15 @@ private fun ParentSettings(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         item {
-            Text("每日新字数（1–5 个）", style = MaterialTheme.typography.titleSmall)
+            Text("每日新字数（1–10 个）", style = MaterialTheme.typography.titleSmall)
         }
         item {
             OutlinedTextField(
                 value = dailyNewText,
-                onValueChange = { value -> dailyNewText = value.copy(text = value.text.filter(Char::isDigit).take(1)) },
+                onValueChange = { value -> dailyNewText = value.copy(text = value.text.filter(Char::isDigit).take(2)) },
                 modifier = Modifier.fillMaxWidth().testTag("parent_daily_new_input"),
                 label = { Text("输入每天想学几个字") },
-                supportingText = { Text("5字原型最多可选择 5 个；复习任务会优先安排。") },
+                supportingText = { Text("保存后当天课程立即按新数量安排，复习任务会优先安排。") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 singleLine = true,
             )
@@ -419,15 +419,15 @@ private fun ParentSettings(
         item {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Button(
-                    onClick = { dailyNewText.text.toIntOrNull()?.takeIf { it in 1..5 }?.let(onSetDailyNew) },
-                    enabled = dailyNewText.text.toIntOrNull() in 1..5,
+                    onClick = { dailyNewText.text.toIntOrNull()?.takeIf { it in 1..10 }?.let(onSetDailyNew) },
+                    enabled = dailyNewText.text.toIntOrNull() in 1..10,
                     modifier = Modifier.weight(1f).testTag("parent_save_daily_new"),
                 ) { Text("保存每日字数") }
             }
         }
         item {
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                (1..5).forEach { count ->
+                (1..10).forEach { count ->
                     TextButton(onClick = { dailyNewText = TextFieldValue(count.toString()) }, modifier = Modifier.weight(1f)) {
                         Text("$count")
                     }

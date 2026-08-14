@@ -57,6 +57,7 @@ def main() -> None:
         require(character_id in characters_by_id, f"题目引用未知 character_id: {character_id}")
         option_chars = [row["correct_character"], row["option_character_1"], row["option_character_2"], row["option_character_3"]]
         require(all(option in chars for option in option_chars), f"题目包含范围外汉字: {row['question_id']}")
+        require(len(set(option_chars)) == 4, f"题目存在重复选项: {row['question_id']}")
         require(row["correct_character"] == characters_by_id[character_id]["character"], f"题目答案不匹配: {row['question_id']}")
         text_option_ids = [f"text_{next(item['id'] for item in characters if item['character'] == option)}" for option in option_chars]
         image_option_ids = [f"image_{next(item['id'] for item in characters if item['character'] == option)}" for option in option_chars]

@@ -640,11 +640,14 @@ private fun ImageOptionGrid(
     assetRoot: String,
 ) {
     val context = LocalContext.current
-    options.distinctBy { it.characterId }.take(4).chunked(2).forEach { row ->
+    options.distinctBy { option ->
+        option.asset ?: "images/characters/${option.characterId}_main_v1.webp"
+    }.take(4).chunked(2).forEach { row ->
         Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             row.forEach { option ->
-                val bitmap = remember(option.asset, assetRoot) {
-                    option.asset?.takeIf { it.endsWith(".webp") }?.let { asset ->
+                val imageAsset = option.asset ?: "images/characters/${option.characterId}_main_v1.webp"
+                val bitmap = remember(imageAsset, assetRoot) {
+                    imageAsset.takeIf { it.endsWith(".webp") }?.let { asset ->
                         context.assets.open("${assetRoot.trimEnd('/')}/$asset").use { BitmapFactory.decodeStream(it) }
                     }
                 }

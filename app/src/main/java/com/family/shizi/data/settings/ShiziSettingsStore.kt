@@ -67,8 +67,8 @@ class ShiziSettingsStore(private val context: Context) {
             schemaVersion = 2,
             nickname = nickname.take(8),
             avatarId = avatarId.ifBlank { "bear" },
-            // This prototype has five characters. Parents can choose a manageable daily batch.
-            dailyNewCharacterCount = dailyNewCharacterCount.coerceIn(1, 5),
+            // Parents can choose up to ten new characters; the repository reads this setting when creating today's session.
+            dailyNewCharacterCount = dailyNewCharacterCount.coerceIn(1, 10),
             sessionLimitMinutes = when (sessionLimitMinutes) {
                 8, 10, 12 -> sessionLimitMinutes
                 else -> 10
