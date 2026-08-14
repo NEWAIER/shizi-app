@@ -24,8 +24,13 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.family.shizi.ShiziApplication
+import com.family.shizi.data.content.ContentLoader
 import com.family.shizi.data.db.SessionStatus
 import com.family.shizi.navigation.ShiziRoute
+import com.family.shizi.ui.components.BadgeCard
+import com.family.shizi.ui.components.ChildPage
+import com.family.shizi.ui.components.ChildPrimaryButton
+import com.family.shizi.ui.components.StarReward
 import kotlinx.coroutines.launch
 
 @Composable
@@ -44,6 +49,10 @@ fun ResultScreen(onNavigate: (ShiziRoute) -> Unit) {
     var isStageTest by remember { mutableStateOf(false) }
     var submissionFailed by remember { mutableStateOf(false) }
     var reviewHint by remember { mutableStateOf("") }
+    var totalStars by remember { mutableStateOf(0) }
+    var honorLevel by remember { mutableStateOf(1) }
+    var learnedCount by remember { mutableStateOf(0) }
+    var newlyUnlockedBadges by remember { mutableStateOf<List<String>>(emptyList()) }
 
     LaunchedEffect(Unit) {
         val session = repo.getLatestOpenOrTodaySession(java.time.LocalDate.now())
@@ -68,6 +77,14 @@ fun ResultScreen(onNavigate: (ShiziRoute) -> Unit) {
             null -> "没有正在保存的课程"
             else -> "练习已保存"
         }
+        val progress = repo.getCharacterProgress()
+        learnedCount = progress.count { it.initialLessonCompleted }
+        val masteredCount = progress.count { it.state.name.contains("MASTERED") }
+        val learningDays = repo.getCompletedLearningDayCount()
+        totalStars = learnedCount * 10 + masteredCount * 5 + learningDays * 2
+        honorLevel = listOf(0, 50, 120, 250, 450, 700).indexOfLast { totalStars >= it }.coerceAtLeast(0) + 1
+        val badges = ContentLoader.load(context).course.badgeMilestones
+        newlyUnlockedBadges = badges.filter { learnedCount >= it.learnedCount }.takeLast(2).map { it.title }
         val upcoming = repo.getCharacterProgress()
             .mapNotNull { it.nextReviewDate }
             .filter { !it.isBefore(java.time.LocalDate.now()) }
@@ -81,36 +98,45 @@ fun ResultScreen(onNavigate: (ShiziRoute) -> Unit) {
 
     BackHandler { onNavigate(ShiziRoute.Home) }
 
-    Scaffold { innerPadding ->
+    ChildPage {
         Column(
-            modifier = Modifier.fillMaxSize().padding(innerPadding).padding(24.dp),
+            modifier = Modifier.fillMaxSize().padding(vertical = 12.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
         ) {
             Text(if (isStageTest) "测试完成！" else "今天真棒！", modifier = Modifier.testTag("page_result"), style = MaterialTheme.typography.headlineMedium)
             Text(message, modifier = Modifier.padding(top = 12.dp).testTag("result_status"), textAlign = TextAlign.Center)
+            StarReward(totalStars, modifier = Modifier.padding(top = 16.dp))
+            Text("Lv.$honorLevel · 已认识 $learnedCount 个字", modifier = Modifier.padding(top = 12.dp), style = MaterialTheme.typography.titleLarge)
+            if (newlyUnlockedBadges.isNotEmpty()) {
+                Text("已经点亮的徽章", modifier = Modifier.padding(top = 22.dp), style = MaterialTheme.typography.titleMedium)
+                newlyUnlockedBadges.forEach { title ->
+                    BadgeCard(title, "继续学习解锁更多成长奖励", unlocked = true, modifier = Modifier.fillMaxWidth().padding(top = 8.dp))
+                }
+            }
             Text(reviewHint, modifier = Modifier.padding(top = 12.dp).testTag("result_review_hint"), textAlign = TextAlign.Center)
-            Button(
+            ChildPrimaryButton(
+                text = if (submissionFailed) "重新保存" else "回到首页",
                 onClick = {
                     if (!submissionFailed) {
                         onNavigate(ShiziRoute.Home)
                     } else {
-                        val id = sessionId ?: return@Button
-                        scope.launch {
-                            runCatching { repo.completeSession(id) }
-                                .onSuccess {
-                                    submissionFailed = false
-                                    sessionStatus = SessionStatus.COMPLETED
-                                    message = "今天完成啦"
-                                }
-                                .onFailure {
-                                    message = "学习结果保存失败，请重试"
-                                }
+                        sessionId?.let { id ->
+                            scope.launch {
+                                runCatching { repo.completeSession(id) }
+                                    .onSuccess {
+                                        submissionFailed = false
+                                        sessionStatus = SessionStatus.COMPLETED
+                                        message = "今天完成啦"
+                                    }
+                                    .onFailure {
+                                        message = "学习结果保存失败，请重试"
+                                    }
+                            }
                         }
                     }
                 },
-                modifier = Modifier.fillMaxWidth().padding(top = 20.dp).testTag("result_complete"),
-            ) { Text(if (submissionFailed) "重新保存" else "回到首页") }
+                modifier = Modifier.padding(top = 20.dp).testTag("result_complete"),
+            )
         }
     }
 }

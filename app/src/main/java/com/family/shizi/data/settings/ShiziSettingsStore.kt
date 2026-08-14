@@ -18,6 +18,7 @@ class ShiziSettingsStore(private val context: Context) {
             schemaVersion = 2,
             onboardingCompleted = prefs[Keys.onboardingCompleted] ?: true,
             nickname = prefs[Keys.nickname] ?: "",
+            avatarId = prefs[Keys.avatarId] ?: "bear",
             // Upgrade old 1-character defaults to the child-friendly 3-character course.
             dailyNewCharacterCount = if ((prefs[Keys.schemaVersion] ?: 1) < 2) 3 else (prefs[Keys.dailyNewCharacterCount] ?: 3),
             sessionLimitMinutes = prefs[Keys.sessionLimitMinutes] ?: 10,
@@ -36,6 +37,7 @@ class ShiziSettingsStore(private val context: Context) {
                 schemaVersion = 2,
                 onboardingCompleted = prefs[Keys.onboardingCompleted] ?: true,
                 nickname = prefs[Keys.nickname] ?: "",
+                avatarId = prefs[Keys.avatarId] ?: "bear",
                 dailyNewCharacterCount = if ((prefs[Keys.schemaVersion] ?: 1) < 2) 3 else (prefs[Keys.dailyNewCharacterCount] ?: 3),
                 sessionLimitMinutes = prefs[Keys.sessionLimitMinutes] ?: 10,
                 volumePercent = prefs[Keys.volumePercent] ?: 80,
@@ -48,6 +50,7 @@ class ShiziSettingsStore(private val context: Context) {
             prefs[Keys.schemaVersion] = updated.schemaVersion
             prefs[Keys.onboardingCompleted] = updated.onboardingCompleted
             prefs[Keys.nickname] = updated.nickname
+            prefs[Keys.avatarId] = updated.avatarId
             prefs[Keys.dailyNewCharacterCount] = updated.dailyNewCharacterCount
             prefs[Keys.sessionLimitMinutes] = updated.sessionLimitMinutes
             prefs[Keys.volumePercent] = updated.volumePercent
@@ -63,6 +66,7 @@ class ShiziSettingsStore(private val context: Context) {
         copy(
             schemaVersion = 2,
             nickname = nickname.take(8),
+            avatarId = avatarId.ifBlank { "bear" },
             // This prototype has five characters. Parents can choose a manageable daily batch.
             dailyNewCharacterCount = dailyNewCharacterCount.coerceIn(1, 5),
             sessionLimitMinutes = when (sessionLimitMinutes) {
@@ -77,6 +81,7 @@ class ShiziSettingsStore(private val context: Context) {
         val schemaVersion = intPreferencesKey("schemaVersion")
         val onboardingCompleted = booleanPreferencesKey("onboardingCompleted")
         val nickname = stringPreferencesKey("nickname")
+        val avatarId = stringPreferencesKey("avatarId")
         val dailyNewCharacterCount = intPreferencesKey("dailyNewCharacterCount")
         val sessionLimitMinutes = intPreferencesKey("sessionLimitMinutes")
         val volumePercent = intPreferencesKey("volumePercent")

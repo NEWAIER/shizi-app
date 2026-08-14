@@ -19,7 +19,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.LinearProgressIndicator
@@ -31,6 +30,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -78,12 +78,12 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
     var characterId by remember { mutableStateOf<String?>(null) }
     var step by remember { mutableStateOf(InitialTeachingStep.A_CONTEXT) }
-    var audioCompleted by remember { mutableStateOf(false) }
     var currentSessionId by remember { mutableStateOf<String?>(null) }
     var timeLimitMessage by remember { mutableStateOf("") }
     var timeLimitPending by remember { mutableStateOf(false) }
     var pauseDialogVisible by remember { mutableStateOf(false) }
     var statusMessage by remember { mutableStateOf("准备好了吗？") }
+    var playbackId by remember { mutableIntStateOf(0) }
 
     LaunchedEffect(Unit) {
         val snapshot = repo.getCurrentItemSnapshot()
@@ -144,6 +144,50 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
     val display = learningDisplay(character, step)
 
+    suspend fun advanceTeachingStep() {
+        val currentId = characterId ?: return
+        runCatching {
+            val next = when (step) {
+                InitialTeachingStep.A_CONTEXT -> InitialTeachingStep.B_SOUND_MEANING
+                InitialTeachingStep.B_SOUND_MEANING -> InitialTeachingStep.C_WORD_SENTENCE
+                else -> InitialTeachingStep.PRACTICE
+            }
+            repo.saveTeachingStep(currentId, next, Instant.now())
+            step = next
+            if (timeLimitPending) {
+                currentSessionId?.let { repo.endEarly(it, EarlyEndReason.TIME_LIMIT) }
+                onNavigate(ShiziRoute.Result)
+            } else if (next == InitialTeachingStep.PRACTICE) {
+                onNavigate(ShiziRoute.Practice)
+            }
+        }.onFailure { statusMessage = "保存失败，请再试一次" }
+    }
+
+    fun playCurrentStep() {
+        if (display.audioAssets.isEmpty()) return
+        playbackId += 1
+        val thisPlayback = playbackId
+        statusMessage = "认真听一听"
+        player.stop()
+        player.playSequence(display.audioAssets) {
+            if (thisPlayback != playbackId) return@playSequence
+            scope.launch {
+                statusMessage = "听完啦！"
+                delay(800)
+                if (thisPlayback == playbackId && !pauseDialogVisible) {
+                    advanceTeachingStep()
+                }
+            }
+        }
+    }
+
+    LaunchedEffect(characterId, step) {
+        if (characterId != null && display.audioAssets.isNotEmpty()) {
+            delay(250)
+            playCurrentStep()
+        }
+    }
+
     Scaffold(containerColor = MaterialTheme.colorScheme.background) { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize().padding(innerPadding).verticalScroll(rememberScrollState()).padding(18.dp),
@@ -190,43 +234,10 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
             Text(statusMessage, modifier = Modifier.padding(top = 12.dp).testTag("learn_status"), style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
 
             Button(
-                onClick = {
-                    audioCompleted = false
-                    statusMessage = "认真听一听"
-                    player.playSequence(display.audioAssets) {
-                        audioCompleted = true
-                        statusMessage = "听完啦！点击下面按钮继续。"
-                    }
-                },
+                onClick = { playCurrentStep() },
                 modifier = Modifier.fillMaxWidth().height(64.dp).padding(top = 12.dp).testTag("learn_play_audio"),
                 shape = RoundedCornerShape(20.dp),
-            ) { Text("🔊  ${display.playLabel}", style = MaterialTheme.typography.titleMedium) }
-
-            Button(
-                onClick = {
-                    val currentId = characterId ?: return@Button
-                    scope.launch {
-                        runCatching {
-                            val next = when (step) {
-                                InitialTeachingStep.A_CONTEXT -> InitialTeachingStep.B_SOUND_MEANING
-                                InitialTeachingStep.B_SOUND_MEANING -> InitialTeachingStep.C_WORD_SENTENCE
-                                else -> InitialTeachingStep.PRACTICE
-                            }
-                            repo.saveTeachingStep(currentId, next, Instant.now())
-                            step = next
-                            audioCompleted = false
-                            if (timeLimitPending) {
-                                currentSessionId?.let { repo.endEarly(it, EarlyEndReason.TIME_LIMIT) }
-                                onNavigate(ShiziRoute.Result)
-                            } else if (next == InitialTeachingStep.PRACTICE) onNavigate(ShiziRoute.Practice)
-                        }.onFailure { statusMessage = "保存失败，请再试一次" }
-                    }
-                },
-                enabled = audioCompleted,
-                modifier = Modifier.fillMaxWidth().height(64.dp).padding(top = 10.dp).testTag("learn_next"),
-                shape = RoundedCornerShape(20.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary),
-            ) { Text(if (step == InitialTeachingStep.C_WORD_SENTENCE) "去闯关 →" else "我知道了 →", style = MaterialTheme.typography.titleMedium) }
+            ) { Text("再听一次", style = MaterialTheme.typography.titleMedium) }
             Spacer(Modifier.height(18.dp))
         }
     }

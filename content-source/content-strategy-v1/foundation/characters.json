@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "opensource-placeholder",
+  "sourceSnapshot": "TO_BE_CONFIRMED",
+  "characters": [
+    {
+      "id": "char_u6c34",
+      "character": "水",
+      "unicode": "U+6C34",
+      "pinyin": "shuǐ",
+      "tone": 3,
+      "strokeCount": 4,
+      "radical": "水",
+      "frequency": 100
+    }
+  ]
+}

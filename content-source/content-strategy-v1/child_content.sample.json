@@ -1,0 +1,13 @@
+{
+  "characterId": "char_u6c34",
+  "meaningForChild": "水可以喝，也可以洗手、洗脸。",
+  "teachingPrompt": "看，这是水。我们每天都会用到水。",
+  "words": ["喝水", "开水"],
+  "sentence": "我每天都要喝水。",
+  "learningGoal": "理解水可以喝，也会在生活中使用。",
+  "imageTheme": "孩子用小杯子喝水，旁边有清楚的水杯",
+  "imageRequest": "原创儿童插画：孩子用小杯子喝水，主体清楚，无文字。",
+  "audioRequest": "角色先说字音，再用温柔语气朗读儿童释义、词语和例句。",
+  "misconceptions": ["不把所有透明液体都当成水"],
+  "reviewStatus": "DRAFT"
+}

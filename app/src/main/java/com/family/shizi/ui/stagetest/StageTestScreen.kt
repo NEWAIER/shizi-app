@@ -30,6 +30,10 @@ import com.family.shizi.domain.core.IdProvider
 import com.family.shizi.domain.core.KotlinRandomProvider
 import com.family.shizi.data.db.CharacterProgressEntity
 import com.family.shizi.navigation.ShiziRoute
+import com.family.shizi.ui.components.ChildPage
+import com.family.shizi.ui.components.ChildPrimaryButton
+import com.family.shizi.ui.components.ChildTopBar
+import com.family.shizi.ui.components.EmptyState
 import java.util.UUID
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -78,12 +82,13 @@ fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
     val count = state.learned.size
     val threshold = state.stageTestThreshold
     val latest = state.latestSummary
-    Column(
-        modifier = Modifier.fillMaxSize().padding(horizontal = 24.dp, vertical = 24.dp).testTag("page_stage_test"),
+    ChildPage {
+      Column(
+        modifier = Modifier.fillMaxSize().testTag("page_stage_test"),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-    ) {
-        Text("阶段测试", style = MaterialTheme.typography.headlineMedium)
+      ) {
+        ChildTopBar("挑战")
+        Text("今天的挑战", style = MaterialTheme.typography.titleLarge)
         latest?.let { summary ->
             Card(modifier = Modifier.fillMaxWidth().padding(top = 16.dp).testTag("stage_test_latest_result")) {
                 Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -104,13 +109,14 @@ fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
                 Text("已认识 $count / $threshold 个字", style = MaterialTheme.typography.titleLarge)
                 if (count < threshold) {
                     Text("再认识 ${threshold - count} 个字，就可以开启第一关测试。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
-                    Button(onClick = { onNavigate(ShiziRoute.Home) }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_go_learn")) { Text("去学习") }
+                    ChildPrimaryButton("去学习", onClick = { onNavigate(ShiziRoute.Home) }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_go_learn"))
                 } else {
                     Text("第一关准备好了！测试只会从已经认识的字中出题。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
                     Text("答题结果会保存到本机，但不会跳过之后该做的复习。", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center)
-                    Button(onClick = { viewModel.start { onNavigate(ShiziRoute.Practice) } }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_start")) { Text("开始测试") }
+                    ChildPrimaryButton("开始测试", onClick = { viewModel.start { onNavigate(ShiziRoute.Practice) } }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_start"))
                 }
             }
         }
+      }
     }
 }

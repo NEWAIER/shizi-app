@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "activePackId": "legacy-five-v1",
+  "activePackId": "child-pack-v1",
   "packs": [
     {
       "packId": "legacy-five-v1",
@@ -9,6 +9,14 @@
       "manifestPath": "content/v1/manifest.json",
       "assetRoot": "content/v1",
       "legacyCompatibleVersions": ["legacy-five-v1"]
+    },
+    {
+      "packId": "child-pack-v1",
+      "version": "child-pack-v1",
+      "contentPath": "content/packs/child-pack-v1/1.0.0/content.json",
+      "manifestPath": "content/packs/child-pack-v1/1.0.0/manifest.json",
+      "assetRoot": "content/packs/child-pack-v1/1.0.0",
+      "legacyCompatibleVersions": ["child-pack-v1"]
     }
   ]
 }
