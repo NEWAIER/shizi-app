@@ -9,10 +9,30 @@ data class ContentPackage(
     val course: CourseConfig = CourseConfig(),
     /** Optional layered source metadata. V1 runtime packages remain valid when absent. */
     val layers: ContentLayerRefs? = null,
+    /** Optional explicit child-content layer. Legacy packs keep using characters only. */
+    val childLearningPack: ChildLearningPack? = null,
     val learningOrder: List<String>,
     val reviewOffsetsDays: List<Int>,
     val optionCatalog: List<OptionContent>,
     val characters: List<CharacterContent>,
+)
+
+@Serializable
+data class ChildLearningPack(
+    val schemaVersion: Int,
+    val packVersion: String,
+    val characters: List<ChildLearningContent>,
+)
+
+@Serializable
+data class ChildLearningContent(
+    val characterId: String,
+    val meaningForChild: String,
+    val words: List<String>,
+    val sentence: String,
+    val learningGoal: String,
+    val imageRequest: String,
+    val audioRequest: String,
 )
 
 @Serializable

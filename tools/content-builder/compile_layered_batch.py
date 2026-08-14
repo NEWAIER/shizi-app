@@ -66,6 +66,11 @@ def main() -> None:
             "childContentVersion": "child-content-v1",
             "experienceVersion": "experience-v1",
         },
+        "childLearningPack": {
+            "schemaVersion": 1,
+            "packVersion": "child-content-v1",
+            "characters": [entry for item in compiled for entry in item["childLearningPack"]["characters"]],
+        },
         "course": {"stageTestThreshold": 3, "badgeMilestones": []},
         "learningOrder": [item["id"] for item in characters],
         "reviewOffsetsDays": [1, 3, 7, 14, 30, 60],
