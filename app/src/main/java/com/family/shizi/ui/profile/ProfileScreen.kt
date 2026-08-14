@@ -17,6 +17,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -106,6 +107,9 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
 fun ProfileScreen() {
     val viewModel: ProfileViewModel = viewModel()
     val state by viewModel.state.collectAsState()
+    val levelProgress = if (state.nextLevelStars <= 0) 1f else
+        (state.totalStars.toFloat() / state.nextLevelStars.toFloat()).coerceIn(0f, 1f)
+    val learnedProgress = (state.learnedCount.toFloat() / 50f).coerceIn(0f, 1f)
     ChildPage {
       Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).testTag("page_profile"),
@@ -129,6 +133,10 @@ fun ProfileScreen() {
                 Text("Lv.${state.honorLevel} · ${state.levelTitle}", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
                 Text("${state.totalStars} 颗星星", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.displaySmall, color = MaterialTheme.colorScheme.primary)
                 Text("再收集 ${((state.nextLevelStars - state.totalStars).coerceAtLeast(0))} 颗星星就升级啦", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
+                LinearProgressIndicator(
+                    progress = { levelProgress },
+                    modifier = Modifier.fillMaxWidth().padding(top = 10.dp).testTag("profile_level_progress"),
+                )
             }
         }
         Text("选择一个小伙伴", modifier = Modifier.padding(top = 22.dp), style = MaterialTheme.typography.titleLarge)
@@ -144,6 +152,11 @@ fun ProfileScreen() {
                 Text("掌握了 ${state.masteredCount} 个字", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.titleMedium)
                 Text("陪伴学习 ${state.learningDays} 天", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.titleMedium)
                 Text("每天认识 ${state.dailyTarget} 个新朋友", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.bodyLarge)
+                LinearProgressIndicator(
+                    progress = { learnedProgress },
+                    modifier = Modifier.fillMaxWidth().padding(top = 14.dp).testTag("profile_learned_progress"),
+                )
+                Text("50 个字宝宝的星球旅程", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.labelMedium)
             }
         }
         Text("我的星星徽章", modifier = Modifier.padding(top = 28.dp), style = MaterialTheme.typography.titleLarge)
