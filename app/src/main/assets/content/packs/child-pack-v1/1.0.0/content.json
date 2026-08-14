@@ -684,10 +684,34 @@
       "text": "人"
     },
     {
+      "id": "image_char_u4eba",
+      "kind": "IMAGE",
+      "characterId": "char_u4eba",
+      "asset": "images/characters/char_u4eba_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u4eba",
+      "kind": "AUDIO",
+      "characterId": "char_u4eba",
+      "asset": "audio/characters/char_u4eba_v1.mp3"
+    },
+    {
       "id": "text_char_u53e3",
       "kind": "TEXT",
       "characterId": "char_u53e3",
       "text": "口"
+    },
+    {
+      "id": "image_char_u53e3",
+      "kind": "IMAGE",
+      "characterId": "char_u53e3",
+      "asset": "images/characters/char_u53e3_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u53e3",
+      "kind": "AUDIO",
+      "characterId": "char_u53e3",
+      "asset": "audio/characters/char_u53e3_v1.mp3"
     },
     {
       "id": "text_char_u5927",
@@ -696,10 +720,34 @@
       "text": "大"
     },
     {
+      "id": "image_char_u5927",
+      "kind": "IMAGE",
+      "characterId": "char_u5927",
+      "asset": "images/characters/char_u5927_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5927",
+      "kind": "AUDIO",
+      "characterId": "char_u5927",
+      "asset": "audio/characters/char_u5927_v1.mp3"
+    },
+    {
       "id": "text_char_u5c0f",
       "kind": "TEXT",
       "characterId": "char_u5c0f",
       "text": "小"
+    },
+    {
+      "id": "image_char_u5c0f",
+      "kind": "IMAGE",
+      "characterId": "char_u5c0f",
+      "asset": "images/characters/char_u5c0f_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5c0f",
+      "kind": "AUDIO",
+      "characterId": "char_u5c0f",
+      "asset": "audio/characters/char_u5c0f_v1.mp3"
     },
     {
       "id": "text_char_u624b",
@@ -708,10 +756,34 @@
       "text": "手"
     },
     {
+      "id": "image_char_u624b",
+      "kind": "IMAGE",
+      "characterId": "char_u624b",
+      "asset": "images/characters/char_u624b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u624b",
+      "kind": "AUDIO",
+      "characterId": "char_u624b",
+      "asset": "audio/characters/char_u624b_v1.mp3"
+    },
+    {
       "id": "text_char_u5934",
       "kind": "TEXT",
       "characterId": "char_u5934",
       "text": "头"
+    },
+    {
+      "id": "image_char_u5934",
+      "kind": "IMAGE",
+      "characterId": "char_u5934",
+      "asset": "images/characters/char_u5934_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5934",
+      "kind": "AUDIO",
+      "characterId": "char_u5934",
+      "asset": "audio/characters/char_u5934_v1.mp3"
     },
     {
       "id": "text_char_u7238",
@@ -720,10 +792,34 @@
       "text": "爸"
     },
     {
+      "id": "image_char_u7238",
+      "kind": "IMAGE",
+      "characterId": "char_u7238",
+      "asset": "images/characters/char_u7238_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u7238",
+      "kind": "AUDIO",
+      "characterId": "char_u7238",
+      "asset": "audio/characters/char_u7238_v1.mp3"
+    },
+    {
       "id": "text_char_u5988",
       "kind": "TEXT",
       "characterId": "char_u5988",
       "text": "妈"
+    },
+    {
+      "id": "image_char_u5988",
+      "kind": "IMAGE",
+      "characterId": "char_u5988",
+      "asset": "images/characters/char_u5988_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5988",
+      "kind": "AUDIO",
+      "characterId": "char_u5988",
+      "asset": "audio/characters/char_u5988_v1.mp3"
     },
     {
       "id": "text_char_u5bb6",
@@ -732,10 +828,34 @@
       "text": "家"
     },
     {
+      "id": "image_char_u5bb6",
+      "kind": "IMAGE",
+      "characterId": "char_u5bb6",
+      "asset": "images/characters/char_u5bb6_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5bb6",
+      "kind": "AUDIO",
+      "characterId": "char_u5bb6",
+      "asset": "audio/characters/char_u5bb6_v1.mp3"
+    },
+    {
       "id": "text_char_u95e8",
       "kind": "TEXT",
       "characterId": "char_u95e8",
       "text": "门"
+    },
+    {
+      "id": "image_char_u95e8",
+      "kind": "IMAGE",
+      "characterId": "char_u95e8",
+      "asset": "images/characters/char_u95e8_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u95e8",
+      "kind": "AUDIO",
+      "characterId": "char_u95e8",
+      "asset": "audio/characters/char_u95e8_v1.mp3"
     },
     {
       "id": "text_char_u5c71",
@@ -744,10 +864,34 @@
       "text": "山"
     },
     {
+      "id": "image_char_u5c71",
+      "kind": "IMAGE",
+      "characterId": "char_u5c71",
+      "asset": "images/characters/char_u5c71_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5c71",
+      "kind": "AUDIO",
+      "characterId": "char_u5c71",
+      "asset": "audio/characters/char_u5c71_v1.mp3"
+    },
+    {
       "id": "text_char_u6c34",
       "kind": "TEXT",
       "characterId": "char_u6c34",
       "text": "水"
+    },
+    {
+      "id": "image_char_u6c34",
+      "kind": "IMAGE",
+      "characterId": "char_u6c34",
+      "asset": "images/characters/char_u6c34_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u6c34",
+      "kind": "AUDIO",
+      "characterId": "char_u6c34",
+      "asset": "audio/characters/char_u6c34_v1.mp3"
     },
     {
       "id": "text_char_u706b",
@@ -756,10 +900,34 @@
       "text": "火"
     },
     {
+      "id": "image_char_u706b",
+      "kind": "IMAGE",
+      "characterId": "char_u706b",
+      "asset": "images/characters/char_u706b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u706b",
+      "kind": "AUDIO",
+      "characterId": "char_u706b",
+      "asset": "audio/characters/char_u706b_v1.mp3"
+    },
+    {
       "id": "text_char_u6728",
       "kind": "TEXT",
       "characterId": "char_u6728",
       "text": "木"
+    },
+    {
+      "id": "image_char_u6728",
+      "kind": "IMAGE",
+      "characterId": "char_u6728",
+      "asset": "images/characters/char_u6728_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u6728",
+      "kind": "AUDIO",
+      "characterId": "char_u6728",
+      "asset": "audio/characters/char_u6728_v1.mp3"
     },
     {
       "id": "text_char_u65e5",
@@ -768,10 +936,34 @@
       "text": "日"
     },
     {
+      "id": "image_char_u65e5",
+      "kind": "IMAGE",
+      "characterId": "char_u65e5",
+      "asset": "images/characters/char_u65e5_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u65e5",
+      "kind": "AUDIO",
+      "characterId": "char_u65e5",
+      "asset": "audio/characters/char_u65e5_v1.mp3"
+    },
+    {
       "id": "text_char_u6708",
       "kind": "TEXT",
       "characterId": "char_u6708",
       "text": "月"
+    },
+    {
+      "id": "image_char_u6708",
+      "kind": "IMAGE",
+      "characterId": "char_u6708",
+      "asset": "images/characters/char_u6708_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u6708",
+      "kind": "AUDIO",
+      "characterId": "char_u6708",
+      "asset": "audio/characters/char_u6708_v1.mp3"
     },
     {
       "id": "text_char_u5929",
@@ -780,10 +972,34 @@
       "text": "天"
     },
     {
+      "id": "image_char_u5929",
+      "kind": "IMAGE",
+      "characterId": "char_u5929",
+      "asset": "images/characters/char_u5929_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5929",
+      "kind": "AUDIO",
+      "characterId": "char_u5929",
+      "asset": "audio/characters/char_u5929_v1.mp3"
+    },
+    {
       "id": "text_char_u4e91",
       "kind": "TEXT",
       "characterId": "char_u4e91",
       "text": "云"
+    },
+    {
+      "id": "image_char_u4e91",
+      "kind": "IMAGE",
+      "characterId": "char_u4e91",
+      "asset": "images/characters/char_u4e91_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u4e91",
+      "kind": "AUDIO",
+      "characterId": "char_u4e91",
+      "asset": "audio/characters/char_u4e91_v1.mp3"
     },
     {
       "id": "text_char_u96e8",
@@ -792,10 +1008,34 @@
       "text": "雨"
     },
     {
+      "id": "image_char_u96e8",
+      "kind": "IMAGE",
+      "characterId": "char_u96e8",
+      "asset": "images/characters/char_u96e8_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u96e8",
+      "kind": "AUDIO",
+      "characterId": "char_u96e8",
+      "asset": "audio/characters/char_u96e8_v1.mp3"
+    },
+    {
       "id": "text_char_u98ce",
       "kind": "TEXT",
       "characterId": "char_u98ce",
       "text": "风"
+    },
+    {
+      "id": "image_char_u98ce",
+      "kind": "IMAGE",
+      "characterId": "char_u98ce",
+      "asset": "images/characters/char_u98ce_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u98ce",
+      "kind": "AUDIO",
+      "characterId": "char_u98ce",
+      "asset": "audio/characters/char_u98ce_v1.mp3"
     },
     {
       "id": "text_char_u725b",
@@ -804,10 +1044,34 @@
       "text": "牛"
     },
     {
+      "id": "image_char_u725b",
+      "kind": "IMAGE",
+      "characterId": "char_u725b",
+      "asset": "images/characters/char_u725b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u725b",
+      "kind": "AUDIO",
+      "characterId": "char_u725b",
+      "asset": "audio/characters/char_u725b_v1.mp3"
+    },
+    {
       "id": "text_char_u7f8a",
       "kind": "TEXT",
       "characterId": "char_u7f8a",
       "text": "羊"
+    },
+    {
+      "id": "image_char_u7f8a",
+      "kind": "IMAGE",
+      "characterId": "char_u7f8a",
+      "asset": "images/characters/char_u7f8a_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u7f8a",
+      "kind": "AUDIO",
+      "characterId": "char_u7f8a",
+      "asset": "audio/characters/char_u7f8a_v1.mp3"
     },
     {
       "id": "text_char_u9e1f",
@@ -816,10 +1080,34 @@
       "text": "鸟"
     },
     {
+      "id": "image_char_u9e1f",
+      "kind": "IMAGE",
+      "characterId": "char_u9e1f",
+      "asset": "images/characters/char_u9e1f_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u9e1f",
+      "kind": "AUDIO",
+      "characterId": "char_u9e1f",
+      "asset": "audio/characters/char_u9e1f_v1.mp3"
+    },
+    {
       "id": "text_char_u9c7c",
       "kind": "TEXT",
       "characterId": "char_u9c7c",
       "text": "鱼"
+    },
+    {
+      "id": "image_char_u9c7c",
+      "kind": "IMAGE",
+      "characterId": "char_u9c7c",
+      "asset": "images/characters/char_u9c7c_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u9c7c",
+      "kind": "AUDIO",
+      "characterId": "char_u9c7c",
+      "asset": "audio/characters/char_u9c7c_v1.mp3"
     },
     {
       "id": "text_char_u9a6c",
@@ -828,10 +1116,34 @@
       "text": "马"
     },
     {
+      "id": "image_char_u9a6c",
+      "kind": "IMAGE",
+      "characterId": "char_u9a6c",
+      "asset": "images/characters/char_u9a6c_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u9a6c",
+      "kind": "AUDIO",
+      "characterId": "char_u9a6c",
+      "asset": "audio/characters/char_u9a6c_v1.mp3"
+    },
+    {
       "id": "text_char_u732b",
       "kind": "TEXT",
       "characterId": "char_u732b",
       "text": "猫"
+    },
+    {
+      "id": "image_char_u732b",
+      "kind": "IMAGE",
+      "characterId": "char_u732b",
+      "asset": "images/characters/char_u732b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u732b",
+      "kind": "AUDIO",
+      "characterId": "char_u732b",
+      "asset": "audio/characters/char_u732b_v1.mp3"
     },
     {
       "id": "text_char_u72d7",
@@ -840,10 +1152,34 @@
       "text": "狗"
     },
     {
+      "id": "image_char_u72d7",
+      "kind": "IMAGE",
+      "characterId": "char_u72d7",
+      "asset": "images/characters/char_u72d7_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u72d7",
+      "kind": "AUDIO",
+      "characterId": "char_u72d7",
+      "asset": "audio/characters/char_u72d7_v1.mp3"
+    },
+    {
       "id": "text_char_u5154",
       "kind": "TEXT",
       "characterId": "char_u5154",
       "text": "兔"
+    },
+    {
+      "id": "image_char_u5154",
+      "kind": "IMAGE",
+      "characterId": "char_u5154",
+      "asset": "images/characters/char_u5154_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5154",
+      "kind": "AUDIO",
+      "characterId": "char_u5154",
+      "asset": "audio/characters/char_u5154_v1.mp3"
     },
     {
       "id": "text_char_u866b",
@@ -852,10 +1188,34 @@
       "text": "虫"
     },
     {
+      "id": "image_char_u866b",
+      "kind": "IMAGE",
+      "characterId": "char_u866b",
+      "asset": "images/characters/char_u866b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u866b",
+      "kind": "AUDIO",
+      "characterId": "char_u866b",
+      "asset": "audio/characters/char_u866b_v1.mp3"
+    },
+    {
       "id": "text_char_u82b1",
       "kind": "TEXT",
       "characterId": "char_u82b1",
       "text": "花"
+    },
+    {
+      "id": "image_char_u82b1",
+      "kind": "IMAGE",
+      "characterId": "char_u82b1",
+      "asset": "images/characters/char_u82b1_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u82b1",
+      "kind": "AUDIO",
+      "characterId": "char_u82b1",
+      "asset": "audio/characters/char_u82b1_v1.mp3"
     },
     {
       "id": "text_char_u8863",
@@ -864,10 +1224,34 @@
       "text": "衣"
     },
     {
+      "id": "image_char_u8863",
+      "kind": "IMAGE",
+      "characterId": "char_u8863",
+      "asset": "images/characters/char_u8863_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u8863",
+      "kind": "AUDIO",
+      "characterId": "char_u8863",
+      "asset": "audio/characters/char_u8863_v1.mp3"
+    },
+    {
       "id": "text_char_u98df",
       "kind": "TEXT",
       "characterId": "char_u98df",
       "text": "食"
+    },
+    {
+      "id": "image_char_u98df",
+      "kind": "IMAGE",
+      "characterId": "char_u98df",
+      "asset": "images/characters/char_u98df_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u98df",
+      "kind": "AUDIO",
+      "characterId": "char_u98df",
+      "asset": "audio/characters/char_u98df_v1.mp3"
     },
     {
       "id": "text_char_u7c73",
@@ -876,10 +1260,34 @@
       "text": "米"
     },
     {
+      "id": "image_char_u7c73",
+      "kind": "IMAGE",
+      "characterId": "char_u7c73",
+      "asset": "images/characters/char_u7c73_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u7c73",
+      "kind": "AUDIO",
+      "characterId": "char_u7c73",
+      "asset": "audio/characters/char_u7c73_v1.mp3"
+    },
+    {
       "id": "text_char_u996d",
       "kind": "TEXT",
       "characterId": "char_u996d",
       "text": "饭"
+    },
+    {
+      "id": "image_char_u996d",
+      "kind": "IMAGE",
+      "characterId": "char_u996d",
+      "asset": "images/characters/char_u996d_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u996d",
+      "kind": "AUDIO",
+      "characterId": "char_u996d",
+      "asset": "audio/characters/char_u996d_v1.mp3"
     },
     {
       "id": "text_char_u676f",
@@ -888,10 +1296,34 @@
       "text": "杯"
     },
     {
+      "id": "image_char_u676f",
+      "kind": "IMAGE",
+      "characterId": "char_u676f",
+      "asset": "images/characters/char_u676f_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u676f",
+      "kind": "AUDIO",
+      "characterId": "char_u676f",
+      "asset": "audio/characters/char_u676f_v1.mp3"
+    },
+    {
       "id": "text_char_u4e66",
       "kind": "TEXT",
       "characterId": "char_u4e66",
       "text": "书"
+    },
+    {
+      "id": "image_char_u4e66",
+      "kind": "IMAGE",
+      "characterId": "char_u4e66",
+      "asset": "images/characters/char_u4e66_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u4e66",
+      "kind": "AUDIO",
+      "characterId": "char_u4e66",
+      "asset": "audio/characters/char_u4e66_v1.mp3"
     },
     {
       "id": "text_char_u8f66",
@@ -900,10 +1332,34 @@
       "text": "车"
     },
     {
+      "id": "image_char_u8f66",
+      "kind": "IMAGE",
+      "characterId": "char_u8f66",
+      "asset": "images/characters/char_u8f66_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u8f66",
+      "kind": "AUDIO",
+      "characterId": "char_u8f66",
+      "asset": "audio/characters/char_u8f66_v1.mp3"
+    },
+    {
       "id": "text_char_u706f",
       "kind": "TEXT",
       "characterId": "char_u706f",
       "text": "灯"
+    },
+    {
+      "id": "image_char_u706f",
+      "kind": "IMAGE",
+      "characterId": "char_u706f",
+      "asset": "images/characters/char_u706f_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u706f",
+      "kind": "AUDIO",
+      "characterId": "char_u706f",
+      "asset": "audio/characters/char_u706f_v1.mp3"
     },
     {
       "id": "text_char_u5e8a",
@@ -912,10 +1368,34 @@
       "text": "床"
     },
     {
+      "id": "image_char_u5e8a",
+      "kind": "IMAGE",
+      "characterId": "char_u5e8a",
+      "asset": "images/characters/char_u5e8a_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5e8a",
+      "kind": "AUDIO",
+      "characterId": "char_u5e8a",
+      "asset": "audio/characters/char_u5e8a_v1.mp3"
+    },
+    {
       "id": "text_char_u684c",
       "kind": "TEXT",
       "characterId": "char_u684c",
       "text": "桌"
+    },
+    {
+      "id": "image_char_u684c",
+      "kind": "IMAGE",
+      "characterId": "char_u684c",
+      "asset": "images/characters/char_u684c_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u684c",
+      "kind": "AUDIO",
+      "characterId": "char_u684c",
+      "asset": "audio/characters/char_u684c_v1.mp3"
     },
     {
       "id": "text_char_u770b",
@@ -924,10 +1404,34 @@
       "text": "看"
     },
     {
+      "id": "image_char_u770b",
+      "kind": "IMAGE",
+      "characterId": "char_u770b",
+      "asset": "images/characters/char_u770b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u770b",
+      "kind": "AUDIO",
+      "characterId": "char_u770b",
+      "asset": "audio/characters/char_u770b_v1.mp3"
+    },
+    {
       "id": "text_char_u542c",
       "kind": "TEXT",
       "characterId": "char_u542c",
       "text": "听"
+    },
+    {
+      "id": "image_char_u542c",
+      "kind": "IMAGE",
+      "characterId": "char_u542c",
+      "asset": "images/characters/char_u542c_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u542c",
+      "kind": "AUDIO",
+      "characterId": "char_u542c",
+      "asset": "audio/characters/char_u542c_v1.mp3"
     },
     {
       "id": "text_char_u8d70",
@@ -936,10 +1440,34 @@
       "text": "走"
     },
     {
+      "id": "image_char_u8d70",
+      "kind": "IMAGE",
+      "characterId": "char_u8d70",
+      "asset": "images/characters/char_u8d70_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u8d70",
+      "kind": "AUDIO",
+      "characterId": "char_u8d70",
+      "asset": "audio/characters/char_u8d70_v1.mp3"
+    },
+    {
       "id": "text_char_u8dd1",
       "kind": "TEXT",
       "characterId": "char_u8dd1",
       "text": "跑"
+    },
+    {
+      "id": "image_char_u8dd1",
+      "kind": "IMAGE",
+      "characterId": "char_u8dd1",
+      "asset": "images/characters/char_u8dd1_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u8dd1",
+      "kind": "AUDIO",
+      "characterId": "char_u8dd1",
+      "asset": "audio/characters/char_u8dd1_v1.mp3"
     },
     {
       "id": "text_char_u6765",
@@ -948,10 +1476,34 @@
       "text": "来"
     },
     {
+      "id": "image_char_u6765",
+      "kind": "IMAGE",
+      "characterId": "char_u6765",
+      "asset": "images/characters/char_u6765_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u6765",
+      "kind": "AUDIO",
+      "characterId": "char_u6765",
+      "asset": "audio/characters/char_u6765_v1.mp3"
+    },
+    {
       "id": "text_char_u53bb",
       "kind": "TEXT",
       "characterId": "char_u53bb",
       "text": "去"
+    },
+    {
+      "id": "image_char_u53bb",
+      "kind": "IMAGE",
+      "characterId": "char_u53bb",
+      "asset": "images/characters/char_u53bb_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u53bb",
+      "kind": "AUDIO",
+      "characterId": "char_u53bb",
+      "asset": "audio/characters/char_u53bb_v1.mp3"
     },
     {
       "id": "text_char_u4e0a",
@@ -960,10 +1512,34 @@
       "text": "上"
     },
     {
+      "id": "image_char_u4e0a",
+      "kind": "IMAGE",
+      "characterId": "char_u4e0a",
+      "asset": "images/characters/char_u4e0a_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u4e0a",
+      "kind": "AUDIO",
+      "characterId": "char_u4e0a",
+      "asset": "audio/characters/char_u4e0a_v1.mp3"
+    },
+    {
       "id": "text_char_u4e0b",
       "kind": "TEXT",
       "characterId": "char_u4e0b",
       "text": "下"
+    },
+    {
+      "id": "image_char_u4e0b",
+      "kind": "IMAGE",
+      "characterId": "char_u4e0b",
+      "asset": "images/characters/char_u4e0b_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u4e0b",
+      "kind": "AUDIO",
+      "characterId": "char_u4e0b",
+      "asset": "audio/characters/char_u4e0b_v1.mp3"
     },
     {
       "id": "text_char_u5f00",
@@ -972,10 +1548,34 @@
       "text": "开"
     },
     {
+      "id": "image_char_u5f00",
+      "kind": "IMAGE",
+      "characterId": "char_u5f00",
+      "asset": "images/characters/char_u5f00_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5f00",
+      "kind": "AUDIO",
+      "characterId": "char_u5f00",
+      "asset": "audio/characters/char_u5f00_v1.mp3"
+    },
+    {
       "id": "text_char_u5173",
       "kind": "TEXT",
       "characterId": "char_u5173",
       "text": "关"
+    },
+    {
+      "id": "image_char_u5173",
+      "kind": "IMAGE",
+      "characterId": "char_u5173",
+      "asset": "images/characters/char_u5173_main_v1.webp"
+    },
+    {
+      "id": "audio_char_u5173",
+      "kind": "AUDIO",
+      "characterId": "char_u5173",
+      "asset": "audio/characters/char_u5173_v1.mp3"
     }
   ],
   "characters": [
@@ -1028,12 +1628,12 @@
           "id": "q_char_u4eba_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u4eba_v1.mp3",
-          "correctOptionId": "text_char_u4eba",
+          "correctOptionId": "image_char_u4eba",
           "optionIds": [
-            "text_char_u4eba",
-            "text_char_u53e3",
-            "text_char_u5927",
-            "text_char_u5c71"
+            "image_char_u4eba",
+            "image_char_u53e3",
+            "image_char_u5927",
+            "image_char_u5c71"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1042,12 +1642,12 @@
           "id": "q_char_u4eba_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u4eba_v1.mp3",
-          "correctOptionId": "text_char_u4eba",
+          "correctOptionId": "audio_char_u4eba",
           "optionIds": [
-            "text_char_u4eba",
-            "text_char_u53e3",
-            "text_char_u5927",
-            "text_char_u5c71"
+            "audio_char_u4eba",
+            "audio_char_u53e3",
+            "audio_char_u5927",
+            "audio_char_u5c71"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1123,12 +1723,12 @@
           "id": "q_char_u53e3_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u53e3_v1.mp3",
-          "correctOptionId": "text_char_u53e3",
+          "correctOptionId": "image_char_u53e3",
           "optionIds": [
-            "text_char_u53e3",
-            "text_char_u4eba",
-            "text_char_u5927",
-            "text_char_u5c71"
+            "image_char_u53e3",
+            "image_char_u4eba",
+            "image_char_u5927",
+            "image_char_u5c71"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1137,12 +1737,12 @@
           "id": "q_char_u53e3_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u53e3_v1.mp3",
-          "correctOptionId": "text_char_u53e3",
+          "correctOptionId": "audio_char_u53e3",
           "optionIds": [
-            "text_char_u53e3",
-            "text_char_u4eba",
-            "text_char_u5927",
-            "text_char_u5c71"
+            "audio_char_u53e3",
+            "audio_char_u4eba",
+            "audio_char_u5927",
+            "audio_char_u5c71"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1218,12 +1818,12 @@
           "id": "q_char_u5927_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5927_v1.mp3",
-          "correctOptionId": "text_char_u5927",
+          "correctOptionId": "image_char_u5927",
           "optionIds": [
-            "text_char_u5927",
-            "text_char_u5c0f",
-            "text_char_u4eba",
-            "text_char_u53e3"
+            "image_char_u5927",
+            "image_char_u5c0f",
+            "image_char_u4eba",
+            "image_char_u53e3"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1232,12 +1832,12 @@
           "id": "q_char_u5927_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5927_v1.mp3",
-          "correctOptionId": "text_char_u5927",
+          "correctOptionId": "audio_char_u5927",
           "optionIds": [
-            "text_char_u5927",
-            "text_char_u5c0f",
-            "text_char_u4eba",
-            "text_char_u53e3"
+            "audio_char_u5927",
+            "audio_char_u5c0f",
+            "audio_char_u4eba",
+            "audio_char_u53e3"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1313,12 +1913,12 @@
           "id": "q_char_u5c0f_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5c0f_v1.mp3",
-          "correctOptionId": "text_char_u5c0f",
+          "correctOptionId": "image_char_u5c0f",
           "optionIds": [
-            "text_char_u5c0f",
-            "text_char_u5927",
-            "text_char_u624b",
-            "text_char_u5c71"
+            "image_char_u5c0f",
+            "image_char_u5927",
+            "image_char_u624b",
+            "image_char_u5c71"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1327,12 +1927,12 @@
           "id": "q_char_u5c0f_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5c0f_v1.mp3",
-          "correctOptionId": "text_char_u5c0f",
+          "correctOptionId": "audio_char_u5c0f",
           "optionIds": [
-            "text_char_u5c0f",
-            "text_char_u5927",
-            "text_char_u624b",
-            "text_char_u5c71"
+            "audio_char_u5c0f",
+            "audio_char_u5927",
+            "audio_char_u624b",
+            "audio_char_u5c71"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1408,12 +2008,12 @@
           "id": "q_char_u624b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u624b_v1.mp3",
-          "correctOptionId": "text_char_u624b",
+          "correctOptionId": "image_char_u624b",
           "optionIds": [
-            "text_char_u624b",
-            "text_char_u5934",
-            "text_char_u4eba",
-            "text_char_u53e3"
+            "image_char_u624b",
+            "image_char_u5934",
+            "image_char_u4eba",
+            "image_char_u53e3"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1422,12 +2022,12 @@
           "id": "q_char_u624b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u624b_v1.mp3",
-          "correctOptionId": "text_char_u624b",
+          "correctOptionId": "audio_char_u624b",
           "optionIds": [
-            "text_char_u624b",
-            "text_char_u5934",
-            "text_char_u4eba",
-            "text_char_u53e3"
+            "audio_char_u624b",
+            "audio_char_u5934",
+            "audio_char_u4eba",
+            "audio_char_u53e3"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1503,12 +2103,12 @@
           "id": "q_char_u5934_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5934_v1.mp3",
-          "correctOptionId": "text_char_u5934",
+          "correctOptionId": "image_char_u5934",
           "optionIds": [
-            "text_char_u5934",
-            "text_char_u624b",
-            "text_char_u5927",
-            "text_char_u5c0f"
+            "image_char_u5934",
+            "image_char_u624b",
+            "image_char_u5927",
+            "image_char_u5c0f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1517,12 +2117,12 @@
           "id": "q_char_u5934_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5934_v1.mp3",
-          "correctOptionId": "text_char_u5934",
+          "correctOptionId": "audio_char_u5934",
           "optionIds": [
-            "text_char_u5934",
-            "text_char_u624b",
-            "text_char_u5927",
-            "text_char_u5c0f"
+            "audio_char_u5934",
+            "audio_char_u624b",
+            "audio_char_u5927",
+            "audio_char_u5c0f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1598,12 +2198,12 @@
           "id": "q_char_u7238_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u7238_v1.mp3",
-          "correctOptionId": "text_char_u7238",
+          "correctOptionId": "image_char_u7238",
           "optionIds": [
-            "text_char_u7238",
-            "text_char_u5988",
-            "text_char_u4eba",
-            "text_char_u5bb6"
+            "image_char_u7238",
+            "image_char_u5988",
+            "image_char_u4eba",
+            "image_char_u5bb6"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1612,12 +2212,12 @@
           "id": "q_char_u7238_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u7238_v1.mp3",
-          "correctOptionId": "text_char_u7238",
+          "correctOptionId": "audio_char_u7238",
           "optionIds": [
-            "text_char_u7238",
-            "text_char_u5988",
-            "text_char_u4eba",
-            "text_char_u5bb6"
+            "audio_char_u7238",
+            "audio_char_u5988",
+            "audio_char_u4eba",
+            "audio_char_u5bb6"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1693,12 +2293,12 @@
           "id": "q_char_u5988_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5988_v1.mp3",
-          "correctOptionId": "text_char_u5988",
+          "correctOptionId": "image_char_u5988",
           "optionIds": [
-            "text_char_u5988",
-            "text_char_u7238",
-            "text_char_u5bb6",
-            "text_char_u95e8"
+            "image_char_u5988",
+            "image_char_u7238",
+            "image_char_u5bb6",
+            "image_char_u95e8"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1707,12 +2307,12 @@
           "id": "q_char_u5988_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5988_v1.mp3",
-          "correctOptionId": "text_char_u5988",
+          "correctOptionId": "audio_char_u5988",
           "optionIds": [
-            "text_char_u5988",
-            "text_char_u7238",
-            "text_char_u5bb6",
-            "text_char_u95e8"
+            "audio_char_u5988",
+            "audio_char_u7238",
+            "audio_char_u5bb6",
+            "audio_char_u95e8"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1788,12 +2388,12 @@
           "id": "q_char_u5bb6_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5bb6_v1.mp3",
-          "correctOptionId": "text_char_u5bb6",
+          "correctOptionId": "image_char_u5bb6",
           "optionIds": [
-            "text_char_u5bb6",
-            "text_char_u95e8",
-            "text_char_u7238",
-            "text_char_u5988"
+            "image_char_u5bb6",
+            "image_char_u95e8",
+            "image_char_u7238",
+            "image_char_u5988"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1802,12 +2402,12 @@
           "id": "q_char_u5bb6_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5bb6_v1.mp3",
-          "correctOptionId": "text_char_u5bb6",
+          "correctOptionId": "audio_char_u5bb6",
           "optionIds": [
-            "text_char_u5bb6",
-            "text_char_u95e8",
-            "text_char_u7238",
-            "text_char_u5988"
+            "audio_char_u5bb6",
+            "audio_char_u95e8",
+            "audio_char_u7238",
+            "audio_char_u5988"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1883,12 +2483,12 @@
           "id": "q_char_u95e8_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u95e8_v1.mp3",
-          "correctOptionId": "text_char_u95e8",
+          "correctOptionId": "image_char_u95e8",
           "optionIds": [
-            "text_char_u95e8",
-            "text_char_u5bb6",
-            "text_char_u53e3",
-            "text_char_u4e0a"
+            "image_char_u95e8",
+            "image_char_u5bb6",
+            "image_char_u53e3",
+            "image_char_u4e0a"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1897,12 +2497,12 @@
           "id": "q_char_u95e8_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u95e8_v1.mp3",
-          "correctOptionId": "text_char_u95e8",
+          "correctOptionId": "audio_char_u95e8",
           "optionIds": [
-            "text_char_u95e8",
-            "text_char_u5bb6",
-            "text_char_u53e3",
-            "text_char_u4e0a"
+            "audio_char_u95e8",
+            "audio_char_u5bb6",
+            "audio_char_u53e3",
+            "audio_char_u4e0a"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -1978,12 +2578,12 @@
           "id": "q_char_u5c71_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5c71_v1.mp3",
-          "correctOptionId": "text_char_u5c71",
+          "correctOptionId": "image_char_u5c71",
           "optionIds": [
-            "text_char_u5c71",
-            "text_char_u6c34",
-            "text_char_u6728",
-            "text_char_u5929"
+            "image_char_u5c71",
+            "image_char_u6c34",
+            "image_char_u6728",
+            "image_char_u5929"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -1992,12 +2592,12 @@
           "id": "q_char_u5c71_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5c71_v1.mp3",
-          "correctOptionId": "text_char_u5c71",
+          "correctOptionId": "audio_char_u5c71",
           "optionIds": [
-            "text_char_u5c71",
-            "text_char_u6c34",
-            "text_char_u6728",
-            "text_char_u5929"
+            "audio_char_u5c71",
+            "audio_char_u6c34",
+            "audio_char_u6728",
+            "audio_char_u5929"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2073,12 +2673,12 @@
           "id": "q_char_u6c34_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u6c34_v1.mp3",
-          "correctOptionId": "text_char_u6c34",
+          "correctOptionId": "image_char_u6c34",
           "optionIds": [
-            "text_char_u6c34",
-            "text_char_u5c71",
-            "text_char_u706b",
-            "text_char_u96e8"
+            "image_char_u6c34",
+            "image_char_u5c71",
+            "image_char_u706b",
+            "image_char_u96e8"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2087,12 +2687,12 @@
           "id": "q_char_u6c34_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u6c34_v1.mp3",
-          "correctOptionId": "text_char_u6c34",
+          "correctOptionId": "audio_char_u6c34",
           "optionIds": [
-            "text_char_u6c34",
-            "text_char_u5c71",
-            "text_char_u706b",
-            "text_char_u96e8"
+            "audio_char_u6c34",
+            "audio_char_u5c71",
+            "audio_char_u706b",
+            "audio_char_u96e8"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2168,12 +2768,12 @@
           "id": "q_char_u706b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u706b_v1.mp3",
-          "correctOptionId": "text_char_u706b",
+          "correctOptionId": "image_char_u706b",
           "optionIds": [
-            "text_char_u706b",
-            "text_char_u6c34",
-            "text_char_u6728",
-            "text_char_u706f"
+            "image_char_u706b",
+            "image_char_u6c34",
+            "image_char_u6728",
+            "image_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2182,12 +2782,12 @@
           "id": "q_char_u706b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u706b_v1.mp3",
-          "correctOptionId": "text_char_u706b",
+          "correctOptionId": "audio_char_u706b",
           "optionIds": [
-            "text_char_u706b",
-            "text_char_u6c34",
-            "text_char_u6728",
-            "text_char_u706f"
+            "audio_char_u706b",
+            "audio_char_u6c34",
+            "audio_char_u6728",
+            "audio_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2263,12 +2863,12 @@
           "id": "q_char_u6728_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u6728_v1.mp3",
-          "correctOptionId": "text_char_u6728",
+          "correctOptionId": "image_char_u6728",
           "optionIds": [
-            "text_char_u6728",
-            "text_char_u706b",
-            "text_char_u5c71",
-            "text_char_u82b1"
+            "image_char_u6728",
+            "image_char_u706b",
+            "image_char_u5c71",
+            "image_char_u82b1"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2277,12 +2877,12 @@
           "id": "q_char_u6728_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u6728_v1.mp3",
-          "correctOptionId": "text_char_u6728",
+          "correctOptionId": "audio_char_u6728",
           "optionIds": [
-            "text_char_u6728",
-            "text_char_u706b",
-            "text_char_u5c71",
-            "text_char_u82b1"
+            "audio_char_u6728",
+            "audio_char_u706b",
+            "audio_char_u5c71",
+            "audio_char_u82b1"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2358,12 +2958,12 @@
           "id": "q_char_u65e5_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u65e5_v1.mp3",
-          "correctOptionId": "text_char_u65e5",
+          "correctOptionId": "image_char_u65e5",
           "optionIds": [
-            "text_char_u65e5",
-            "text_char_u6708",
-            "text_char_u5929",
-            "text_char_u4e91"
+            "image_char_u65e5",
+            "image_char_u6708",
+            "image_char_u5929",
+            "image_char_u4e91"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2372,12 +2972,12 @@
           "id": "q_char_u65e5_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u65e5_v1.mp3",
-          "correctOptionId": "text_char_u65e5",
+          "correctOptionId": "audio_char_u65e5",
           "optionIds": [
-            "text_char_u65e5",
-            "text_char_u6708",
-            "text_char_u5929",
-            "text_char_u4e91"
+            "audio_char_u65e5",
+            "audio_char_u6708",
+            "audio_char_u5929",
+            "audio_char_u4e91"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2453,12 +3053,12 @@
           "id": "q_char_u6708_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u6708_v1.mp3",
-          "correctOptionId": "text_char_u6708",
+          "correctOptionId": "image_char_u6708",
           "optionIds": [
-            "text_char_u6708",
-            "text_char_u65e5",
-            "text_char_u5929",
-            "text_char_u6c34"
+            "image_char_u6708",
+            "image_char_u65e5",
+            "image_char_u5929",
+            "image_char_u6c34"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2467,12 +3067,12 @@
           "id": "q_char_u6708_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u6708_v1.mp3",
-          "correctOptionId": "text_char_u6708",
+          "correctOptionId": "audio_char_u6708",
           "optionIds": [
-            "text_char_u6708",
-            "text_char_u65e5",
-            "text_char_u5929",
-            "text_char_u6c34"
+            "audio_char_u6708",
+            "audio_char_u65e5",
+            "audio_char_u5929",
+            "audio_char_u6c34"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2548,12 +3148,12 @@
           "id": "q_char_u5929_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5929_v1.mp3",
-          "correctOptionId": "text_char_u5929",
+          "correctOptionId": "image_char_u5929",
           "optionIds": [
-            "text_char_u5929",
-            "text_char_u65e5",
-            "text_char_u6708",
-            "text_char_u4e91"
+            "image_char_u5929",
+            "image_char_u65e5",
+            "image_char_u6708",
+            "image_char_u4e91"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2562,12 +3162,12 @@
           "id": "q_char_u5929_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5929_v1.mp3",
-          "correctOptionId": "text_char_u5929",
+          "correctOptionId": "audio_char_u5929",
           "optionIds": [
-            "text_char_u5929",
-            "text_char_u65e5",
-            "text_char_u6708",
-            "text_char_u4e91"
+            "audio_char_u5929",
+            "audio_char_u65e5",
+            "audio_char_u6708",
+            "audio_char_u4e91"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2643,12 +3243,12 @@
           "id": "q_char_u4e91_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u4e91_v1.mp3",
-          "correctOptionId": "text_char_u4e91",
+          "correctOptionId": "image_char_u4e91",
           "optionIds": [
-            "text_char_u4e91",
-            "text_char_u96e8",
-            "text_char_u5929",
-            "text_char_u98ce"
+            "image_char_u4e91",
+            "image_char_u96e8",
+            "image_char_u5929",
+            "image_char_u98ce"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2657,12 +3257,12 @@
           "id": "q_char_u4e91_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u4e91_v1.mp3",
-          "correctOptionId": "text_char_u4e91",
+          "correctOptionId": "audio_char_u4e91",
           "optionIds": [
-            "text_char_u4e91",
-            "text_char_u96e8",
-            "text_char_u5929",
-            "text_char_u98ce"
+            "audio_char_u4e91",
+            "audio_char_u96e8",
+            "audio_char_u5929",
+            "audio_char_u98ce"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2738,12 +3338,12 @@
           "id": "q_char_u96e8_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u96e8_v1.mp3",
-          "correctOptionId": "text_char_u96e8",
+          "correctOptionId": "image_char_u96e8",
           "optionIds": [
-            "text_char_u96e8",
-            "text_char_u4e91",
-            "text_char_u6c34",
-            "text_char_u98ce"
+            "image_char_u96e8",
+            "image_char_u4e91",
+            "image_char_u6c34",
+            "image_char_u98ce"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2752,12 +3352,12 @@
           "id": "q_char_u96e8_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u96e8_v1.mp3",
-          "correctOptionId": "text_char_u96e8",
+          "correctOptionId": "audio_char_u96e8",
           "optionIds": [
-            "text_char_u96e8",
-            "text_char_u4e91",
-            "text_char_u6c34",
-            "text_char_u98ce"
+            "audio_char_u96e8",
+            "audio_char_u4e91",
+            "audio_char_u6c34",
+            "audio_char_u98ce"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2833,12 +3433,12 @@
           "id": "q_char_u98ce_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u98ce_v1.mp3",
-          "correctOptionId": "text_char_u98ce",
+          "correctOptionId": "image_char_u98ce",
           "optionIds": [
-            "text_char_u98ce",
-            "text_char_u96e8",
-            "text_char_u4e91",
-            "text_char_u706b"
+            "image_char_u98ce",
+            "image_char_u96e8",
+            "image_char_u4e91",
+            "image_char_u706b"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2847,12 +3447,12 @@
           "id": "q_char_u98ce_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u98ce_v1.mp3",
-          "correctOptionId": "text_char_u98ce",
+          "correctOptionId": "audio_char_u98ce",
           "optionIds": [
-            "text_char_u98ce",
-            "text_char_u96e8",
-            "text_char_u4e91",
-            "text_char_u706b"
+            "audio_char_u98ce",
+            "audio_char_u96e8",
+            "audio_char_u4e91",
+            "audio_char_u706b"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -2928,12 +3528,12 @@
           "id": "q_char_u725b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u725b_v1.mp3",
-          "correctOptionId": "text_char_u725b",
+          "correctOptionId": "image_char_u725b",
           "optionIds": [
-            "text_char_u725b",
-            "text_char_u7f8a",
-            "text_char_u9a6c",
-            "text_char_u9e1f"
+            "image_char_u725b",
+            "image_char_u7f8a",
+            "image_char_u9a6c",
+            "image_char_u9e1f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -2942,12 +3542,12 @@
           "id": "q_char_u725b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u725b_v1.mp3",
-          "correctOptionId": "text_char_u725b",
+          "correctOptionId": "audio_char_u725b",
           "optionIds": [
-            "text_char_u725b",
-            "text_char_u7f8a",
-            "text_char_u9a6c",
-            "text_char_u9e1f"
+            "audio_char_u725b",
+            "audio_char_u7f8a",
+            "audio_char_u9a6c",
+            "audio_char_u9e1f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3023,12 +3623,12 @@
           "id": "q_char_u7f8a_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u7f8a_v1.mp3",
-          "correctOptionId": "text_char_u7f8a",
+          "correctOptionId": "image_char_u7f8a",
           "optionIds": [
-            "text_char_u7f8a",
-            "text_char_u725b",
-            "text_char_u5154",
-            "text_char_u9e1f"
+            "image_char_u7f8a",
+            "image_char_u725b",
+            "image_char_u5154",
+            "image_char_u9e1f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3037,12 +3637,12 @@
           "id": "q_char_u7f8a_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u7f8a_v1.mp3",
-          "correctOptionId": "text_char_u7f8a",
+          "correctOptionId": "audio_char_u7f8a",
           "optionIds": [
-            "text_char_u7f8a",
-            "text_char_u725b",
-            "text_char_u5154",
-            "text_char_u9e1f"
+            "audio_char_u7f8a",
+            "audio_char_u725b",
+            "audio_char_u5154",
+            "audio_char_u9e1f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3118,12 +3718,12 @@
           "id": "q_char_u9e1f_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u9e1f_v1.mp3",
-          "correctOptionId": "text_char_u9e1f",
+          "correctOptionId": "image_char_u9e1f",
           "optionIds": [
-            "text_char_u9e1f",
-            "text_char_u9c7c",
-            "text_char_u725b",
-            "text_char_u7f8a"
+            "image_char_u9e1f",
+            "image_char_u9c7c",
+            "image_char_u725b",
+            "image_char_u7f8a"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3132,12 +3732,12 @@
           "id": "q_char_u9e1f_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u9e1f_v1.mp3",
-          "correctOptionId": "text_char_u9e1f",
+          "correctOptionId": "audio_char_u9e1f",
           "optionIds": [
-            "text_char_u9e1f",
-            "text_char_u9c7c",
-            "text_char_u725b",
-            "text_char_u7f8a"
+            "audio_char_u9e1f",
+            "audio_char_u9c7c",
+            "audio_char_u725b",
+            "audio_char_u7f8a"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3213,12 +3813,12 @@
           "id": "q_char_u9c7c_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u9c7c_v1.mp3",
-          "correctOptionId": "text_char_u9c7c",
+          "correctOptionId": "image_char_u9c7c",
           "optionIds": [
-            "text_char_u9c7c",
-            "text_char_u9e1f",
-            "text_char_u725b",
-            "text_char_u82b1"
+            "image_char_u9c7c",
+            "image_char_u9e1f",
+            "image_char_u725b",
+            "image_char_u82b1"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3227,12 +3827,12 @@
           "id": "q_char_u9c7c_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u9c7c_v1.mp3",
-          "correctOptionId": "text_char_u9c7c",
+          "correctOptionId": "audio_char_u9c7c",
           "optionIds": [
-            "text_char_u9c7c",
-            "text_char_u9e1f",
-            "text_char_u725b",
-            "text_char_u82b1"
+            "audio_char_u9c7c",
+            "audio_char_u9e1f",
+            "audio_char_u725b",
+            "audio_char_u82b1"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3308,12 +3908,12 @@
           "id": "q_char_u9a6c_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u9a6c_v1.mp3",
-          "correctOptionId": "text_char_u9a6c",
+          "correctOptionId": "image_char_u9a6c",
           "optionIds": [
-            "text_char_u9a6c",
-            "text_char_u725b",
-            "text_char_u7f8a",
-            "text_char_u9e1f"
+            "image_char_u9a6c",
+            "image_char_u725b",
+            "image_char_u7f8a",
+            "image_char_u9e1f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3322,12 +3922,12 @@
           "id": "q_char_u9a6c_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u9a6c_v1.mp3",
-          "correctOptionId": "text_char_u9a6c",
+          "correctOptionId": "audio_char_u9a6c",
           "optionIds": [
-            "text_char_u9a6c",
-            "text_char_u725b",
-            "text_char_u7f8a",
-            "text_char_u9e1f"
+            "audio_char_u9a6c",
+            "audio_char_u725b",
+            "audio_char_u7f8a",
+            "audio_char_u9e1f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3403,12 +4003,12 @@
           "id": "q_char_u732b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u732b_v1.mp3",
-          "correctOptionId": "text_char_u732b",
+          "correctOptionId": "image_char_u732b",
           "optionIds": [
-            "text_char_u732b",
-            "text_char_u72d7",
-            "text_char_u5154",
-            "text_char_u866b"
+            "image_char_u732b",
+            "image_char_u72d7",
+            "image_char_u5154",
+            "image_char_u866b"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3417,12 +4017,12 @@
           "id": "q_char_u732b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u732b_v1.mp3",
-          "correctOptionId": "text_char_u732b",
+          "correctOptionId": "audio_char_u732b",
           "optionIds": [
-            "text_char_u732b",
-            "text_char_u72d7",
-            "text_char_u5154",
-            "text_char_u866b"
+            "audio_char_u732b",
+            "audio_char_u72d7",
+            "audio_char_u5154",
+            "audio_char_u866b"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3498,12 +4098,12 @@
           "id": "q_char_u72d7_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u72d7_v1.mp3",
-          "correctOptionId": "text_char_u72d7",
+          "correctOptionId": "image_char_u72d7",
           "optionIds": [
-            "text_char_u72d7",
-            "text_char_u732b",
-            "text_char_u725b",
-            "text_char_u9a6c"
+            "image_char_u72d7",
+            "image_char_u732b",
+            "image_char_u725b",
+            "image_char_u9a6c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3512,12 +4112,12 @@
           "id": "q_char_u72d7_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u72d7_v1.mp3",
-          "correctOptionId": "text_char_u72d7",
+          "correctOptionId": "audio_char_u72d7",
           "optionIds": [
-            "text_char_u72d7",
-            "text_char_u732b",
-            "text_char_u725b",
-            "text_char_u9a6c"
+            "audio_char_u72d7",
+            "audio_char_u732b",
+            "audio_char_u725b",
+            "audio_char_u9a6c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3593,12 +4193,12 @@
           "id": "q_char_u5154_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5154_v1.mp3",
-          "correctOptionId": "text_char_u5154",
+          "correctOptionId": "image_char_u5154",
           "optionIds": [
-            "text_char_u5154",
-            "text_char_u732b",
-            "text_char_u72d7",
-            "text_char_u7f8a"
+            "image_char_u5154",
+            "image_char_u732b",
+            "image_char_u72d7",
+            "image_char_u7f8a"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3607,12 +4207,12 @@
           "id": "q_char_u5154_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5154_v1.mp3",
-          "correctOptionId": "text_char_u5154",
+          "correctOptionId": "audio_char_u5154",
           "optionIds": [
-            "text_char_u5154",
-            "text_char_u732b",
-            "text_char_u72d7",
-            "text_char_u7f8a"
+            "audio_char_u5154",
+            "audio_char_u732b",
+            "audio_char_u72d7",
+            "audio_char_u7f8a"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3688,12 +4288,12 @@
           "id": "q_char_u866b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u866b_v1.mp3",
-          "correctOptionId": "text_char_u866b",
+          "correctOptionId": "image_char_u866b",
           "optionIds": [
-            "text_char_u866b",
-            "text_char_u82b1",
-            "text_char_u9e1f",
-            "text_char_u9c7c"
+            "image_char_u866b",
+            "image_char_u82b1",
+            "image_char_u9e1f",
+            "image_char_u9c7c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3702,12 +4302,12 @@
           "id": "q_char_u866b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u866b_v1.mp3",
-          "correctOptionId": "text_char_u866b",
+          "correctOptionId": "audio_char_u866b",
           "optionIds": [
-            "text_char_u866b",
-            "text_char_u82b1",
-            "text_char_u9e1f",
-            "text_char_u9c7c"
+            "audio_char_u866b",
+            "audio_char_u82b1",
+            "audio_char_u9e1f",
+            "audio_char_u9c7c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3783,12 +4383,12 @@
           "id": "q_char_u82b1_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u82b1_v1.mp3",
-          "correctOptionId": "text_char_u82b1",
+          "correctOptionId": "image_char_u82b1",
           "optionIds": [
-            "text_char_u82b1",
-            "text_char_u6728",
-            "text_char_u866b",
-            "text_char_u6c34"
+            "image_char_u82b1",
+            "image_char_u6728",
+            "image_char_u866b",
+            "image_char_u6c34"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3797,12 +4397,12 @@
           "id": "q_char_u82b1_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u82b1_v1.mp3",
-          "correctOptionId": "text_char_u82b1",
+          "correctOptionId": "audio_char_u82b1",
           "optionIds": [
-            "text_char_u82b1",
-            "text_char_u6728",
-            "text_char_u866b",
-            "text_char_u6c34"
+            "audio_char_u82b1",
+            "audio_char_u6728",
+            "audio_char_u866b",
+            "audio_char_u6c34"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3878,12 +4478,12 @@
           "id": "q_char_u8863_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u8863_v1.mp3",
-          "correctOptionId": "text_char_u8863",
+          "correctOptionId": "image_char_u8863",
           "optionIds": [
-            "text_char_u8863",
-            "text_char_u98df",
-            "text_char_u4e66",
-            "text_char_u676f"
+            "image_char_u8863",
+            "image_char_u98df",
+            "image_char_u4e66",
+            "image_char_u676f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3892,12 +4492,12 @@
           "id": "q_char_u8863_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u8863_v1.mp3",
-          "correctOptionId": "text_char_u8863",
+          "correctOptionId": "audio_char_u8863",
           "optionIds": [
-            "text_char_u8863",
-            "text_char_u98df",
-            "text_char_u4e66",
-            "text_char_u676f"
+            "audio_char_u8863",
+            "audio_char_u98df",
+            "audio_char_u4e66",
+            "audio_char_u676f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -3973,12 +4573,12 @@
           "id": "q_char_u98df_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u98df_v1.mp3",
-          "correctOptionId": "text_char_u98df",
+          "correctOptionId": "image_char_u98df",
           "optionIds": [
-            "text_char_u98df",
-            "text_char_u8863",
-            "text_char_u996d",
-            "text_char_u7c73"
+            "image_char_u98df",
+            "image_char_u8863",
+            "image_char_u996d",
+            "image_char_u7c73"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -3987,12 +4587,12 @@
           "id": "q_char_u98df_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u98df_v1.mp3",
-          "correctOptionId": "text_char_u98df",
+          "correctOptionId": "audio_char_u98df",
           "optionIds": [
-            "text_char_u98df",
-            "text_char_u8863",
-            "text_char_u996d",
-            "text_char_u7c73"
+            "audio_char_u98df",
+            "audio_char_u8863",
+            "audio_char_u996d",
+            "audio_char_u7c73"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4068,12 +4668,12 @@
           "id": "q_char_u7c73_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u7c73_v1.mp3",
-          "correctOptionId": "text_char_u7c73",
+          "correctOptionId": "image_char_u7c73",
           "optionIds": [
-            "text_char_u7c73",
-            "text_char_u996d",
-            "text_char_u98df",
-            "text_char_u6c34"
+            "image_char_u7c73",
+            "image_char_u996d",
+            "image_char_u98df",
+            "image_char_u6c34"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4082,12 +4682,12 @@
           "id": "q_char_u7c73_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u7c73_v1.mp3",
-          "correctOptionId": "text_char_u7c73",
+          "correctOptionId": "audio_char_u7c73",
           "optionIds": [
-            "text_char_u7c73",
-            "text_char_u996d",
-            "text_char_u98df",
-            "text_char_u6c34"
+            "audio_char_u7c73",
+            "audio_char_u996d",
+            "audio_char_u98df",
+            "audio_char_u6c34"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4163,12 +4763,12 @@
           "id": "q_char_u996d_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u996d_v1.mp3",
-          "correctOptionId": "text_char_u996d",
+          "correctOptionId": "image_char_u996d",
           "optionIds": [
-            "text_char_u996d",
-            "text_char_u7c73",
-            "text_char_u98df",
-            "text_char_u676f"
+            "image_char_u996d",
+            "image_char_u7c73",
+            "image_char_u98df",
+            "image_char_u676f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4177,12 +4777,12 @@
           "id": "q_char_u996d_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u996d_v1.mp3",
-          "correctOptionId": "text_char_u996d",
+          "correctOptionId": "audio_char_u996d",
           "optionIds": [
-            "text_char_u996d",
-            "text_char_u7c73",
-            "text_char_u98df",
-            "text_char_u676f"
+            "audio_char_u996d",
+            "audio_char_u7c73",
+            "audio_char_u98df",
+            "audio_char_u676f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4258,12 +4858,12 @@
           "id": "q_char_u676f_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u676f_v1.mp3",
-          "correctOptionId": "text_char_u676f",
+          "correctOptionId": "image_char_u676f",
           "optionIds": [
-            "text_char_u676f",
-            "text_char_u6c34",
-            "text_char_u4e66",
-            "text_char_u7c73"
+            "image_char_u676f",
+            "image_char_u6c34",
+            "image_char_u4e66",
+            "image_char_u7c73"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4272,12 +4872,12 @@
           "id": "q_char_u676f_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u676f_v1.mp3",
-          "correctOptionId": "text_char_u676f",
+          "correctOptionId": "audio_char_u676f",
           "optionIds": [
-            "text_char_u676f",
-            "text_char_u6c34",
-            "text_char_u4e66",
-            "text_char_u7c73"
+            "audio_char_u676f",
+            "audio_char_u6c34",
+            "audio_char_u4e66",
+            "audio_char_u7c73"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4353,12 +4953,12 @@
           "id": "q_char_u4e66_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u4e66_v1.mp3",
-          "correctOptionId": "text_char_u4e66",
+          "correctOptionId": "image_char_u4e66",
           "optionIds": [
-            "text_char_u4e66",
-            "text_char_u770b",
-            "text_char_u8f66",
-            "text_char_u684c"
+            "image_char_u4e66",
+            "image_char_u770b",
+            "image_char_u8f66",
+            "image_char_u684c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4367,12 +4967,12 @@
           "id": "q_char_u4e66_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u4e66_v1.mp3",
-          "correctOptionId": "text_char_u4e66",
+          "correctOptionId": "audio_char_u4e66",
           "optionIds": [
-            "text_char_u4e66",
-            "text_char_u770b",
-            "text_char_u8f66",
-            "text_char_u684c"
+            "audio_char_u4e66",
+            "audio_char_u770b",
+            "audio_char_u8f66",
+            "audio_char_u684c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4448,12 +5048,12 @@
           "id": "q_char_u8f66_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u8f66_v1.mp3",
-          "correctOptionId": "text_char_u8f66",
+          "correctOptionId": "image_char_u8f66",
           "optionIds": [
-            "text_char_u8f66",
-            "text_char_u9a6c",
-            "text_char_u4e66",
-            "text_char_u706f"
+            "image_char_u8f66",
+            "image_char_u9a6c",
+            "image_char_u4e66",
+            "image_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4462,12 +5062,12 @@
           "id": "q_char_u8f66_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u8f66_v1.mp3",
-          "correctOptionId": "text_char_u8f66",
+          "correctOptionId": "audio_char_u8f66",
           "optionIds": [
-            "text_char_u8f66",
-            "text_char_u9a6c",
-            "text_char_u4e66",
-            "text_char_u706f"
+            "audio_char_u8f66",
+            "audio_char_u9a6c",
+            "audio_char_u4e66",
+            "audio_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4543,12 +5143,12 @@
           "id": "q_char_u706f_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u706f_v1.mp3",
-          "correctOptionId": "text_char_u706f",
+          "correctOptionId": "image_char_u706f",
           "optionIds": [
-            "text_char_u706f",
-            "text_char_u706b",
-            "text_char_u5e8a",
-            "text_char_u684c"
+            "image_char_u706f",
+            "image_char_u706b",
+            "image_char_u5e8a",
+            "image_char_u684c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4557,12 +5157,12 @@
           "id": "q_char_u706f_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u706f_v1.mp3",
-          "correctOptionId": "text_char_u706f",
+          "correctOptionId": "audio_char_u706f",
           "optionIds": [
-            "text_char_u706f",
-            "text_char_u706b",
-            "text_char_u5e8a",
-            "text_char_u684c"
+            "audio_char_u706f",
+            "audio_char_u706b",
+            "audio_char_u5e8a",
+            "audio_char_u684c"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4638,12 +5238,12 @@
           "id": "q_char_u5e8a_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5e8a_v1.mp3",
-          "correctOptionId": "text_char_u5e8a",
+          "correctOptionId": "image_char_u5e8a",
           "optionIds": [
-            "text_char_u5e8a",
-            "text_char_u684c",
-            "text_char_u5bb6",
-            "text_char_u706f"
+            "image_char_u5e8a",
+            "image_char_u684c",
+            "image_char_u5bb6",
+            "image_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4652,12 +5252,12 @@
           "id": "q_char_u5e8a_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5e8a_v1.mp3",
-          "correctOptionId": "text_char_u5e8a",
+          "correctOptionId": "audio_char_u5e8a",
           "optionIds": [
-            "text_char_u5e8a",
-            "text_char_u684c",
-            "text_char_u5bb6",
-            "text_char_u706f"
+            "audio_char_u5e8a",
+            "audio_char_u684c",
+            "audio_char_u5bb6",
+            "audio_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4733,12 +5333,12 @@
           "id": "q_char_u684c_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u684c_v1.mp3",
-          "correctOptionId": "text_char_u684c",
+          "correctOptionId": "image_char_u684c",
           "optionIds": [
-            "text_char_u684c",
-            "text_char_u5e8a",
-            "text_char_u4e66",
-            "text_char_u676f"
+            "image_char_u684c",
+            "image_char_u5e8a",
+            "image_char_u4e66",
+            "image_char_u676f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4747,12 +5347,12 @@
           "id": "q_char_u684c_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u684c_v1.mp3",
-          "correctOptionId": "text_char_u684c",
+          "correctOptionId": "audio_char_u684c",
           "optionIds": [
-            "text_char_u684c",
-            "text_char_u5e8a",
-            "text_char_u4e66",
-            "text_char_u676f"
+            "audio_char_u684c",
+            "audio_char_u5e8a",
+            "audio_char_u4e66",
+            "audio_char_u676f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4828,12 +5428,12 @@
           "id": "q_char_u770b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u770b_v1.mp3",
-          "correctOptionId": "text_char_u770b",
+          "correctOptionId": "image_char_u770b",
           "optionIds": [
-            "text_char_u770b",
-            "text_char_u542c",
-            "text_char_u4e66",
-            "text_char_u7c73"
+            "image_char_u770b",
+            "image_char_u542c",
+            "image_char_u4e66",
+            "image_char_u7c73"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4842,12 +5442,12 @@
           "id": "q_char_u770b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u770b_v1.mp3",
-          "correctOptionId": "text_char_u770b",
+          "correctOptionId": "audio_char_u770b",
           "optionIds": [
-            "text_char_u770b",
-            "text_char_u542c",
-            "text_char_u4e66",
-            "text_char_u7c73"
+            "audio_char_u770b",
+            "audio_char_u542c",
+            "audio_char_u4e66",
+            "audio_char_u7c73"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -4923,12 +5523,12 @@
           "id": "q_char_u542c_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u542c_v1.mp3",
-          "correctOptionId": "text_char_u542c",
+          "correctOptionId": "image_char_u542c",
           "optionIds": [
-            "text_char_u542c",
-            "text_char_u770b",
-            "text_char_u9e1f",
-            "text_char_u4e66"
+            "image_char_u542c",
+            "image_char_u770b",
+            "image_char_u9e1f",
+            "image_char_u4e66"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -4937,12 +5537,12 @@
           "id": "q_char_u542c_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u542c_v1.mp3",
-          "correctOptionId": "text_char_u542c",
+          "correctOptionId": "audio_char_u542c",
           "optionIds": [
-            "text_char_u542c",
-            "text_char_u770b",
-            "text_char_u9e1f",
-            "text_char_u4e66"
+            "audio_char_u542c",
+            "audio_char_u770b",
+            "audio_char_u9e1f",
+            "audio_char_u4e66"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5018,12 +5618,12 @@
           "id": "q_char_u8d70_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u8d70_v1.mp3",
-          "correctOptionId": "text_char_u8d70",
+          "correctOptionId": "image_char_u8d70",
           "optionIds": [
-            "text_char_u8d70",
-            "text_char_u8dd1",
-            "text_char_u6765",
-            "text_char_u53bb"
+            "image_char_u8d70",
+            "image_char_u8dd1",
+            "image_char_u6765",
+            "image_char_u53bb"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5032,12 +5632,12 @@
           "id": "q_char_u8d70_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u8d70_v1.mp3",
-          "correctOptionId": "text_char_u8d70",
+          "correctOptionId": "audio_char_u8d70",
           "optionIds": [
-            "text_char_u8d70",
-            "text_char_u8dd1",
-            "text_char_u6765",
-            "text_char_u53bb"
+            "audio_char_u8d70",
+            "audio_char_u8dd1",
+            "audio_char_u6765",
+            "audio_char_u53bb"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5113,12 +5713,12 @@
           "id": "q_char_u8dd1_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u8dd1_v1.mp3",
-          "correctOptionId": "text_char_u8dd1",
+          "correctOptionId": "image_char_u8dd1",
           "optionIds": [
-            "text_char_u8dd1",
-            "text_char_u8d70",
-            "text_char_u6765",
-            "text_char_u53bb"
+            "image_char_u8dd1",
+            "image_char_u8d70",
+            "image_char_u6765",
+            "image_char_u53bb"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5127,12 +5727,12 @@
           "id": "q_char_u8dd1_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u8dd1_v1.mp3",
-          "correctOptionId": "text_char_u8dd1",
+          "correctOptionId": "audio_char_u8dd1",
           "optionIds": [
-            "text_char_u8dd1",
-            "text_char_u8d70",
-            "text_char_u6765",
-            "text_char_u53bb"
+            "audio_char_u8dd1",
+            "audio_char_u8d70",
+            "audio_char_u6765",
+            "audio_char_u53bb"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5208,12 +5808,12 @@
           "id": "q_char_u6765_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u6765_v1.mp3",
-          "correctOptionId": "text_char_u6765",
+          "correctOptionId": "image_char_u6765",
           "optionIds": [
-            "text_char_u6765",
-            "text_char_u53bb",
-            "text_char_u8d70",
-            "text_char_u8dd1"
+            "image_char_u6765",
+            "image_char_u53bb",
+            "image_char_u8d70",
+            "image_char_u8dd1"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5222,12 +5822,12 @@
           "id": "q_char_u6765_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u6765_v1.mp3",
-          "correctOptionId": "text_char_u6765",
+          "correctOptionId": "audio_char_u6765",
           "optionIds": [
-            "text_char_u6765",
-            "text_char_u53bb",
-            "text_char_u8d70",
-            "text_char_u8dd1"
+            "audio_char_u6765",
+            "audio_char_u53bb",
+            "audio_char_u8d70",
+            "audio_char_u8dd1"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5303,12 +5903,12 @@
           "id": "q_char_u53bb_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u53bb_v1.mp3",
-          "correctOptionId": "text_char_u53bb",
+          "correctOptionId": "image_char_u53bb",
           "optionIds": [
-            "text_char_u53bb",
-            "text_char_u6765",
-            "text_char_u4e0a",
-            "text_char_u4e0b"
+            "image_char_u53bb",
+            "image_char_u6765",
+            "image_char_u4e0a",
+            "image_char_u4e0b"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5317,12 +5917,12 @@
           "id": "q_char_u53bb_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u53bb_v1.mp3",
-          "correctOptionId": "text_char_u53bb",
+          "correctOptionId": "audio_char_u53bb",
           "optionIds": [
-            "text_char_u53bb",
-            "text_char_u6765",
-            "text_char_u4e0a",
-            "text_char_u4e0b"
+            "audio_char_u53bb",
+            "audio_char_u6765",
+            "audio_char_u4e0a",
+            "audio_char_u4e0b"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5398,12 +5998,12 @@
           "id": "q_char_u4e0a_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u4e0a_v1.mp3",
-          "correctOptionId": "text_char_u4e0a",
+          "correctOptionId": "image_char_u4e0a",
           "optionIds": [
-            "text_char_u4e0a",
-            "text_char_u4e0b",
-            "text_char_u6765",
-            "text_char_u53bb"
+            "image_char_u4e0a",
+            "image_char_u4e0b",
+            "image_char_u6765",
+            "image_char_u53bb"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5412,12 +6012,12 @@
           "id": "q_char_u4e0a_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u4e0a_v1.mp3",
-          "correctOptionId": "text_char_u4e0a",
+          "correctOptionId": "audio_char_u4e0a",
           "optionIds": [
-            "text_char_u4e0a",
-            "text_char_u4e0b",
-            "text_char_u6765",
-            "text_char_u53bb"
+            "audio_char_u4e0a",
+            "audio_char_u4e0b",
+            "audio_char_u6765",
+            "audio_char_u53bb"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5493,12 +6093,12 @@
           "id": "q_char_u4e0b_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u4e0b_v1.mp3",
-          "correctOptionId": "text_char_u4e0b",
+          "correctOptionId": "image_char_u4e0b",
           "optionIds": [
-            "text_char_u4e0b",
-            "text_char_u4e0a",
-            "text_char_u53bb",
-            "text_char_u5f00"
+            "image_char_u4e0b",
+            "image_char_u4e0a",
+            "image_char_u53bb",
+            "image_char_u5f00"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5507,12 +6107,12 @@
           "id": "q_char_u4e0b_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u4e0b_v1.mp3",
-          "correctOptionId": "text_char_u4e0b",
+          "correctOptionId": "audio_char_u4e0b",
           "optionIds": [
-            "text_char_u4e0b",
-            "text_char_u4e0a",
-            "text_char_u53bb",
-            "text_char_u5f00"
+            "audio_char_u4e0b",
+            "audio_char_u4e0a",
+            "audio_char_u53bb",
+            "audio_char_u5f00"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5588,12 +6188,12 @@
           "id": "q_char_u5f00_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5f00_v1.mp3",
-          "correctOptionId": "text_char_u5f00",
+          "correctOptionId": "image_char_u5f00",
           "optionIds": [
-            "text_char_u5f00",
-            "text_char_u5173",
-            "text_char_u95e8",
-            "text_char_u706f"
+            "image_char_u5f00",
+            "image_char_u5173",
+            "image_char_u95e8",
+            "image_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5602,12 +6202,12 @@
           "id": "q_char_u5f00_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5f00_v1.mp3",
-          "correctOptionId": "text_char_u5f00",
+          "correctOptionId": "audio_char_u5f00",
           "optionIds": [
-            "text_char_u5f00",
-            "text_char_u5173",
-            "text_char_u95e8",
-            "text_char_u706f"
+            "audio_char_u5f00",
+            "audio_char_u5173",
+            "audio_char_u95e8",
+            "audio_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"
@@ -5683,12 +6283,12 @@
           "id": "q_char_u5173_listen_character_choose_image",
           "type": "CHARACTER_CHOOSE_IMAGE",
           "promptAudio": "audio/characters/char_u5173_v1.mp3",
-          "correctOptionId": "text_char_u5173",
+          "correctOptionId": "image_char_u5173",
           "optionIds": [
-            "text_char_u5173",
-            "text_char_u5f00",
-            "text_char_u95e8",
-            "text_char_u706f"
+            "image_char_u5173",
+            "image_char_u5f00",
+            "image_char_u95e8",
+            "image_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_MEANING"
@@ -5697,12 +6297,12 @@
           "id": "q_char_u5173_listen_character_choose_audio",
           "type": "CHARACTER_CHOOSE_AUDIO",
           "promptAudio": "audio/characters/char_u5173_v1.mp3",
-          "correctOptionId": "text_char_u5173",
+          "correctOptionId": "audio_char_u5173",
           "optionIds": [
-            "text_char_u5173",
-            "text_char_u5f00",
-            "text_char_u95e8",
-            "text_char_u706f"
+            "audio_char_u5173",
+            "audio_char_u5f00",
+            "audio_char_u95e8",
+            "audio_char_u706f"
           ],
           "minLearnedCount": 0,
           "evidenceCategory": "SHAPE_TO_SOUND"

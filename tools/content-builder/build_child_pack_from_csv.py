@@ -58,8 +58,15 @@ def main() -> None:
         option_chars = [row["correct_character"], row["option_character_1"], row["option_character_2"], row["option_character_3"]]
         require(all(option in chars for option in option_chars), f"题目包含范围外汉字: {row['question_id']}")
         require(row["correct_character"] == characters_by_id[character_id]["character"], f"题目答案不匹配: {row['question_id']}")
-        option_ids = [f"text_{next(item['id'] for item in characters if item['character'] == option)}" for option in option_chars]
+        text_option_ids = [f"text_{next(item['id'] for item in characters if item['character'] == option)}" for option in option_chars]
+        image_option_ids = [f"image_{next(item['id'] for item in characters if item['character'] == option)}" for option in option_chars]
+        audio_option_ids = [f"audio_{next(item['id'] for item in characters if item['character'] == option)}" for option in option_chars]
         for variant, evidence in question_variants:
+            option_ids = (
+                image_option_ids if variant == "CHARACTER_CHOOSE_IMAGE"
+                else audio_option_ids if variant == "CHARACTER_CHOOSE_AUDIO"
+                else text_option_ids
+            )
             compiled_questions_by_id[character_id].append({
                 "id": f"{row['question_id']}_{variant.lower()}",
                 "type": variant,
@@ -71,6 +78,18 @@ def main() -> None:
             })
     for row in characters:
         option_catalog.append({"id": f"text_{row['id']}", "kind": "TEXT", "characterId": row["id"], "text": row["character"]})
+        option_catalog.append({
+            "id": f"image_{row['id']}",
+            "kind": "IMAGE",
+            "characterId": row["id"],
+            "asset": f"images/characters/{row['id']}_main_v1.webp",
+        })
+        option_catalog.append({
+            "id": f"audio_{row['id']}",
+            "kind": "AUDIO",
+            "characterId": row["id"],
+            "asset": f"audio/characters/{row['id']}_v1.mp3",
+        })
     compiled_characters = []
     child_entries = []
     for order, row in enumerate(characters, start=1):
