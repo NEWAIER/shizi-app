@@ -20,12 +20,20 @@ jobs:
         with:
           python-version: "3.12"
       - uses: android-actions/setup-android@v3
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Grant Gradle wrapper permission
         run: chmod +x gradlew
       - name: Install offline-testable audio tool dependencies
         run: python -m pip install -r tools/audio-generator/requirements.txt
       - name: Python audio generator and media validator tests
         run: python -m unittest discover -s tools/tests -p "test_*.py" -v
+      - name: Verify committed audition package
+        run: python tools/audio-generator/verify_audition_package.py
+      - name: Verify audition reports are stable
+        run: python tools/audio-generator/build_audition_report.py --check
+      - name: Ensure verification does not modify tracked files
+        run: git diff --exit-code
       - name: Unit tests
         run: ./gradlew testDebugUnitTest --console=plain
       - name: G1 content validation

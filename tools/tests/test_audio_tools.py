@@ -6,10 +6,12 @@ import csv
 import hashlib
 import importlib.util
 import json
+import shutil
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import AsyncMock, patch
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -29,7 +31,7 @@ media = load_module("validate_media", "tools/content-builder/validate_media.py")
 def options(output_dir: Path, force: bool = False) -> argparse.Namespace:
     return argparse.Namespace(
         output_dir=output_dir, voice="zh-CN-XiaoyiNeural", rate="-8%", volume="+0%", pitch="+0Hz",
-        force=force, manifest=None, index=None,
+        force=force, normalize_existing=False, manifest=None, index=None,
     )
 
 
@@ -64,11 +66,14 @@ class EdgeTtsGeneratorTests(unittest.TestCase):
             row = {"id": "a", "text": "一", "filename": "a.mp3"}
             current = options(directory)
             entry = {"inputFingerprint": tts.provenance(row, current), "sha256": tts.sha256(target)}
-            self.assertTrue(tts.can_reuse(entry, row, target, current))
+            with patch.object(tts, "validate_mp3", return_value=1000):
+                self.assertTrue(tts.can_reuse(entry, row, target, current))
             changed_text = {**row, "text": "上"}
-            self.assertFalse(tts.can_reuse(entry, changed_text, target, current))
+            with patch.object(tts, "validate_mp3", return_value=1000):
+                self.assertFalse(tts.can_reuse(entry, changed_text, target, current))
             target.write_bytes(b"changed bytes")
-            self.assertFalse(tts.can_reuse(entry, row, target, current))
+            with patch.object(tts, "validate_mp3", return_value=1000):
+                self.assertFalse(tts.can_reuse(entry, row, target, current))
 
     def test_mismatched_existing_file_is_preserved_without_force(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -96,7 +101,22 @@ class EdgeTtsGeneratorTests(unittest.TestCase):
                 result = asyncio.run(tts.generate_one(row, current, existing))
             self.assertEqual("2026-01-01T00:00:00+00:00", result["generatedAt"])
             self.assertNotIn("\\", result["outputPath"])
-            self.assertEqual("GENERATED", result["generationStatus"])
+            self.assertEqual("REUSED_VERIFIED", result["generationStatus"])
+
+    def test_batch_failure_preserves_old_manifest_and_writes_failed_items(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            directory = Path(temp)
+            source = self.write_csv(directory, [["a", "一", "a.mp3"]])
+            manifest = directory / "audition_manifest.json"
+            original = "[{\"old\": true}]\n"
+            manifest.write_text(original, encoding="utf-8")
+            current = options(directory)
+            current.input, current.manifest, current.index = source, manifest, directory / "AUDITION_INDEX.md"
+            failed = {"id": "a", "generationStatus": "FAILED", "error": "intentional"}
+            with patch.object(tts, "args", return_value=current), patch.object(tts, "generate_one", AsyncMock(return_value=failed)):
+                self.assertEqual(1, asyncio.run(tts.main()))
+            self.assertEqual(original, manifest.read_text(encoding="utf-8"))
+            self.assertEqual([failed], json.loads((directory / "failed_items.json").read_text(encoding="utf-8")))
 
 
 class MediaValidatorTests(unittest.TestCase):
@@ -109,7 +129,7 @@ class MediaValidatorTests(unittest.TestCase):
     def test_uses_probe_and_decoder_instead_of_header_checks(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "forged.mp3"
-            path.write_bytes(b"ID3 this is garbage, not media")
+            path.write_bytes(b"ID3" + b"x" * 2048)
             calls: list[list[str]] = []
 
             def fake_which(name: str) -> str:
@@ -130,18 +150,50 @@ class MediaValidatorTests(unittest.TestCase):
     def test_valid_probe_requires_decoder(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "real.mp3"
-            path.write_bytes(b"not a placeholder")
+            path.write_bytes(b"not a placeholder" * 100)
             calls: list[list[str]] = []
 
             def fake_run(command, **_kwargs):
                 calls.append(command)
                 if command[0] == "ffprobe":
-                    return type("Result", (), {"returncode": 0, "stdout": json.dumps({"format": {"duration": "1.2"}, "streams": [{"codec_type": "audio", "codec_name": "mp3"}]}), "stderr": ""})()
-                return type("Result", (), {"returncode": 0, "stdout": "", "stderr": ""})()
+                    return type("Result", (), {"returncode": 0, "stdout": json.dumps({"format": {"duration": "1.2", "bit_rate": "96000"}, "streams": [{"codec_type": "audio", "codec_name": "mp3", "channels": 1, "sample_rate": "44100", "bit_rate": "96000"}]}), "stderr": ""})()
+                volume = "mean_volume: -20.0 dB" if "volumedetect" in command else ""
+                return type("Result", (), {"returncode": 0, "stdout": volume, "stderr": ""})()
 
             with patch.object(media.shutil, "which", lambda name: name), patch.object(media.subprocess, "run", fake_run):
                 media.validate_file(path)
-            self.assertEqual(["ffprobe", "ffmpeg"], [call[0] for call in calls])
+            self.assertEqual(["ffprobe", "ffmpeg", "ffmpeg"], [call[0] for call in calls])
+
+
+@unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "FFmpeg is required for real-media tests")
+class ActualMediaValidationTests(unittest.TestCase):
+    def ffmpeg(self, *arguments: str) -> None:
+        subprocess.run([shutil.which("ffmpeg"), "-y", *arguments], check=True, capture_output=True)
+
+    def test_real_mp3_rejects_silence_truncation_channels_and_rate(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            valid, silent, stereo, low_rate, broken = (root / name for name in ("valid.mp3", "silent.mp3", "stereo.mp3", "low.mp3", "broken.mp3"))
+            self.ffmpeg("-f", "lavfi", "-i", "sine=frequency=440:duration=1", "-ac", "1", "-ar", "44100", "-b:a", "96k", str(valid))
+            self.ffmpeg("-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "1", "-ac", "1", "-ar", "44100", "-b:a", "96k", str(silent))
+            self.ffmpeg("-f", "lavfi", "-i", "sine=frequency=440:duration=1", "-ac", "2", "-ar", "44100", "-b:a", "96k", str(stereo))
+            self.ffmpeg("-f", "lavfi", "-i", "sine=frequency=440:duration=1", "-ac", "1", "-ar", "22050", "-b:a", "96k", str(low_rate))
+            broken.write_bytes(valid.read_bytes()[:100])
+            media.validate_mp3(valid)
+            for invalid in (silent, stereo, low_rate, broken):
+                with self.subTest(invalid=invalid.name), self.assertRaises(media.MediaValidationError):
+                    media.validate_mp3(invalid)
+
+    def test_real_webp_rejects_fake_wrong_size_and_oversize(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            wrong, fake, oversized = root / "wrong.webp", root / "fake.webp", root / "large.webp"
+            self.ffmpeg("-f", "lavfi", "-i", "color=c=red:s=64x64", "-frames:v", "1", "-c:v", "libwebp", str(wrong))
+            fake.write_bytes(b"RIFF" + b"not-a-webp" * 200)
+            oversized.write_bytes(wrong.read_bytes() + b"x" * (media.MAX_WEBP_BYTES + 1))
+            for invalid in (wrong, fake, oversized):
+                with self.subTest(invalid=invalid.name), self.assertRaises(media.MediaValidationError):
+                    media.validate_webp(invalid)
 
 
 if __name__ == "__main__":

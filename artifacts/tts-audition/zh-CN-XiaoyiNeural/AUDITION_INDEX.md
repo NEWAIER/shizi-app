@@ -4,15 +4,15 @@
 
 | 文件 | 状态 | 大小 | 时长(ms) | SHA-256 |
 |---|---:|---:|---:|---|
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/01_character_yi.mp3 | GENERATED | 10656 | 1776 | afebf57cc4f6e7583a7a8516ec898ceaf82e8a4b4de23cfe36fdfd421d4aada0 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/02_character_shang.mp3 | GENERATED | 10656 | 1776 | 52ead1a168e774a482d7ae4715b92e69187061d604c493b605161a46d13cdf2d |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/03_character_shui.mp3 | GENERATED | 10656 | 1776 | 150644e1b5648377122841ab7148a803f218b2f43285ee87c35335f84b936ef7 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/04_character_huo.mp3 | GENERATED | 10656 | 1776 | 3b9e08ba7166844d930b8d82e1b9ab180dd1db759cb705f819e569e0c16dde79 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/05_character_feng.mp3 | GENERATED | 10656 | 1776 | 9a597adc8aa025bdb1eeb802a6519c68755bab7a211cfc1fbd5cbb0a43782901 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/06_character_niao.mp3 | GENERATED | 10656 | 1776 | 0af7dbe28df62777c83bb9b43240de797abe646f7bb96b80d34abf8fc83d4a62 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/07_word_yige.mp3 | GENERATED | 10656 | 1776 | 6c1cfbbcff559a7d59286325d14369212782549890d7c688f9618bd6083e6519 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/08_word_yitian.mp3 | GENERATED | 10656 | 1776 | 931cfffc41391bfd47c3bf65d1759675fd20009f5756521a88225503deac6772 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/09_word_baiyun.mp3 | GENERATED | 10656 | 1776 | 01674a52344c83912347203dbc81ead0b7f2e836717b7218b69ef982ca8ebdbd |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/10_word_shuaya.mp3 | GENERATED | 10656 | 1776 | 53efaadc82bdd8c0929b9c55ec7c8730c4ba8f0b63f6c3ce287703e1084dc107 |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/11_meaning_feng.mp3 | GENERATED | 33120 | 5520 | 4526ffa3704e144e499721185eb426ea5f9ed52b577b941a49e8770818e3103f |
-| artifacts/tts-audition/zh-CN-XiaoyiNeural/12_sentence_yu.mp3 | GENERATED | 14688 | 2448 | e35897054c2f484198f86400d427d67df56e4c6448648cbca61c0913f09dd698 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/01_character_yi.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | f73b8e035d8925052de5bf8730a12b59c6f9eb62ddf3a185ee792b92d4cf527d |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/02_character_shang.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | eb42a7b14931ea2464f2f15bc515274ec389a0bc1f9157e3a90550bb33eebb6d |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/03_character_shui.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | f67c9b83b4acaf27198aeb635583e93bc67dad411ebfa9ae8fdfc639c6621692 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/04_character_huo.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | 8b2d03e14982812bd4ddef8328f2c958584ff255ee6404dcf25546125bda8277 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/05_character_feng.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | 919456db5c7f6fa8e3dba74f23f913ab5d6d3afb206deb480eca186ceacf4611 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/06_character_niao.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | bf6032efb8c5abf95b982265bbd6ff0717462aa16110dbe172249d76da3cf37e |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/07_word_yige.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | f46dbe24343d95ba8bdaade760b2fd2917862c6b37888a16212f42ca7b638ce5 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/08_word_yitian.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | 4dd3ac07e870965b87de3d8ace604c143756236bb4ec2e900437a2b587b532e5 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/09_word_baiyun.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | f6d01004681f723392e98baf17cef18caf22ba12d8c3b9d9e795d31b1e785f17 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/10_word_shuaya.mp3 | NORMALIZED_EXISTING | 21987 | 1802 | e2517f2a6f4ffa715c3ad10ecdd432beccfeb1748b918fc75c77088108e7f785 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/11_meaning_feng.mp3 | NORMALIZED_EXISTING | 67127 | 5564 | bb6f3416be8e11207f20d5dbc4f51131af4e42906dca906d09f46ea10f37dd58 |
+| artifacts/tts-audition/zh-CN-XiaoyiNeural/12_sentence_yu.mp3 | NORMALIZED_EXISTING | 30138 | 2482 | 052da258210415283cb853511dcb988eb87bdf9061ce16a7d7e06f012e168a4f |

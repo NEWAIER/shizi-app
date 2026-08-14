@@ -17,6 +17,7 @@ import os
 import re
 import shutil
 import subprocess
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
@@ -38,6 +39,7 @@ def args() -> argparse.Namespace:
     parser.add_argument("--volume", default="+0%")
     parser.add_argument("--pitch", default="+0Hz")
     parser.add_argument("--force", action="store_true", help="Permit replacing a mismatched existing MP3")
+    parser.add_argument("--normalize-existing", action="store_true", help="Normalize verified legacy MP3s locally without Edge TTS")
     parser.add_argument("--index", type=Path, help="Markdown index path")
     parser.add_argument("--manifest", type=Path, help="JSON manifest path")
     return parser.parse_args()
@@ -118,6 +120,17 @@ def manifest_path(options: argparse.Namespace) -> Path:
     return options.manifest or options.output_dir / "audition_manifest.json"
 
 
+def failed_items_path(options: argparse.Namespace) -> Path:
+    return manifest_path(options).with_name("failed_items.json")
+
+
+def atomic_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(path)
+
+
 def load_existing(options: argparse.Namespace) -> dict[str, dict[str, Any]]:
     path = manifest_path(options)
     if not path.is_file():
@@ -145,13 +158,36 @@ def decoded_audio_is_not_silent(path: Path) -> bool:
     return float(match.group(1)) > -90.0
 
 
+def probe_mp3(path: Path) -> dict[str, Any]:
+    ffprobe = shutil.which("ffprobe")
+    if not ffprobe:
+        raise RuntimeError("ffprobe is required to verify MP3 format")
+    result = subprocess.run([ffprobe, "-v", "error", "-show_streams", "-show_format", "-of", "json", str(path)], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30, check=False)
+    if result.returncode != 0:
+        raise RuntimeError(f"ffprobe rejected MP3: {path}")
+    return json.loads(result.stdout)
+
+
 def validate_mp3(path: Path) -> int:
     if not path.is_file() or path.stat().st_size <= 1024:
         raise RuntimeError(f"MP3 is missing or too small: {path}")
+    details = probe_mp3(path)
+    stream = next((item for item in details.get("streams", []) if item.get("codec_type") == "audio" and item.get("codec_name") == "mp3"), None)
     duration_ms = round(MP3(path).info.length * 1000)
-    if duration_ms <= 300 or not decoded_audio_is_not_silent(path):
+    bitrate = int((stream or {}).get("bit_rate") or details.get("format", {}).get("bit_rate") or 0)
+    if not stream or duration_ms <= 300 or int(stream.get("channels", 0)) != 1 or int(stream.get("sample_rate", 0)) != 44100 or not 96000 <= bitrate <= 128000 or not decoded_audio_is_not_silent(path):
         raise RuntimeError(f"MP3 is invalid, too short, or silent: {path}")
     return duration_ms
+
+
+def normalize_mp3(source: Path, target: Path) -> None:
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffmpeg:
+        raise RuntimeError("ffmpeg is required to normalize MP3")
+    result = subprocess.run([ffmpeg, "-y", "-i", str(source), "-map", "0:a:0", "-vn", "-ac", "1", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "96k", str(target)], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=60, check=False)
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg normalization failed: {source}")
+    validate_mp3(target)
 
 
 def legacy_metadata_matches(entry: dict[str, Any], row: dict[str, str], options: argparse.Namespace) -> bool:
@@ -170,7 +206,19 @@ def can_reuse(entry: dict[str, Any] | None, row: dict[str, str], target: Path, o
     migratable_v1 = not entry.get("inputFingerprint") and legacy_metadata_matches(entry, row, options)
     if not (fingerprint_matches or migratable_v1):
         return False
-    return entry.get("sha256") == sha256(target)
+    if entry.get("sha256") != sha256(target):
+        return False
+    try:
+        validate_mp3(target)
+        return True
+    except RuntimeError:
+        return False
+
+
+def metadata_and_hash_match(entry: dict[str, Any] | None, row: dict[str, str], target: Path, options: argparse.Namespace) -> bool:
+    if not entry or not target.is_file() or entry.get("sha256") != sha256(target):
+        return False
+    return entry.get("inputFingerprint") == provenance(row, options) or (not entry.get("inputFingerprint") and legacy_metadata_matches(entry, row, options))
 
 
 async def synthesize(text: str, target: Path, options: argparse.Namespace) -> None:
@@ -192,21 +240,33 @@ async def generate_one(row: dict[str, str], options: argparse.Namespace, existin
     target = output_target(options.output_dir, row["filename"])
     target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists() and can_reuse(existing, row, target, options):
-        return record(row, target, options, "GENERATED", existing.get("generatedAt"))
+        return record(row, target, options, "REUSED_VERIFIED", existing.get("generatedAt"))
+    if target.exists() and options.normalize_existing and metadata_and_hash_match(existing, row, target, options):
+        temporary = target.with_name(f".{target.name}.normalized.tmp.mp3")
+        try:
+            normalize_mp3(target, temporary)
+            temporary.replace(target)
+            return record(row, target, options, "NORMALIZED_EXISTING", existing.get("generatedAt"))
+        finally:
+            temporary.unlink(missing_ok=True)
     if target.exists() and not options.force:
         return {"id": row["id"], "text": row["text"], "outputPath": portable_output_path(target, options.output_dir), "voice": options.voice, "rate": options.rate, "volume": options.volume, "pitch": options.pitch, "inputFingerprint": provenance(row, options), "generationStatus": "FAILED", "generatedAt": None, "error": "existing file provenance does not match; rerun with --force to replace it"}
 
-    temporary = target.with_name(f".{target.name}.edge-tts.tmp")
+    raw = target.with_name(f".{target.name}.edge-tts.raw.mp3")
+    temporary = target.with_name(f".{target.name}.edge-tts.normalized.tmp.mp3")
     last_error = "unknown error"
     for attempt in range(1, RETRY_COUNT + 1):
         try:
+            raw.unlink(missing_ok=True)
             temporary.unlink(missing_ok=True)
-            await synthesize(row["text"], temporary, options)
-            validate_mp3(temporary)
+            await synthesize(row["text"], raw, options)
+            normalize_mp3(raw, temporary)
             temporary.replace(target)  # Atomic replacement; retain prior file on failures.
+            raw.unlink(missing_ok=True)
             return record(row, target, options, "GENERATED", datetime.now(timezone.utc).isoformat())
         except Exception as exc:
             last_error = f"attempt {attempt}: {type(exc).__name__}: {exc}"
+            raw.unlink(missing_ok=True)
             temporary.unlink(missing_ok=True)
             if attempt < RETRY_COUNT:
                 await asyncio.sleep(attempt)
@@ -216,12 +276,13 @@ async def generate_one(row: dict[str, str], options: argparse.Namespace, existin
 def write_reports(items: list[dict[str, Any]], options: argparse.Namespace) -> None:
     manifest = manifest_path(options)
     index = options.index or options.output_dir / "AUDITION_INDEX.md"
-    manifest.parent.mkdir(parents=True, exist_ok=True)
-    manifest.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    atomic_json(manifest, items)
     lines = ["# Edge TTS 试听包", "", "以下项目必须由真人试听确认：单字声调；‘一’是否为 yī；‘一个’与‘一天’的自然连读；4—7岁儿童语速；声音温和清楚；首尾是否截断；是否有噪声或异常停顿。", "", "| 文件 | 状态 | 大小 | 时长(ms) | SHA-256 |", "|---|---:|---:|---:|---|"]
     for item in items:
         lines.append(f"| {item['outputPath']} | {item['generationStatus']} | {item.get('fileSize', '')} | {item.get('durationMs', '')} | {item.get('sha256', '')} |")
-    index.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    temporary = index.with_name(f".{index.name}.tmp")
+    temporary.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    temporary.replace(index)
 
 
 async def main() -> int:
@@ -233,8 +294,13 @@ async def main() -> int:
     for row in rows:  # Serial requests, with a polite gap. CI never calls this path.
         items.append(await generate_one(row, options, existing.get(row["id"])))
         await asyncio.sleep(0.4)
+    failures = [item for item in items if item["generationStatus"] == "FAILED"]
+    if failures:
+        atomic_json(failed_items_path(options), failures)
+        return 1
     write_reports(items, options)
-    return 1 if any(item["generationStatus"] == "FAILED" for item in items) else 0
+    failed_items_path(options).unlink(missing_ok=True)
+    return 0
 
 
 if __name__ == "__main__":
