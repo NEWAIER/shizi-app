@@ -86,7 +86,6 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
     var question by remember { mutableStateOf<QuestionInstanceEntity?>(null) }
     var options by remember { mutableStateOf<List<OptionContent>>(emptyList()) }
     var status by remember { mutableStateOf("读取题目") }
-    var selectedAudioOptionId by remember { mutableStateOf<String?>(null) }
     var questionShownAtMs by remember { mutableStateOf(0L) }
     var currentSessionId by remember { mutableStateOf<String?>(null) }
     var submissionInFlight by remember { mutableStateOf(false) }
@@ -119,7 +118,6 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         val seededOptions = optionIds.mapNotNull { id -> content.optionCatalog.firstOrNull { it.id == id } }
         // Every picture question is a stable 2×2 board: the original correct answer plus three real picture distractors.
         options = seededOptions
-        selectedAudioOptionId = null
         questionShownAtMs = SystemClock.elapsedRealtime()
         submissionInFlight = false
         teachingCorrectId = null
@@ -317,7 +315,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         QuestionType.LISTEN_CHOOSE_CHARACTER ->
                             ListenChooseCharQuestion(q, options, character, player, teachingCorrectId, submissionInFlight, ::submitAnswer)
                         QuestionType.CHARACTER_CHOOSE_AUDIO ->
-                            CharChooseAudioQuestion(q, options, character, player, selectedAudioOptionId, { selectedAudioOptionId = it }, teachingCorrectId, submissionInFlight, ::submitAnswer)
+                            CharChooseAudioQuestion(q, options, character, player, teachingCorrectId, submissionInFlight, ::submitAnswer)
                         QuestionType.SHAPE_RECOGNITION ->
                             ShapeRecognitionQuestion(q, options, character, teachingCorrectId, submissionInFlight, ::submitAnswer)
                         QuestionType.LIFE_WORD_CONTEXT ->
@@ -375,7 +373,7 @@ private fun ChildReviewHeader(
     ) {
         Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                Text(if (isStageTest) "🏆 小小测试" else if (isReview) "🌟 复习时间" else "🚀 闯关时间", style = MaterialTheme.typography.labelLarge)
+                Text(if (isStageTest) "小小测试" else if (isReview) "复习时间" else "闯关时间", style = MaterialTheme.typography.labelLarge)
                 if (questionTotal > 0) Text("第 $questionNumber / $questionTotal 关", style = MaterialTheme.typography.labelLarge)
             }
             Text(title, modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.titleLarge)
@@ -444,8 +442,6 @@ private fun CharChooseAudioQuestion(
     options: List<OptionContent>,
     character: CharacterContent?,
     player: AssetAudioPlayer,
-    selectedAudioOptionId: String?,
-    onSelectAudio: (String) -> Unit,
     teachingCorrectId: String?,
     disabled: Boolean,
     onSubmit: (String) -> Unit,
@@ -458,10 +454,8 @@ private fun CharChooseAudioQuestion(
             style = MaterialTheme.typography.displayLarge,
             modifier = Modifier.padding(16.dp).testTag("practice_target_character"),
         )
-        Text("这个字的读音是哪个？先试听再确认", style = MaterialTheme.typography.bodySmall)
-        // Audio options: preview then confirm
+        Text("这个字的读音是哪个？点一下就知道", style = MaterialTheme.typography.bodySmall)
         options.filter { it.kind == OptionKind.AUDIO }.forEach { option ->
-            val isSelected = selectedAudioOptionId == option.id
             val isCorrect = teachingCorrectId == option.id
             Card(
                 modifier = Modifier
@@ -472,31 +466,22 @@ private fun CharChooseAudioQuestion(
                         detectTapGestures(onTap = {
                             if (!disabled && teachingCorrectId == null) {
                                 runCatching { player.play(option.asset ?: return@detectTapGestures) }
-                                onSelectAudio(option.id)
+                                onSubmit(option.id)
                             }
                         })
                     },
                 colors = CardDefaults.cardColors(
                     containerColor = when {
                         isCorrect -> MaterialTheme.colorScheme.primaryContainer
-                        isSelected -> MaterialTheme.colorScheme.secondaryContainer
                         else -> MaterialTheme.colorScheme.surfaceVariant
                     },
                 ),
             ) {
                 Column(modifier = Modifier.fillMaxWidth().padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(if (isSelected) "已试听" else "点击试听", style = MaterialTheme.typography.bodyMedium)
+                    Text("点击试听", style = MaterialTheme.typography.bodyMedium)
                     if (isCorrect) Text("正确答案", style = MaterialTheme.typography.labelSmall)
                 }
             }
-        }
-        // Confirm button
-        if (selectedAudioOptionId != null && teachingCorrectId == null) {
-            Button(
-                onClick = { selectedAudioOptionId.let(onSubmit) },
-                enabled = !disabled,
-                modifier = Modifier.fillMaxWidth().padding(top = 12.dp).testTag("practice_confirm_audio"),
-            ) { Text("确认") }
         }
     }
 }

@@ -34,6 +34,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.family.shizi.navigation.ShiziRoute
+import com.family.shizi.ui.components.ChildPrimaryButton
+import com.family.shizi.ui.components.MascotBubble
+import com.family.shizi.ui.theme.ShiziShapes
 import kotlinx.coroutines.coroutineScope
 
 @Composable
@@ -52,37 +55,29 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
         ) {
-            Text("今天的识字小任务", modifier = Modifier.testTag("page_home"), style = MaterialTheme.typography.headlineMedium, textAlign = TextAlign.Center)
+            Text("今天学什么", modifier = Modifier.testTag("page_home"), style = MaterialTheme.typography.headlineMedium, textAlign = TextAlign.Center)
             Text("已经认识 ${state.learnedCount} 个字", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
-            Text(state.message, modifier = Modifier.padding(top = 8.dp).testTag("home_status"), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center)
+            MascotBubble("我准备好了，和我一起认识一个新字吧！", modifier = Modifier.padding(top = 20.dp))
             state.error?.let { Text(it, modifier = Modifier.padding(top = 8.dp), color = MaterialTheme.colorScheme.error, textAlign = TextAlign.Center) }
-            DailyTaskCard(
-                icon = "📖",
-                title = "学习新字",
-                detail = "今天最多认识 ${state.dailyNewTarget} 个新字",
-                action = state.primaryAction,
-                enabled = state.canStart,
-                tag = "home_primary",
-                onClick = { viewModel.startOrContinue { onNavigate(it) } },
-            )
-            DailyTaskCard(
-                icon = "🌟",
-                title = "复习老朋友",
-                detail = if (state.dueReviewCount > 0) "今天有 ${state.dueReviewCount} 个字等你复习" else "今天暂时没有到期复习",
-                action = if (state.dueReviewCount > 0) "去复习" else "明天再来",
-                enabled = state.dueReviewCount > 0 && state.canStart,
-                tag = "home_review_task",
-                onClick = { viewModel.startOrContinue { onNavigate(it) } },
-            )
-            DailyTaskCard(
-                icon = "🏆",
-                title = "阶段测试",
-                detail = if (state.canTakeStageTest) "只考认识过的字" else "认识 ${state.stageTestThreshold} 个字后开启",
-                action = if (state.canTakeStageTest) "去测试" else "继续学习",
-                enabled = state.canTakeStageTest,
-                tag = "home_stage_test_task",
-                onClick = { onNavigate(if (state.canTakeStageTest) ShiziRoute.StageTest else ShiziRoute.Home) },
-            )
+            Card(
+                modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
+                shape = ShiziShapes.card,
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+            ) {
+                Column(modifier = Modifier.padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(state.message, modifier = Modifier.testTag("home_status"), style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center)
+                    Text("每天最多认识 ${state.dailyNewTarget} 个新字", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodyLarge)
+                    if (state.dueReviewCount > 0) {
+                        Text("还有 ${state.dueReviewCount} 个字等你复习", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodyMedium)
+                    }
+                    ChildPrimaryButton(
+                        text = state.primaryAction,
+                        enabled = state.canStart,
+                        modifier = Modifier.padding(top = 16.dp).testTag("home_primary"),
+                        onClick = { viewModel.startOrContinue { onNavigate(it) } },
+                    )
+                }
+            }
         }
 
         // A discreet bubble keeps parent controls out of the child learning area.
@@ -137,32 +132,6 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
                     TextButton(onClick = { parentPanelVisible = false; parentBubbleExpanded = false }) { Text("隐藏入口") }
                 }
             }
-        }
-    }
-}
-
-@Composable
-private fun DailyTaskCard(
-    icon: String,
-    title: String,
-    detail: String,
-    action: String,
-    enabled: Boolean,
-    tag: String,
-    onClick: () -> Unit,
-) {
-    Card(
-        modifier = Modifier.fillMaxWidth().padding(top = 14.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text("$icon  $title", style = MaterialTheme.typography.titleLarge)
-            Text(detail, modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
-            Button(
-                onClick = onClick,
-                enabled = enabled,
-                modifier = Modifier.fillMaxWidth().padding(top = 10.dp).testTag(tag),
-            ) { Text(action) }
         }
     }
 }

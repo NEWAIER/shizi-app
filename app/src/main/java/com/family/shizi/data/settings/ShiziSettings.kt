@@ -5,6 +5,7 @@ data class ShiziSettings(
     // First-run parent setup was removed: children can begin immediately.
     val onboardingCompleted: Boolean = true,
     val nickname: String = "",
+    val avatarId: String = "bear",
     val dailyNewCharacterCount: Int = 3,
     val sessionLimitMinutes: Int = 10,
     val volumePercent: Int = 80,

@@ -7,10 +7,16 @@ import androidx.compose.runtime.Composable
 private val ShiziColorScheme = lightColorScheme(
     primary = PrimaryTeal,
     onPrimary = CardWhite,
+    secondary = SkyBlue,
+    onSecondary = CardWhite,
+    tertiary = ChallengePurple,
+    onTertiary = CardWhite,
     background = WarmBackground,
     onBackground = PrimaryText,
     surface = CardWhite,
     onSurface = PrimaryText,
+    errorContainer = GentleError,
+    onErrorContainer = PrimaryText,
 )
 
 @Composable

@@ -35,6 +35,10 @@ set APP_HOME=%DIRNAME%
 @rem Resolve any "." and ".." in APP_HOME to make it shorter.
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
+rem Prefer the repository-local JDK when the machine has no configured Java.
+rem The toolchain is unpacked from jdk17.zip into the ignored .tools directory.
+if not defined JAVA_HOME if exist "%APP_HOME%\.tools\jdk17\jdk-17.0.19+10\bin\java.exe" set JAVA_HOME=%APP_HOME%\.tools\jdk17\jdk-17.0.19+10
+
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
 

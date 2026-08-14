@@ -1,17 +1,20 @@
 package com.family.shizi.ui.learned
 
 import android.app.Application
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -22,6 +25,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.testTag
@@ -37,7 +41,9 @@ import com.family.shizi.data.db.CharacterProgressEntity
 import com.family.shizi.data.db.LearningState
 import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.audio.AssetAudioPlayer
-import java.time.LocalDate
+import com.family.shizi.ui.components.ChildPage
+import com.family.shizi.ui.components.ChildTopBar
+import com.family.shizi.ui.components.EmptyState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -69,26 +75,29 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
         AssetAudioPlayer(context, onError = { error -> scope.launch { app.repository?.logAudioError(error) } })
             .also { it.attachLifecycle(lifecycleOwner) }
     }
+    var detailCharacter by remember { mutableStateOf<CharacterContent?>(null) }
     DisposableEffect(player) { onDispose { player.stop() } }
     val learned = state.characters.filter { it.initialLessonCompleted }
-    Column(
-        modifier = Modifier.fillMaxSize().padding(horizontal = 22.dp, vertical = 20.dp).testTag("page_learned"),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Text("我认识的字", style = MaterialTheme.typography.headlineMedium)
-        Text("已经认识 ${learned.size} 个字", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
+    ChildPage {
+        Column(modifier = Modifier.fillMaxSize().testTag("page_learned"), horizontalAlignment = Alignment.CenterHorizontally) {
+            ChildTopBar("字卡")
+            Text("已经认识 ${learned.size} 个字", modifier = Modifier.padding(bottom = 8.dp), style = MaterialTheme.typography.titleMedium)
         if (!state.loading && learned.isEmpty()) {
-            Text("先去学习第一个字吧！", modifier = Modifier.padding(top = 48.dp), style = MaterialTheme.typography.titleLarge)
+            EmptyState("还没有字卡", "先去学习第一个字，字宝宝会住进这里。", Modifier.padding(top = 24.dp))
         } else {
-            LazyColumn(
-                modifier = Modifier.fillMaxWidth().padding(top = 18.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(5),
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                items(learned, key = { it.characterId }) { progress ->
+                items(learned.size, key = { learned[it].characterId }) { index ->
+                    val progress = learned[index]
                     LearnedCharacterCard(
                         progress = progress,
                         character = content.characters.firstOrNull { it.id == progress.characterId },
                         onPlay = { character -> player.play(character.audio.character) },
+                        onLongPress = { character -> detailCharacter = character },
                     )
                 }
                 if (learned.size >= content.course.stageTestThreshold) {
@@ -101,6 +110,21 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
                 }
             }
         }
+        }
+    }
+    detailCharacter?.let { character ->
+        AlertDialog(
+            onDismissRequest = { detailCharacter = null },
+            title = { Text("${character.character}  ${character.pinyin}") },
+            text = {
+                Column {
+                    Text(character.meaningForChild, style = MaterialTheme.typography.bodyLarge)
+                    Text("词语：${character.words.joinToString("、") { word -> word.text }}", modifier = Modifier.padding(top = 10.dp))
+                    Text("例句：${character.sentence.text}", modifier = Modifier.padding(top = 8.dp))
+                }
+            },
+            confirmButton = { TextButton(onClick = { detailCharacter = null }) { Text("知道啦") } },
+        )
     }
 }
 
@@ -109,33 +133,24 @@ fun LearnedCharacterCard(
     progress: CharacterProgressEntity,
     character: CharacterContent?,
     onPlay: (CharacterContent) -> Unit,
+    onLongPress: (CharacterContent) -> Unit = {},
 ) {
-    val nextReview = progress.nextReviewDate?.let { date ->
-        when {
-            date.isBefore(LocalDate.now()) || date == LocalDate.now() -> "今天该来复习啦"
-            date == LocalDate.now().plusDays(1) -> "明天来复习"
-            else -> "下次复习：${date.monthValue}月${date.dayOfMonth}日"
-        }
-    } ?: "继续巩固，会记得更牢"
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(18.dp)) {
+    Card(
+        modifier = Modifier.fillMaxWidth().testTag("learned_play_${character?.id ?: progress.characterId}").pointerInput(character?.id) {
+            detectTapGestures(
+                onTap = { character?.let(onPlay) },
+                onLongPress = { character?.let(onLongPress) },
+            )
+        },
+    ) {
+        Column(modifier = Modifier.padding(vertical = 12.dp, horizontal = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 childCharacterTitle(character),
-                style = MaterialTheme.typography.displaySmall,
+                style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.testTag("learned_character_title"),
             )
-            Text(stateName(progress.state), modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.titleMedium)
-            character?.let {
-                Text("${it.pinyin} · ${it.meaningForChild}", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
-                if (it.words.isNotEmpty()) {
-                    Text("词语：${it.words.joinToString("、") { word -> word.text }}", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodySmall)
-                }
-                Button(
-                    onClick = { onPlay(it) },
-                    modifier = Modifier.padding(top = 10.dp).testTag("learned_play_${it.id}"),
-                ) { Text("听一听") }
-            }
-            Text(nextReview, modifier = Modifier.padding(top = 5.dp), style = MaterialTheme.typography.bodyMedium)
+            Text(stateName(progress.state), modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.labelSmall)
+            Text("轻点播放 · 长按详情", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.labelSmall, textAlign = TextAlign.Center)
         }
     }
 }
