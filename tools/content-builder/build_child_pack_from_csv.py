@@ -6,6 +6,7 @@ import argparse
 import csv
 import hashlib
 import json
+import shutil
 from pathlib import Path
 
 
@@ -28,6 +29,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--media-root", type=Path, default=None)
     parser.add_argument("--allow-draft", action="store_true")
     args = parser.parse_args()
     characters = read_csv(args.source / "characters.csv")
@@ -108,15 +110,48 @@ def main() -> None:
         "characters": compiled_characters,
     }
     args.output.mkdir(parents=True, exist_ok=True)
+    media_root = args.media_root or (args.source / "generated")
     content_path = args.output / "content.json"
     pack_path = args.output / "pack.json"
     manifest_path = args.output / "manifest.json"
     content_path.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     pack_path.write_text(json.dumps({"packId": PACK_VERSION, "version": PACK_VERSION, "status": "CANDIDATE", "characterCount": 50, "contentPath": "content.json", "manifestPath": "manifest.json"}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     resources = []
-    for path in (pack_path, content_path):
+    for relative in (Path("pack.json"), Path("content.json")):
+        path = args.output / relative
         payload = path.read_bytes()
         resources.append({"path": path.name, "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload), "required": True})
+    for row in media:
+        if row["character_id"] != "ALL":
+            continue
+        asset_template = row["asset_path"]
+        if "{id}" in asset_template:
+            continue
+        source = media_root / asset_template
+        target = args.output / asset_template
+        if source.is_file():
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+            payload = target.read_bytes()
+            resources.append({"path": target.relative_to(args.output).as_posix(), "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload), "required": row["required"].lower() == "true"})
+    for character in characters:
+        cid = character["id"]
+        for relative in (
+            Path("images") / "characters" / f"{cid}_main_v1.webp",
+            Path("audio") / "characters" / f"{cid}_v1.mp3",
+            Path("audio") / "meanings" / f"meaning_{cid}_v1.mp3",
+            Path("audio") / "words" / f"{cid}_1_v1.mp3",
+            Path("audio") / "words" / f"{cid}_2_v1.mp3",
+            Path("audio") / "sentences" / f"{cid}_v1.mp3",
+        ):
+            source = media_root / relative
+            target = args.output / relative
+            if not source.is_file():
+                raise ValueError(f"缺少媒体资源: {source}")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+            payload = target.read_bytes()
+            resources.append({"path": relative.as_posix(), "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload), "required": True})
     manifest_path.write_text(json.dumps({"manifestVersion": 1, "packId": PACK_VERSION, "status": "CANDIDATE", "resources": resources, "mediaRows": len(media), "reviewRows": len(reviews)}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Child pack candidate written: {args.output} ({len(compiled_characters)} characters, status=CANDIDATE)")
 
