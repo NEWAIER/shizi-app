@@ -9,6 +9,8 @@ local.properties
 # Bundled local toolchains and caches
 .tools/
 .codex-tools/
+.venv-tts/
+__pycache__/
 tmp/
 
 # Generated delivery copies and local review archives
