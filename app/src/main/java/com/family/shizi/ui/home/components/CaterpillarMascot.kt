@@ -15,6 +15,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.family.shizi.ui.theme.PrimaryText
@@ -32,6 +33,7 @@ fun CaterpillarMascot(
     state: CaterpillarState = CaterpillarState.WAITING,
     modifier: Modifier = Modifier,
     height: Dp = 46.dp,
+    facingLeft: Boolean = false,
 ) {
     val headSize = 30.dp
     val segmentSize = 22.dp
@@ -45,6 +47,9 @@ fun CaterpillarMascot(
     ).value
     Box(modifier.size(width = (segmentCount * 14 + 30).dp, height = height)) {
         Canvas(modifier = Modifier.size(width = (segmentCount * 14 + 30).dp, height = height)) {
+            withTransform({
+                if (facingLeft) scale(-1f, 1f, pivot = Offset(size.width / 2f, size.height / 2f))
+            }) {
             val bodyStartY = 30.dp.toPx() + bob.dp.toPx()
             (segmentCount - 1 downTo 1).forEach { seg ->
                 val cx = seg * 14.dp.toPx() + 10.dp.toPx()
@@ -89,6 +94,7 @@ fun CaterpillarMascot(
             // 小脚
             drawCircle(color = darkGreen, radius = 2.5.dp.toPx(), center = Offset(headX - 8.dp.toPx(), headY + 12.dp.toPx()))
             drawCircle(color = darkGreen, radius = 2.5.dp.toPx(), center = Offset(headX - 14.dp.toPx(), headY + 14.dp.toPx()))
+            }
         }
     }
 }
