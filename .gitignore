@@ -1,6 +1,8 @@
 # Local Android and Gradle state
 .gradle/
 .gradle-temp-final/
+.gradle-home-write/
+.gradle-cache-write/
 .kotlin/
 build/
 **/build/
@@ -27,3 +29,6 @@ chatgpt-web-review/
 build-tab.log
 build-tab.err
 kapt.log
+
+# Device screenshots and local debug captures
+device-*.png

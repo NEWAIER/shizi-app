@@ -24,6 +24,7 @@ data class HomeUiState(
     val primaryAction: String = "开始",
     val canStart: Boolean = false,
     val learnedCount: Int = 0,
+    val dailyCompletedCount: Int = 0,
     val dueReviewCount: Int = 0,
     val dailyNewTarget: Int = 3,
     val stageTestThreshold: Int = 3,
@@ -98,23 +99,27 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     todayPinyin = todayCharacter?.pinyin ?: "shuǐ",
                 )
                 val existing = repo.getUsableSession(today)
+                val dailyCompletedCount = existing?.let { session ->
+                    repo.getItemsForSession(session.id).count { item -> item.status == com.family.shizi.data.db.ItemStatus.COMPLETED }
+                } ?: 0
+                val readyBase = base.copy(dailyCompletedCount = dailyCompletedCount)
                 _uiState.value = when {
-                    existing?.status == SessionStatus.COMPLETED -> base.copy(
+                    existing?.status == SessionStatus.COMPLETED -> readyBase.copy(
                         message = "今天完成啦",
                         primaryAction = "今天完成啦",
                         canStart = false,
                     )
-                    existing?.status == SessionStatus.ENDED_EARLY -> base.copy(
+                    existing?.status == SessionStatus.ENDED_EARLY -> readyBase.copy(
                         message = "今天先到这里",
                         primaryAction = "今天先到这里",
                         canStart = false,
                     )
-                    existing != null -> base.copy(
+                    existing != null -> readyBase.copy(
                         message = "今天还有任务可以继续",
                         primaryAction = "继续",
                         canStart = true,
                     )
-                    else -> base.copy(
+                    else -> readyBase.copy(
                         message = "今天认识新朋友",
                         primaryAction = "开始",
                         canStart = true,

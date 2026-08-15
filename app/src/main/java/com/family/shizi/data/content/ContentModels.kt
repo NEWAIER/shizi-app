@@ -11,6 +11,8 @@ data class ContentPackage(
     val layers: ContentLayerRefs? = null,
     /** Optional explicit child-content layer. Legacy packs keep using characters only. */
     val childLearningPack: ChildLearningPack? = null,
+    /** 界面反馈音频（audio/ui 目录下的 mp3）。旧包为空列表，保持解码兼容。 */
+    val uiAudio: List<String> = emptyList(),
     val learningOrder: List<String>,
     val reviewOffsetsDays: List<Int>,
     val optionCatalog: List<OptionContent>,

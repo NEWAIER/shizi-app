@@ -19,7 +19,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.draw.clip
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,7 +33,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.family.shizi.data.content.ContentLoader
@@ -100,8 +98,7 @@ fun HomeScreen(
             if (profileMenuVisible) {
                 ProfileMenuCard(onOpenProfile = { profileMenuVisible = false; onNavigate(ShiziRoute.Profile) })
             }
-            Text("我的成长森林", modifier = Modifier.padding(top = 20.dp), style = MaterialTheme.typography.titleLarge)
-            Text("毛毛虫每学会一个字，就吃掉一个果子。每 10 个字会长出一个树洞挑战", modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center)
+            Text("成长森林", modifier = Modifier.padding(top = 20.dp), style = MaterialTheme.typography.titleLarge)
             GrowthMap(
                 characters = content.characters,
                 learnedCount = state.learnedCount,
@@ -117,13 +114,10 @@ fun HomeScreen(
                 },
                 onOpenStageTest = onOpenStageTest,
             )
-            Text("已认识 ${state.learnedCount} 个字宝宝", modifier = Modifier.padding(top = 18.dp), style = MaterialTheme.typography.titleMedium)
-            LinearProgressIndicator(
-                progress = { (state.learnedCount / 50f).coerceIn(0f, 1f) },
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp).height(10.dp).clip(RoundedCornerShape(99.dp)).testTag("home_progress"),
-            )
+            Text("认识 ${state.learnedCount} / ${content.characters.size}", modifier = Modifier.padding(top = 18.dp), style = MaterialTheme.typography.titleMedium)
             HomeProgressSummary(
                 learnedCount = state.learnedCount,
+                dailyCompletedCount = state.dailyCompletedCount,
                 totalStars = state.totalStars,
                 dailyTarget = state.dailyNewTarget,
             )

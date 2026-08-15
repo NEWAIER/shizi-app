@@ -67,6 +67,7 @@ object G2ResourceValidator {
 
     internal fun collectReferences(content: ContentPackage): Set<String> = buildSet {
         content.optionCatalog.mapNotNullTo(this) { it.asset }
+        content.uiAudio.mapTo(this) { it }
         content.characters.forEach { character ->
             add(character.imageAsset)
             character.words.mapTo(this) { it.audioAsset }

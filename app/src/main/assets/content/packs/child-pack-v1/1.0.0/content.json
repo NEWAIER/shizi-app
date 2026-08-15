@@ -6379,5 +6379,14 @@
         "blockedReason": null
       }
     }
+  ],
+  "uiAudio": [
+    "audio/ui/badge_unlock.mp3",
+    "audio/ui/challenge_complete.mp3",
+    "audio/ui/found_it.mp3",
+    "audio/ui/great.mp3",
+    "audio/ui/lets_look_again.mp3",
+    "audio/ui/level_up.mp3",
+    "audio/ui/try_again.mp3"
   ]
 }

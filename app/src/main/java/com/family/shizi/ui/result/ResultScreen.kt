@@ -82,9 +82,16 @@ fun ResultScreen(onNavigate: (ShiziRoute) -> Unit) {
         val masteredCount = progress.count { it.state.name.contains("MASTERED") }
         val learningDays = repo.getCompletedLearningDayCount()
         totalStars = learnedCount * 10 + masteredCount * 5 + learningDays * 2
-        honorLevel = listOf(0, 50, 120, 250, 450, 700).indexOfLast { totalStars >= it }.coerceAtLeast(0) + 1
-        val badges = ContentLoader.load(context).course.badgeMilestones
-        newlyUnlockedBadges = badges.filter { learnedCount >= it.learnedCount }.takeLast(2).map { it.title }
+        val level = com.family.shizi.domain.engine.HonorLevels.progressFor(totalStars)
+        honorLevel = level.level
+        val counts = com.family.shizi.domain.engine.BadgeCounts(
+            learnedCount = learnedCount,
+            learningDays = learningDays,
+        )
+        newlyUnlockedBadges = com.family.shizi.domain.engine.BadgeCatalog.all
+            .filter { it.id in com.family.shizi.domain.engine.BadgeCatalog.unlockedIds(counts) }
+            .takeLast(2)
+            .map { it.title }
         val upcoming = repo.getCharacterProgress()
             .mapNotNull { it.nextReviewDate }
             .filter { !it.isBefore(java.time.LocalDate.now()) }

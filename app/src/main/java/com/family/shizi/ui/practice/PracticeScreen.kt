@@ -2,7 +2,6 @@ package com.family.shizi.ui.practice
 
 import android.graphics.BitmapFactory
 import android.os.SystemClock
-import android.speech.tts.TextToSpeech
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -70,10 +69,10 @@ import com.family.shizi.data.db.QuestionInstanceEntity
 import com.family.shizi.data.db.ReviewStage
 import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.audio.AssetAudioPlayer
+import com.family.shizi.ui.audio.UiFeedbackAudio
 import com.family.shizi.ui.components.StarReward
 import java.time.Instant
 import java.time.LocalDate
-import java.util.Locale
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlinx.coroutines.delay
@@ -100,20 +99,8 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
             scope.launch { repo.logAudioError(error) }
         }) { assetRoot }.also { it.attachLifecycle(lifecycleOwner) }
     }
-    var celebrationSpeechReady by remember { mutableStateOf(false) }
     var celebrationVisible by remember { mutableStateOf(false) }
     var starRewardVisible by remember { mutableStateOf(false) }
-    val celebrationSpeech = remember(context) {
-        TextToSpeech(context) { status ->
-            if (status == TextToSpeech.SUCCESS) {
-                // Keep the voice prompt short and friendly for a four-year-old.
-                celebrationSpeechReady = true
-            }
-        }
-    }
-    DisposableEffect(celebrationSpeech) {
-        onDispose { celebrationSpeech.shutdown() }
-    }
     var question by remember { mutableStateOf<QuestionInstanceEntity?>(null) }
     var options by remember { mutableStateOf<List<OptionContent>>(emptyList()) }
     var status by remember { mutableStateOf("读取题目") }
@@ -259,9 +246,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                 submissionInFlight = false
                 suspend fun celebrateCompletedCharacter() {
                     celebrationVisible = true
-                    if (celebrationSpeechReady) {
-                        celebrationSpeech.speak("你太棒了！", TextToSpeech.QUEUE_FLUSH, null, "character_complete")
-                    }
+                    runCatching { player.play(UiFeedbackAudio.GREAT) }
                     delay(2_000)
                     celebrationVisible = false
                 }
@@ -272,10 +257,13 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         status = "再来一次"
                     }
                     !attempt.isCorrect && attempt.attemptNumber == 1 -> {
-                        status = "没关系，再试一次"
+                        // 第一次错误：温和提示 + "再试试看"
+                        runCatching { player.play(UiFeedbackAudio.TRY_AGAIN) }
+                        status = "再试试看"
                     }
                     !attempt.isCorrect -> {
                         // Second wrong: show teaching with correct answer
+                        runCatching { player.play(UiFeedbackAudio.LETS_LOOK_AGAIN) }
                         val reducedOptionIds = buildSet {
                             add(q.correctOptionId)
                             options.firstOrNull { it.id != q.correctOptionId }?.let { add(it.id) }
@@ -290,7 +278,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                                 content.characters.firstOrNull { it.id == correctCharacterId }?.audio?.character
                             }
                         correctAudio?.let { runCatching { player.play(it) } }
-                        delay(2500)
+                        delay(2000)
                         when {
                             result.sessionCompleted || result.endedEarly -> onNavigate(ShiziRoute.Result)
                             result.itemCompleted -> {
@@ -302,6 +290,8 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                         }
                     }
                     attempt.isCorrect -> {
+                        // 答对：星星动画 + "找到了！"，约 600-800ms 自动下一题
+                        runCatching { player.play(UiFeedbackAudio.FOUND_IT) }
                         teachingCorrectId = q.correctOptionId
                         status = "找到了！"
                         starRewardVisible = true
@@ -311,7 +301,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                                 content.characters.firstOrNull { it.id == correctCharacterId }?.audio?.character
                             }
                         targetAudio?.let { runCatching { player.play(it) } }
-                        delay(800)
+                        delay(700)
                         starRewardVisible = false
                         when {
                             result.sessionCompleted || result.endedEarly -> onNavigate(ShiziRoute.Result)

@@ -6,16 +6,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -28,12 +24,12 @@ import com.family.shizi.ShiziApplication
 import com.family.shizi.data.content.ContentLoader
 import com.family.shizi.domain.core.IdProvider
 import com.family.shizi.domain.core.KotlinRandomProvider
+import com.family.shizi.domain.engine.StageTestBatches
 import com.family.shizi.data.db.CharacterProgressEntity
 import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.components.ChildPage
 import com.family.shizi.ui.components.ChildPrimaryButton
 import com.family.shizi.ui.components.ChildTopBar
-import com.family.shizi.ui.components.EmptyState
 import java.util.UUID
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -41,12 +37,16 @@ import kotlinx.coroutines.launch
 
 data class StageTestUiState(
     val loading: Boolean = true,
-    val learned: List<CharacterProgressEntity> = emptyList(),
+    val batchIndex: Int = 0,
+    val batchLearned: List<CharacterProgressEntity> = emptyList(),
+    val batchIds: List<String> = emptyList(),
     val latestSummary: com.family.shizi.data.repository.ShiziRepository.StageTestSummary? = null,
-    val stageTestThreshold: Int = 3,
 )
 
-class StageTestViewModel(application: Application) : AndroidViewModel(application) {
+class StageTestViewModel(
+    application: Application,
+    private val batchIndex: Int,
+) : AndroidViewModel(application) {
     private val application = application
     private val repository = (application as ShiziApplication).repository
     private val _state = MutableStateFlow(StageTestUiState())
@@ -55,11 +55,14 @@ class StageTestViewModel(application: Application) : AndroidViewModel(applicatio
 
     private fun refresh() = viewModelScope.launch {
         val content = ContentLoader.load(application)
+        val batchIds = StageTestBatches.characterIdsOf(content.learningOrder, batchIndex)
+        val all = repository?.getCharacterProgress().orEmpty().associateBy { it.characterId }
         _state.value = StageTestUiState(
             loading = false,
-            learned = repository?.getCharacterProgress().orEmpty().filter { it.initialLessonCompleted },
+            batchIndex = batchIndex,
+            batchLearned = batchIds.mapNotNull { all[it] }.filter { it.initialLessonCompleted },
+            batchIds = batchIds,
             latestSummary = repository?.getLatestStageTestSummary(),
-            stageTestThreshold = content.course.stageTestThreshold,
         )
     }
 
@@ -70,17 +73,32 @@ class StageTestViewModel(application: Application) : AndroidViewModel(applicatio
                 content = ContentLoader.load(application),
                 randomProvider = KotlinRandomProvider(),
                 idProvider = IdProvider { UUID.randomUUID().toString() },
+                batchIndex = batchIndex,
             )
         }.onSuccess { onReady() }
+    }
+
+    class Factory(
+        private val application: Application,
+        private val batchIndex: Int,
+    ) : androidx.lifecycle.ViewModelProvider.Factory {
+        @Suppress("UNCHECKED_CAST")
+        override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T =
+            StageTestViewModel(application, batchIndex) as T
     }
 }
 
 @Composable
-fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
-    val viewModel: StageTestViewModel = viewModel()
+fun StageTestScreen(batchIndex: Int, onNavigate: (ShiziRoute) -> Unit) {
+    val app = androidx.compose.ui.platform.LocalContext.current.applicationContext as Application
+    val viewModel: StageTestViewModel = viewModel(
+        key = "stage_test_$batchIndex",
+        factory = StageTestViewModel.Factory(app, batchIndex),
+    )
     val state by viewModel.state.collectAsState()
-    val count = state.learned.size
-    val threshold = state.stageTestThreshold
+    val count = state.batchLearned.size
+    val total = state.batchIds.size
+    val batchNo = state.batchIndex + 1
     val latest = state.latestSummary
     ChildPage {
       Column(
@@ -88,8 +106,13 @@ fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
       ) {
         ChildTopBar("挑战")
-        Text("小星星找朋友", style = MaterialTheme.typography.titleLarge)
-        Text("和认识的字宝宝玩一个小游戏，不是考试。", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
+        Text("第 $batchNo 关 · 树洞闯关", style = MaterialTheme.typography.titleLarge)
+        Text(
+            "树洞里的字宝宝小游戏，不是考试。这一关认识第 ${state.batchIndex * StageTestBatches.BATCH_SIZE + 1} 到 ${state.batchIndex * StageTestBatches.BATCH_SIZE + total} 个字。",
+            modifier = Modifier.padding(top = 6.dp),
+            style = MaterialTheme.typography.bodyMedium,
+            textAlign = TextAlign.Center,
+        )
         latest?.let { summary ->
             Card(modifier = Modifier.fillMaxWidth().padding(top = 16.dp).testTag("stage_test_latest_result")) {
                 Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -107,14 +130,14 @@ fun StageTestScreen(onNavigate: (ShiziRoute) -> Unit) {
         }
         Card(modifier = Modifier.fillMaxWidth().padding(top = if (latest == null) 22.dp else 14.dp)) {
             Column(modifier = Modifier.padding(22.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("已认识 $count / $threshold 个字", style = MaterialTheme.typography.titleLarge)
-                if (count < threshold) {
-                    Text("再认识 ${threshold - count} 个字，就可以开启第一关测试。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
+                Text("本关已认识 $count / $total 个字", style = MaterialTheme.typography.titleLarge)
+                if (count < total) {
+                    Text("把这一批 ${total - count} 个字都学会，树洞才会打开。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
                     ChildPrimaryButton("去学习", onClick = { onNavigate(ShiziRoute.Home) }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_go_learn"))
                 } else {
-                    Text("第一关准备好了！找出和声音一样的字宝宝。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
+                    Text("树洞打开啦！找出和声音一样的字宝宝。", modifier = Modifier.padding(top = 12.dp), textAlign = TextAlign.Center)
                     Text("每找到一个朋友，都会收获鼓励。", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center)
-                    ChildPrimaryButton("开始找朋友", onClick = { viewModel.start { onNavigate(ShiziRoute.Practice) } }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_start"))
+                    ChildPrimaryButton("开始闯关", onClick = { viewModel.start { onNavigate(ShiziRoute.Practice) } }, modifier = Modifier.padding(top = 20.dp).testTag("stage_test_start"))
                 }
             }
         }
