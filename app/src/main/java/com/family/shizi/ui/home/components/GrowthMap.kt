@@ -32,6 +32,7 @@ fun GrowthMap(
     completedStageBatches: Set<Int> = emptySet(),
     onLearn: (String) -> Unit,
     onOpenStageTest: (Int) -> Unit,
+    onAutoFocusComplete: (Int) -> Unit = {},
     onCompletedTap: (CharacterContent) -> Unit = {},
     onCompletedLongPress: (CharacterContent) -> Unit = {},
     modifier: Modifier = Modifier,
@@ -40,7 +41,10 @@ fun GrowthMap(
     val currentIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, characters.map { it.id })
     val listState = rememberLazyListState()
     LaunchedEffect(currentIndex, entries.size) {
-        if (entries.isNotEmpty()) listState.animateScrollToItem(currentIndex.coerceIn(0, entries.lastIndex), scrollOffset = -260)
+        if (entries.isNotEmpty()) {
+            listState.animateScrollToItem(currentIndex.coerceIn(0, entries.lastIndex), scrollOffset = -260)
+            onAutoFocusComplete(currentIndex)
+        }
     }
     Box(modifier = modifier.fillMaxSize().testTag("home_growth_tree")) {
         ForestBackdrop(chapterIndex = ((learnedCount.coerceAtMost(characters.size)) / 10).coerceIn(0, 4), modifier = Modifier.fillMaxSize()) {}

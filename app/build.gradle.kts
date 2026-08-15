@@ -56,21 +56,20 @@ android {
     }
 
     testOptions {
-        unitTests.isReturnDefaultValues = true
+        unitTests {
+            isReturnDefaultValues = true
+            all {
+                val kotlinClasses = layout.buildDirectory.dir("tmp/kotlin-classes/debugUnitTest").get().asFile
+                if (kotlinClasses.exists()) {
+                    it.classpath = it.classpath + files(kotlinClasses)
+                    it.testClassesDirs = it.testClassesDirs + files(kotlinClasses)
+                }
+            }
+        }
     }
 }
 
 tasks.withType<Test>().configureEach {
-    doFirst {
-        // Kotlin 2.x writes JVM test classes to this directory. On Windows, the
-        // Android plugin's default Test worker classpath can omit it when the
-        // project path contains non-ASCII characters.
-        val kotlinTestClasses = layout.buildDirectory.dir("tmp/kotlin-classes/debugUnitTest").get().asFile
-        if (kotlinTestClasses.exists()) {
-            classpath = classpath + files(kotlinTestClasses)
-            testClassesDirs = testClassesDirs + files(kotlinTestClasses)
-        }
-    }
     jvmArgs("-Dfile.encoding=UTF-8", "-Dsun.jnu.encoding=UTF-8")
     systemProperty("file.encoding", "UTF-8")
     systemProperty("sun.jnu.encoding", "UTF-8")

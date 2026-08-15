@@ -77,6 +77,7 @@ import kotlin.math.cos
 import kotlin.math.sin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
 import kotlinx.serialization.json.Json
 
 // ─────────────────── Main Practice Screen ───────────────────
@@ -216,6 +217,8 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                             scope.launch {
                                 player.stop()
                                 repo.pauseForRest(sessionId)
+                                val childId = repo.settings.first().testChildId
+                                repo.recordUxEvent("SESSION_EXIT_EARLY", childId, sessionId = sessionId)
                                 onNavigate(ShiziRoute.Home)
                             }
                         }
@@ -243,6 +246,15 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                     isAccidental = responseMs < 300 || multiTouchDetected,
                 )
                 val attempt = result.attempt
+                val childId = repo.settings.first().testChildId
+                val event = when {
+                    !attempt.isCorrect -> "QUESTION_WRONG"
+                    attempt.attemptNumber == 1 -> "QUESTION_CORRECT_FIRST_TRY"
+                    else -> "QUESTION_CORRECT"
+                }
+                repo.recordUxEvent(event, childId, sessionId = currentSessionId, metadata = "{\"questionId\":\"${q.id}\"}")
+                if (result.sessionCompleted) repo.recordUxEvent("SESSION_COMPLETE", childId, sessionId = currentSessionId)
+                if (result.endedEarly) repo.recordUxEvent("SESSION_EXIT_EARLY", childId, sessionId = currentSessionId)
                 submissionInFlight = false
                 suspend fun celebrateCompletedCharacter() {
                     celebrationVisible = true

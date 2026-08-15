@@ -237,14 +237,15 @@ fun ParentScreen(
                     onReset = {
                         if (!resetTestArmed) {
                             resetTestArmed = true
-                            status = "再次点击确认，只重置当前测试宝宝学习进度"
+                            status = "将清空上一位测试儿童的学习进度，并开始新的测试；再次点击确认"
                         } else {
                             scope.launch {
+                                val preservedEvents = repo?.latestUxEvents().orEmpty()
                                 val result = repo?.clearLearningDataAndResetSettingsSafely()
                                 resetTestArmed = false
                                 app.settingsStore.updateSettings { it.copy(testChildId = testChildId) }
-                                uxEvents = repo?.latestUxEvents().orEmpty()
-                                status = if (result is ShiziRepository.ClearResult.Success) "当前测试宝宝已恢复初始状态" else "重置失败，请查看诊断"
+                                uxEvents = preservedEvents
+                                status = if (result is ShiziRepository.ClearResult.Success) "上一轮日志已保留，新的测试儿童已准备好" else "重置失败，请查看诊断"
                             }
                         }
                     },
@@ -334,7 +335,7 @@ private fun ChildUxTestMode(
     ) {
         Text("Child UX Test Mode", style = MaterialTheme.typography.titleLarge)
         Text("当前：$activeChildId", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.titleMedium)
-        Text("测试数据只保存在本机，不联网、不录音、不录像。", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall)
+            Text("一次测试一个孩子：日志只保存在本机，不联网、不录音、不录像。", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall)
         Row(modifier = Modifier.fillMaxWidth().padding(top = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             listOf("测试宝宝A", "测试宝宝B", "测试宝宝C").forEach { childId ->
                 Button(onClick = { onSelectChild(childId) }, modifier = Modifier.weight(1f).testTag("test_child_${childId.takeLast(1)}")) {
@@ -343,7 +344,7 @@ private fun ChildUxTestMode(
             }
         }
         Button(onClick = onReset, modifier = Modifier.fillMaxWidth().padding(top = 12.dp).testTag("test_mode_reset")) {
-            Text(if (resetArmed) "再次确认重置" else "重置当前测试宝宝")
+            Text(if (resetArmed) "确认开始新的测试" else "开始新的测试")
         }
         TextButton(onClick = onLoadEvents, modifier = Modifier.testTag("test_mode_load_events")) { Text("查看本地体验日志") }
         if (events.isEmpty()) {

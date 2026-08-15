@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -21,6 +22,8 @@ import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.home.components.GrowthMap
 import com.family.shizi.ui.home.components.ChildHud
 import com.family.shizi.ui.home.components.ParentEntry
+import com.family.shizi.ui.audio.AssetAudioPlayer
+import com.family.shizi.domain.engine.LearnedCardAudio
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -40,6 +43,12 @@ fun HomeScreen(
     val content = remember { ContentLoader.load(context) }
     val app = context.applicationContext as ShiziApplication
     val scope = rememberCoroutineScope()
+    val lifecycle = LocalLifecycleOwner.current
+    val player = remember {
+        AssetAudioPlayer(context, onError = { error -> scope.launch { app.repository?.logAudioError(error) } })
+            .also { it.attachLifecycle(lifecycle) }
+    }
+    DisposableEffect(player) { onDispose { player.stop() } }
 
     DisposableEffect(lifecycleOwner) {
         val observer = androidx.lifecycle.LifecycleEventObserver { _, event ->
@@ -63,12 +72,38 @@ fun HomeScreen(
                 app.repository?.let { repo ->
                     scope.launch {
                         val childId = app.settingsStore.settings.first().testChildId
-                        repo.recordUxEvent("MAP_NODE_CLICK", childId)
+                        repo.recordUxEvent("CURRENT_CHARACTER_CLICK", childId, characterId = characterId, metadata = "{\"mapIndex\":${state.currentMapIndex}}")
                     }
                 }
                 viewModel.startOrContinueForCharacter(characterId) { onNavigate(it) }
             },
-            onOpenStageTest = onOpenStageTest,
+            onOpenStageTest = { batchIndex ->
+                scope.launch {
+                    val childId = app.settingsStore.settings.first().testChildId
+                    app.repository?.recordUxEvent("TREE_HOLE_CLICK", childId, metadata = "{\"batchIndex\":$batchIndex}")
+                }
+                onOpenStageTest(batchIndex)
+            },
+            onAutoFocusComplete = { mapIndex ->
+                scope.launch {
+                    val childId = app.settingsStore.settings.first().testChildId
+                    app.repository?.recordUxEvent("MAP_AUTO_FOCUS_COMPLETE", childId, metadata = "{\"mapIndex\":$mapIndex}")
+                }
+            },
+            onCompletedTap = { character ->
+                scope.launch {
+                    val childId = app.settingsStore.settings.first().testChildId
+                    app.repository?.recordUxEvent("COMPLETED_CHARACTER_TAP", childId, characterId = character.id)
+                    player.playSequence(LearnedCardAudio.tapAssets(character))
+                }
+            },
+            onCompletedLongPress = { character ->
+                scope.launch {
+                    val childId = app.settingsStore.settings.first().testChildId
+                    app.repository?.recordUxEvent("COMPLETED_CHARACTER_LONG_PRESS", childId, characterId = character.id)
+                    player.playSequence(LearnedCardAudio.longPressAssets(character))
+                }
+            },
             modifier = Modifier.fillMaxSize(),
         )
         ChildHud(

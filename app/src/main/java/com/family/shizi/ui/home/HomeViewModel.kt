@@ -190,6 +190,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             val route = repo.resolveNextRoute(session.id)
             val currentItem = repo.getItemsForSession(session.id).firstOrNull { it.status != com.family.shizi.data.db.ItemStatus.COMPLETED }
             if (characterId != null && currentItem?.characterId != characterId) return@launch
+            if (currentItem != null) repo.recordUxEvent("LEARN_START", settings.testChildId, characterId = currentItem.characterId, sessionId = session.id)
             refresh()
             onReady(route)
         }
