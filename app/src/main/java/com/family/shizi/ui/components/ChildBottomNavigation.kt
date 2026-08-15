@@ -14,7 +14,6 @@ private val childTabs = listOf(
     ChildTab(ShiziRoute.Home, "学习", "学"),
     ChildTab(ShiziRoute.StageTest, "挑战", "挑"),
     ChildTab(ShiziRoute.Learned, "字卡", "卡"),
-    ChildTab(ShiziRoute.Profile, "我的", "我"),
 )
 
 @Composable

@@ -34,19 +34,9 @@ fun ShiziNavHost() {
 
     val navEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navEntry?.destination?.route
-    val showChildTabs = currentRoute in setOf(
-        ShiziRoute.Home.route, ShiziRoute.StageTest.route, ShiziRoute.Learned.route, ShiziRoute.Profile.route,
-    )
     Scaffold(
         bottomBar = {
-            if (showChildTabs) {
-                ChildBottomNavigation(currentRoute) { tab ->
-                    navController.navigate(tab.route) {
-                        popUpTo(ShiziRoute.Home.route) { inclusive = false }
-                        launchSingleTop = true
-                    }
-                }
-            }
+            // The growth tree is the single child navigation surface.
         },
     ) { padding ->
     NavHost(
