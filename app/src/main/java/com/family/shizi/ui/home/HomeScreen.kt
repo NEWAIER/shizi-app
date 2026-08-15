@@ -16,9 +16,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.background
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -28,6 +30,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -144,54 +151,13 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
             }
             Text("我的成长树", modifier = Modifier.padding(top = 20.dp), style = MaterialTheme.typography.titleLarge)
             Text("每个果子都是一个字宝宝，每 10 个字会长出一个树洞挑战", modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center)
-            Card(
-                modifier = Modifier.fillMaxWidth().padding(top = 10.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
-            ) {
-                Column(modifier = Modifier.fillMaxWidth().padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    content.characters.chunked(5).forEachIndexed { rowIndex, row ->
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly, verticalAlignment = Alignment.CenterVertically) {
-                            row.forEachIndexed { columnIndex, character ->
-                                val number = rowIndex * 5 + columnIndex + 1
-                                val learned = number <= state.learnedCount
-                                val toLearn = number > state.learnedCount && number <= state.learnedCount + state.dailyNewTarget
-                                val sparkleAlpha = rememberInfiniteTransition(label = "fruit_$number").animateFloat(
-                                    initialValue = 0.55f,
-                                    targetValue = 1f,
-                                    animationSpec = infiniteRepeatable(tween(720), RepeatMode.Reverse),
-                                    label = "fruit_alpha_$number",
-                                ).value
-                                Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(vertical = 4.dp)) {
-                                    Box(
-                                        modifier = Modifier
-                                            .size(42.dp)
-                                            .clip(CircleShape)
-                                            .background(
-                                                when {
-                                                    learned -> MaterialTheme.colorScheme.error
-                                                    toLearn -> MaterialTheme.colorScheme.primary
-                                                    else -> MaterialTheme.colorScheme.surfaceVariant
-                                                },
-                                            )
-                                            .alpha(if (toLearn) sparkleAlpha else 1f)
-                                            .clickable(enabled = toLearn) { viewModel.startOrContinue { onNavigate(it) } }
-                                            .testTag("home_tree_fruit_$number"),
-                                        contentAlignment = Alignment.Center,
-                                    ) {
-                                        Text(character.character, color = if (learned || toLearn) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.titleLarge)
-                                        if (toLearn) Text("★", modifier = Modifier.align(Alignment.TopEnd).padding(2.dp), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onPrimary)
-                                    }
-                                    Text("$number", style = MaterialTheme.typography.labelSmall)
-                                }
-                            }
-                        }
-                        if ((rowIndex + 1) % 2 == 0 && rowIndex + 1 < content.characters.chunked(5).size) {
-                            val holeUnlocked = state.learnedCount >= (rowIndex + 1) * 5
-                            TextButton(onClick = { if (holeUnlocked) onNavigate(ShiziRoute.StageTest) }, enabled = holeUnlocked, modifier = Modifier.testTag("home_tree_hole_${rowIndex + 1}")) { Text(if (holeUnlocked) "树洞挑战" else "树洞还在长大") }
-                        }
-                    }
-                }
-            }
+            GrowthTree(
+                characters = content.characters,
+                learnedCount = state.learnedCount,
+                dailyTarget = state.dailyNewTarget,
+                onLearn = { viewModel.startOrContinue { onNavigate(it) } },
+                onChallenge = { onNavigate(ShiziRoute.StageTest) },
+            )
             Text("已认识 ${state.learnedCount} 个字宝宝", modifier = Modifier.padding(top = 18.dp), style = MaterialTheme.typography.titleMedium)
             LinearProgressIndicator(
                 progress = { (state.learnedCount / 50f).coerceIn(0f, 1f) },
@@ -256,6 +222,108 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
                         }, modifier = Modifier.fillMaxWidth().padding(top = 8.dp).testTag("adult_gate_submit")) { Text("进入家长设置") }
                     }
                     TextButton(onClick = { parentPanelVisible = false; parentBubbleExpanded = false }) { Text("隐藏入口") }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun GrowthTree(
+    characters: List<com.family.shizi.data.content.CharacterContent>,
+    learnedCount: Int,
+    dailyTarget: Int,
+    onLearn: () -> Unit,
+    onChallenge: () -> Unit,
+) {
+    val xPositions = listOf(156, 224, 118, 244, 88, 190, 260, 132, 72, 210)
+    val step = 84
+    val fruitSize = 54.dp
+    val treeHeight = (characters.size * step + 92).dp
+    val trunk = MaterialTheme.colorScheme.primary.copy(alpha = 0.78f)
+    val branch = MaterialTheme.colorScheme.primary.copy(alpha = 0.45f)
+    val leafColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.26f)
+
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(top = 10.dp).testTag("home_growth_tree"),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
+    ) {
+        Box(modifier = Modifier.fillMaxWidth().height(treeHeight)) {
+            Canvas(modifier = Modifier.fillMaxSize()) {
+                val points = characters.indices.map { index ->
+                    Offset(xPositions[index % xPositions.size].dp.toPx(), (48 + index * step).dp.toPx())
+                }
+                if (points.isNotEmpty()) {
+                    val path = Path().apply {
+                        moveTo(points.first().x, points.first().y)
+                        var previous = points.first()
+                        points.drop(1).forEach { point ->
+                            quadraticTo((previous.x + point.x) / 2f, previous.y, point.x, point.y)
+                            previous = point
+                        }
+                    }
+                    drawPath(path, color = trunk, style = Stroke(width = 18.dp.toPx(), cap = StrokeCap.Round))
+                    drawPath(path, color = branch, style = Stroke(width = 28.dp.toPx(), cap = StrokeCap.Round))
+                }
+                points.forEachIndexed { index, point ->
+                    if (index % 3 == 0) {
+                        drawCircle(color = leafColor, radius = 10.dp.toPx(), center = point + Offset(22.dp.toPx(), -18.dp.toPx()))
+                    }
+                }
+            }
+            characters.forEachIndexed { index, character ->
+                val number = index + 1
+                val x = xPositions[index % xPositions.size]
+                val y = 20 + index * step
+                val learned = number <= learnedCount
+                val toLearn = number > learnedCount && number <= learnedCount + dailyTarget
+                val sparkleAlpha = rememberInfiniteTransition(label = "tree_fruit_$number").animateFloat(
+                    initialValue = 0.55f,
+                    targetValue = 1f,
+                    animationSpec = infiniteRepeatable(tween(720), RepeatMode.Reverse),
+                    label = "tree_fruit_alpha_$number",
+                ).value
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.offset(x = (x - 27).dp, y = y.dp),
+                ) {
+                    Text("$number", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onTertiaryContainer)
+                    Box(
+                        modifier = Modifier
+                            .size(fruitSize)
+                            .clip(CircleShape)
+                            .background(
+                                when {
+                                    learned -> MaterialTheme.colorScheme.error
+                                    toLearn -> MaterialTheme.colorScheme.primary
+                                    else -> MaterialTheme.colorScheme.surfaceVariant
+                                },
+                            )
+                            .alpha(if (toLearn) sparkleAlpha else 1f)
+                            .clickable(enabled = toLearn) { onLearn() }
+                            .testTag("home_tree_fruit_$number"),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text(character.character, color = if (learned || toLearn) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.titleLarge)
+                        if (toLearn) Text("★", modifier = Modifier.align(Alignment.TopEnd).padding(2.dp), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onPrimary)
+                    }
+                    if (learned) Text("★ ★ ★", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
+                }
+                if (number % 10 == 0 && number < characters.size) {
+                    val holeUnlocked = learnedCount >= number
+                    Card(
+                        modifier = Modifier
+                            .offset(x = if (x < 150) 188.dp else 12.dp, y = (y + 12).dp)
+                            .size(width = 108.dp, height = 48.dp)
+                            .clickable(enabled = holeUnlocked) { onChallenge() }
+                            .testTag("home_tree_hole_$number"),
+                        colors = CardDefaults.cardColors(containerColor = if (holeUnlocked) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surfaceVariant),
+                    ) {
+                        Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+                            Text("树洞", style = MaterialTheme.typography.labelLarge)
+                            Text(if (holeUnlocked) "挑战已开启" else "还在长大", style = MaterialTheme.typography.labelSmall)
+                        }
+                    }
                 }
             }
         }
