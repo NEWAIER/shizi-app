@@ -1,6 +1,8 @@
 # Local Android and Gradle state
 .gradle/
 .gradle-temp-final/
+.gradle-home-write/
+.gradle-cache-write/
 .kotlin/
 build/
 **/build/

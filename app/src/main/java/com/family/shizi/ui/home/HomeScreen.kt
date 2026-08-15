@@ -31,6 +31,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
@@ -73,7 +74,11 @@ import com.family.shizi.ui.theme.ShiziShapes
 import kotlinx.coroutines.coroutineScope
 
 @Composable
-fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit) {
+fun HomeScreen(
+    onNavigate: (ShiziRoute) -> Unit,
+    onOpenStageTest: (Int) -> Unit = { _ -> onNavigate(ShiziRoute.Learned) },
+    onParentAuthorized: () -> Unit,
+) {
     val viewModel: HomeViewModel = viewModel()
     val state by viewModel.uiState.collectAsState()
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -150,13 +155,13 @@ fun HomeScreen(onNavigate: (ShiziRoute) -> Unit, onParentAuthorized: () -> Unit)
                 }
             }
             Text("我的成长树", modifier = Modifier.padding(top = 20.dp), style = MaterialTheme.typography.titleLarge)
-            Text("每个果子都是一个字宝宝，每 10 个字会长出一个树洞挑战", modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center)
+            Text("毛毛虫每学会一个字，就吃掉一个果子。每 10 个字会长出一个树洞挑战", modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center)
             GrowthTree(
                 characters = content.characters,
                 learnedCount = state.learnedCount,
                 dailyTarget = state.dailyNewTarget,
                 onLearn = { viewModel.startOrContinue { onNavigate(it) } },
-                onChallenge = { onNavigate(ShiziRoute.StageTest) },
+                onOpenStageTest = onOpenStageTest,
             )
             Text("已认识 ${state.learnedCount} 个字宝宝", modifier = Modifier.padding(top = 18.dp), style = MaterialTheme.typography.titleMedium)
             LinearProgressIndicator(
@@ -234,15 +239,21 @@ private fun GrowthTree(
     learnedCount: Int,
     dailyTarget: Int,
     onLearn: () -> Unit,
-    onChallenge: () -> Unit,
+    onOpenStageTest: (Int) -> Unit,
 ) {
+    // 树只长到「已学 + 今日目标」的位置，随学习进度从下往上生长。
+    val visibleCount = (learnedCount + dailyTarget).coerceIn(1, characters.size)
     val xPositions = listOf(156, 224, 118, 244, 88, 190, 260, 132, 72, 210)
     val step = 84
     val fruitSize = 54.dp
-    val treeHeight = (characters.size * step + 92).dp
+    val topMargin = 64
+    val bottomMargin = 160 // 为树根与毛毛虫预留空间
+    val treeHeight = topMargin.dp + ((visibleCount - 1) * step).dp + bottomMargin.dp
     val trunk = MaterialTheme.colorScheme.primary.copy(alpha = 0.78f)
     val branch = MaterialTheme.colorScheme.primary.copy(alpha = 0.45f)
     val leafColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.26f)
+    val fruitY = { index: Int -> (visibleCount - 1 - index) * step } // index 0 在最底部
+    val caterpillarSegments = 2 + learnedCount.coerceAtMost(6)
 
     Card(
         modifier = Modifier.fillMaxWidth().padding(top = 10.dp).testTag("home_growth_tree"),
@@ -250,8 +261,8 @@ private fun GrowthTree(
     ) {
         Box(modifier = Modifier.fillMaxWidth().height(treeHeight)) {
             Canvas(modifier = Modifier.fillMaxSize()) {
-                val points = characters.indices.map { index ->
-                    Offset(xPositions[index % xPositions.size].dp.toPx(), (48 + index * step).dp.toPx())
+                val points = (0 until visibleCount).map { index ->
+                    Offset(xPositions[index % xPositions.size].dp.toPx(), (topMargin + fruitY(index)).dp.toPx())
                 }
                 if (points.isNotEmpty()) {
                     val path = Path().apply {
@@ -264,17 +275,17 @@ private fun GrowthTree(
                     }
                     drawPath(path, color = trunk, style = Stroke(width = 18.dp.toPx(), cap = StrokeCap.Round))
                     drawPath(path, color = branch, style = Stroke(width = 28.dp.toPx(), cap = StrokeCap.Round))
-                }
-                points.forEachIndexed { index, point ->
-                    if (index % 3 == 0) {
-                        drawCircle(color = leafColor, radius = 10.dp.toPx(), center = point + Offset(22.dp.toPx(), -18.dp.toPx()))
+                    points.forEachIndexed { index, point ->
+                        if (index % 3 == 0) {
+                            drawCircle(color = leafColor, radius = 10.dp.toPx(), center = point + Offset(22.dp.toPx(), -18.dp.toPx()))
+                        }
                     }
                 }
             }
-            characters.forEachIndexed { index, character ->
+            characters.take(visibleCount).forEachIndexed { index, character ->
                 val number = index + 1
                 val x = xPositions[index % xPositions.size]
-                val y = 20 + index * step
+                val y = fruitY(index)
                 val learned = number <= learnedCount
                 val toLearn = number > learnedCount && number <= learnedCount + dailyTarget
                 val sparkleAlpha = rememberInfiniteTransition(label = "tree_fruit_$number").animateFloat(
@@ -285,47 +296,156 @@ private fun GrowthTree(
                 ).value
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier.offset(x = (x - 27).dp, y = y.dp),
+                    modifier = Modifier.offset(x = (x - 27).dp, y = (topMargin + y).dp),
                 ) {
-                    Text("$number", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onTertiaryContainer)
-                    Box(
-                        modifier = Modifier
-                            .size(fruitSize)
-                            .clip(CircleShape)
-                            .background(
-                                when {
-                                    learned -> MaterialTheme.colorScheme.error
-                                    toLearn -> MaterialTheme.colorScheme.primary
-                                    else -> MaterialTheme.colorScheme.surfaceVariant
-                                },
+                    if (learned) {
+                        // 被毛毛虫吃掉的果子：保留汉字，换成金色星星果皮肤。
+                        Box(
+                            modifier = Modifier
+                                .size(fruitSize)
+                                .clip(CircleShape)
+                                .background(
+                                    Brush.linearGradient(
+                                        listOf(
+                                            com.family.shizi.ui.theme.StarYellow,
+                                            com.family.shizi.ui.theme.StarYellow.copy(alpha = 0.72f),
+                                        ),
+                                    ),
+                                )
+                                .testTag("home_tree_fruit_$number"),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text(
+                                character.character,
+                                color = com.family.shizi.ui.theme.PrimaryText,
+                                style = MaterialTheme.typography.titleLarge,
                             )
-                            .alpha(if (toLearn) sparkleAlpha else 1f)
-                            .clickable(enabled = toLearn) { onLearn() }
-                            .testTag("home_tree_fruit_$number"),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text(character.character, color = if (learned || toLearn) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.titleLarge)
-                        if (toLearn) Text("★", modifier = Modifier.align(Alignment.TopEnd).padding(2.dp), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onPrimary)
+                            Text(
+                                "★",
+                                modifier = Modifier.align(Alignment.TopEnd).padding(2.dp),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = com.family.shizi.ui.theme.Coral,
+                            )
+                        }
+                        Text("已吃掉", style = MaterialTheme.typography.labelSmall, color = com.family.shizi.ui.theme.Coral)
+                    } else if (toLearn) {
+                        Text("$number", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onTertiaryContainer)
+                        Box(
+                            modifier = Modifier
+                                .size(fruitSize)
+                                .clip(CircleShape)
+                                .background(MaterialTheme.colorScheme.primary)
+                                .alpha(sparkleAlpha)
+                                .clickable(enabled = true) { onLearn() }
+                                .testTag("home_tree_fruit_$number"),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text(character.character, color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.titleLarge)
+                            Text("★", modifier = Modifier.align(Alignment.TopEnd).padding(2.dp), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onPrimary)
+                        }
+                        Text("快来吃我", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
+                    } else {
+                        Text("$number", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onTertiaryContainer.copy(alpha = 0.5f))
+                        Box(
+                            modifier = Modifier
+                                .size(fruitSize)
+                                .clip(CircleShape)
+                                .background(MaterialTheme.colorScheme.surfaceVariant)
+                                .alpha(0.55f)
+                                .testTag("home_tree_fruit_$number"),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text("?", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.titleLarge)
+                        }
                     }
-                    if (learned) Text("★ ★ ★", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
                 }
-                if (number % 10 == 0 && number < characters.size) {
+                if (number % com.family.shizi.domain.engine.StageTestBatches.BATCH_SIZE == 0) {
+                    val batchIndex = number / com.family.shizi.domain.engine.StageTestBatches.BATCH_SIZE - 1
                     val holeUnlocked = learnedCount >= number
                     Card(
                         modifier = Modifier
-                            .offset(x = if (x < 150) 188.dp else 12.dp, y = (y + 12).dp)
-                            .size(width = 108.dp, height = 48.dp)
-                            .clickable(enabled = holeUnlocked) { onChallenge() }
+                            .offset(x = if (x < 150) 188.dp else 12.dp, y = (topMargin + y + 14).dp)
+                            .size(width = 118.dp, height = 58.dp)
+                            .clickable(enabled = holeUnlocked) { onOpenStageTest(batchIndex) }
                             .testTag("home_tree_hole_$number"),
-                        colors = CardDefaults.cardColors(containerColor = if (holeUnlocked) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surfaceVariant),
+                        shape = RoundedCornerShape(topStart = 99.dp, topEnd = 99.dp, bottomStart = 18.dp, bottomEnd = 18.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = if (holeUnlocked) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surfaceVariant,
+                        ),
                     ) {
                         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-                            Text("树洞", style = MaterialTheme.typography.labelLarge)
-                            Text(if (holeUnlocked) "挑战已开启" else "还在长大", style = MaterialTheme.typography.labelSmall)
+                            Text("树洞 · 第${batchIndex + 1}关", style = MaterialTheme.typography.labelLarge)
+                            Text(if (holeUnlocked) "挑战已开启" else "再学 ${number - learnedCount} 个字", style = MaterialTheme.typography.labelSmall)
                         }
                     }
                 }
             }
+            // 毛毛虫：停在下一个待学果子旁边，吃一个长一截。
+            if (learnedCount < visibleCount) {
+                val caterpillarIndex = learnedCount
+                val cx = xPositions[caterpillarIndex % xPositions.size]
+                val cy = topMargin + fruitY(caterpillarIndex) + 92
+                Caterpillar(
+                    segmentCount = caterpillarSegments,
+                    modifier = Modifier.offset(x = (cx - 26).dp, y = cy.dp),
+                )
+            }
+        }
+    }
+}
+
+/** 用 Canvas 绘制一只卡通毛毛虫：圆头 + 分段身体 + 触角，吃一个果子长一截。 */
+@Composable
+private fun Caterpillar(segmentCount: Int, modifier: Modifier = Modifier) {
+    val headSize = 30.dp
+    val segmentSize = 22.dp
+    val green = com.family.shizi.ui.theme.SuccessGreen
+    val darkGreen = Color(0xFF3FA371)
+    val bob = rememberInfiniteTransition(label = "caterpillar_bob").animateFloat(
+        initialValue = -2f,
+        targetValue = 2f,
+        animationSpec = infiniteRepeatable(tween(600), RepeatMode.Reverse),
+        label = "caterpillar_bob_alpha",
+    ).value
+    Box(modifier.size(width = (segmentCount * 14 + 30).dp, height = 46.dp)) {
+        Canvas(modifier = Modifier.fillMaxSize()) {
+            val bodyStartY = 30.dp.toPx() + bob.dp.toPx()
+            // 分段身体：从尾部向头部排列。
+            (segmentCount - 1 downTo 1).forEach { seg ->
+                val cx = seg * 14.dp.toPx() + 10.dp.toPx()
+                val cy = bodyStartY - (seg % 2) * 4.dp.toPx()
+                drawCircle(
+                    color = if (seg % 2 == 0) green else darkGreen,
+                    radius = segmentSize.toPx() / 2f,
+                    center = Offset(cx, cy),
+                )
+            }
+            // 头部：大圆 + 眼睛 + 触角。
+            val headX = (segmentCount * 14 + 10).dp.toPx()
+            val headY = bodyStartY - 8.dp.toPx()
+            drawCircle(color = green, radius = headSize.toPx() / 2f, center = Offset(headX, headY))
+            drawCircle(color = Color.White, radius = 4.dp.toPx(), center = Offset(headX + 5.dp.toPx(), headY - 5.dp.toPx()))
+            drawCircle(color = Color(0xFF2F3B45), radius = 2.dp.toPx(), center = Offset(headX + 6.dp.toPx(), headY - 5.dp.toPx()))
+            // 触角。
+            drawLine(
+                color = darkGreen,
+                start = Offset(headX + 2.dp.toPx(), headY - 12.dp.toPx()),
+                end = Offset(headX + 6.dp.toPx(), headY - 20.dp.toPx()),
+                strokeWidth = 2.dp.toPx(),
+                cap = StrokeCap.Round,
+            )
+            drawCircle(color = darkGreen, radius = 3.dp.toPx(), center = Offset(headX + 6.dp.toPx(), headY - 21.dp.toPx()))
+            drawLine(
+                color = darkGreen,
+                start = Offset(headX - 6.dp.toPx(), headY - 12.dp.toPx()),
+                end = Offset(headX - 10.dp.toPx(), headY - 20.dp.toPx()),
+                strokeWidth = 2.dp.toPx(),
+                cap = StrokeCap.Round,
+            )
+            drawCircle(color = darkGreen, radius = 3.dp.toPx(), center = Offset(headX - 10.dp.toPx(), headY - 21.dp.toPx()))
+            // 小脚。
+            drawCircle(color = darkGreen, radius = 2.5.dp.toPx(), center = Offset(headX - 8.dp.toPx(), headY + 12.dp.toPx()))
+            drawCircle(color = darkGreen, radius = 2.5.dp.toPx(), center = Offset(headX - 14.dp.toPx(), headY + 14.dp.toPx()))
         }
     }
 }

@@ -30,6 +30,7 @@ import com.family.shizi.domain.core.RandomProvider
 import com.family.shizi.domain.diagnostics.DiagnosticsExporter
 import com.family.shizi.domain.engine.MasteryStateEngine
 import com.family.shizi.domain.engine.ReviewScheduler
+import com.family.shizi.domain.engine.StageTestBatches
 import com.family.shizi.navigation.ShiziRoute
 import androidx.room.withTransaction
 import java.time.Clock
@@ -379,20 +380,23 @@ class ShiziRepository(
     }
 
     /**
-     * A short stage check uses only characters the child has already finished learning.
-     * It stores real attempts but is deliberately separate from the spaced-review schedule:
-     * passing a test must never skip a due review or promote mastery by itself.
+     * 树洞测试关卡：只使用该批次（每 [StageTestBatches.BATCH_SIZE] 个字一批）中已学完的字，
+     * 整批学完后树洞才解锁。测试保留真实答题记录，但刻意与间隔复习解耦：
+     * 通过测试不会跳过到期复习，也不会单独提升掌握等级。
      */
     suspend fun createStageTestSession(
         content: ContentPackage,
         randomProvider: RandomProvider,
         idProvider: IdProvider,
+        batchIndex: Int = 0,
         now: Instant = clock.instant(),
     ): LearningSessionEntity = database.withTransaction {
-        val learned = content.learningOrder.filter { characterId ->
+        val batchIds = StageTestBatches.characterIdsOf(content.learningOrder, batchIndex)
+        require(batchIds.isNotEmpty()) { "测试批次超出课程范围" }
+        val learned = batchIds.filter { characterId ->
             database.characterProgressDao().getById(characterId)?.initialLessonCompleted == true
-        }.take(content.course.stageTestThreshold)
-        require(learned.size >= content.course.stageTestThreshold) { "尚未达到课程设定的阶段测试字数" }
+        }
+        require(learned.size == batchIds.size) { "本关还有 ${batchIds.size - learned.size} 个字没学完" }
         val session = LearningSessionEntity(
             id = idProvider.newId(),
             localDate = LocalDate.now(clock.zone),

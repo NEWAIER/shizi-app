@@ -7,10 +7,12 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.material3.Scaffold
+import androidx.navigation.NavType
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.family.shizi.ui.home.HomeScreen
 import com.family.shizi.ui.learn.LearnScreen
 import com.family.shizi.ui.parent.ParentScreen
@@ -47,6 +49,12 @@ fun ShiziNavHost() {
         composable(ShiziRoute.Home.route) {
             HomeScreen(
                 onNavigate = navigate,
+                onOpenStageTest = { batchIndex ->
+                    navController.navigate(ShiziRoute.stageTestRoute(batchIndex)) {
+                        popUpTo(ShiziRoute.Home.route) { inclusive = false }
+                        launchSingleTop = true
+                    }
+                },
                 onParentAuthorized = {
                     parentAuthorizationToken += 1
                     navigate(ShiziRoute.Parent)
@@ -68,8 +76,24 @@ fun ShiziNavHost() {
                 },
             )
         }
-        composable(ShiziRoute.StageTest.route) { StageTestScreen(onNavigate = navigate) }
-        composable(ShiziRoute.Learned.route) { LearnedScreen(onNavigate = navigate) }
+        composable(
+            route = ShiziRoute.STAGE_TEST_ROUTE_PATTERN,
+            arguments = listOf(navArgument(ShiziRoute.STAGE_TEST_ARG_BATCH) { type = NavType.IntType }),
+        ) { entry ->
+            val batchIndex = entry.arguments?.getInt(ShiziRoute.STAGE_TEST_ARG_BATCH) ?: 0
+            StageTestScreen(batchIndex = batchIndex, onNavigate = navigate)
+        }
+        composable(ShiziRoute.Learned.route) {
+            LearnedScreen(
+                onNavigate = navigate,
+                onOpenStageTest = { batchIndex ->
+                    navController.navigate(ShiziRoute.stageTestRoute(batchIndex)) {
+                        popUpTo(ShiziRoute.Home.route) { inclusive = false }
+                        launchSingleTop = true
+                    }
+                },
+            )
+        }
         composable(ShiziRoute.Profile.route) { ProfileScreen() }
     }
     }

@@ -12,5 +12,14 @@ enum class ShiziRoute(val route: String, val pageName: String) {
 
     companion object {
         val startDestination: String = Home.route
+
+        /** 树洞测试关卡路由模板（Navigation Compose 参数名）。 */
+        const val STAGE_TEST_ROUTE_PATTERN = "stage_test/{batch}"
+
+        /** 生成带批次参数的具体路由，[batchIndex] 为 0 起的批次号（第 1 关 = 1-10 字）。 */
+        fun stageTestRoute(batchIndex: Int): String = "stage_test/$batchIndex"
+
+        /** 从导航参数中读取批次号。 */
+        const val STAGE_TEST_ARG_BATCH = "batch"
     }
 }

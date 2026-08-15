@@ -65,7 +65,10 @@ class LearnedViewModel(application: Application) : AndroidViewModel(application)
 }
 
 @Composable
-fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
+fun LearnedScreen(
+    onNavigate: (ShiziRoute) -> Unit,
+    onOpenStageTest: (Int) -> Unit = { _ -> onNavigate(ShiziRoute.Home) },
+) {
     val viewModel: LearnedViewModel = viewModel()
     val state by viewModel.state.collectAsState()
     val context = LocalContext.current
@@ -112,10 +115,10 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
                         },
                     )
                 }
-                if (learned.size >= content.course.stageTestThreshold) {
+                if (com.family.shizi.domain.engine.StageTestBatches.latestUsableBatch(learned.size) != null) {
                     item {
                         Button(
-                            onClick = { onNavigate(ShiziRoute.StageTest) },
+                            onClick = { onOpenStageTest(com.family.shizi.domain.engine.StageTestBatches.latestUsableBatch(learned.size) ?: 0) },
                             modifier = Modifier.fillMaxWidth().padding(top = 8.dp).testTag("learned_go_stage_test"),
                         ) { Text("去参加阶段测试") }
                     }

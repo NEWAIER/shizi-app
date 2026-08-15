@@ -221,7 +221,8 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
                         (fadeOut(animationSpec = tween(180)) + scaleOut(targetScale = 1.04f, animationSpec = tween(180)))
                 },
                 label = "learn_step_transition",
-            ) {
+            ) { targetStep ->
+                val animatedDisplay = learningDisplay(character, targetStep)
                 Card(
                     modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
                     shape = RoundedCornerShape(28.dp),
@@ -230,19 +231,19 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
                 Column(
                     modifier = Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Text(display.eyebrow, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+                    Text(animatedDisplay.eyebrow, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                     Text(character?.character ?: "？", modifier = Modifier.padding(top = 4.dp).testTag("learn_character"),
                         style = MaterialTheme.typography.displayLarge, fontWeight = FontWeight.Bold)
                     Text(character?.pinyin ?: "", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
-                    if (display.showImage) {
+                    if (animatedDisplay.showImage) {
                         bitmap?.let {
                             Image(it.asImageBitmap(), character?.imageAlt,
                                 modifier = Modifier.fillMaxWidth().height(190.dp).padding(top = 12.dp).clip(RoundedCornerShape(20.dp)).testTag("learn_image"))
                         }
                     }
-                    Text(display.mainText, modifier = Modifier.padding(top = 14.dp).testTag("learn_step_text"),
+                    Text(animatedDisplay.mainText, modifier = Modifier.padding(top = 14.dp).testTag("learn_step_text"),
                         style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
-                    display.detailText?.let { Text(it, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center) }
+                    animatedDisplay.detailText?.let { Text(it, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center) }
                 }
                 }
             }
