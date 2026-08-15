@@ -156,6 +156,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 return@launch
             }
             val settings = repo.settings.first()
+            repo.recordUxEvent("PRIMARY_LEARN_CLICK", settings.testChildId)
             val session = repo.getOrCreateDailySession(
                 date = LocalDate.now(),
                 settings = settings,

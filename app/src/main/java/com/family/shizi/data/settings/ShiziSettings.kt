@@ -14,4 +14,5 @@ data class ShiziSettings(
     val lastSuccessfulSaveAt: Long? = null,
     val contentVersion: String = "1.0.0",
     val bootCount: Int = 0,
+    val testChildId: String = "测试宝宝A",
 )
