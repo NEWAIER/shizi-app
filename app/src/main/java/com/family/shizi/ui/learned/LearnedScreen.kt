@@ -33,6 +33,7 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.size
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewModelScope
@@ -45,6 +46,7 @@ import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.audio.AssetAudioPlayer
 import com.family.shizi.ui.components.ChildPage
 import com.family.shizi.ui.components.ChildTopBar
+import com.family.shizi.ui.components.DecorativeStar
 import com.family.shizi.ui.components.EmptyState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -65,7 +67,10 @@ class LearnedViewModel(application: Application) : AndroidViewModel(application)
 }
 
 @Composable
-fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
+fun LearnedScreen(
+    onNavigate: (ShiziRoute) -> Unit,
+    onOpenStageTest: (Int) -> Unit = { _ -> onNavigate(ShiziRoute.Home) },
+) {
     val viewModel: LearnedViewModel = viewModel()
     val state by viewModel.state.collectAsState()
     val context = LocalContext.current
@@ -99,23 +104,21 @@ fun LearnedScreen(onNavigate: (ShiziRoute) -> Unit) {
                     CatalogCharacterCard(
                         character = character,
                         learned = progress?.initialLessonCompleted == true,
-                        onPlay = { player.play(character.audio.character) },
+                        onPlay = {
+                            // 单击：字音 + 第 1 个词语
+                            player.playSequence(com.family.shizi.domain.engine.LearnedCardAudio.tapAssets(character))
+                        },
                         onLongPress = {
                             detailCharacter = character
-                            player.playSequence(
-                                buildList {
-                                    add(character.audio.character)
-                                    addAll(character.words.map { it.audioAsset })
-                                    add(character.sentence.audioAsset)
-                                },
-                            )
+                            // 长按：字音 + 全部词语 + 例句
+                            player.playSequence(com.family.shizi.domain.engine.LearnedCardAudio.longPressAssets(character))
                         },
                     )
                 }
-                if (learned.size >= content.course.stageTestThreshold) {
+                if (com.family.shizi.domain.engine.StageTestBatches.latestUsableBatch(learned.size) != null) {
                     item {
                         Button(
-                            onClick = { onNavigate(ShiziRoute.StageTest) },
+                            onClick = { onOpenStageTest(com.family.shizi.domain.engine.StageTestBatches.latestUsableBatch(learned.size) ?: 0) },
                             modifier = Modifier.fillMaxWidth().padding(top = 8.dp).testTag("learned_go_stage_test"),
                         ) { Text("去参加阶段测试") }
                     }
@@ -161,7 +164,8 @@ private fun CatalogCharacterCard(
     ) {
         Column(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp, horizontal = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(character.character, style = MaterialTheme.typography.headlineSmall, color = if (learned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(if (learned) "★" else "·", modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.titleMedium, color = if (learned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline)
+            if (learned) DecorativeStar(modifier = Modifier.padding(top = 2.dp).size(12.dp), color = MaterialTheme.colorScheme.primary)
+            else Text("·", modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.outline)
         }
     }
 }
