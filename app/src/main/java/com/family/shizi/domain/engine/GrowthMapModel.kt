@@ -20,6 +20,69 @@ object GrowthMapModel {
 
     enum class NodeState { COMPLETED, CURRENT, UPCOMING, LOCKED }
 
+    sealed class MapEntry {
+        data class CharacterNode(val characterId: String, val order: Int) : MapEntry()
+        data class StageTestNode(val batchIndex: Int, val afterCharacterOrder: Int) : MapEntry()
+    }
+
+    fun entries(characterIds: List<String>): List<MapEntry> = buildList {
+        characterIds.forEachIndexed { index, characterId ->
+            add(MapEntry.CharacterNode(characterId, index + 1))
+            if ((index + 1) % CHAPTER_SIZE == 0) {
+                add(MapEntry.StageTestNode(index / CHAPTER_SIZE, index + 1))
+            }
+        }
+    }
+
+    fun currentEntry(
+        learnedCount: Int,
+        completedStageBatches: Set<Int>,
+        totalCharacters: Int,
+    ): MapEntry? {
+        if (totalCharacters <= 0) return null
+        if (learnedCount < totalCharacters) {
+            val nextOrder = learnedCount + 1
+            if (nextOrder > 1 && (nextOrder - 1) % CHAPTER_SIZE == 0) {
+                val batch = nextOrder / CHAPTER_SIZE - 1
+                if (batch !in completedStageBatches) return MapEntry.StageTestNode(batch, nextOrder - 1)
+            }
+            return MapEntry.CharacterNode("", nextOrder)
+        }
+        val finalBatch = (totalCharacters - 1) / CHAPTER_SIZE
+        return if (totalCharacters % CHAPTER_SIZE == 0 && finalBatch !in completedStageBatches) {
+            MapEntry.StageTestNode(finalBatch, totalCharacters)
+        } else null
+    }
+
+    fun currentEntryIndex(
+        learnedCount: Int,
+        completedStageBatches: Set<Int>,
+        characterIds: List<String>,
+    ): Int = currentEntry(learnedCount, completedStageBatches, characterIds.size)?.let { current ->
+        entries(characterIds).indexOfFirst { it == current || (it is MapEntry.CharacterNode && current is MapEntry.CharacterNode && it.order == current.order) }
+    }?.takeIf { it >= 0 } ?: (entries(characterIds).lastIndex.coerceAtLeast(0))
+
+    fun entryState(
+        entry: MapEntry,
+        learnedCount: Int,
+        completedStageBatches: Set<Int>,
+        dailyTarget: Int,
+        totalCharacters: Int,
+    ): NodeState = when (entry) {
+        is MapEntry.CharacterNode -> when {
+            entry.order <= learnedCount -> NodeState.COMPLETED
+            currentEntry(learnedCount, completedStageBatches, totalCharacters)?.let { it is MapEntry.CharacterNode && it.order == entry.order } == true -> NodeState.CURRENT
+            entry.order <= learnedCount + dailyTarget && (entry.order - 1) / CHAPTER_SIZE in completedStageBatches + ((learnedCount / CHAPTER_SIZE).takeIf { learnedCount % CHAPTER_SIZE != 0 } ?: -1) -> NodeState.UPCOMING
+            else -> NodeState.LOCKED
+        }
+        is MapEntry.StageTestNode -> when {
+            entry.batchIndex in completedStageBatches -> NodeState.COMPLETED
+            currentEntry(learnedCount, completedStageBatches, totalCharacters) == entry -> NodeState.CURRENT
+            learnedCount >= entry.afterCharacterOrder -> NodeState.UPCOMING
+            else -> NodeState.LOCKED
+        }
+    }
+
     /** 总字数对应章节数（末尾不足一批也占一章，最少 0）。 */
     fun chapterCount(totalCharacters: Int): Int =
         if (totalCharacters <= 0) 0 else (totalCharacters + CHAPTER_SIZE - 1) / CHAPTER_SIZE

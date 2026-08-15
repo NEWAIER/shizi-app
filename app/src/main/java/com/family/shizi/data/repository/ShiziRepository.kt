@@ -129,6 +129,13 @@ class ShiziRepository(
     suspend fun getUsableSession(localDate: LocalDate): LearningSessionEntity? =
         database.learningSessionDao().getUsableByDate(localDate)
 
+    suspend fun getCompletedStageTestBatches(learningOrder: List<String>): Set<Int> =
+        database.learningSessionDao().getCompletedStageTests().mapNotNull { session ->
+            database.sessionItemDao().getForSession(session.id).firstOrNull()?.characterId?.let { id ->
+                learningOrder.indexOf(id).takeIf { it >= 0 }?.div(StageTestBatches.BATCH_SIZE)
+            }
+        }.toSet()
+
     suspend fun getLatestOpenOrTodaySession(localDate: LocalDate): LearningSessionEntity? =
         database.learningSessionDao().getMostRecentForDate(localDate)
             ?: database.learningSessionDao().getMostRecentlyActive()

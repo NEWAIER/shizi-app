@@ -8,6 +8,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -19,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
@@ -44,6 +46,8 @@ fun GameMapNode(
     number: Int,
     state: GrowthMapModel.NodeState,
     onClick: () -> Unit,
+    onTap: () -> Unit = {},
+    onLongPress: () -> Unit = {},
     modifier: Modifier = Modifier,
     size: Dp = 56.dp,
 ) {
@@ -94,8 +98,17 @@ fun GameMapNode(
                         else -> 1f
                     },
                 )
-                .clickable(enabled = state == GrowthMapModel.NodeState.CURRENT) {
-                    onClick()
+                .pointerInput(state, number) {
+                    detectTapGestures(
+                        onTap = {
+                            when (state) {
+                                GrowthMapModel.NodeState.CURRENT -> onClick()
+                                GrowthMapModel.NodeState.COMPLETED -> onTap()
+                                else -> Unit
+                            }
+                        },
+                        onLongPress = { if (state == GrowthMapModel.NodeState.COMPLETED) onLongPress() },
+                    )
                 }
                 .testTag("home_tree_fruit_$number"),
             contentAlignment = Alignment.Center,
@@ -109,13 +122,14 @@ fun GameMapNode(
                     )
                     StarMark(modifier = Modifier.align(Alignment.TopEnd).padding(5.dp), color = Coral)
                 }
-                GrowthMapModel.NodeState.CURRENT, GrowthMapModel.NodeState.UPCOMING -> {
+                GrowthMapModel.NodeState.CURRENT -> {
                     Text(
                         character,
                         color = MaterialTheme.colorScheme.onPrimary,
                         style = MaterialTheme.typography.titleLarge,
                     )
                 }
+                GrowthMapModel.NodeState.UPCOMING -> Unit
                 GrowthMapModel.NodeState.LOCKED -> {
                     LockMark(color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }

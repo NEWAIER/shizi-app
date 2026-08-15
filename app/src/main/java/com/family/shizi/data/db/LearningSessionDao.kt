@@ -33,6 +33,9 @@ interface LearningSessionDao {
     @Query("SELECT * FROM learning_session WHERE status = 'COMPLETED' AND plannedNewCount = 0 AND plannedReviewCount = 0 ORDER BY completedAt DESC LIMIT 1")
     suspend fun getLatestCompletedStageTest(): LearningSessionEntity?
 
+    @Query("SELECT * FROM learning_session WHERE status = 'COMPLETED' AND plannedNewCount = 0 AND plannedReviewCount = 0 ORDER BY completedAt ASC")
+    suspend fun getCompletedStageTests(): List<LearningSessionEntity>
+
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(entity: LearningSessionEntity)
 
