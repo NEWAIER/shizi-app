@@ -130,7 +130,7 @@ fun FeedbackBanner(text: String, positive: Boolean, modifier: Modifier = Modifie
 @Composable
 fun StarReward(stars: Int, modifier: Modifier = Modifier) {
     Surface(modifier, shape = ShiziShapes.pill, color = StarYellow) {
-        Text("星星能量 +$stars", Modifier.padding(horizontal = 18.dp, vertical = 10.dp), style = MaterialTheme.typography.labelLarge)
+        Text("成长星星 +$stars", Modifier.padding(horizontal = 18.dp, vertical = 10.dp), style = MaterialTheme.typography.labelLarge)
     }
 }
 

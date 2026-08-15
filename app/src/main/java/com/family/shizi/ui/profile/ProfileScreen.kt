@@ -38,17 +38,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewModelScope
 import com.family.shizi.ShiziApplication
-import com.family.shizi.data.content.ContentLoader
-import com.family.shizi.data.content.BadgeMilestone
 import com.family.shizi.data.db.CharacterProgressEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import com.family.shizi.ui.components.BadgeCard
 import com.family.shizi.ui.components.ChildPage
 import com.family.shizi.ui.components.ChildTopBar
-import com.family.shizi.ui.components.AvatarCard
 import com.family.shizi.R
 
 data class ProfileUiState(
@@ -58,12 +54,12 @@ data class ProfileUiState(
     val masteredCount: Int = 0,
     val learningDays: Int = 0,
     val dailyTarget: Int = 3,
-    val badgeMilestones: List<BadgeMilestone> = emptyList(),
     val avatarId: String = "bear",
     val totalStars: Int = 0,
-    val honorLevel: Int = 1,
-    val nextLevelStars: Int = 50,
-    val levelTitle: String = "字宝宝",
+    val levelProgress: com.family.shizi.domain.engine.HonorLevels.LevelProgress =
+        com.family.shizi.domain.engine.HonorLevels.progressFor(0),
+    val unlockedBadgeIds: Set<String> = emptySet(),
+    val awaitingBadgeIds: Set<String> = com.family.shizi.domain.engine.BadgeCatalog.awaitingIds().toSet(),
 )
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
@@ -73,14 +69,14 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     init { viewModelScope.launch {
         val progress = repository?.getCharacterProgress().orEmpty()
         val settings = repository?.settings?.first()
-        val content = ContentLoader.load(application)
         val learnedCount = progress.count { it.initialLessonCompleted }
         val masteredCount = progress.count { it.state.name.contains("MASTERED") }
         val learningDays = repository?.getCompletedLearningDayCount() ?: 0
         val totalStars = learnedCount * 10 + masteredCount * 5 + learningDays * 2
-        val levels = listOf(0, 50, 120, 250, 450, 700)
-        val levelIndex = levels.indexOfLast { totalStars >= it }.coerceAtLeast(0)
-        val levelTitles = listOf("字宝宝", "识字小芽", "汉字朋友", "识字探险家", "汉字收藏家", "汉字达人")
+        val counts = com.family.shizi.domain.engine.BadgeCounts(
+            learnedCount = learnedCount,
+            learningDays = learningDays,
+        )
         _state.value = ProfileUiState(
             loading = false,
             nickname = settings?.nickname?.ifBlank { "小朋友" } ?: "小朋友",
@@ -88,12 +84,10 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
             masteredCount = masteredCount,
             learningDays = learningDays,
             dailyTarget = settings?.dailyNewCharacterCount ?: 3,
-            badgeMilestones = content.course.badgeMilestones,
             avatarId = settings?.avatarId ?: "bear",
             totalStars = totalStars,
-            honorLevel = levelIndex + 1,
-            nextLevelStars = levels.getOrNull(levelIndex + 1) ?: levels.last(),
-            levelTitle = levelTitles[levelIndex.coerceIn(0, levelTitles.lastIndex)],
+            levelProgress = com.family.shizi.domain.engine.HonorLevels.progressFor(totalStars),
+            unlockedBadgeIds = com.family.shizi.domain.engine.BadgeCatalog.unlockedIds(counts).toSet(),
         )
     } }
 
@@ -107,8 +101,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
 fun ProfileScreen() {
     val viewModel: ProfileViewModel = viewModel()
     val state by viewModel.state.collectAsState()
-    val levelProgress = if (state.nextLevelStars <= 0) 1f else
-        (state.totalStars.toFloat() / state.nextLevelStars.toFloat()).coerceIn(0f, 1f)
+    val level = state.levelProgress
     val learnedProgress = (state.learnedCount.toFloat() / 50f).coerceIn(0f, 1f)
     ChildPage {
       Column(
@@ -130,12 +123,23 @@ fun ProfileScreen() {
                     modifier = Modifier.size(108.dp).clip(CircleShape).padding(top = 8.dp),
                 )
                 Text("${state.nickname}，你真棒！", modifier = Modifier.padding(top = 10.dp), style = MaterialTheme.typography.headlineSmall)
-                Text("Lv.${state.honorLevel} · ${state.levelTitle}", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
-                Text("${state.totalStars} 颗星星", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.displaySmall, color = MaterialTheme.colorScheme.primary)
-                Text("再收集 ${((state.nextLevelStars - state.totalStars).coerceAtLeast(0))} 颗星星就升级啦", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium)
+                Text("Lv.${level.level} · ${level.title}", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.titleMedium)
+                Text("${state.totalStars} 颗成长星星", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.displaySmall, color = MaterialTheme.colorScheme.primary)
+                Text(
+                    if (level.nextLevelThreshold > level.currentLevelStart)
+                        "再收集 ${com.family.shizi.domain.engine.HonorLevels.starsToNext(state.totalStars)} 颗成长星星就升级啦"
+                    else "已经到达最高等级，真了不起！",
+                    modifier = Modifier.padding(top = 4.dp),
+                    style = MaterialTheme.typography.bodyMedium,
+                )
                 LinearProgressIndicator(
-                    progress = { levelProgress },
+                    progress = { level.progress },
                     modifier = Modifier.fillMaxWidth().padding(top = 10.dp).testTag("profile_level_progress"),
+                )
+                Text(
+                    "Lv.${level.level} 起点 ${level.currentLevelStart} 颗 · 下一级 ${level.nextLevelThreshold} 颗",
+                    modifier = Modifier.padding(top = 4.dp),
+                    style = MaterialTheme.typography.labelSmall,
                 )
             }
         }
@@ -160,11 +164,17 @@ fun ProfileScreen() {
             }
         }
         Text("我的星星徽章", modifier = Modifier.padding(top = 28.dp), style = MaterialTheme.typography.titleLarge)
-        val badges = if (state.badgeMilestones.isEmpty()) childBadgeMilestones else state.badgeMilestones
-        badges.chunked(2).forEach { row ->
+        val catalog = com.family.shizi.domain.engine.BadgeCatalog.all
+        catalog.chunked(2).forEach { row ->
             Row(modifier = Modifier.fillMaxWidth().padding(top = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                row.forEach { milestone ->
-                    VisualBadgeCard(milestone.title, milestone.detail, state.learnedCount >= milestone.learnedCount, modifier = Modifier.weight(1f))
+                row.forEach { badge ->
+                    val unlocked = badge.id in state.unlockedBadgeIds
+                    VisualBadgeCard(
+                        title = badge.title,
+                        detail = if (badge.id in state.awaitingBadgeIds) "等待点亮" else badge.detail,
+                        unlocked = unlocked,
+                        modifier = Modifier.weight(1f),
+                    )
                 }
                 if (row.size == 1) Spacer(modifier = Modifier.weight(1f))
             }
@@ -226,29 +236,6 @@ private fun avatarDrawable(id: String): Int = when (id) {
     "lion" -> R.drawable.avatar_lion
     else -> R.drawable.avatar_bear
 }
-
-private val childBadgeMilestones = listOf(
-    BadgeMilestone("first", "第一颗星", "第一次完成学习", 1),
-    BadgeMilestone("three", "三字小芽", "认识3个字", 3),
-    BadgeMilestone("five", "五字朋友", "认识5个字", 5),
-    BadgeMilestone("ten", "十字花园", "认识10个字", 10),
-    BadgeMilestone("twenty", "二十字树", "认识20个字", 20),
-    BadgeMilestone("thirty", "三十字云朵", "认识30个字", 30),
-    BadgeMilestone("forty", "四十字星球", "认识40个字", 40),
-    BadgeMilestone("fifty", "五十字达人", "认识50个字", 50),
-    BadgeMilestone("day1", "出发啦", "完成第1天学习", 1),
-    BadgeMilestone("day3", "连续三天", "坚持3天", 3),
-    BadgeMilestone("day7", "一周相伴", "坚持7天", 7),
-    BadgeMilestone("day14", "两周闪耀", "坚持14天", 14),
-    BadgeMilestone("review1", "老朋友你好", "完成第一次复习", 1),
-    BadgeMilestone("review5", "复习小能手", "完成5次复习", 5),
-    BadgeMilestone("challenge1", "勇敢挑战", "完成第一次挑战", 1),
-    BadgeMilestone("challenge5", "挑战之星", "完成5次挑战", 5),
-    BadgeMilestone("collect10", "小小收藏家", "收集10张字卡", 10),
-    BadgeMilestone("collect25", "字卡花园", "收集25张字卡", 25),
-    BadgeMilestone("collect40", "星球探险家", "收集40张字卡", 40),
-    BadgeMilestone("collect50", "汉字收藏家", "收集50张字卡", 50),
-)
 
 private fun avatarName(id: String): String = when (id) {
     "rabbit" -> "小兔"

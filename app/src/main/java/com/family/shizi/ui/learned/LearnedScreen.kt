@@ -102,16 +102,14 @@ fun LearnedScreen(
                     CatalogCharacterCard(
                         character = character,
                         learned = progress?.initialLessonCompleted == true,
-                        onPlay = { player.play(character.audio.character) },
+                        onPlay = {
+                            // 单击：字音 + 第 1 个词语
+                            player.playSequence(com.family.shizi.domain.engine.LearnedCardAudio.tapAssets(character))
+                        },
                         onLongPress = {
                             detailCharacter = character
-                            player.playSequence(
-                                buildList {
-                                    add(character.audio.character)
-                                    addAll(character.words.map { it.audioAsset })
-                                    add(character.sentence.audioAsset)
-                                },
-                            )
+                            // 长按：字音 + 全部词语 + 例句
+                            player.playSequence(com.family.shizi.domain.engine.LearnedCardAudio.longPressAssets(character))
                         },
                     )
                 }
