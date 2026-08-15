@@ -1,0 +1,8 @@
+id,text,filename
+ui_found_it,找到了！,audio/ui/found_it.mp3
+ui_try_again,再试试看,audio/ui/try_again.mp3
+ui_lets_look_again,不着急，再看一眼,audio/ui/lets_look_again.mp3
+ui_great,你太棒了！,audio/ui/great.mp3
+ui_challenge_complete,闯关完成啦！,audio/ui/challenge_complete.mp3
+ui_badge_unlock,徽章点亮啦！,audio/ui/badge_unlock.mp3
+ui_level_up,升级啦！,audio/ui/level_up.mp3

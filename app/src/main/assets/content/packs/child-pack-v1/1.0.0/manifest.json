@@ -1800,6 +1800,48 @@
       "sha256": "78de907151d71ed01e710f89451f2d30f644d212404ba4a3470b7b2c2609aab8",
       "bytes": 29511,
       "required": true
+    },
+    {
+      "path": "audio/ui/badge_unlock.mp3",
+      "sha256": "aa38086fda56314ab9e36d50f6537b6d848af084da4525253eeb44a449c597ed",
+      "bytes": 25749,
+      "required": true
+    },
+    {
+      "path": "audio/ui/challenge_complete.mp3",
+      "sha256": "a7c3528f2557b0f1e541124975ac8d659817bd8a640c34ca27867ca890dd9d03",
+      "bytes": 25436,
+      "required": true
+    },
+    {
+      "path": "audio/ui/found_it.mp3",
+      "sha256": "79ca49c5c984e1adc685cf0558dccac6085603e2494e48d3c416e7317f653790",
+      "bytes": 19166,
+      "required": true
+    },
+    {
+      "path": "audio/ui/great.mp3",
+      "sha256": "4c1da2124f27208ac266b5726d1e348b790626a15d3fbdd802e31d54df57a508",
+      "bytes": 22928,
+      "required": true
+    },
+    {
+      "path": "audio/ui/lets_look_again.mp3",
+      "sha256": "4d7aae93fb1ef81d05e70c3cdafdc8a34e34c8e9abb1f64d1c22a381c509dd15",
+      "bytes": 35153,
+      "required": true
+    },
+    {
+      "path": "audio/ui/level_up.mp3",
+      "sha256": "2f1e7df230433ba1cf95f91e41e459d2a12b2e0b2892819006432d4ab47d78c6",
+      "bytes": 21360,
+      "required": true
+    },
+    {
+      "path": "audio/ui/try_again.mp3",
+      "sha256": "3442988eefbd8c3b55efc61dfd18e057b8363af84f3baa8ef68e093220b7a726",
+      "bytes": 23241,
+      "required": true
     }
   ]
 }
