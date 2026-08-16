@@ -86,6 +86,7 @@ fun HomeHero(
 @Composable
 fun HomeProgressSummary(
     learnedCount: Int,
+    dailyCompletedCount: Int = 0,
     totalStars: Int,
     dailyTarget: Int,
     modifier: Modifier = Modifier,
@@ -94,7 +95,7 @@ fun HomeProgressSummary(
         modifier = modifier.fillMaxWidth().padding(top = 12.dp),
         horizontalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceBetween,
     ) {
-        Text("今日进度 $learnedCount/${dailyTarget}", style = MaterialTheme.typography.labelLarge)
+        Text("今日进度 $dailyCompletedCount/${dailyTarget}", style = MaterialTheme.typography.labelLarge)
         Text("成长星星 $totalStars", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
     }
 }

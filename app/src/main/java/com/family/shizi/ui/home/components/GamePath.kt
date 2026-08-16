@@ -35,7 +35,13 @@ fun GamePath(
                 previous = point
             }
         }
-        drawPath(path, color = color.copy(alpha = 0.78f), style = Stroke(width = trunkWidth.toPx(), cap = StrokeCap.Round))
-        drawPath(path, color = color.copy(alpha = 0.45f), style = Stroke(width = branchWidth.toPx(), cap = StrokeCap.Round))
+        drawPath(path, color = Color.White.copy(alpha = 0.78f), style = Stroke(width = (branchWidth + 8.dp).toPx(), cap = StrokeCap.Round))
+        drawPath(path, color = color.copy(alpha = 0.42f), style = Stroke(width = branchWidth.toPx(), cap = StrokeCap.Round))
+        drawPath(path, color = color.copy(alpha = 0.88f), style = Stroke(width = trunkWidth.toPx(), cap = StrokeCap.Round))
+        points.forEachIndexed { index, point ->
+            if (index % 2 == 0) {
+                drawCircle(Color.White.copy(alpha = 0.82f), radius = 3.dp.toPx(), center = Offset(point.x.toPx(), point.y.toPx()))
+            }
+        }
     }
 }

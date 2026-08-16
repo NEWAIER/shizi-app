@@ -1,144 +1,113 @@
 package com.family.shizi.ui.home.components
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.domain.engine.GrowthMapModel
+import com.family.shizi.ui.home.components.tree.CartoonBranch
+import com.family.shizi.ui.home.components.tree.CartoonTrunk
+import com.family.shizi.ui.home.components.tree.LeafCluster
+import com.family.shizi.ui.home.components.tree.TreeRoots
 
-/** 每个节点在章节内的 x 位置（蛇形摆动），保证 360dp 宽度不重叠。 */
-private val nodeXs = listOf(78, 150, 222, 168, 96, 210, 120, 240, 60, 186)
+private val nodeXs = listOf(76, 150, 224, 166, 98, 210, 124, 238, 62, 184)
+private const val ENTRY_HEIGHT = 104
 
-private val stepY = 96
-
-/**
- * 成长森林地图：按章节分区展示全部节点。
- * 每章一个横幅 + 蜿蜒路径 + 节点 + 树洞 + 当前节点旁的毛毛虫。
- * 无限动画仅出现在：当前节点、毛毛虫、已解锁树洞。
- */
+/** 一棵连续的树：55 个 MapEntry 从底部向树冠排列。 */
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun GrowthMap(
     characters: List<CharacterContent>,
     learnedCount: Int,
     dailyTarget: Int,
-    onLearn: () -> Unit,
+    completedStageBatches: Set<Int> = emptySet(),
+    onLearn: (String) -> Unit,
     onOpenStageTest: (Int) -> Unit,
+    onAutoFocusComplete: (Int) -> Unit = {},
+    onCompletedTap: (CharacterContent) -> Unit = {},
+    onCompletedLongPress: (CharacterContent) -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
-    val chapters = GrowthMapModel.chapters(characters.size)
-    val currentChapter = GrowthMapModel.currentChapterIndex(learnedCount, characters.size)
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .testTag("home_growth_tree"),
-    ) {
-        chapters.forEach { chapter ->
-            ChapterSection(
-                chapter = chapter,
-                characters = characters,
-                learnedCount = learnedCount,
-                dailyTarget = dailyTarget,
-                isCurrentChapter = chapter.index == currentChapter,
-                onLearn = onLearn,
-                onOpenStageTest = onOpenStageTest,
-            )
+    val entries = remember(characters) { GrowthMapModel.entries(characters.map { it.id }) }
+    val currentIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, characters.map { it.id })
+    val listState = rememberLazyListState()
+    LaunchedEffect(currentIndex, entries.size) {
+        if (entries.isNotEmpty()) {
+            listState.animateScrollToItem(currentIndex.coerceIn(0, entries.lastIndex), scrollOffset = -260)
+            onAutoFocusComplete(currentIndex)
+        }
+    }
+    Box(modifier = modifier.fillMaxSize().testTag("home_growth_tree")) {
+        ForestBackdrop(chapterIndex = ((learnedCount.coerceAtMost(characters.size)) / 10).coerceIn(0, 4), modifier = Modifier.fillMaxSize()) {}
+        LazyColumn(
+            state = listState,
+            reverseLayout = true,
+            modifier = Modifier.fillMaxSize(),
+            userScrollEnabled = true,
+        ) {
+            itemsIndexed(entries, key = { index, entry -> "map_entry_${index}_${entry.hashCode()}" }) { index, entry ->
+                val state = GrowthMapModel.entryState(entry, learnedCount, completedStageBatches, dailyTarget, characters.map { it.id })
+                val x = nodeXs[index % nodeXs.size]
+                Box(modifier = Modifier.fillMaxWidth().height(ENTRY_HEIGHT.dp).testTag("map_entry_$index")) {
+                    GrowthTreeSegment(index = index, x = x, modifier = Modifier.fillMaxSize())
+                    when (entry) {
+                        is GrowthMapModel.MapEntry.CharacterNode -> {
+                            val character = characters.getOrNull(entry.order - 1) ?: return@itemsIndexed
+                            GameMapNode(
+                                character = character.character,
+                                number = entry.order,
+                                state = state,
+                                onClick = { onLearn(character.id) },
+                                onTap = { onCompletedTap(character) },
+                                onLongPress = { onCompletedLongPress(character) },
+                                modifier = Modifier.offset(x = (x - 36).dp, y = 12.dp).testTag("map_node_${entry.order}"),
+                            )
+                        }
+                        is GrowthMapModel.MapEntry.StageTestNode -> {
+                            TreeHoleGate(
+                                batchIndex = entry.batchIndex,
+                                number = entry.afterCharacterOrder,
+                                unlocked = state == GrowthMapModel.NodeState.CURRENT || state == GrowthMapModel.NodeState.COMPLETED,
+                                completed = state == GrowthMapModel.NodeState.COMPLETED,
+                                remaining = (entry.afterCharacterOrder - learnedCount).coerceAtLeast(0),
+                                onClick = { if (state == GrowthMapModel.NodeState.CURRENT) onOpenStageTest(entry.batchIndex) },
+                                modifier = Modifier.offset(x = (x - 50).dp, y = 12.dp),
+                            )
+                        }
+                    }
+                    if (state == GrowthMapModel.NodeState.CURRENT) {
+                        CaterpillarMascot(
+                            segmentCount = 4,
+                            state = if (entry is GrowthMapModel.MapEntry.StageTestNode) CaterpillarState.CHALLENGE else CaterpillarState.LEARNING,
+                            facingLeft = x < 150,
+                            modifier = Modifier.offset(x = if (x < 150) (x + 58).dp else (x - 58).dp, y = 38.dp),
+                        )
+                    }
+                }
+            }
         }
     }
 }
 
 @Composable
-private fun ChapterSection(
-    chapter: GrowthMapModel.Chapter,
-    characters: List<CharacterContent>,
-    learnedCount: Int,
-    dailyTarget: Int,
-    isCurrentChapter: Boolean,
-    onLearn: () -> Unit,
-    onOpenStageTest: (Int) -> Unit,
-) {
-    val bannerColor = chapterBannerColor(chapter.index)
-    Column(modifier = Modifier.fillMaxWidth().padding(top = 14.dp)) {
-        ChapterBanner(chapter = chapter, current = isCurrentChapter, bannerColor = bannerColor)
-        val chapterCharacters = characters.filter { it.order in chapter.startNumber..chapter.endNumber }
-        val topMargin = 40
-        val bottomMargin = 96
-        val chapterHeight = topMargin.dp + ((chapterCharacters.size - 1).coerceAtLeast(0) * stepY).dp + bottomMargin.dp
-        Card(
-            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.55f)),
-        ) {
-            Box(modifier = Modifier.fillMaxWidth().height(chapterHeight)) {
-                // 蜿蜒路径：连接本章节节点
-                val points = chapterCharacters.mapIndexed { index, _ ->
-                    val number = chapter.startNumber + index
-                    androidx.compose.ui.unit.DpOffset(
-                        nodeXs[(number - 1) % nodeXs.size].dp,
-                        (topMargin + index * stepY).dp,
-                    )
-                }
-                GamePath(
-                    points = points,
-                    modifier = Modifier.fillMaxWidth().height(chapterHeight),
-                    color = bannerColor,
-                )
-                chapterCharacters.forEachIndexed { index, character ->
-                    val number = chapter.startNumber + index
-                    val state = GrowthMapModel.nodeState(number, learnedCount, dailyTarget, characters.size)
-                    GameMapNode(
-                        character = character.character,
-                        number = number,
-                        state = state,
-                        onClick = onLearn,
-                        modifier = Modifier
-                            .offset(
-                                x = (nodeXs[(number - 1) % nodeXs.size] - 28).dp,
-                                y = (topMargin + index * stepY).dp,
-                            )
-                            .testTag("map_node_$number"),
-                    )
-                }
-                // 章节末尾树洞
-                val lastNumber = chapter.endNumber
-                if (lastNumber % GrowthMapModel.CHAPTER_SIZE == 0) {
-                    val batchIndex = lastNumber / GrowthMapModel.CHAPTER_SIZE - 1
-                    val holeUnlocked = GrowthMapModel.chapterUnlocked(batchIndex, learnedCount)
-                    val remaining = (lastNumber - learnedCount).coerceAtLeast(0)
-                    val lastX = nodeXs[(lastNumber - 1) % nodeXs.size]
-                    TreeHoleGate(
-                        batchIndex = batchIndex,
-                        number = lastNumber,
-                        unlocked = holeUnlocked,
-                        remaining = remaining,
-                        onClick = { onOpenStageTest(batchIndex) },
-                        modifier = Modifier.offset(
-                            x = if (lastX < 150) 168.dp else 14.dp,
-                            y = (topMargin + (lastNumber - chapter.startNumber) * stepY + 84).dp,
-                        ),
-                    )
-                }
-                // 毛毛虫：停在当前节点旁
-                if (learnedCount >= chapter.startNumber && learnedCount < chapter.endNumber) {
-                    val indexInChapter = learnedCount - chapter.startNumber
-                    val cx = nodeXs[learnedCount % nodeXs.size]
-                    val cy = topMargin + indexInChapter * stepY + 92
-                    CaterpillarMascot(
-                        segmentCount = 2 + (learnedCount - chapter.startNumber).coerceAtMost(6),
-                        modifier = Modifier.offset(x = (cx - 26).dp, y = cy.dp),
-                    )
-                }
-            }
-        }
+private fun GrowthTreeSegment(index: Int, x: Int, modifier: Modifier) {
+    Box(modifier) {
+        CartoonTrunk(index = index, progress = (index / 54f).coerceIn(0f, 1f), modifier = Modifier.fillMaxSize())
+        CartoonBranch(index = index, fruitX = x, modifier = Modifier.fillMaxSize())
+        LeafCluster(index = index, fruitX = x, modifier = Modifier.fillMaxSize())
+        if (index == 0) TreeRoots(modifier = Modifier.fillMaxSize())
     }
 }

@@ -32,3 +32,8 @@ kapt.log
 
 # Device screenshots and local debug captures
 device-*.png
+
+# Edge TTS audition reports inside content packs
+**/AUDITION_INDEX.md
+**/audition_manifest.json
+**/failed_items.json

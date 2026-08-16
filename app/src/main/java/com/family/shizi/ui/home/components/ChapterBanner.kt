@@ -65,7 +65,7 @@ fun ChapterBanner(
             )
             if (current) {
                 Spacer(Modifier.width(8.dp))
-                Text("🌱 当前章节", style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center)
+                Text("正在探索", style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center)
             }
         }
     }
