@@ -1,33 +1,29 @@
 package com.family.shizi.ui.home.components
 
-import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.domain.engine.GrowthMapModel
-import com.family.shizi.ui.home.components.tree.CartoonBranch
-import com.family.shizi.ui.home.components.tree.CartoonTrunk
-import com.family.shizi.ui.home.components.tree.LeafCluster
-import com.family.shizi.ui.home.components.tree.TreeRoots
+import com.family.shizi.domain.engine.InfiniteGrowthTreeModel
+import com.family.shizi.ui.home.tree.SegmentCharacterEntry
+import com.family.shizi.ui.home.tree.SegmentStageEntry
+import com.family.shizi.ui.home.tree.TreeSegmentCatalog
+import com.family.shizi.ui.home.tree.TreeSegmentView
 
-private val nodeXs = listOf(76, 150, 224, 166, 98, 210, 124, 238, 62, 184)
-private const val ENTRY_HEIGHT = 104
+private val SEGMENT_OVERLAP = (-72).dp
 
-/** 一棵连续的树：55 个 MapEntry 从底部向树冠排列。 */
-@OptIn(ExperimentalFoundationApi::class)
+/** 每个树段是一个 LazyColumn item，节点只使用正式树段的归一化锚点。 */
 @Composable
 fun GrowthMap(
     characters: List<CharacterContent>,
@@ -41,73 +37,101 @@ fun GrowthMap(
     onCompletedLongPress: (CharacterContent) -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
-    val entries = remember(characters) { GrowthMapModel.entries(characters.map { it.id }) }
-    val currentIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, characters.map { it.id })
+    val ids = remember(characters) { characters.map { it.id } }
+    val mapEntries = remember(ids) { GrowthMapModel.entries(ids) }
+    val segments = remember(mapEntries.size) { InfiniteGrowthTreeModel.segments(mapEntries.size) }
+    val currentMapIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, ids)
+    val currentSegmentIndex = (currentMapIndex / InfiniteGrowthTreeModel.ENTRIES_PER_SEGMENT)
+        .coerceIn(0, segments.lastIndex.coerceAtLeast(0))
     val listState = rememberLazyListState()
-    LaunchedEffect(currentIndex, entries.size) {
-        if (entries.isNotEmpty()) {
-            listState.animateScrollToItem(currentIndex.coerceIn(0, entries.lastIndex), scrollOffset = -260)
-            onAutoFocusComplete(currentIndex)
+
+    LaunchedEffect(currentSegmentIndex, mapEntries.size) {
+        if (segments.isNotEmpty()) {
+            listState.scrollToItem(currentSegmentIndex.coerceIn(0, segments.lastIndex))
+            onAutoFocusComplete(currentMapIndex)
         }
     }
+
     Box(modifier = modifier.fillMaxSize().testTag("home_growth_tree")) {
-        ForestBackdrop(chapterIndex = ((learnedCount.coerceAtMost(characters.size)) / 10).coerceIn(0, 4), modifier = Modifier.fillMaxSize()) {}
+        ForestBackdrop(
+            chapterIndex = ((learnedCount.coerceAtMost(characters.size)) / 10).coerceIn(0, 4),
+            modifier = Modifier.fillMaxSize(),
+        ) {}
         LazyColumn(
+            modifier = Modifier.fillMaxSize(),
             state = listState,
             reverseLayout = true,
-            modifier = Modifier.fillMaxSize(),
-            userScrollEnabled = true,
+            verticalArrangement = Arrangement.spacedBy(SEGMENT_OVERLAP),
         ) {
-            itemsIndexed(entries, key = { index, entry -> "map_entry_${index}_${entry.hashCode()}" }) { index, entry ->
-                val state = GrowthMapModel.entryState(entry, learnedCount, completedStageBatches, dailyTarget, characters.map { it.id })
-                val x = nodeXs[index % nodeXs.size]
-                Box(modifier = Modifier.fillMaxWidth().height(ENTRY_HEIGHT.dp).testTag("map_entry_$index")) {
-                    GrowthTreeSegment(index = index, x = x, modifier = Modifier.fillMaxSize())
-                    when (entry) {
-                        is GrowthMapModel.MapEntry.CharacterNode -> {
-                            val character = characters.getOrNull(entry.order - 1) ?: return@itemsIndexed
-                            GameMapNode(
-                                character = character.character,
-                                number = entry.order,
-                                state = state,
-                                onClick = { onLearn(character.id) },
-                                onTap = { onCompletedTap(character) },
-                                onLongPress = { onCompletedLongPress(character) },
-                                modifier = Modifier.offset(x = (x - 36).dp, y = 12.dp).testTag("map_node_${entry.order}"),
-                            )
-                        }
-                        is GrowthMapModel.MapEntry.StageTestNode -> {
-                            TreeHoleGate(
-                                batchIndex = entry.batchIndex,
-                                number = entry.afterCharacterOrder,
-                                unlocked = state == GrowthMapModel.NodeState.CURRENT || state == GrowthMapModel.NodeState.COMPLETED,
-                                completed = state == GrowthMapModel.NodeState.COMPLETED,
-                                remaining = (entry.afterCharacterOrder - learnedCount).coerceAtLeast(0),
-                                onClick = { if (state == GrowthMapModel.NodeState.CURRENT) onOpenStageTest(entry.batchIndex) },
-                                modifier = Modifier.offset(x = (x - 50).dp, y = 12.dp),
-                            )
-                        }
-                    }
-                    if (state == GrowthMapModel.NodeState.CURRENT) {
-                        CaterpillarMascot(
-                            segmentCount = 4,
-                            state = if (entry is GrowthMapModel.MapEntry.StageTestNode) CaterpillarState.CHALLENGE else CaterpillarState.LEARNING,
-                            facingLeft = x < 150,
-                            modifier = Modifier.offset(x = if (x < 150) (x + 58).dp else (x - 58).dp, y = 38.dp),
-                        )
-                    }
-                }
+            items(items = segments, key = { it.segmentIndex }) { segment ->
+                val spec = TreeSegmentCatalog.specFor(segment.segmentIndex)
+                val segmentEntries = buildSegmentEntries(
+                    segment = segment,
+                    mapEntries = mapEntries,
+                    characters = characters,
+                    learnedCount = learnedCount,
+                    dailyTarget = dailyTarget,
+                    completedStageBatches = completedStageBatches,
+                )
+                TreeSegmentView(
+                    segmentIndex = segment.segmentIndex,
+                    spec = spec,
+                    characterEntries = segmentEntries.characters,
+                    stageEntry = segmentEntries.stage,
+                    currentGlobalMapIndex = currentMapIndex,
+                    onLearn = onLearn,
+                    onStageTest = onOpenStageTest,
+                    onCompletedTap = onCompletedTap,
+                    onCompletedLongPress = onCompletedLongPress,
+                    modifier = Modifier.fillMaxWidth().testTag("home_tree_segment_${segment.segmentIndex}"),
+                )
             }
         }
     }
 }
 
-@Composable
-private fun GrowthTreeSegment(index: Int, x: Int, modifier: Modifier) {
-    Box(modifier) {
-        CartoonTrunk(index = index, progress = (index / 54f).coerceIn(0f, 1f), modifier = Modifier.fillMaxSize())
-        CartoonBranch(index = index, fruitX = x, modifier = Modifier.fillMaxSize())
-        LeafCluster(index = index, fruitX = x, modifier = Modifier.fillMaxSize())
-        if (index == 0) TreeRoots(modifier = Modifier.fillMaxSize())
+private data class SegmentEntries(
+    val characters: List<SegmentCharacterEntry>,
+    val stage: SegmentStageEntry?,
+)
+
+private fun buildSegmentEntries(
+    segment: InfiniteGrowthTreeModel.TreeSegment,
+    mapEntries: List<GrowthMapModel.MapEntry>,
+    characters: List<CharacterContent>,
+    learnedCount: Int,
+    dailyTarget: Int,
+    completedStageBatches: Set<Int>,
+): SegmentEntries {
+    val characterById = characters.associateBy { it.id }
+    val characterEntries = mutableListOf<SegmentCharacterEntry>()
+    var stage: SegmentStageEntry? = null
+    mapEntries.subList(segment.firstEntryIndex, segment.lastEntryIndex + 1).forEachIndexed { localIndex, entry ->
+        val globalIndex = segment.firstEntryIndex + localIndex
+        val state = GrowthMapModel.entryState(
+            entry = entry,
+            learnedCount = learnedCount,
+            completedStageBatches = completedStageBatches,
+            dailyTarget = dailyTarget,
+            characterIds = characters.map { it.id },
+        )
+        when (entry) {
+            is GrowthMapModel.MapEntry.CharacterNode -> characterById[entry.characterId]?.let { character ->
+                characterEntries += SegmentCharacterEntry(
+                    globalMapIndex = globalIndex,
+                    localCharacterIndex = localIndex,
+                    characterOrder = entry.order,
+                    character = character,
+                    state = state,
+                )
+            }
+            is GrowthMapModel.MapEntry.StageTestNode -> stage = SegmentStageEntry(
+                globalMapIndex = globalIndex,
+                batchIndex = entry.batchIndex,
+                afterCharacterOrder = entry.afterCharacterOrder,
+                state = state,
+            )
+        }
     }
+    return SegmentEntries(characterEntries, stage)
 }
