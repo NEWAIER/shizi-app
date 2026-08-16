@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -18,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.domain.engine.GrowthMapModel
 import com.family.shizi.ui.home.components.assets.GrowthTreeArtwork
+import com.family.shizi.ui.home.components.assets.CaterpillarArtwork
 
 private val nodeXs = listOf(76, 150, 224, 166, 98, 210, 124, 238, 62, 184)
 private const val ENTRY_HEIGHT = 104
@@ -130,11 +132,10 @@ private fun GrowthMapEntry(
             }
         }
         if (state == GrowthMapModel.NodeState.CURRENT) {
-            CaterpillarMascot(
-                segmentCount = 4,
+            CaterpillarArtwork(
                 state = if (entry is GrowthMapModel.MapEntry.StageTestNode) CaterpillarState.CHALLENGE else CaterpillarState.LEARNING,
                 facingLeft = x < 150,
-                modifier = Modifier.offset(x = if (x < 150) (x + 58).dp else (x - 58).dp, y = 38.dp),
+                modifier = Modifier.offset(x = if (x < 150) (x + 48).dp else (x - 48).dp, y = 8.dp).height(94.dp).width(96.dp),
             )
         }
     }
