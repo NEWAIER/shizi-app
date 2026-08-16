@@ -19,6 +19,7 @@ import com.family.shizi.domain.engine.GrowthMapModel
 @Composable
 fun CharacterFruit(
     state: GrowthMapModel.NodeState,
+    seed: Int = 0,
     modifier: Modifier = Modifier,
 ) {
     val pulse = if (state == GrowthMapModel.NodeState.CURRENT) {
@@ -30,8 +31,12 @@ fun CharacterFruit(
         ).value
     } else 1f
     Canvas(modifier) {
+        val matureColors = listOf(
+            Color(0xFFE85D45), Color(0xFFF29F38), Color(0xFFEBC43F),
+            Color(0xFF8F75D6), Color(0xFF48B8C8), Color(0xFF7CCB55),
+        )
         val base = when (state) {
-            GrowthMapModel.NodeState.COMPLETED -> Color(0xFFEBAE38)
+            GrowthMapModel.NodeState.COMPLETED -> matureColors[seed.mod(matureColors.size)]
             GrowthMapModel.NodeState.CURRENT -> Color(0xFF49B975)
             GrowthMapModel.NodeState.UPCOMING -> Color(0xFF76C98A)
             GrowthMapModel.NodeState.LOCKED -> Color(0xFF84A9A1)

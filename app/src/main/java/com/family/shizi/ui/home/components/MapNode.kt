@@ -89,7 +89,7 @@ fun GameMapNode(
                 .testTag("home_tree_fruit_$number"),
             contentAlignment = Alignment.Center,
         ) {
-            CharacterFruit(state = state, modifier = Modifier.size(nodeSize))
+            CharacterFruit(state = state, seed = number, modifier = Modifier.size(nodeSize))
             when (state) {
                 GrowthMapModel.NodeState.COMPLETED -> {
                     Text(

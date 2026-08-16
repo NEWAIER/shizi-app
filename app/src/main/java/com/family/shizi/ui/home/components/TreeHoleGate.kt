@@ -57,6 +57,10 @@ fun TreeHoleGate(
                 unlocked -> Color(0xFF875E4A)
                 else -> Color(0xFF6F7280)
             }
+            if (unlocked && !completed) {
+                drawCircle(Color(0xFFFFE38A).copy(alpha = .3f), radius = 34.dp.toPx(), center = Offset(size.width / 2f, 48.dp.toPx()))
+            }
+            drawArc(Color(0xFF5B3426), 180f, 180f, true, topLeft = Offset(6.dp.toPx(), 5.dp.toPx()), size = androidx.compose.ui.geometry.Size(size.width - 12.dp.toPx(), size.height - 10.dp.toPx()))
             drawArc(holeColor, 180f, 180f, true, topLeft = Offset(10.dp.toPx(), 8.dp.toPx()), size = androidx.compose.ui.geometry.Size(size.width - 20.dp.toPx(), size.height - 14.dp.toPx()))
             drawCircle(Color(0xFF2D252A), radius = 28.dp.toPx(), center = Offset(size.width / 2f, 48.dp.toPx()))
             if (completed) {
