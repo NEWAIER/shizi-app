@@ -18,11 +18,11 @@ class GrowthMapVisualRegressionTest {
 
     @Test fun currentFocusCoversRequiredReleaseStates() {
         val states = listOf(
-            GrowthMapModel.currentEntry(0, emptySet(), 50),
-            GrowthMapModel.currentEntry(10, emptySet(), 50),
-            GrowthMapModel.currentEntry(10, setOf(0), 50),
-            GrowthMapModel.currentEntry(20, emptySet(), 50),
-            GrowthMapModel.currentEntry(50, setOf(0, 1, 2, 3), 50),
+            GrowthMapModel.currentEntry(0, emptySet(), ids),
+            GrowthMapModel.currentEntry(10, emptySet(), ids),
+            GrowthMapModel.currentEntry(10, setOf(0), ids),
+            GrowthMapModel.currentEntry(20, emptySet(), ids),
+            GrowthMapModel.currentEntry(50, setOf(0, 1, 2, 3), ids),
         )
         assertTrue(states[0] is GrowthMapModel.MapEntry.CharacterNode)
         assertTrue(states[1] is GrowthMapModel.MapEntry.StageTestNode)
