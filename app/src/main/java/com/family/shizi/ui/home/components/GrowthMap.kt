@@ -1,6 +1,7 @@
 package com.family.shizi.ui.home.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -59,6 +60,7 @@ fun GrowthMap(
             modifier = Modifier.fillMaxSize(),
             state = listState,
             reverseLayout = true,
+            verticalArrangement = Arrangement.spacedBy((-18).dp),
         ) {
             items(segments, key = { it.segmentIndex }) { segment ->
                 val segmentEntries = entries.subList(segment.firstEntryIndex, segment.lastEntryIndex + 1)
