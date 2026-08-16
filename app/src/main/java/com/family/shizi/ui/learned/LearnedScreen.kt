@@ -33,6 +33,7 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.size
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewModelScope
@@ -45,6 +46,7 @@ import com.family.shizi.navigation.ShiziRoute
 import com.family.shizi.ui.audio.AssetAudioPlayer
 import com.family.shizi.ui.components.ChildPage
 import com.family.shizi.ui.components.ChildTopBar
+import com.family.shizi.ui.components.DecorativeStar
 import com.family.shizi.ui.components.EmptyState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -162,7 +164,8 @@ private fun CatalogCharacterCard(
     ) {
         Column(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp, horizontal = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(character.character, style = MaterialTheme.typography.headlineSmall, color = if (learned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(if (learned) "★" else "·", modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.titleMedium, color = if (learned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline)
+            if (learned) DecorativeStar(modifier = Modifier.padding(top = 2.dp).size(12.dp), color = MaterialTheme.colorScheme.primary)
+            else Text("·", modifier = Modifier.padding(top = 2.dp), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.outline)
         }
     }
 }

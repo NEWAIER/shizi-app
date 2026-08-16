@@ -77,6 +77,7 @@ import kotlin.math.cos
 import kotlin.math.sin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
 import kotlinx.serialization.json.Json
 
 // ─────────────────── Main Practice Screen ───────────────────
@@ -216,6 +217,8 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                             scope.launch {
                                 player.stop()
                                 repo.pauseForRest(sessionId)
+                                val childId = repo.settings.first().testChildId
+                                repo.recordUxEvent("SESSION_EXIT_EARLY", childId, sessionId = sessionId)
                                 onNavigate(ShiziRoute.Home)
                             }
                         }
@@ -243,6 +246,24 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                     isAccidental = responseMs < 300 || multiTouchDetected,
                 )
                 val attempt = result.attempt
+                val childId = repo.settings.first().testChildId
+                val completedCharacterId = content.optionCatalog.firstOrNull { it.id == q.correctOptionId }?.characterId
+                val event = when {
+                    !attempt.isCorrect -> "QUESTION_WRONG"
+                    attempt.attemptNumber == 1 -> "QUESTION_CORRECT_FIRST_TRY"
+                    else -> "QUESTION_CORRECT"
+                }
+                repo.recordUxEvent(event, childId, sessionId = currentSessionId, metadata = "{\"questionId\":\"${q.id}\"}")
+                if (result.itemCompleted) {
+                    repo.recordUxEvent("QUESTION_COMPLETE", childId, characterId = completedCharacterId, sessionId = currentSessionId)
+                    repo.recordUxEvent("SESSION_CHARACTER_COMPLETE", childId, characterId = completedCharacterId, sessionId = currentSessionId)
+                    if (currentItemKind == ItemKind.NEW) {
+                        repo.recordUxEvent("LEARN_COMPLETE", childId, characterId = completedCharacterId, sessionId = currentSessionId)
+                        repo.recordUxEvent("MAP_RETURN_AFTER_CHARACTER", childId, characterId = completedCharacterId, sessionId = currentSessionId)
+                    }
+                }
+                if (result.sessionCompleted) repo.recordUxEvent("SESSION_COMPLETE", childId, sessionId = currentSessionId)
+                if (result.endedEarly) repo.recordUxEvent("SESSION_EXIT_EARLY", childId, sessionId = currentSessionId)
                 submissionInFlight = false
                 suspend fun celebrateCompletedCharacter() {
                     celebrationVisible = true
@@ -284,7 +305,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                             result.itemCompleted -> {
                                 status = "你太棒了！"
                                 celebrateCompletedCharacter()
-                                onNavigate(repo.resolveNextRoute(currentSessionId ?: return@runCatching))
+                                onNavigate(repo.resolveRouteAfterItemCompleted(currentSessionId ?: return@runCatching, q.sessionItemId))
                             }
                             else -> reload()
                         }
@@ -308,7 +329,7 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
                             result.itemCompleted -> {
                                 status = "你太棒了！"
                                 celebrateCompletedCharacter()
-                                onNavigate(repo.resolveNextRoute(currentSessionId ?: return@runCatching))
+                                onNavigate(repo.resolveRouteAfterItemCompleted(currentSessionId ?: return@runCatching, q.sessionItemId))
                             }
                             else -> reload()
                         }

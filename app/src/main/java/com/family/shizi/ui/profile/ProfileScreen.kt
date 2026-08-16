@@ -33,6 +33,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.family.shizi.ui.components.DecorativeStar
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -213,7 +214,8 @@ private fun VisualBadgeCard(title: String, detail: String, unlocked: Boolean, mo
                 modifier = Modifier.size(42.dp).clip(CircleShape),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(if (unlocked) "★" else "☆", style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.primary)
+                if (unlocked) DecorativeStar(modifier = Modifier.size(26.dp), color = MaterialTheme.colorScheme.primary)
+                else Text("等待", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
             }
             Text(title, style = MaterialTheme.typography.labelMedium, maxLines = 1)
             Text(if (unlocked) "已点亮" else detail, style = MaterialTheme.typography.labelSmall, maxLines = 1)

@@ -9,6 +9,7 @@ import com.family.shizi.data.db.SessionStatus
 import com.family.shizi.domain.core.IdProvider
 import com.family.shizi.domain.core.KotlinRandomProvider
 import com.family.shizi.domain.health.AppReadinessChecker
+import com.family.shizi.domain.engine.GrowthMapModel
 import com.family.shizi.navigation.ShiziRoute
 import java.time.LocalDate
 import java.util.UUID
@@ -24,6 +25,7 @@ data class HomeUiState(
     val primaryAction: String = "开始",
     val canStart: Boolean = false,
     val learnedCount: Int = 0,
+    val dailyCompletedCount: Int = 0,
     val dueReviewCount: Int = 0,
     val dailyNewTarget: Int = 3,
     val stageTestThreshold: Int = 3,
@@ -32,6 +34,9 @@ data class HomeUiState(
     val error: String? = null,
     val todayCharacter: String = "水",
     val todayPinyin: String = "shuǐ",
+    val completedStageBatches: Set<Int> = emptySet(),
+    val currentCharacterId: String? = null,
+    val currentMapIndex: Int = 0,
 )
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
@@ -85,6 +90,12 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 val totalStars = learnedCount * 10 + masteredCount * 5 + learningDays * 2
                 val dueReviewCount = progress.count { it.nextReviewDate?.let { date -> date <= today } == true }
                 val learnedIds = progress.filter { it.initialLessonCompleted }.map { it.characterId }.toSet()
+                val completedStageBatches = repo.getCompletedStageTestBatches(content.learningOrder)
+                val mapCurrent = GrowthMapModel.currentEntry(learnedCount, completedStageBatches, content.learningOrder)
+                val sessionCurrentCharacter = repo.getUsableSession(today)?.let { session ->
+                    repo.getItemsForSession(session.id).firstOrNull { it.status != com.family.shizi.data.db.ItemStatus.COMPLETED && it.kind == com.family.shizi.data.db.ItemKind.NEW }?.characterId
+                }
+                val currentCharacterId = sessionCurrentCharacter ?: (mapCurrent as? GrowthMapModel.MapEntry.CharacterNode)?.let { node -> content.characters.getOrNull(node.order - 1)?.id }
                 val todayCharacter = content.characters.firstOrNull { it.id !in learnedIds } ?: content.characters.firstOrNull()
                 val base = HomeUiState(
                     onboardingCompleted = true,
@@ -96,25 +107,32 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     canTakeStageTest = learnedCount >= content.course.stageTestThreshold,
                     todayCharacter = todayCharacter?.character ?: "水",
                     todayPinyin = todayCharacter?.pinyin ?: "shuǐ",
+                    completedStageBatches = completedStageBatches,
+                    currentCharacterId = currentCharacterId,
+                    currentMapIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, content.learningOrder),
                 )
                 val existing = repo.getUsableSession(today)
+                val dailyCompletedCount = existing?.let { session ->
+                    repo.getItemsForSession(session.id).count { item -> item.status == com.family.shizi.data.db.ItemStatus.COMPLETED }
+                } ?: 0
+                val readyBase = base.copy(dailyCompletedCount = dailyCompletedCount)
                 _uiState.value = when {
-                    existing?.status == SessionStatus.COMPLETED -> base.copy(
+                    existing?.status == SessionStatus.COMPLETED -> readyBase.copy(
                         message = "今天完成啦",
                         primaryAction = "今天完成啦",
                         canStart = false,
                     )
-                    existing?.status == SessionStatus.ENDED_EARLY -> base.copy(
+                    existing?.status == SessionStatus.ENDED_EARLY -> readyBase.copy(
                         message = "今天先到这里",
                         primaryAction = "今天先到这里",
                         canStart = false,
                     )
-                    existing != null -> base.copy(
+                    existing != null -> readyBase.copy(
                         message = "今天还有任务可以继续",
                         primaryAction = "继续",
                         canStart = true,
                     )
-                    else -> base.copy(
+                    else -> readyBase.copy(
                         message = "今天认识新朋友",
                         primaryAction = "开始",
                         canStart = true,
@@ -135,6 +153,10 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun startOrContinue(onReady: (ShiziRoute) -> Unit) {
+        startOrContinueForCharacter(null, onReady)
+    }
+
+    fun startOrContinueForCharacter(characterId: String?, onReady: (ShiziRoute) -> Unit) {
         viewModelScope.launch {
             val repo = app.repository
             if (repo == null) {
@@ -156,6 +178,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 return@launch
             }
             val settings = repo.settings.first()
+            repo.recordUxEvent("PRIMARY_LEARN_CLICK", settings.testChildId)
             val session = repo.getOrCreateDailySession(
                 date = LocalDate.now(),
                 settings = settings,
@@ -165,6 +188,9 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             )
             repo.markSessionActive(session.id)
             val route = repo.resolveNextRoute(session.id)
+            val currentItem = repo.getItemsForSession(session.id).firstOrNull { it.status != com.family.shizi.data.db.ItemStatus.COMPLETED }
+            if (characterId != null && currentItem?.characterId != characterId) return@launch
+            if (currentItem != null) repo.recordUxEvent("LEARN_START", settings.testChildId, characterId = currentItem.characterId, sessionId = session.id)
             refresh()
             onReady(route)
         }

@@ -42,12 +42,14 @@ import java.time.LocalDate
 import java.util.UUID
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
 
 private enum class ParentTab(val title: String) {
     Report("学习报告"),
     ErrorProne("易错字"),
     Oral("口头抽检"),
     Settings("设置与诊断"),
+    TestMode("体验测试"),
 }
 
 @Composable
@@ -71,6 +73,9 @@ fun ParentScreen(
     var adultGateOpen by remember { mutableStateOf(false) }
     var adultAnswer by remember { mutableStateOf(TextFieldValue("")) }
     var adultGateMessage by remember { mutableStateOf("家长页需要再次成人验证") }
+    var testChildId by remember { mutableStateOf("测试宝宝A") }
+    var uxEvents by remember { mutableStateOf<List<String>>(emptyList()) }
+    var resetTestArmed by remember { mutableStateOf(false) }
 
     suspend fun reload() {
         if (repo == null) {
@@ -88,6 +93,7 @@ fun ParentScreen(
 
     LaunchedEffect(Unit) {
         onAuthorizationConsumed()
+        testChildId = app.settingsStore.settings.first().testChildId
         reload()
     }
 
@@ -216,6 +222,34 @@ fun ParentScreen(
                         }
                     },
                 )
+                ParentTab.TestMode -> ChildUxTestMode(
+                    activeChildId = testChildId,
+                    events = uxEvents,
+                    resetArmed = resetTestArmed,
+                    onSelectChild = { childId ->
+                        scope.launch {
+                            app.settingsStore.updateSettings { it.copy(testChildId = childId) }
+                            testChildId = childId
+                            status = "$childId 已选择"
+                        }
+                    },
+                    onLoadEvents = { scope.launch { uxEvents = repo?.latestUxEvents().orEmpty() } },
+                    onReset = {
+                        if (!resetTestArmed) {
+                            resetTestArmed = true
+                            status = "将清空上一位测试儿童的学习进度，并开始新的测试；再次点击确认"
+                        } else {
+                            scope.launch {
+                                val preservedEvents = repo?.latestUxEvents().orEmpty()
+                                val result = repo?.clearLearningDataAndResetSettingsSafely()
+                                resetTestArmed = false
+                                app.settingsStore.updateSettings { it.copy(testChildId = testChildId) }
+                                uxEvents = preservedEvents
+                                status = if (result is ShiziRepository.ClearResult.Success) "上一轮日志已保留，新的测试儿童已准备好" else "重置失败，请查看诊断"
+                            }
+                        }
+                    },
+                )
             }
             }
         }
@@ -282,6 +316,43 @@ private fun ParentAdultGate(
                 .testTag("parent_adult_gate_submit"),
         ) {
             Text("验证")
+        }
+    }
+}
+
+@Composable
+private fun ChildUxTestMode(
+    activeChildId: String,
+    events: List<String>,
+    resetArmed: Boolean,
+    onSelectChild: (String) -> Unit,
+    onLoadEvents: () -> Unit,
+    onReset: () -> Unit,
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth().padding(top = 12.dp).testTag("parent_child_ux_test_mode"),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text("Child UX Test Mode", style = MaterialTheme.typography.titleLarge)
+        Text("当前：$activeChildId", modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.titleMedium)
+            Text("一次测试一个孩子：日志只保存在本机，不联网、不录音、不录像。", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall)
+        Row(modifier = Modifier.fillMaxWidth().padding(top = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            listOf("测试宝宝A", "测试宝宝B", "测试宝宝C").forEach { childId ->
+                Button(onClick = { onSelectChild(childId) }, modifier = Modifier.weight(1f).testTag("test_child_${childId.takeLast(1)}")) {
+                    Text(childId.takeLast(1))
+                }
+            }
+        }
+        Button(onClick = onReset, modifier = Modifier.fillMaxWidth().padding(top = 12.dp).testTag("test_mode_reset")) {
+            Text(if (resetArmed) "确认开始新的测试" else "开始新的测试")
+        }
+        TextButton(onClick = onLoadEvents, modifier = Modifier.testTag("test_mode_load_events")) { Text("查看本地体验日志") }
+        if (events.isEmpty()) {
+            Text("还没有体验日志", style = MaterialTheme.typography.bodySmall)
+        } else {
+            events.take(12).forEach { event ->
+                Text(event, modifier = Modifier.fillMaxWidth().padding(top = 4.dp), style = MaterialTheme.typography.labelSmall)
+            }
         }
     }
 }

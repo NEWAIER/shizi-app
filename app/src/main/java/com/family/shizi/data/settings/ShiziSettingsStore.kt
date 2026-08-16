@@ -27,6 +27,7 @@ class ShiziSettingsStore(private val context: Context) {
             lastKnownLocalDate = prefs[Keys.lastKnownLocalDate],
             lastSuccessfulSaveAt = prefs[Keys.lastSuccessfulSaveAt],
             contentVersion = prefs[Keys.contentVersion] ?: "1.0.0",
+            testChildId = prefs[Keys.testChildId] ?: "测试宝宝A",
         )
     }
 
@@ -45,6 +46,7 @@ class ShiziSettingsStore(private val context: Context) {
                 lastKnownLocalDate = prefs[Keys.lastKnownLocalDate],
                 lastSuccessfulSaveAt = prefs[Keys.lastSuccessfulSaveAt],
                 contentVersion = prefs[Keys.contentVersion] ?: "1.0.0",
+                testChildId = prefs[Keys.testChildId] ?: "测试宝宝A",
             )
             updated = transform(current).validated()
             prefs[Keys.schemaVersion] = updated.schemaVersion
@@ -58,6 +60,7 @@ class ShiziSettingsStore(private val context: Context) {
             updated.lastKnownLocalDate?.let { prefs[Keys.lastKnownLocalDate] = it } ?: prefs.remove(Keys.lastKnownLocalDate)
             updated.lastSuccessfulSaveAt?.let { prefs[Keys.lastSuccessfulSaveAt] = it } ?: prefs.remove(Keys.lastSuccessfulSaveAt)
             prefs[Keys.contentVersion] = updated.contentVersion
+            prefs[Keys.testChildId] = updated.testChildId
         }
         return updated
     }
@@ -75,6 +78,7 @@ class ShiziSettingsStore(private val context: Context) {
             },
             volumePercent = volumePercent.coerceIn(0, 100),
             contentVersion = contentVersion.ifBlank { "1.0.0" },
+            testChildId = testChildId.ifBlank { "测试宝宝A" }.take(20),
         )
 
     private object Keys {
@@ -89,6 +93,7 @@ class ShiziSettingsStore(private val context: Context) {
         val lastKnownLocalDate = stringPreferencesKey("lastKnownLocalDate")
         val lastSuccessfulSaveAt = longPreferencesKey("lastSuccessfulSaveAt")
         val contentVersion = stringPreferencesKey("contentVersion")
+        val testChildId = stringPreferencesKey("testChildId")
     }
 
     companion object {

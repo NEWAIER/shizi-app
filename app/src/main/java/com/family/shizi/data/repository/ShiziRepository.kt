@@ -129,6 +129,13 @@ class ShiziRepository(
     suspend fun getUsableSession(localDate: LocalDate): LearningSessionEntity? =
         database.learningSessionDao().getUsableByDate(localDate)
 
+    suspend fun getCompletedStageTestBatches(learningOrder: List<String>): Set<Int> =
+        database.learningSessionDao().getCompletedStageTests().mapNotNull { session ->
+            database.sessionItemDao().getForSession(session.id).firstOrNull()?.characterId?.let { id ->
+                learningOrder.indexOf(id).takeIf { it >= 0 }?.div(StageTestBatches.BATCH_SIZE)
+            }
+        }.toSet()
+
     suspend fun getLatestOpenOrTodaySession(localDate: LocalDate): LearningSessionEntity? =
         database.learningSessionDao().getMostRecentForDate(localDate)
             ?: database.learningSessionDao().getMostRecentlyActive()
@@ -894,6 +901,19 @@ class ShiziRepository(
         }
     }
 
+    /**
+     * Resolves the route after one item is completed without opening the next item automatically.
+     * A NEW character and a completed stage-test item both return to the growth map. REVIEW keeps
+     * the existing session flow so due reviews are not silently discarded.
+     */
+    suspend fun resolveRouteAfterItemCompleted(sessionId: String, itemId: String): ShiziRoute {
+        val item = database.sessionItemDao().getById(itemId) ?: return ShiziRoute.Home
+        return when (item.kind) {
+            ItemKind.NEW, ItemKind.TEST -> ShiziRoute.Home
+            ItemKind.REVIEW -> resolveNextRoute(sessionId)
+        }
+    }
+
     // ========== ORAL CHECK ==========
 
     suspend fun appendOralCheck(
@@ -1024,6 +1044,21 @@ class ShiziRepository(
     suspend fun logError(code: String, context: String = "{}", now: Instant = clock.instant()) {
         database.withTransaction { logErrorInternal(code, context, now) }
     }
+
+    suspend fun recordUxEvent(
+        event: String,
+        testChildId: String,
+        characterId: String? = null,
+        sessionId: String? = null,
+        metadata: String = "{}",
+        now: Instant = clock.instant(),
+    ) {
+        val context = """{"event":"$event","testChildId":"${testChildId.replace("\"", "\\\"")}","characterId":${characterId?.let { "\"${it.replace("\"", "\\\"")}\"" } ?: "null"},"sessionId":${sessionId?.let { "\"${it.replace("\"", "\\\"")}\"" } ?: "null"},"metadata":$metadata}"""
+        logError("UX_EVENT", context, now)
+    }
+
+    suspend fun latestUxEvents(limit: Int = 30): List<String> =
+        database.appErrorLogDao().latest(limit).filter { it.code == "UX_EVENT" }.map { "${it.occurredAt} ${it.context}" }
 
     private suspend fun logErrorInternal(code: String, context: String, now: Instant) {
         database.appErrorLogDao().insert(

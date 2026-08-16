@@ -19,11 +19,11 @@ class GrowthMapModelTest {
 
     @Test fun chapterNamesCoverFiveForests() {
         assertEquals(5, GrowthMapModel.chapters(50).size)
-        assertEquals("第一森林", GrowthMapModel.chapters(50)[0].name)
-        assertEquals("第二森林", GrowthMapModel.chapters(50)[1].name)
-        assertEquals("第三森林", GrowthMapModel.chapters(50)[2].name)
-        assertEquals("第四森林", GrowthMapModel.chapters(50)[3].name)
-        assertEquals("第五星光森林", GrowthMapModel.chapters(50)[4].name)
+        assertEquals("青草森林", GrowthMapModel.chapters(50)[0].name)
+        assertEquals("花朵森林", GrowthMapModel.chapters(50)[1].name)
+        assertEquals("小溪森林", GrowthMapModel.chapters(50)[2].name)
+        assertEquals("彩云森林", GrowthMapModel.chapters(50)[3].name)
+        assertEquals("星光森林", GrowthMapModel.chapters(50)[4].name)
     }
 
     @Test fun chapterRangesSplitTenCharacters() {
