@@ -1,12 +1,14 @@
 package com.family.shizi.ui.home.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -15,15 +17,14 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.domain.engine.GrowthMapModel
-import com.family.shizi.domain.engine.InfiniteGrowthTreeModel
-import com.family.shizi.ui.home.tree.SegmentCharacterEntry
-import com.family.shizi.ui.home.tree.SegmentStageEntry
-import com.family.shizi.ui.home.tree.TreeSegmentCatalog
-import com.family.shizi.ui.home.tree.TreeSegmentView
+import com.family.shizi.ui.home.components.assets.GrowthTreeArtwork
+import com.family.shizi.ui.home.components.assets.CaterpillarArtwork
+import com.family.shizi.ui.home.tree.FullTreeAnchorCatalog
+import com.family.shizi.ui.home.tree.NormalizedPoint
 
-private val SEGMENT_OVERLAP = (-72).dp
+private val FULL_TREE_HEIGHT = 900.dp
 
-/** 每个树段是一个 LazyColumn item，节点只使用正式树段的归一化锚点。 */
+/** 首页是一张完整连续的树图，所有节点都挂在同一张树上。 */
 @Composable
 fun GrowthMap(
     characters: List<CharacterContent>,
@@ -38,100 +39,84 @@ fun GrowthMap(
     modifier: Modifier = Modifier,
 ) {
     val ids = remember(characters) { characters.map { it.id } }
-    val mapEntries = remember(ids) { GrowthMapModel.entries(ids) }
-    val segments = remember(mapEntries.size) { InfiniteGrowthTreeModel.segments(mapEntries.size) }
-    val currentMapIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, ids)
-    val currentSegmentIndex = (currentMapIndex / InfiniteGrowthTreeModel.ENTRIES_PER_SEGMENT)
-        .coerceIn(0, segments.lastIndex.coerceAtLeast(0))
-    val listState = rememberLazyListState()
+    val entries = remember(ids) { GrowthMapModel.entries(ids) }
+    val currentIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, ids)
+    val scrollState = rememberScrollState()
 
-    LaunchedEffect(currentSegmentIndex, mapEntries.size) {
-        if (segments.isNotEmpty()) {
-            listState.scrollToItem(currentSegmentIndex.coerceIn(0, segments.lastIndex))
-            onAutoFocusComplete(currentMapIndex)
+    BoxWithConstraints(modifier = modifier.fillMaxSize().testTag("home_growth_tree")) {
+        val viewportHeight = maxHeight
+        val mapWidth = maxWidth
+        val contentHeight = maxOf(FULL_TREE_HEIGHT, viewportHeight * 1.65f)
+        val current = anchorForEntry(currentIndex, entries)
+        LaunchedEffect(currentIndex, contentHeight) {
+            val target = (contentHeight * current.y - viewportHeight * 0.45f).coerceAtLeast(0.dp)
+            scrollState.animateScrollTo(target.value.toInt())
+            onAutoFocusComplete(currentIndex)
         }
-    }
 
-    Box(modifier = modifier.fillMaxSize().testTag("home_growth_tree")) {
-        ForestBackdrop(
-            chapterIndex = ((learnedCount.coerceAtMost(characters.size)) / 10).coerceIn(0, 4),
-            modifier = Modifier.fillMaxSize(),
-        ) {}
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            state = listState,
-            reverseLayout = true,
-            verticalArrangement = Arrangement.spacedBy(SEGMENT_OVERLAP),
-        ) {
-            items(items = segments, key = { it.segmentIndex }) { segment ->
-                val spec = TreeSegmentCatalog.specFor(segment.segmentIndex)
-                val segmentEntries = buildSegmentEntries(
-                    segment = segment,
-                    mapEntries = mapEntries,
-                    characters = characters,
-                    learnedCount = learnedCount,
-                    dailyTarget = dailyTarget,
-                    completedStageBatches = completedStageBatches,
-                )
-                TreeSegmentView(
-                    segmentIndex = segment.segmentIndex,
-                    spec = spec,
-                    characterEntries = segmentEntries.characters,
-                    stageEntry = segmentEntries.stage,
-                    currentGlobalMapIndex = currentMapIndex,
-                    onLearn = onLearn,
-                    onStageTest = onOpenStageTest,
-                    onCompletedTap = onCompletedTap,
-                    onCompletedLongPress = onCompletedLongPress,
-                    modifier = Modifier.fillMaxWidth().testTag("home_tree_segment_${segment.segmentIndex}"),
-                )
+        Box(modifier = Modifier.fillMaxSize().verticalScroll(scrollState)) {
+            Box(modifier = Modifier.fillMaxWidth().height(contentHeight)) {
+                GrowthTreeArtwork(modifier = Modifier.fillMaxSize())
+                entries.forEachIndexed { index, entry ->
+                    val anchor = anchorForEntry(index, entries)
+                    val x = mapWidth * anchor.x
+                    val y = contentHeight * anchor.y
+                    val state = GrowthMapModel.entryState(entry, learnedCount, completedStageBatches, dailyTarget, ids)
+                    when (entry) {
+                        is GrowthMapModel.MapEntry.CharacterNode -> {
+                            val character = characters.getOrNull(entry.order - 1) ?: return@forEachIndexed
+                            GameMapNode(
+                                character = character.character,
+                                number = entry.order,
+                                state = state,
+                                onClick = { if (state == GrowthMapModel.NodeState.CURRENT) onLearn(character.id) },
+                                onTap = { if (state == GrowthMapModel.NodeState.COMPLETED) onCompletedTap(character) },
+                                onLongPress = { if (state == GrowthMapModel.NodeState.COMPLETED) onCompletedLongPress(character) },
+                                modifier = Modifier.offset(x = x - 36.dp, y = y - 36.dp).testTag("map_node_${entry.order}"),
+                            )
+                            if (state == GrowthMapModel.NodeState.CURRENT) {
+                                CaterpillarArtwork(
+                                    state = CaterpillarState.LEARNING,
+                                    facingLeft = anchor.x > 0.5f,
+                                    modifier = Modifier.offset(
+                                        x = if (anchor.x > 0.5f) x - 115.dp else x + 38.dp,
+                                        y = y - 18.dp,
+                                    ).height(94.dp).width(96.dp),
+                                )
+                            }
+                        }
+                        is GrowthMapModel.MapEntry.StageTestNode -> {
+                            val holeAnchor = FullTreeAnchorCatalog.stageHoleAnchor(entry.batchIndex)
+                            val holeX = mapWidth * holeAnchor.x
+                            val holeY = contentHeight * holeAnchor.y
+                            TreeHoleGate(
+                                batchIndex = entry.batchIndex,
+                                number = entry.afterCharacterOrder,
+                                unlocked = state == GrowthMapModel.NodeState.CURRENT || state == GrowthMapModel.NodeState.COMPLETED,
+                                completed = state == GrowthMapModel.NodeState.COMPLETED,
+                                remaining = (entry.afterCharacterOrder - learnedCount).coerceAtLeast(0),
+                                onClick = { if (state == GrowthMapModel.NodeState.CURRENT) onOpenStageTest(entry.batchIndex) },
+                                modifier = Modifier.offset(x = holeX - 52.dp, y = holeY - 35.dp),
+                            )
+                            if (state == GrowthMapModel.NodeState.CURRENT) {
+                                CaterpillarArtwork(
+                                    state = CaterpillarState.CHALLENGE,
+                                    facingLeft = false,
+                                    modifier = Modifier.offset(x = holeX + 45.dp, y = holeY - 18.dp).height(94.dp).width(96.dp),
+                                )
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-private data class SegmentEntries(
-    val characters: List<SegmentCharacterEntry>,
-    val stage: SegmentStageEntry?,
-)
-
-private fun buildSegmentEntries(
-    segment: InfiniteGrowthTreeModel.TreeSegment,
-    mapEntries: List<GrowthMapModel.MapEntry>,
-    characters: List<CharacterContent>,
-    learnedCount: Int,
-    dailyTarget: Int,
-    completedStageBatches: Set<Int>,
-): SegmentEntries {
-    val characterById = characters.associateBy { it.id }
-    val characterEntries = mutableListOf<SegmentCharacterEntry>()
-    var stage: SegmentStageEntry? = null
-    mapEntries.subList(segment.firstEntryIndex, segment.lastEntryIndex + 1).forEachIndexed { localIndex, entry ->
-        val globalIndex = segment.firstEntryIndex + localIndex
-        val state = GrowthMapModel.entryState(
-            entry = entry,
-            learnedCount = learnedCount,
-            completedStageBatches = completedStageBatches,
-            dailyTarget = dailyTarget,
-            characterIds = characters.map { it.id },
-        )
-        when (entry) {
-            is GrowthMapModel.MapEntry.CharacterNode -> characterById[entry.characterId]?.let { character ->
-                characterEntries += SegmentCharacterEntry(
-                    globalMapIndex = globalIndex,
-                    localCharacterIndex = localIndex,
-                    characterOrder = entry.order,
-                    character = character,
-                    state = state,
-                )
-            }
-            is GrowthMapModel.MapEntry.StageTestNode -> stage = SegmentStageEntry(
-                globalMapIndex = globalIndex,
-                batchIndex = entry.batchIndex,
-                afterCharacterOrder = entry.afterCharacterOrder,
-                state = state,
-            )
-        }
+private fun anchorForEntry(index: Int, entries: List<GrowthMapModel.MapEntry>): NormalizedPoint {
+    return when (val entry = entries.getOrNull(index)) {
+        is GrowthMapModel.MapEntry.CharacterNode -> FullTreeAnchorCatalog.fruitAnchor(entry.order)
+        is GrowthMapModel.MapEntry.StageTestNode -> FullTreeAnchorCatalog.stageHoleAnchor(entry.batchIndex)
+        null -> FullTreeAnchorCatalog.fruitAnchor(1)
     }
-    return SegmentEntries(characterEntries, stage)
 }
