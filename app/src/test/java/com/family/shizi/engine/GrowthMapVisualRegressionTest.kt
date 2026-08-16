@@ -13,6 +13,7 @@ class GrowthMapVisualRegressionTest {
         assertEquals(55, entries.size)
         assertEquals(50, entries.count { it is GrowthMapModel.MapEntry.CharacterNode })
         assertEquals(5, entries.count { it is GrowthMapModel.MapEntry.StageTestNode })
+        assertEquals(ids, entries.filterIsInstance<GrowthMapModel.MapEntry.CharacterNode>().map { it.characterId })
     }
 
     @Test fun currentFocusCoversRequiredReleaseStates() {

@@ -61,7 +61,14 @@ fun GrowthMap(
                     .height(contentHeight)
                     .verticalScroll(scrollState),
             ) {
-                GrowthTreeArtwork(Modifier.fillMaxSize())
+                // Keep the artwork at the same measured height as the scroll content.
+                // A fillMaxSize child inside a verticalScroll container can otherwise
+                // collapse to the viewport's loose height on some Android devices.
+                GrowthTreeArtwork(
+                    Modifier
+                        .fillMaxWidth()
+                        .height(contentHeight),
+                )
                 entries.forEachIndexed { index, entry ->
                     GrowthMapEntry(
                         index = index,

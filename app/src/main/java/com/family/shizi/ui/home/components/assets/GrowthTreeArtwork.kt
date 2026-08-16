@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import com.family.shizi.R
 
 /**
@@ -27,23 +26,35 @@ fun GrowthTreeArtwork(modifier: Modifier = Modifier) {
 }
 
 private fun DrawScope.drawTreeSlices(bitmap: androidx.compose.ui.graphics.ImageBitmap) {
-    val sourceSlice = bitmap.height / 4
-    val destinationSlice = size.height / 4f
-    repeat(4) { slice ->
-        val sourceTop = when (slice) {
-            0 -> 0
-            1 -> sourceSlice - 4
-            2 -> sourceSlice * 2 - 4
-            else -> sourceSlice * 3 - 4
-        }.coerceAtLeast(0)
-        val sourceBottom = if (slice == 3) bitmap.height else ((slice + 1) * sourceSlice + 4).coerceAtMost(bitmap.height)
+    // One complete reference tree anchors the roots and canopy at the bottom.
+    // Only a narrow bark crop is extended upward; full tree crowns are never tiled.
+    val treeWidth = size.width * .96f
+    val treeHeight = treeWidth * bitmap.height.toFloat() / bitmap.width.toFloat()
+    val treeX = (size.width - treeWidth) / 2f
+    val treeY = (size.height - treeHeight).coerceAtLeast(0f)
+    val trunkSourceLeft = (bitmap.width * .39f).toInt()
+    val trunkSourceRight = (bitmap.width * .64f).toInt()
+    val trunkSourceTop = (bitmap.height * .16f).toInt()
+    val trunkSourceBottom = (bitmap.height * .88f).toInt()
+    val trunkWidth = size.width * .42f
+    val trunkSegmentHeight = trunkWidth * (trunkSourceBottom - trunkSourceTop).toFloat() /
+        (trunkSourceRight - trunkSourceLeft).toFloat()
+    var y = treeY - trunkSegmentHeight
+    while (y > -trunkSegmentHeight) {
         drawImage(
             image = bitmap,
-            srcOffset = androidx.compose.ui.unit.IntOffset(0, sourceTop),
-            srcSize = androidx.compose.ui.unit.IntSize(bitmap.width, sourceBottom - sourceTop),
-            dstOffset = androidx.compose.ui.unit.IntOffset(0, (slice * destinationSlice).toInt()),
-            dstSize = androidx.compose.ui.unit.IntSize(size.width.toInt(), (destinationSlice + 6.dp.toPx()).toInt()),
-            alpha = .98f,
+            srcOffset = androidx.compose.ui.unit.IntOffset(trunkSourceLeft, trunkSourceTop),
+            srcSize = androidx.compose.ui.unit.IntSize(trunkSourceRight - trunkSourceLeft, trunkSourceBottom - trunkSourceTop),
+            dstOffset = androidx.compose.ui.unit.IntOffset(((size.width - trunkWidth) / 2f).toInt(), y.toInt()),
+            dstSize = androidx.compose.ui.unit.IntSize(trunkWidth.toInt(), trunkSegmentHeight.toInt()),
+            alpha = .94f,
         )
+        y -= trunkSegmentHeight * .9f
     }
+    drawImage(
+        image = bitmap,
+        dstOffset = androidx.compose.ui.unit.IntOffset(treeX.toInt(), treeY.toInt()),
+        dstSize = androidx.compose.ui.unit.IntSize(treeWidth.toInt(), treeHeight.toInt()),
+        alpha = .98f,
+    )
 }
