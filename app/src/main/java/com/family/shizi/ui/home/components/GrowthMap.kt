@@ -71,7 +71,8 @@ fun GrowthMap(
                         modifier = Modifier.fillMaxWidth(),
                     ) {
                         val segmentWidth = maxWidth
-                        val segmentHeight = segmentWidth * (1536f / 1024f)
+                        // The fixed asset is 887 x 1774. Keep its natural ratio; never stretch it.
+                        val segmentHeight = segmentWidth * (1774f / 887f)
                         Box(modifier = Modifier.fillMaxWidth().size(height = segmentHeight, width = segmentWidth)) {
                             Image(
                                 painter = painterResource(R.drawable.growth_trunk_segment),
