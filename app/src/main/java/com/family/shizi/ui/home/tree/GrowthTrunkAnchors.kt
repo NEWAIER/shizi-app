@@ -2,15 +2,15 @@ package com.family.shizi.ui.home.tree
 
 object GrowthTrunkAnchors {
     private val fruit = listOf(
-        // 从下到上：底部左枝挂 2 个，其余枝条按不规则高度挂 1 个。
-        NormalizedPoint(0.20f, 0.86f), NormalizedPoint(0.30f, 0.79f),
-        NormalizedPoint(0.82f, 0.73f),
-        NormalizedPoint(0.18f, 0.61f),
-        NormalizedPoint(0.82f, 0.53f),
-        NormalizedPoint(0.16f, 0.45f), NormalizedPoint(0.28f, 0.50f),
-        NormalizedPoint(0.82f, 0.36f),
-        NormalizedPoint(0.18f, 0.22f),
-        NormalizedPoint(0.82f, 0.15f),
+        // 严格从下到上：果柄落在枝梢末端，枝条数量和长度不规则。
+        NormalizedPoint(0.12f, 0.82f), NormalizedPoint(0.22f, 0.77f),
+        NormalizedPoint(0.89f, 0.71f),
+        NormalizedPoint(0.12f, 0.60f),
+        NormalizedPoint(0.92f, 0.47f), NormalizedPoint(0.82f, 0.50f),
+        NormalizedPoint(0.10f, 0.39f),
+        NormalizedPoint(0.93f, 0.30f),
+        NormalizedPoint(0.18f, 0.16f),
+        NormalizedPoint(0.88f, 0.13f),
     )
 
     fun fruitAnchor(localIndex: Int): NormalizedPoint = fruit[localIndex.coerceIn(0, fruit.lastIndex)]
