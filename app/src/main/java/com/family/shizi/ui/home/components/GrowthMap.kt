@@ -18,11 +18,12 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.domain.engine.GrowthMapModel
+import com.family.shizi.domain.engine.InfiniteGrowthTreeModel
 import com.family.shizi.ui.home.components.assets.GrowthTreeArtwork
 import com.family.shizi.ui.home.components.assets.CaterpillarArtwork
 
 private val nodeXs = listOf(76, 150, 224, 166, 98, 210, 124, 238, 62, 184)
-private const val ENTRY_HEIGHT = 104
+private const val ENTRY_HEIGHT = 64
 
 /** 一棵连续的树：55 个 MapEntry 从底部向树冠排列。 */
 @OptIn(ExperimentalFoundationApi::class)
@@ -40,6 +41,7 @@ fun GrowthMap(
     modifier: Modifier = Modifier,
 ) {
     val entries = remember(characters) { GrowthMapModel.entries(characters.map { it.id }) }
+    val treeSegments = remember(entries.size) { InfiniteGrowthTreeModel.segments(entries.size) }
     val currentIndex = GrowthMapModel.currentEntryIndex(learnedCount, completedStageBatches, characters.map { it.id })
     val scrollState = rememberScrollState()
     Box(modifier = modifier.fillMaxSize().testTag("home_growth_tree")) {
@@ -65,7 +67,8 @@ fun GrowthMap(
                 // A fillMaxSize child inside a verticalScroll container can otherwise
                 // collapse to the viewport's loose height on some Android devices.
                 GrowthTreeArtwork(
-                    Modifier
+                    segmentCount = treeSegments.size,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .height(contentHeight),
                 )
