@@ -11,6 +11,7 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,6 +22,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -46,12 +48,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.family.shizi.R
 import com.family.shizi.ShiziApplication
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.data.content.ContentLoader
@@ -197,22 +203,28 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
     }
 
     Scaffold(containerColor = MaterialTheme.colorScheme.background) { innerPadding ->
-        Column(
-            modifier = Modifier.fillMaxSize().padding(innerPadding).verticalScroll(rememberScrollState()).padding(18.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Text(
-                "今天认识一个新朋友",
-                modifier = Modifier.testTag("page_learn"),
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold,
-            )
-            Spacer(Modifier.height(10.dp))
-            LinearProgressIndicator(
-                progress = { display.progress },
-                modifier = Modifier.fillMaxWidth().height(9.dp).clip(RoundedCornerShape(99.dp)).testTag("learn_progress"),
-            )
-            Text("第 ${display.number} 步，共 3 步", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.labelMedium)
+        Box(modifier = Modifier.fillMaxSize().padding(innerPadding).background(MaterialTheme.colorScheme.background)) {
+            Column(
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 14.dp, vertical = 12.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            "和字宝宝做朋友",
+                            modifier = Modifier.testTag("page_learn"),
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                        )
+                        Text("听一听、看一看，慢慢认识它", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+                    }
+                    Image(
+                        painter = painterResource(R.drawable.caterpillar_mascot_main),
+                        contentDescription = "陪伴学习的小禾",
+                        modifier = Modifier.size(56.dp),
+                    )
+                }
+                LearningStepRail(currentStep = display.number)
 
             AnimatedContent(
                 targetState = step,
@@ -223,40 +235,96 @@ fun LearnScreen(onNavigate: (ShiziRoute) -> Unit) {
                 label = "learn_step_transition",
             ) { targetStep ->
                 val animatedDisplay = learningDisplay(character, targetStep)
-                Card(
-                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
-                    shape = RoundedCornerShape(28.dp),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-                ) {
-                Column(
-                    modifier = Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Text(animatedDisplay.eyebrow, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
-                    Text(character?.character ?: "？", modifier = Modifier.padding(top = 4.dp).testTag("learn_character"),
-                        style = MaterialTheme.typography.displayLarge, fontWeight = FontWeight.Bold)
-                    Text(character?.pinyin ?: "", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
-                    if (animatedDisplay.showImage) {
-                        bitmap?.let {
-                            Image(it.asImageBitmap(), character?.imageAlt,
-                                modifier = Modifier.fillMaxWidth().height(190.dp).padding(top = 12.dp).clip(RoundedCornerShape(20.dp)).testTag("learn_image"))
+                    Card(
+                        modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
+                        shape = RoundedCornerShape(30.dp),
+                        border = androidx.compose.foundation.BorderStroke(2.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.16f)),
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFCF3)),
+                    ) {
+                        Column(
+                            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 18.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                        ) {
+                            Text(
+                                animatedDisplay.eyebrow,
+                                modifier = Modifier.background(Color(0xFFE7F6D8), RoundedCornerShape(50)).padding(horizontal = 14.dp, vertical = 6.dp),
+                                style = MaterialTheme.typography.labelLarge,
+                                color = Color(0xFF4C8A50),
+                            )
+                            Text(
+                                character?.character ?: "？",
+                                modifier = Modifier.padding(top = 4.dp).testTag("learn_character"),
+                                style = MaterialTheme.typography.displayLarge.copy(fontSize = 88.sp),
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF8E5E35),
+                            )
+                            Text(character?.pinyin ?: "", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+                            if (animatedDisplay.showImage) {
+                                bitmap?.let {
+                                    Box(
+                                        modifier = Modifier.fillMaxWidth().height(184.dp).padding(top = 12.dp)
+                                            .clip(RoundedCornerShape(24.dp)).background(Color(0xFFFFEAC2))
+                                            .border(3.dp, Color(0xFFFFD58A), RoundedCornerShape(24.dp)),
+                                        contentAlignment = Alignment.Center,
+                                    ) {
+                                        Image(
+                                            it.asImageBitmap(), character?.imageAlt,
+                                            modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(20.dp)).testTag("learn_image"),
+                                        )
+                                    }
+                                }
+                            }
+                            Text(
+                                animatedDisplay.mainText,
+                                modifier = Modifier.padding(top = 14.dp).testTag("learn_step_text"),
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                textAlign = TextAlign.Center,
+                            )
+                            animatedDisplay.detailText?.let {
+                                Text(it, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center, color = Color(0xFF6C7774))
+                            }
                         }
                     }
-                    Text(animatedDisplay.mainText, modifier = Modifier.padding(top = 14.dp).testTag("learn_step_text"),
-                        style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
-                    animatedDisplay.detailText?.let { Text(it, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center) }
                 }
-                }
+
+                if (timeLimitMessage.isNotBlank()) Text(timeLimitMessage, modifier = Modifier.padding(top = 10.dp), color = MaterialTheme.colorScheme.error, textAlign = TextAlign.Center)
+                Text(statusMessage, modifier = Modifier.padding(top = 10.dp).testTag("learn_status"), style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center, color = Color(0xFF6C7774))
+
+                Button(
+                    onClick = { playCurrentStep() },
+                    modifier = Modifier.fillMaxWidth().height(60.dp).padding(top = 10.dp).testTag("learn_play_audio"),
+                    shape = RoundedCornerShape(22.dp),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(containerColor = Color(0xFFFF9B58), contentColor = Color.White),
+                ) { Text("再听一次", style = MaterialTheme.typography.titleMedium) }
+                Spacer(Modifier.height(12.dp))
             }
+        }
+    }
+}
 
-            if (timeLimitMessage.isNotBlank()) Text(timeLimitMessage, modifier = Modifier.padding(top = 12.dp), color = MaterialTheme.colorScheme.error, textAlign = TextAlign.Center)
-            Text(statusMessage, modifier = Modifier.padding(top = 12.dp).testTag("learn_status"), style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
-
-            Button(
-                onClick = { playCurrentStep() },
-                modifier = Modifier.fillMaxWidth().height(64.dp).padding(top = 12.dp).testTag("learn_play_audio"),
-                shape = RoundedCornerShape(20.dp),
-            ) { Text("再听一次", style = MaterialTheme.typography.titleMedium) }
-            Spacer(Modifier.height(18.dp))
+@Composable
+private fun LearningStepRail(currentStep: Int) {
+    val labels = listOf("认识字", "了解意思", "一起读")
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(top = 14.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center,
+    ) {
+        labels.forEachIndexed { index, label ->
+            val active = index < currentStep
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Box(
+                    modifier = Modifier.size(if (active) 15.dp else 11.dp)
+                        .clip(RoundedCornerShape(50))
+                        .background(if (active) Color(0xFFFFB84D) else Color(0xFFD8E8D0)),
+                )
+                Text(label, modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.labelMedium,
+                    color = if (active) Color(0xFF8E5E35) else Color(0xFF8BA18D))
+            }
+            if (index < labels.lastIndex) {
+                Spacer(Modifier.width(34.dp).height(2.dp).background(if (index + 1 < currentStep) Color(0xFFFFB84D) else Color(0xFFD8E8D0)))
+            }
         }
     }
 }
