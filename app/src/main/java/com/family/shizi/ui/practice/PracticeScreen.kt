@@ -10,6 +10,7 @@ import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,6 +21,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -53,10 +55,12 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.family.shizi.ShiziApplication
+import com.family.shizi.R
 import com.family.shizi.data.content.CharacterContent
 import com.family.shizi.data.content.ContentLoader
 import com.family.shizi.data.content.ContentRepository
@@ -347,13 +351,13 @@ fun PracticeScreen(onNavigate: (ShiziRoute) -> Unit) {
         content.characters.firstOrNull { it.id == correctOption?.characterId }
     }
 
-    Scaffold { innerPadding ->
-        Box(modifier = Modifier.fillMaxSize()) {
+    Scaffold(containerColor = Color(0xFFFFF6E8)) { innerPadding ->
+        Box(modifier = Modifier.fillMaxSize().background(Color(0xFFFFF6E8))) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)
-                    .padding(16.dp),
+                    .padding(horizontal = 14.dp, vertical = 12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
             ChildReviewHeader(
@@ -499,16 +503,23 @@ private fun ChildReviewHeader(
         modifier = Modifier.fillMaxWidth().testTag("child_review_header"),
         shape = RoundedCornerShape(24.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (isReview) MaterialTheme.colorScheme.tertiaryContainer else MaterialTheme.colorScheme.primaryContainer,
+            containerColor = Color(0xFFFFFCF3),
         ),
     ) {
-        Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                Text(if (isStageTest) "小小测试" else if (isReview) "复习时间" else "闯关时间", style = MaterialTheme.typography.labelLarge)
-                if (questionTotal > 0) Text("第 $questionNumber / $questionTotal 关", style = MaterialTheme.typography.labelLarge)
+        Row(modifier = Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
+            Image(
+                painter = painterResource(R.drawable.caterpillar_mascot_main),
+                contentDescription = "陪伴挑战的小禾",
+                modifier = Modifier.size(62.dp),
+            )
+            Column(modifier = Modifier.weight(1f).padding(start = 10.dp)) {
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Text(if (isStageTest) "小小树洞挑战" else if (isReview) "复习老朋友" else "字宝宝闯关", style = MaterialTheme.typography.labelLarge, color = Color(0xFF4C8A50))
+                    if (questionTotal > 0) Text("第 $questionNumber / $questionTotal 关", style = MaterialTheme.typography.labelLarge, color = Color(0xFF8E5E35))
+                }
+                Text(title, modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.titleLarge, color = Color(0xFF8E5E35))
+                Text(subtitle, modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.bodyMedium)
             }
-            Text(title, modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.titleLarge)
-            Text(subtitle, modifier = Modifier.padding(top = 3.dp), style = MaterialTheme.typography.bodyMedium)
         }
     }
 }

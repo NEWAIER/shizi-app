@@ -4,13 +4,19 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -25,12 +31,15 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import com.family.shizi.R
 import com.family.shizi.ShiziApplication
 import com.family.shizi.data.db.OralCheckEntity
 import com.family.shizi.data.db.OralStatus
@@ -76,6 +85,7 @@ fun ParentScreen(
     var testChildId by remember { mutableStateOf("测试宝宝A") }
     var uxEvents by remember { mutableStateOf<List<String>>(emptyList()) }
     var resetTestArmed by remember { mutableStateOf(false) }
+    var dailyNewCount by remember { mutableStateOf(3) }
 
     suspend fun reload() {
         if (repo == null) {
@@ -93,13 +103,15 @@ fun ParentScreen(
 
     LaunchedEffect(Unit) {
         onAuthorizationConsumed()
-        testChildId = app.settingsStore.settings.first().testChildId
+        val settings = app.settingsStore.settings.first()
+        testChildId = settings.testChildId
+        dailyNewCount = settings.dailyNewCharacterCount
         reload()
     }
 
     BackHandler { onNavigate(ShiziRoute.Home) }
 
-    Scaffold { innerPadding ->
+    Scaffold(containerColor = Color(0xFFFFF6E8)) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -108,7 +120,22 @@ fun ParentScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
         ) {
-            Text("家长页", modifier = Modifier.testTag("page_parent"), style = MaterialTheme.typography.headlineMedium)
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(28.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFCF3)),
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Image(painterResource(R.drawable.xiaohe_launcher), "小禾家长助手", modifier = Modifier.size(48.dp))
+                    Column(modifier = Modifier.padding(start = 12.dp)) {
+                        Text("小禾家长助手", modifier = Modifier.testTag("page_parent"), style = MaterialTheme.typography.headlineMedium)
+                        Text("陪孩子轻松长大，设置今天的学习节奏", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+                    }
+                }
+            }
             status.takeIf { it.isNotBlank() }?.let {
                 Text(it, modifier = Modifier.padding(top = 8.dp).testTag("parent_status"))
             }
@@ -140,7 +167,7 @@ fun ParentScreen(
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
             ) {
                 ParentTab.entries.forEach { tab ->
-                    Button(
+                    TextButton(
                         onClick = { selectedTab = tab },
                         modifier = Modifier.weight(1f).testTag("parent_tab_${tab.name}"),
                     ) {
@@ -178,10 +205,13 @@ fun ParentScreen(
                 ParentTab.Settings -> ParentSettings(
                     diagnosticsPreview = diagnosticsPreview,
                     clearArmed = clearArmed,
+                    initialDailyNew = dailyNewCount,
                     onSetDailyNew = { count ->
                         scope.launch {
-                            app.settingsStore.updateSettings { it.copy(dailyNewCharacterCount = count) }
-                            status = "每日新字数已保存"
+                            val updated = app.settingsStore.updateSettings { it.copy(dailyNewCharacterCount = count) }
+                            repo?.applyDailyNewTargetForToday(LocalDate.now(), updated, content)
+                            dailyNewCount = count
+                            status = "今天已调整为每天 $count 个新字"
                         }
                     },
                     onSetLimit = { minutes ->
@@ -460,12 +490,13 @@ private fun characterLabel(content: com.family.shizi.data.content.ContentPackage
 private fun ParentSettings(
     diagnosticsPreview: String,
     clearArmed: Boolean,
+    initialDailyNew: Int,
     onSetDailyNew: (Int) -> Unit,
     onSetLimit: (Int) -> Unit,
     onExport: () -> Unit,
     onClearClick: () -> Unit,
 ) {
-    var dailyNewText by remember { mutableStateOf(TextFieldValue("3")) }
+    var dailyNewText by remember(initialDailyNew) { mutableStateOf(TextFieldValue(initialDailyNew.toString())) }
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
@@ -474,7 +505,17 @@ private fun ParentSettings(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         item {
-            Text("每日新字数（1–10 个）", style = MaterialTheme.typography.titleSmall)
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(24.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFCF3)),
+            ) {
+                Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+                    Text("今天学几个新朋友？", style = MaterialTheme.typography.titleLarge)
+                    Text("每日新字数（1–10 个）", modifier = Modifier.padding(top = 4.dp), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+                    Text("保存后当天课程立即补齐，已经学完的内容不会重复。", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall)
+                }
+            }
         }
         item {
             OutlinedTextField(
@@ -482,7 +523,7 @@ private fun ParentSettings(
                 onValueChange = { value -> dailyNewText = value.copy(text = value.text.filter(Char::isDigit).take(2)) },
                 modifier = Modifier.fillMaxWidth().testTag("parent_daily_new_input"),
                 label = { Text("输入每天想学几个字") },
-                supportingText = { Text("保存后当天课程立即按新数量安排，复习任务会优先安排。") },
+                supportingText = { Text("复习任务会优先安排，新字数量只影响今天未开始的字。") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 singleLine = true,
             )

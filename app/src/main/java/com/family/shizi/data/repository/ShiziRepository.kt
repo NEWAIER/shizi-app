@@ -319,6 +319,52 @@ class ShiziRepository(
             session
         }
 
+    /**
+     * 当家长在当天修改新字数量时，把尚未加入今日课程的新字即时补入现有 session。
+     * 已完成的字和复习题不受影响；只扩展当天尚未完成的新字课程。
+     */
+    suspend fun applyDailyNewTargetForToday(
+        date: LocalDate,
+        settings: ShiziSettings,
+        content: ContentPackage,
+    ): LearningSessionEntity? = database.withTransaction {
+        val session = database.learningSessionDao().getUsableByDate(date) ?: return@withTransaction null
+        if (session.status == SessionStatus.COMPLETED || session.status == SessionStatus.ENDED_EARLY) {
+            return@withTransaction session
+        }
+        val items = database.sessionItemDao().getForSession(session.id)
+        val currentNewCount = items.count { it.kind == ItemKind.NEW }
+        val target = settings.dailyNewCharacterCount.coerceIn(1, 10).coerceAtMost(content.learningOrder.size)
+        val missing = target - currentNewCount
+        if (missing <= 0) return@withTransaction session
+
+        val existingIds = items.map { it.characterId }.toSet()
+        val progress = database.characterProgressDao().getAll().associateBy { it.characterId }
+        val candidates = content.learningOrder
+            .filter { it !in existingIds }
+            .mapNotNull { id -> progress[id]?.takeIf { it.firstStartedAt == null && !it.initialLessonCompleted } }
+            .take(missing)
+        if (candidates.isEmpty()) return@withTransaction session
+
+        val randomProvider = com.family.shizi.domain.core.KotlinRandomProvider()
+        var sequence = (items.maxOfOrNull { it.sequence } ?: -1) + 1
+        candidates.forEach { candidate ->
+            createItemWithQuestionsInternal(
+                sessionId = session.id,
+                characterId = candidate.characterId,
+                kind = ItemKind.NEW,
+                sequence = sequence++,
+                reviewStage = ReviewStage.NONE,
+                content = content,
+                randomProvider = randomProvider,
+                idProvider = IdProvider { UUID.randomUUID().toString() },
+            )
+        }
+        val updated = session.copy(plannedNewCount = currentNewCount + candidates.size)
+        database.learningSessionDao().update(updated)
+        updated
+    }
+
     private suspend fun createItemWithQuestionsInternal(
         sessionId: String,
         characterId: String,
