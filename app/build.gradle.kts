@@ -58,18 +58,20 @@ android {
     testOptions {
         unitTests {
             isReturnDefaultValues = true
-            all {
-                val kotlinClasses = layout.buildDirectory.dir("tmp/kotlin-classes/debugUnitTest").get().asFile
-                if (kotlinClasses.exists()) {
-                    it.classpath = it.classpath + files(kotlinClasses)
-                    it.testClassesDirs = it.testClassesDirs + files(kotlinClasses)
-                }
-            }
         }
     }
 }
 
 tasks.withType<Test>().configureEach {
+    // The Android plugin discovers Kotlin tests but does not put their output
+    // directory on the worker classpath on this Windows/Kotlin combination.
+    // Add it as a provider so the directory is resolved after compilation.
+    val kotlinTestClasses = layout.buildDirectory.dir("tmp/kotlin-classes/debugUnitTest")
+    classpath = classpath + files(kotlinTestClasses)
+    val javaTestClasses = layout.buildDirectory.dir(
+        "intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes"
+    )
+    testClassesDirs = files(javaTestClasses, kotlinTestClasses)
     jvmArgs("-Dfile.encoding=UTF-8", "-Dsun.jnu.encoding=UTF-8")
     systemProperty("file.encoding", "UTF-8")
     systemProperty("sun.jnu.encoding", "UTF-8")

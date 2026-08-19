@@ -37,3 +37,6 @@ device-*.png
 **/AUDITION_INDEX.md
 **/audition_manifest.json
 **/failed_items.json
+
+# Generated source images inside content packs (large binaries, regenerable)
+**/content-source/*/generated/images/

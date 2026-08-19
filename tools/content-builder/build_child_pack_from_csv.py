@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the frozen 50-character child-pack-v1 candidate from CSV sources."""
+"""Build a child learning pack from CSV sources without activating it."""
 from __future__ import annotations
 
 import argparse
@@ -10,7 +10,6 @@ import shutil
 from pathlib import Path
 
 
-PACK_VERSION = "child-pack-v1"
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SOURCE = ROOT / "content-source" / "v1"
 
@@ -30,19 +29,23 @@ def main() -> None:
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--media-root", type=Path, default=None)
+    parser.add_argument("--pack-id", default="child-pack-v1")
+    parser.add_argument("--expected-count", type=int, default=None)
     parser.add_argument("--allow-draft", action="store_true")
     args = parser.parse_args()
+    pack_version = args.pack_id
     characters = read_csv(args.source / "characters.csv")
     questions = read_csv(args.source / "questions.csv")
     media = read_csv(args.source / "media.csv")
     reviews = read_csv(args.source / "reviews.csv")
-    require(len(characters) == 50, f"characters.csv 必须是50字，实际 {len(characters)}")
+    if args.expected_count is not None:
+        require(len(characters) == args.expected_count, f"characters.csv 必须是{args.expected_count}字，实际 {len(characters)}")
     ids = [row["id"] for row in characters]
-    require(len(set(ids)) == 50, "characters.csv 存在重复 id")
+    require(len(set(ids)) == len(characters), "characters.csv 存在重复 id")
     chars = {row["character"] for row in characters}
     all_active = all(row["review_status"] == "ACTIVE" for row in characters)
     require(all_active or args.allow_draft, "存在未审核字符；候选包请使用 --allow-draft")
-    require(len(questions) == 50, f"questions.csv 必须是50题，实际 {len(questions)}")
+    require(len(questions) == len(characters), f"questions.csv 应与 characters.csv 一字一题，实际 {len(questions)}题")
     characters_by_id = {row["id"]: row for row in characters}
     option_catalog = []
     compiled_questions_by_id: dict[str, list[dict]] = {character_id: [] for character_id in ids}
@@ -129,9 +132,9 @@ def main() -> None:
         })
     content = {
         "schemaVersion": 2,
-        "contentVersion": PACK_VERSION,
-        "layers": {"foundationVersion": "csv-child-pack-v1", "childContentVersion": PACK_VERSION, "experienceVersion": "child-pack-experience-v1"},
-        "childLearningPack": {"schemaVersion": 1, "packVersion": PACK_VERSION, "characters": child_entries},
+        "contentVersion": pack_version,
+        "layers": {"foundationVersion": f"csv-{pack_version}", "childContentVersion": pack_version, "experienceVersion": "child-pack-experience-v1"},
+        "childLearningPack": {"schemaVersion": 1, "packVersion": pack_version, "characters": child_entries},
         "course": {"stageTestThreshold": 3, "badgeMilestones": []},
         "learningOrder": ids,
         "reviewOffsetsDays": [1, 3, 7, 14, 30, 60],
@@ -145,7 +148,7 @@ def main() -> None:
     manifest_path = args.output / "manifest.json"
     content_path.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     package_status = "ACTIVE" if all_active else "CANDIDATE"
-    pack_path.write_text(json.dumps({"packId": PACK_VERSION, "version": PACK_VERSION, "status": package_status, "characterCount": 50, "contentPath": "content.json", "manifestPath": "manifest.json"}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    pack_path.write_text(json.dumps({"packId": pack_version, "version": pack_version, "status": package_status, "characterCount": len(characters), "contentPath": "content.json", "manifestPath": "manifest.json"}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     resources = []
     for row in media:
         if row["character_id"] != "ALL":

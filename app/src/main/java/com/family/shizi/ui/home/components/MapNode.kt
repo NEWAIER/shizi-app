@@ -24,11 +24,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.family.shizi.domain.engine.GrowthMapModel
 import com.family.shizi.ui.theme.Coral
-import com.family.shizi.ui.theme.PrimaryText
 import com.family.shizi.ui.theme.StarYellow
 import com.family.shizi.ui.home.components.tree.CharacterFruit
 
@@ -94,8 +95,11 @@ fun GameMapNode(
                 GrowthMapModel.NodeState.COMPLETED -> {
                     Text(
                         character,
-                        color = PrimaryText,
-                        style = MaterialTheme.typography.titleLarge,
+                        color = Color(0xFFFFF8E8),
+                        style = MaterialTheme.typography.titleLarge.copy(
+                            fontWeight = FontWeight.Bold,
+                            shadow = Shadow(color = Color(0xFF7A4A2B).copy(alpha = 0.72f), blurRadius = 3f),
+                        ),
                     )
                     StarMark(modifier = Modifier.align(Alignment.TopEnd).padding(5.dp), color = Coral)
                 }
